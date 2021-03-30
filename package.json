@@ -1,5 +1,5 @@
 {
-  "name": "nextra",
+  "name": "jambonz",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "build": "next build",
     "export": "next export"
   },
-  "author": "Shu Ding",
+  "author": "Jambonz Developers",
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.6",
