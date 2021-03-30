@@ -10,6 +10,19 @@ body {
 
 a {
   color: $jambonz;
+
+  svg, span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  svg:last-child {
+    margin-left: 8px;
+  }
+
+  svg:first-child {
+    margin-right: 8px;
+  }
 }
 
 strong {
@@ -105,13 +118,27 @@ em {
   border-radius: 30px;
   display: inline-block;
 
-  &--dark {
-    background-color: $charcoal;
-  }
+  &--fill {
+    &--dark {
+      background-color: $charcoal;
+    }
 
-  &--light {
-    background-color: $white;
-    color: $jambonz;
+    &--purple {
+      background-color: $purple;
+    }
+
+    &--teal {
+      background-color: $teal;
+    }
+
+    &--blue {
+      background-color: $blue;
+    }
+
+    &--light {
+      background-color: $white;
+      color: $jambonz;
+    }
   }
 
   &--pill {
@@ -128,6 +155,15 @@ em {
 
     svg {
       margin-right: 16px;
+    }
+
+    &--jambonz {
+      border-color: $jambonz;
+      color: $jambonz;
+
+      svg {
+        stroke: $jambonz;
+      }
     }
   }
 
@@ -176,6 +212,20 @@ em {
       stroke: $jambonz;
     }
   }
+
+  &--fill {
+    &--purple {
+      background-color: $purple;
+    }
+
+    &--blue {
+      background-color: $blue;
+    }
+
+    &--teal {
+      background-color: $teal;
+    }
+  }
 }
 
 .icons {
@@ -187,12 +237,27 @@ em {
 }
 
 /******************************************************************************
- * Layout
+ * Backgrounds
 *******************************************************************************/
 .bg-jambonz {
   background-color: $jambonz;
+  color: $white;
+}
+
+.bg-black {
+  background-color: $black;
+  color: $white;
 }
 
 .bg-charcoal {
   background-color: $charcoal;
+  color: $white;
+}
+
+.bg-grey {
+  background-color: $grey;
+}
+
+.bg-pink {
+  background-color: $pink;
 }

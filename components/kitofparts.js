@@ -7,65 +7,99 @@ export default function Kitofparts() {
 
   return (
     <>
+      {/* High-level design information */}
       <div className="wrap padr">
         <div className="pad">
           <img src="/svg/jambonz.svg" width="128" />
+          <MS>Kit of Parts</MS>
         </div>
         <div className="pad">
           <H5>
             <div><strong>docs</strong></div>
             <div>
               <Link href="/docs">
-                <a>nextra docs</a>
+                <a>
+                  <Icon name="Code" />
+                  <span>jambonz nextra docs</span>
+                </a>
               </Link>
             </div>
             <div>&nbsp;</div>
             <div><strong>font</strong></div>
             <div>Objectivity (free, large family—16 styles)</div>
-            <div>&nbsp;</div>
-            <div><strong>specimen</strong></div>
             <div>
-              <Link href="https://www.fontsquirrel.com/fonts/objectivity">
-                <a target="_blank">www.fontsquirrel.com/fonts/objectivity</a>
+              <Link href="https://www.behance.net/gallery/60530395/Objectivity-Free-Font-Family">
+                <a target="_blank">
+                  <span>design</span>
+                  <Icon name="ExternalLink" />
+                </a>
               </Link>
             </div>
             <div>
-              <Link href="https://www.behance.net/gallery/60530395/Objectivity-Free-Font-Family">
-                <a target="_blank">www.behance.net/gallery/60530395/Objectivity-Free-Font-Family</a>
+              <Link href="https://www.fontsquirrel.com/fonts/objectivity">
+                <a target="_blank">
+                  <span>specimen</span>
+                  <Icon name="ExternalLink" />
+                </a>
               </Link>
             </div>
             <div>&nbsp;</div>
             <div><strong>icons</strong></div>
             <div>Feather (free, large set—286 icons)</div>
-            <div>&nbsp;</div>
-            <div><strong>specimen</strong></div>
             <div>
               <Link href="https://feathericons.com">
-                <a target="_blank">feathericons.com</a>
+                <a target="_blank">
+                  <span>specimen</span>
+                  <Icon name="ExternalLink" />
+                </a>
               </Link>
             </div>
             <div>
               <Link href="https://github.com/feathericons/react-feather">
-                <a target="_blank">github.com/feathericons/react-feather</a>
+                <a target="_blank">
+                  <span>react-feather</span>
+                  <Icon name="ExternalLink" />
+                </a>
               </Link>
             </div>
           </H5>
         </div>
-        <div className="wrap-text pad">
-          <H1>{text}</H1>
+      </div>
+      {/* Show black background style */}
+      <div className="pad bg-black">
+        <div className="wrap padr">
+          <div className="wrap-text pad">
+            <H1>{text}</H1>
+          </div>
         </div>
+      </div>
+      <div className="wrap padr">
         <div className="wrap-text pad">
           <H2>{text}</H2>
         </div>
-        <div className="wrap-text pad">
-          <H3>{text}</H3>
+      </div>
+      {/* Show pink background style */}
+      <div className="pad bg-pink">
+        <div className="wrap padr">
+          <div className="wrap-text pad">
+            <H3>{text}</H3>
+          </div>
         </div>
+      </div>
+      <div className="wrap padr">
         <div className="wrap-text pad">
           <H4>{text}</H4>
         </div>
-        <div className="wrap-text pad">
-          <H5>{text}</H5>
+      </div>
+      {/* Show grey background style */}
+      <div className="pad bg-grey">
+        <div className="wrap padr">
+          <div className="wrap-text pad">
+            <H5>{text}</H5>
+          </div>
         </div>
+      </div>
+      <div className="wrap padr">
         <div className="wrap-text pad">
           <H6>{text}</H6>
         </div>
@@ -84,24 +118,35 @@ export default function Kitofparts() {
         <div className="pad">
           <Image src="/images/Jambonz_app_screenshot.png" width={1280 / 2} height={842 / 2} />
         </div>
-        <div className="icons pad">
-          <Icon style="fill" name="Server" />
-          <Icon style="fill" name="PhoneCall" />
-          <Icon style="fill" name="Folder" />
-          <Icon style="fill" name="Cloud" />
-          <Icon style="pill" name="Heart" />
+        <div className="pad">
+          <div className="icons">
+            <Icon style="fill" name="Server" />
+            <Icon style="fill" name="Folder" />
+            <Icon style="fill" name="Cloud" />
+            <Icon style="fill" name="Layers" />
+            <Icon style="fill" name="UserCheck" />
+            <Icon style="fill" name="Lock" />
+            <Icon style="fill" name="ThumbsUp" />
+            <Icon style="fill" subStyle="purple" name="Phone" />
+            <Icon style="fill" subStyle="teal" name="PhoneCall" />
+            <Icon style="fill" subStyle="blue" name="Activity" />
+            <Icon style="pill" name="Heart" />
+          </div>
         </div>
         <div className="pad">
           <img src="/svg/drachtio.svg" width="128" />
         </div>
         <div className="pad">
-          <Button href="#" target="_blank" style="login">Log In</Button>
+          <Button href="#" style="login">Log In</Button>
         </div>
-        <div className="pad">
-          <Button href="#" target="_blank">Sign up for free</Button>
+        <div className="btns pad">
+          <Button href="#">Button</Button>
+          <Button href="#" subStyle="dark">styles...</Button>
         </div>
-        <div className="pad">
-          <Button href="#" target="_blank" style="dark">Sign up for free</Button>
+        <div className="btns pad">
+          <Button href="#" subStyle="purple">Optional</Button>
+          <Button href="#" subStyle="teal">button</Button>
+          <Button href="#" subStyle="blue">styles...</Button>
         </div>
         <div className="btns pad">
           <Button href="https://github.com/jambonz" target="_blank" style="pill">
@@ -113,10 +158,17 @@ export default function Kitofparts() {
             <span>github.com/drachtio</span>
           </Button>
         </div>
+        <div className="pad">
+          <Button href="#" style="pill" subStyle="jambonz">
+            <Icon size={18} name="Send" />
+            <span>Contact us to get started</span>
+          </Button>
+        </div>
       </div>
+      {/* Show jambonz background style */}
       <div className="pad bg-jambonz">
         <div className="wrap padr">
-          <Button href="#" target="_blank" style="light">Sign up for free</Button>
+          <Button href="#" target="_blank" subStyle="light">Footer button...</Button>
         </div>
       </div>
     </>

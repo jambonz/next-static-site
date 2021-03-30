@@ -43,43 +43,53 @@ export function MXS({ children }) {
   return <div className="mxs">{children}</div>;
 }
 
-export function Button({children, href, style = 'jambonz', target = '_blank'}) {
+// Extra {props} get passed to the <a> element
+export function Button({ children, href, style = 'fill', subStyle = null, ...props}) {
   const classes = {
     'btn': true,
     [`btn--${style}`]: true,
   };
 
+  if (subStyle) {
+    classes[`btn--${style}--${subStyle}`] = true;
+  }
+
   return (
     <Link href={href}>
-      <a target={target} className={classNames(classes)}>{children}</a>
+      <a {...props} className={classNames(classes)}>{children}</a>
     </Link>
   );
 }
 
-export function Icon({name, size = 24, style = 'inline'}) {
+// Extra {props} get passed to the feather Component
+// See react-feather for all 286 icons available
+// https://github.com/feathericons/react-feather
+export function Icon({name, style = 'inline', subStyle = null, ...props}) {
   const Component = Icons[name];
   const classes = {
     'icon': true,
     [`icon--${style}`]: true,
   };
 
-  // See react-feather for all 286 icons available
-  // https://github.com/feathericons/react-feather
+  if (subStyle) {
+    classes[`icon--${style}--${subStyle}`] = true;
+  }
+
   if (!Component) {
     return null;
   }
 
-  // Circle icon with fill or pill style
+  // Stylized icon
   if (style !== 'inline') {
     return (
       <div className={classNames(classes)}>
-        <Component size={size} />
+        <Component {...props} />
       </div>
     );
   }
 
-  // Inline SVG icon
-  return <Component size={size} />;
+  // Inline icon
+  return <Component {...props} />;
 }
 
 export function Layout({children, title = "jambonz"}) {
