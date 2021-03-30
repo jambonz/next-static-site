@@ -13,6 +13,13 @@ export default function Kitofparts() {
         </div>
         <div className="pad">
           <H5>
+            <div><strong>docs</strong></div>
+            <div>
+              <Link href="/docs">
+                <a>nextra docs</a>
+              </Link>
+            </div>
+            <div>&nbsp;</div>
             <div><strong>font</strong></div>
             <div>Objectivity (free, large family—16 styles)</div>
             <div>&nbsp;</div>
