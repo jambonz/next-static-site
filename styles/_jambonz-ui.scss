@@ -1,0 +1,198 @@
+/******************************************************************************
+ * Typography
+*******************************************************************************/
+html,
+body {
+  font-family: 'objectivityregular';
+  letter-spacing: -0.02px;
+  color: $charcoal;
+}
+
+a {
+  color: $jambonz;
+}
+
+strong {
+  font-family: 'objectivitybold';
+}
+
+em {
+  font-family: 'objectivityitalic';
+}
+
+.h1 {
+  font-size: 48px;
+  line-height: 1.33;
+  letter-spacing: -0.06px;
+  font-family: 'objectivitybold';
+
+  em {
+    font-family: 'objectivitybold_italic';
+  }
+}
+
+.h2 {
+  font-size: 40px;
+  line-height: 1.35;
+  letter-spacing: -0.05px;
+  font-family: 'objectivitybold';
+
+  em {
+    font-family: 'objectivitybold_italic';
+  }
+}
+
+.h3 {
+  font-size: 36px;
+  line-height: 1.33;
+  letter-spacing: -0.05px;
+  font-family: 'objectivitybold';
+
+  em {
+    font-family: 'objectivitybold_italic';
+  }
+}
+
+.h4 {
+  font-size: 32px;
+  line-height: 1.56;
+  letter-spacing: -0.04px;
+}
+
+.h5 {
+  font-size: 24px;
+  line-height: 1.67;
+  letter-spacing: -0.03px;
+}
+
+.h6 {
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: -0.03px;
+}
+
+.p {
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.m {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.ms {
+  font-size: 14px;
+  line-height: 2;
+}
+
+.mxs {
+  font-size: 12px;
+  line-height: 2;
+}
+
+/******************************************************************************
+ * Buttons
+*******************************************************************************/
+.btn {
+  font-size: 16px;
+  line-height: 1;
+  padding: 23px 65px 21px;
+  background-color: $jambonz;
+  color: $white;
+  text-decoration: none;
+  font-family: 'objectivitybold';
+  border-radius: 30px;
+  display: inline-block;
+
+  &--dark {
+    background-color: $charcoal;
+  }
+
+  &--light {
+    background-color: $white;
+    color: $jambonz;
+  }
+
+  &--pill {
+    background-color: transparent;
+    border: 2px solid $charcoal;
+    color: $charcoal;
+    padding: 19px 32px 18px;
+    font-family: 'objectivityregular';
+    
+    svg, span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    svg {
+      margin-right: 16px;
+    }
+  }
+
+  &--login {
+    background-color: transparent;
+    border: 2px solid $jambonz;
+    color: $jambonz;
+    padding: 10px 26px 8px;
+    font-family: 'objectivityregular';
+    font-size: 14px;
+  }
+}
+
+.btns {
+  margin: 0 -32px;
+
+  .btn {
+    margin: 0 32px;
+  }
+}
+
+/******************************************************************************
+ * Icons
+*******************************************************************************/
+.icon {
+  display: inline-block;
+  background-color: $jambonz;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  position: relative;
+
+  svg {
+    stroke: $white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--pill {
+    background-color: transparent;
+    border: 2px solid $jambonz;
+
+    svg {
+      stroke: $jambonz;
+    }
+  }
+}
+
+.icons {
+  margin: 0 -16px;
+
+  .icon {
+    margin: 0 16px;
+  }
+}
+
+/******************************************************************************
+ * Layout
+*******************************************************************************/
+.bg-jambonz {
+  background-color: $jambonz;
+}
+
+.bg-charcoal {
+  background-color: $charcoal;
+}
