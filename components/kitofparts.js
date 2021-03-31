@@ -68,7 +68,7 @@ export default function Kitofparts() {
       {/* Show black background style */}
       <div className="pad bg-black">
         <div className="wrap padr">
-          <div className="wrap-text pad">
+          <div className="wrap-text">
             <H1>{text}</H1>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function Kitofparts() {
       {/* Show pink background style */}
       <div className="pad bg-pink">
         <div className="wrap padr">
-          <div className="wrap-text pad">
+          <div className="wrap-text">
             <H3>{text}</H3>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function Kitofparts() {
       {/* Show grey background style */}
       <div className="pad bg-grey">
         <div className="wrap padr">
-          <div className="wrap-text pad">
+          <div className="wrap-text">
             <H5>{text}</H5>
           </div>
         </div>

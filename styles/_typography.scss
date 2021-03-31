@@ -20,6 +20,33 @@ a {
   svg:first-child {
     margin-right: 8px;
   }
+  
+  /*
+   * Using React Feather
+   * https://github.com/feathericons/react-feather
+   * Default size is 24x24 for SVG icons
+   * Sizing can be passed in component JS as in:
+   * <Icon size={18} name="GitHub" />
+   * However the inline, in-text SVG icons need to be
+   *    responsive with the text scaling so some CSS
+   *    can achieve the desired result in this case:
+   *    e.g. <span>text</span><Icon name="ExternalLink" />
+   *
+   */
+  svg {
+    @media (max-width: $width-tablet-1) {
+      width: 20px;
+      height: auto;
+    }
+
+    @media (max-width: $width-tablet-2) {
+      width: 18px;
+    }
+
+    @media (max-width: $width-mobile) {
+      width: 16px;
+    }
+  }
 }
 
 strong {
