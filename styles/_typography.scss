@@ -5,7 +5,8 @@ body {
   color: $charcoal;
 }
 
-a {
+/* Buttons have their own inline svg/span styles */
+a:not(.btn) {
   color: $jambonz;
 
   svg, span {
