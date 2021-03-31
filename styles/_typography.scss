@@ -31,7 +31,7 @@ em {
 }
 
 .h1 {
-  font-size: 48px;
+  font-size: $h1-size;
   line-height: 1.33;
   letter-spacing: -0.06px;
   font-family: 'objectivitybold';
@@ -39,10 +39,22 @@ em {
   em {
     font-family: 'objectivitybold_italic';
   }
+
+  @media (max-width: $width-tablet-1) {
+    font-size: $h2-size;
+  }
+
+  @media (max-width: $width-tablet-2) {
+    font-size: $h3-size;
+  }
+
+  @media (max-width: $width-mobile) {
+    font-size: $h4-size;
+  }
 }
 
 .h2 {
-  font-size: 40px;
+  font-size: $h2-size;
   line-height: 1.35;
   letter-spacing: -0.05px;
   font-family: 'objectivitybold';
@@ -50,10 +62,22 @@ em {
   em {
     font-family: 'objectivitybold_italic';
   }
+
+  @media (max-width: $width-tablet-1) {
+    font-size: $h3-size;
+  }
+
+  @media (max-width: $width-tablet-2) {
+    font-size: $h4-size;
+  }
+
+  @media (max-width: $width-mobile) {
+    font-size: $h5-size;
+  }
 }
 
 .h3 {
-  font-size: 36px;
+  font-size: $h3-size;
   line-height: 1.33;
   letter-spacing: -0.05px;
   font-family: 'objectivitybold';
@@ -61,42 +85,106 @@ em {
   em {
     font-family: 'objectivitybold_italic';
   }
+
+  @media (max-width: $width-tablet-1) {
+    font-size: $h4-size;
+  }
+
+  @media (max-width: $width-tablet-2) {
+    font-size: $h5-size;
+  }
+
+  @media (max-width: $width-mobile) {
+    font-size: $h6-size;
+  }
 }
 
 .h4 {
-  font-size: 32px;
-  line-height: 1.56;
+  font-size: $h4-size;
+  line-height: 1.5;
   letter-spacing: -0.04px;
+
+  @media (max-width: $width-tablet-1) {
+    font-size: $h5-size;
+  }
+
+  @media (max-width: $width-tablet-2) {
+    font-size: $h6-size;
+  }
+
+  @media (max-width: $width-mobile) {
+    font-size: $p-size;
+  }
 }
 
 .h5 {
-  font-size: 24px;
+  font-size: $h5-size;
   line-height: 1.67;
   letter-spacing: -0.03px;
+
+  @media (max-width: $width-tablet-1) {
+    font-size: $h6-size;
+  }
+
+  @media (max-width: $width-tablet-2) {
+    font-size: $p-size;
+  }
+
+  @media (max-width: $width-mobile) {
+    font-size: $m-size;
+  }
 }
 
 .h6 {
-  font-size: 20px;
+  font-size: $h6-size;
   line-height: 1.8;
   letter-spacing: -0.03px;
+
+  @media (max-width: $width-tablet-1) {
+    font-size: $p-size;
+  }
+
+  @media (max-width: $width-tablet-2) {
+    font-size: $m-size;
+  }
+
+  @media (max-width: $width-mobile) {
+    font-size: $ms-size;
+  }
 }
 
 .p {
-  font-size: 18px;
+  font-size: $p-size;
   line-height: 1.9;
+
+  @media (max-width: $width-tablet-1) {
+    font-size: $m-size;
+  }
+
+  @media (max-width: $width-tablet-2) {
+    font-size: $ms-size;
+  }
 }
 
 .m {
-  font-size: 16px;
+  font-size: $m-size;
   line-height: 1.9;
+
+  @media (max-width: $width-tablet-1) {
+    font-size: $ms-size;
+  }
 }
 
 .ms {
-  font-size: 14px;
+  font-size: $ms-size;
   line-height: 2;
+
+  @media (max-width: $width-tablet-1) {
+    font-size: $mxs-size;
+  }
 }
 
 .mxs {
-  font-size: 12px;
+  font-size: $mxs-size;
   line-height: 2;
 }
