@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Head from 'next/head';
 import classNames from 'classnames';
 import * as Icons from 'react-feather';
 
@@ -43,8 +42,12 @@ export function MXS({ children }) {
   return <div className="mxs">{children}</div>;
 }
 
+export function Hero({ children }) {
+  return <div className="hero wrap">{children}</div>;
+}
+
 // Extra {props} get passed to the <a> element
-export function Button({ children, href, style = 'fill', subStyle = null, ...props}) {
+export function Button({ children, href, style = 'fill', subStyle = null, ...props }) {
   const classes = {
     'btn': true,
     [`btn--${style}`]: true,
@@ -64,7 +67,7 @@ export function Button({ children, href, style = 'fill', subStyle = null, ...pro
 // Extra {props} get passed to the feather Component
 // See react-feather for all 286 icons available
 // https://github.com/feathericons/react-feather
-export function Icon({name, style = 'inline', subStyle = null, ...props}) {
+export function Icon({ name, style = 'inline', subStyle = null, ...props }) {
   const Component = Icons[name];
   const classes = {
     'icon': true,
@@ -90,29 +93,4 @@ export function Icon({name, style = 'inline', subStyle = null, ...props}) {
 
   // Inline icon
   return <Component {...props} />;
-}
-
-export function Layout({children, title = "jambonz"}) {
-  return (
-    <>
-      <Head>
-        <title>{title}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta
-          name="description"
-          content="The “bring your own everything” CPaaS"
-        />
-        <link rel="apple-touch-icon" href="/logo192.png" />
-        {/*
-          manifest.json provides metadata used when your web app is installed on a
-          user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-        */}
-        <link rel="manifest" href="/manifest.json" />
-      </Head>
-      {children}
-    </>
-  );
 }

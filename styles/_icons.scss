@@ -45,6 +45,14 @@
     &--teal {
       background-color: $teal;
     }
+
+    &--white {
+      background-color: $white;
+
+      svg {
+        stroke: $jambonz;
+      }
+    }
   }
 }
 

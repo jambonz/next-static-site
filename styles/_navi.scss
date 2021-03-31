@@ -1,0 +1,87 @@
+.navi {
+  padding: 16px 0;
+
+  .icon {
+    width: $icon-size-3;
+    height: $icon-size-3;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__wrap,
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__links {
+    transform: translateY(-4px);
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $charcoal;
+    margin-left: 32px;
+
+    &.active {
+      color: $jambonz;
+    }
+  }
+
+  &__icon,
+  &__login {
+    margin-left: auto;
+  }
+
+  &__links,
+  &__login {
+    @media (max-width: $width-tablet-2) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    display: none;
+    line-height: 0;
+    cursor: pointer;
+
+    @media (max-width: $width-tablet-2) {
+      display: block;
+    }
+  }
+
+  &__mobile {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity $base-dur $base-ease,
+                z-index $base-dur $base-ease;
+    
+    &.active {
+      pointer-events: auto;
+      opacity: 1;
+      z-index: 999;
+    }
+
+    &__head {
+      padding: 19px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__icon {
+      line-height: 0;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.wrap {
+  max-width: calc(#{$width-max} + #{$width-padding} * 2);
+  width: 100%;
+  margin: 0 auto;
+  padding-left: $width-padding;
+  padding-right: $width-padding;
+}
+
+.hero {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  text-align: center;
+}

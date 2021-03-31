@@ -2,29 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Button, Icon } from './jambonz-ui';
 
-export default function Kitofparts() {
-  const text = 'jambonz is a self-hosted, “bring your own everything” open source CPaaS platform, developed by the creator of the drachtio open source sip server.';
-
+export default function KitOfParts({pageData}) {
   return (
     <>
       {/* High-level design information */}
-      <div className="wrap padr">
-        <div className="pad">
-          <img src="/svg/jambonz.svg" width="128" />
-          <MS>Kit of Parts</MS>
-        </div>
+      <div className="wrap">
         <div className="pad">
           <H5>
-            <div><strong>docs</strong></div>
-            <div>
-              <Link href="/docs">
-                <a>
-                  <Icon name="Code" />
-                  <span>jambonz nextra docs</span>
-                </a>
-              </Link>
-            </div>
-            <div>&nbsp;</div>
             <div><strong>font</strong></div>
             <div>Objectivity (free, large family—16 styles)</div>
             <div>
@@ -67,53 +51,53 @@ export default function Kitofparts() {
       </div>
       {/* Show black background style */}
       <div className="pad bg-black">
-        <div className="wrap padr">
+        <div className="wrap">
           <div className="wrap-text">
-            <H1>{text}</H1>
+            <H1>{pageData.text}</H1>
           </div>
         </div>
       </div>
-      <div className="wrap padr">
+      <div className="wrap">
         <div className="wrap-text pad">
-          <H2>{text}</H2>
+          <H2>{pageData.text}</H2>
         </div>
       </div>
       {/* Show pink background style */}
       <div className="pad bg-pink">
-        <div className="wrap padr">
+        <div className="wrap">
           <div className="wrap-text">
-            <H3>{text}</H3>
+            <H3>{pageData.text}</H3>
           </div>
         </div>
       </div>
-      <div className="wrap padr">
+      <div className="wrap">
         <div className="wrap-text pad">
-          <H4>{text}</H4>
+          <H4>{pageData.text}</H4>
         </div>
       </div>
       {/* Show grey background style */}
       <div className="pad bg-grey">
-        <div className="wrap padr">
+        <div className="wrap">
           <div className="wrap-text">
-            <H5>{text}</H5>
+            <H5>{pageData.text}</H5>
           </div>
         </div>
       </div>
-      <div className="wrap padr">
+      <div className="wrap">
         <div className="wrap-text pad">
-          <H6>{text}</H6>
+          <H6>{pageData.text}</H6>
         </div>
         <div className="wrap-text pad">
-          <P>{text}</P>
+          <P>{pageData.text}</P>
         </div>
         <div className="wrap-text pad">
-          <M>{text}</M>
+          <M>{pageData.text}</M>
         </div>
         <div className="wrap-text pad">
-          <MS>{text}</MS>
+          <MS>{pageData.text}</MS>
         </div>
         <div className="wrap-text pad">
-          <MXS>{text}</MXS>
+          <MXS>{pageData.text}</MXS>
         </div>
         <div className="pad">
           <Image src="/images/Jambonz_app_screenshot.png" width={1280 / 2} height={842 / 2} />
@@ -167,7 +151,7 @@ export default function Kitofparts() {
       </div>
       {/* Show jambonz background style */}
       <div className="pad bg-jambonz">
-        <div className="wrap padr">
+        <div className="wrap">
           <Button href="#" target="_blank" subStyle="light">Footer button...</Button>
         </div>
       </div>

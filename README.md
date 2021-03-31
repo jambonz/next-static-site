@@ -5,8 +5,18 @@ jambonz/next-static-site
 
 # [Jambonz](https://jambonz.vercel.app)
 
+## Getting started
+
 - `yarn install`
 - `yarn dev`
+
+## Kit of parts
+
+- [Design elements](https://jambonz.vercel.app/kit-of-parts)
+
+## Static data
+
+Static data is being used to power Next.js pages using `yaml` and [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation). Data files are in `/data/` and a simple JS utility for loading the data for static props is in [/lib/data.js](./lib/data.js).
 
 ![](/public/jambonz.png)
 

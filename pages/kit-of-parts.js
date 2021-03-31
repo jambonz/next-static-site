@@ -1,19 +1,17 @@
 import Layout from '../components/layout';
-import { Hero, H1 } from '../components/jambonz-ui';
+import KitOfParts from '../components/kit-of-parts';
 import { getData } from '../lib/data';
 
-export default function Home({ data }) {
+export default function KOP({ data }) {
   return (
     <Layout siteData={data.site}>
-      <Hero>
-        <H1>{data.home.h1}</H1>
-      </Hero>
+      <KitOfParts pageData={data.kop} />
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const data = getData('home');
+  const data = getData('kop');
 
   return {
     props: {

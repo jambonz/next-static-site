@@ -5,10 +5,11 @@ body {
   color: $charcoal;
 }
 
+a {
+  color: $jambonz;
+}
 /* Buttons have their own inline svg/span styles */
 a:not(.btn) {
-  color: $jambonz;
-
   svg, span {
     display: inline-block;
     vertical-align: middle;

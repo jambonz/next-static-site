@@ -25,6 +25,11 @@
     color: $jambonz;
     padding: 10px 26px 8px;
 
+    &--white {
+      color: $white;
+      border-color: $white;
+    }
+
     @media (max-width: $width-tablet-2) {
       font-size: $mxs-size;
     }

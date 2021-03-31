@@ -1,0 +1,36 @@
+navi:
+  login:
+    label: Log In
+    link: /#
+  links:
+    -
+      label: Why jambonz
+      link: /why
+      id: why
+    -
+      label: For Developers
+      link: /docs
+      id: docs
+    -
+      label: Pricing
+      link: /pricing
+      id: pricing
+footer:
+  email: support@jambonz.com
+  links:
+    -
+      label: View on Github
+      link: /#
+      id: github
+    -
+      label: Join us on Slack
+      link: /#
+      id: slack
+    -
+      label: Privacy Policy
+      link: /#
+      id: privacy
+    -
+      label: Terms of Service
+      link: /#
+      id: terms
