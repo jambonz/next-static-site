@@ -1,0 +1,47 @@
+.icon {
+  display: inline-block;
+  background-color: $jambonz;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  position: relative;
+
+  svg {
+    stroke: $white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--pill {
+    background-color: transparent;
+    border: 2px solid $jambonz;
+
+    svg {
+      stroke: $jambonz;
+    }
+  }
+
+  &--fill {
+    &--purple {
+      background-color: $purple;
+    }
+
+    &--blue {
+      background-color: $blue;
+    }
+
+    &--teal {
+      background-color: $teal;
+    }
+  }
+}
+
+.icons {
+  margin: 0 -16px;
+
+  .icon {
+    margin: 0 16px;
+  }
+}
