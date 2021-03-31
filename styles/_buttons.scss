@@ -67,6 +67,20 @@
 
     svg {
       margin-right: 16px;
+      width: 18px;
+      height: 18px;
+
+      @media (max-width: $width-tablet-2) {
+        margin-right: 12px;
+        width: 16px;
+        height: 16px;
+      }
+
+      @media (max-width: $width-mobile) {
+        margin-right: 10px;
+        width: 14px;
+        height: 14px;
+      }
     }
 
     &--jambonz {

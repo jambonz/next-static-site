@@ -150,17 +150,17 @@ export default function Kitofparts() {
         </div>
         <div className="btns pad">
           <Button href="https://github.com/jambonz" target="_blank" style="pill">
-            <Icon size={18} name="GitHub" />
+            <Icon name="GitHub" />
             <span>github.com/jambonz</span>
           </Button>
           <Button href="https://github.com/drachtio" target="_blank" style="pill">
-            <Icon size={18} name="GitHub" />
+            <Icon name="GitHub" />
             <span>github.com/drachtio</span>
           </Button>
         </div>
         <div className="pad">
           <Button href="#" style="pill" subStyle="jambonz">
-            <Icon size={18} name="Send" />
+            <Icon name="Send" />
             <span>Contact us to get started</span>
           </Button>
         </div>
