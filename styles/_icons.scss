@@ -1,10 +1,15 @@
 .icon {
   display: inline-block;
   background-color: $jambonz;
-  width: 48px;
-  height: 48px;
+  width: $icon-size-1;
+  height: $icon-size-1;
   border-radius: 24px;
   position: relative;
+
+  @media (max-width: $width-mobile) {
+    width: $icon-size-2;
+    height: $icon-size-2;
+  }
 
   svg {
     stroke: $white;
@@ -12,6 +17,11 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: $width-mobile) {
+      width: 18px;
+      height: 18px;
+    }
   }
 
   &--pill {
@@ -39,9 +49,9 @@
 }
 
 .icons {
-  margin: 0 -16px;
+  margin: 0 -1.1111111111vw;
 
   .icon {
-    margin: 0 16px;
+    margin: 0 1.1111111111vw;
   }
 }

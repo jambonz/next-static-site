@@ -37,15 +37,17 @@ a:not(.btn) {
   svg {
     @media (max-width: $width-tablet-1) {
       width: 20px;
-      height: auto;
+      height: 20px;
     }
 
     @media (max-width: $width-tablet-2) {
       width: 18px;
+      height: 18px;
     }
 
     @media (max-width: $width-mobile) {
       width: 16px;
+      height: 16px;
     }
   }
 }
