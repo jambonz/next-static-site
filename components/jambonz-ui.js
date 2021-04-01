@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import classNames from 'classnames';
 import * as Icons from 'react-feather';
+import { nanoid } from 'nanoid';
 
 export function H1({ children }) {
   return <div className="h1">{children}</div>;
@@ -58,8 +59,8 @@ export function Hero({ data, subStyle }) {
         <H1>{data.headline}</H1>
       </div>
       <div className="hero__subtext">
-        {Array.isArray(data.subtext) ? data.subtext.map((subtext, index) => {
-          return <H5 key={index}>{subtext}</H5>;
+        {Array.isArray(data.subtext) ? data.subtext.map((subtext) => {
+          return <H5 key={nanoid()}>{subtext}</H5>;
         }) : (
           <H5>{data.subtext}</H5>
         )}

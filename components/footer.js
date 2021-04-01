@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from './jambonz-ui';
 import { homeObj } from '../lib/vars';
+import { nanoid } from 'nanoid';
 
 function FooterItem({ obj }) {
   return (
@@ -21,13 +22,13 @@ export default function Footer({ siteData }) {
         <div className="foot__navs">
           <ul className="foot__links">
             {siteData.footer.links.map((obj) => {
-              return <FooterItem key={obj.id} obj={obj} />
+              return <FooterItem key={nanoid()} obj={obj} />
             })}
           </ul>
           <ul className="foot__links">
             <FooterItem key="home" obj={homeObj} />
             {siteData.navi.links.map((obj) => {
-              return <FooterItem key={obj.id} obj={obj} />
+              return <FooterItem key={nanoid()} obj={obj} />
             })}
           </ul>
         </div>

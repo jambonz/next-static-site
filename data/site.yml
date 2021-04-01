@@ -6,15 +6,12 @@ navi:
     -
       label: Why jambonz
       link: /why
-      id: why
     -
       label: For Developers
       link: /docs
-      id: docs
     -
       label: Pricing
       link: /pricing
-      id: pricing
 footer:
   email: support@jambonz.com
   links:
@@ -22,17 +19,13 @@ footer:
       label: View on Github
       link: https://github.com/jambonz
       open: true
-      id: github
     -
       label: Join us on Slack
       link: /#
       open: true
-      id: slack
     -
       label: Privacy Policy
       link: /privacy
-      id: privacy
     -
       label: Terms of Service
       link: /terms
-      id: terms

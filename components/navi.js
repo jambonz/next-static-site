@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import { Button, Icon } from './jambonz-ui';
 import { homeObj, mobileMedia } from '../lib/vars';
+import { nanoid } from 'nanoid';
 
 function NaviItem({obj}) {
   const router = useRouter();
@@ -46,12 +47,12 @@ function NaviMobile({ active, handler, siteData }) {
       <ul className="navi__mobile__links">
         <NaviItem key="home" obj={homeObj} />
         {siteData.navi.links.map((obj) => {
-          return <NaviItem key={obj.id} obj={obj} />
+          return <NaviItem key={nanoid()} obj={obj} />
         })}
       </ul>
       <ul className="navi__mobile__footer">
         {siteData.footer.links.map((obj) => {
-          return <NaviItem key={obj.id} obj={obj} />
+          return <NaviItem key={nanoid()} obj={obj} />
         })}
       </ul>
       <div className="navi__mobile__support">
@@ -102,7 +103,7 @@ export default function Navi({ siteData }) {
         </Link>
         <ul className="navi__links">
           {siteData.navi.links.map((obj) => {
-            return <NaviItem key={obj.id} obj={obj} />
+            return <NaviItem key={nanoid()} obj={obj} />
           })}
         </ul>
         <div className="navi__icon" onClick={handleNavi}>
