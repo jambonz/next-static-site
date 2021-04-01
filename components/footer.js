@@ -32,7 +32,9 @@ export default function Footer({ siteData }) {
           </ul>
         </div>
         <div className="foot__support">
-          <Button href={`mailto:${siteData.footer.email}`} target="_blank" subStyle="light">{siteData.footer.email}</Button>
+          <Button href={`mailto:${siteData.footer.email}`} target="_blank" subStyle="light">
+            {siteData.footer.email}
+          </Button>
         </div>
       </div>
     </footer>

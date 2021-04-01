@@ -66,7 +66,7 @@ export function Hero({ data, subStyle }) {
       </div>
       {data.cta && (
         <div className="hero__cta">
-          <Button href="#" target="_blank">{data.cta}</Button>
+          <Button href={data.url} target="_blank">{data.cta}</Button>
         </div>
       )}
     </div>
