@@ -64,6 +64,7 @@
     top: 0;
     width: 100%;
     height: 100%;
+    overflow-y: auto;
     transition: opacity $base-dur $base-ease,
                 z-index $base-dur $base-ease;
     
@@ -107,7 +108,7 @@
     }
 
     &__footer {
-      padding-top: 128px;
+      padding-top: 96px;
 
       .navi__link {
         font-size: $m-size;
@@ -117,7 +118,7 @@
 
     &__support {
       text-align: center;
-      padding-top: 32px;
+      padding: 32px 0;
     }
   }
 }
