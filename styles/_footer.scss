@@ -1,0 +1,49 @@
+.foot {
+  padding: 96px 0;
+
+  &__navs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__links {
+    margin: 0 64px;
+
+    li {
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: $width-mobile) {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  &__links:first-child {
+    text-align: right;
+
+    @media (max-width: $width-mobile) {
+      text-align: center;
+    }
+  }
+
+  &__links:last-child {
+    text-align: left;
+
+    @media (max-width: $width-mobile) {
+      text-align: center;
+      margin-top: 32px;
+    }
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__support {
+    text-align: center;
+    padding-top: 96px;
+  }
+}
