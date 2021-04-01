@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import { Button, Icon } from './jambonz-ui';
-// import { mobileMedia } from '../lib/vars';
+import { homeObj, mobileMedia } from '../lib/vars';
 
 function NaviItem({obj}) {
   const router = useRouter();
@@ -29,10 +29,6 @@ function NaviMobile({ active, handler, siteData }) {
     'wrap': true,
     'navi__mobile': true,
     'active': active,
-  };
-  const homeObj = {
-    link: '/',
-    label: 'Home',
   };
 
   return (
@@ -65,13 +61,11 @@ function NaviMobile({ active, handler, siteData }) {
 
 export default function Navi({ siteData }) {
   const [active, setActive] = useState(false);
+  const [mobile, setMobile] = useState(false);
 
   const handleNavi = () => {
     setActive(!active);
   };
-
-  /* Example of matchMedia for responsive component...
-  const [mobile, setMobile] = useState(false);
 
   const handleMedia = (e) => {
     setMobile(e.matches);
@@ -93,7 +87,6 @@ export default function Navi({ siteData }) {
       mql.removeListener(handleMedia);
     }
   }, [handleMedia, setMobile]);
-  */
 
   return (
     <nav className="navi">
@@ -115,7 +108,7 @@ export default function Navi({ siteData }) {
           <Button href={siteData.navi.login.link} style="login">{siteData.navi.login.label}</Button>
         </div>
       </div>
-      <NaviMobile active={active} handler={handleNavi} siteData={siteData} />
+      {mobile && <NaviMobile active={active} handler={handleNavi} siteData={siteData} />}
     </nav>
   );
 }
