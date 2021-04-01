@@ -4,10 +4,14 @@ import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Button, Icon } from './jambonz-u
 
 export default function KitOfParts({pageData}) {
   return (
-    <>
+    <div className="kop">
       {/* High-level design information */}
-      <div className="wrap">
-        <div className="pad">
+      <div className="hero">
+        <div className="wrap">
+          <H1>
+            <div>Kit of Parts</div>
+            <div>&nbsp;</div>
+          </H1>
           <H5>
             <div><strong>font</strong></div>
             <div>Objectivity (free, large family—16 styles)</div>
@@ -149,6 +153,6 @@ export default function KitOfParts({pageData}) {
           </Button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
