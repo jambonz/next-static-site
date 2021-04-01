@@ -20,17 +20,19 @@ footer:
   links:
     -
       label: View on Github
-      link: /#
+      link: https://github.com/jambonz
+      open: true
       id: github
     -
       label: Join us on Slack
       link: /#
+      open: true
       id: slack
     -
       label: Privacy Policy
-      link: /#
+      link: /privacy
       id: privacy
     -
       label: Terms of Service
-      link: /#
+      link: /terms
       id: terms

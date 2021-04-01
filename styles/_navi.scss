@@ -1,6 +1,7 @@
 .navi {
   padding: 16px 0;
 
+  // Menu / X icons for mobile nav interactions
   .icon {
     width: $icon-size-3;
     height: $icon-size-3;
@@ -82,6 +83,41 @@
     &__icon {
       line-height: 0;
       cursor: pointer;
+    }
+
+    &__links,
+    &__footer {
+      text-align: center;
+      padding-top: 48px;
+
+      li {
+        margin-top: 16px;
+      }
+
+      .navi__link {
+        color: $white;
+        font-size: $h6-size;
+        font-family: 'objectivitymedium';
+        margin: 0;
+
+        &.active {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__footer {
+      padding-top: 128px;
+
+      .navi__link {
+        font-size: $m-size;
+        font-family: 'objectivityregular';
+      }
+    }
+
+    &__support {
+      text-align: center;
+      padding-top: 32px;
     }
   }
 }

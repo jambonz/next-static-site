@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import { Button, Icon } from './jambonz-ui';
+// import { mobileMedia } from '../lib/vars';
 
 function NaviItem({obj}) {
   const router = useRouter();
@@ -14,7 +15,7 @@ function NaviItem({obj}) {
   return (
     <li>
       <Link href={obj.link}>
-        <a className={classNames(classes)}>
+        <a target={obj.open ? '_blank' : null} className={classNames(classes)}>
           {obj.label}
         </a>
       </Link>
@@ -29,6 +30,10 @@ function NaviMobile({ active, handler, siteData }) {
     'navi__mobile': true,
     'active': active,
   };
+  const homeObj = {
+    link: '/',
+    label: 'Home',
+  };
 
   return (
     <div className={classNames(classes)}>
@@ -40,6 +45,20 @@ function NaviMobile({ active, handler, siteData }) {
           <Icon style="fill" subStyle="white" name="X" />
         </div>
       </div>
+      <ul className="navi__mobile__links">
+        <NaviItem key="home" obj={homeObj} />
+        {siteData.navi.links.map((obj) => {
+          return <NaviItem key={obj.id} obj={obj} />
+        })}
+      </ul>
+      <ul className="navi__mobile__footer">
+        {siteData.footer.links.map((obj) => {
+          return <NaviItem key={obj.id} obj={obj} />
+        })}
+      </ul>
+      <div className="navi__mobile__support">
+        <Button href={`mailto:${siteData.footer.email}`} target="_blank" subStyle="light">{siteData.footer.email}</Button>
+      </div>
     </div>
   );
 }
@@ -50,6 +69,31 @@ export default function Navi({ siteData }) {
   const handleNavi = () => {
     setActive(!active);
   };
+
+  /* Example of matchMedia for responsive component...
+  const [mobile, setMobile] = useState(false);
+
+  const handleMedia = (e) => {
+    setMobile(e.matches);
+    
+    // Make sure mobile navi is closed on resizes...
+    if (!e.matches && active) {
+      setActive(false);
+    }
+  };
+
+  useEffect(() => {
+    const mql = window.matchMedia(mobileMedia);
+
+    mql.addListener(handleMedia);
+
+    setMobile(mql.matches);
+
+    return function cleanup() {
+      mql.removeListener(handleMedia);
+    }
+  }, [handleMedia, setMobile]);
+  */
 
   return (
     <nav className="navi">
@@ -64,11 +108,11 @@ export default function Navi({ siteData }) {
             return <NaviItem key={obj.id} obj={obj} />
           })}
         </ul>
-        <div className="navi__login">
-          <Button href={siteData.navi.login.link} style="login">{siteData.navi.login.label}</Button>
-        </div>
         <div className="navi__icon" onClick={handleNavi}>
           <Icon style="fill" name="Menu" />
+        </div>
+        <div className="navi__login">
+          <Button href={siteData.navi.login.link} style="login">{siteData.navi.login.label}</Button>
         </div>
       </div>
       <NaviMobile active={active} handler={handleNavi} siteData={siteData} />
