@@ -1,2 +1,6 @@
-h1: Build unique voice solutions, faster.
-cta: Sign up for free
+hero:
+  headline: Build unique voice solutions, faster.
+  subtext:
+    - jambonz is the open source CPaaS 
+    - built for communications service providers.
+  cta: Sign up for free

@@ -1,2 +1,5 @@
-h1: Simple, capacity-based pricing.
-cta: Contact us to get started
+hero:
+  headline: Simple, capacity-based pricing.
+  subtext:
+    - There are no per-minute charges.
+    - "You choose the application processing capacity that you need and pay a monthly fee based on:"

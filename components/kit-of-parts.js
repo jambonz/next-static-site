@@ -149,12 +149,6 @@ export default function KitOfParts({pageData}) {
           </Button>
         </div>
       </div>
-      {/* Show jambonz background style */}
-      <div className="pad bg-jambonz">
-        <div className="wrap">
-          <Button href="#" target="_blank" subStyle="light">Footer button...</Button>
-        </div>
-      </div>
     </>
   );
 }

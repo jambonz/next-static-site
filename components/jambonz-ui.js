@@ -42,8 +42,35 @@ export function MXS({ children }) {
   return <div className="mxs">{children}</div>;
 }
 
-export function Hero({ children }) {
-  return <div className="hero wrap">{children}</div>;
+export function Hero({ data, subStyle }) {
+  const classes = {
+    'hero': true,
+    'wrap': true,
+  };
+
+  if (subStyle) {
+    classes[`hero--${subStyle}`] = true;
+  }
+
+  return (
+    <div className={classNames(classes)}>
+      <div className="hero__headline">
+        <H1>{data.headline}</H1>
+      </div>
+      <div className="hero__subtext">
+        {Array.isArray(data.subtext) ? data.subtext.map((subtext, index) => {
+          return <H5 key={index}>{subtext}</H5>;
+        }) : (
+          <H5>{data.subtext}</H5>
+        )}
+      </div>
+      {data.cta && (
+        <div className="hero__cta">
+          <Button href="#" target="_blank">{data.cta}</Button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 // Extra {props} get passed to the <a> element

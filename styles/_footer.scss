@@ -45,5 +45,9 @@
   &__support {
     text-align: center;
     padding-top: 96px;
+
+    @media (max-width: $width-mobile) {
+      padding-top: 64px;
+    }
   }
 }

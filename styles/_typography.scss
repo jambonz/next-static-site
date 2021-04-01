@@ -54,7 +54,7 @@ a:not(.btn) {
 }
 
 strong {
-  font-family: 'objectivitybold';
+  font-family: 'objectivitymedium';
 }
 
 em {
@@ -134,6 +134,11 @@ em {
   font-size: $h4-size;
   line-height: 1.5;
   letter-spacing: -0.04px;
+  font-family: 'objectivitymedium';
+
+  em {
+    font-family: 'objectivitymedium_slanted';
+  }
 
   @media (max-width: $width-tablet-1) {
     font-size: $h5-size;
@@ -152,6 +157,11 @@ em {
   font-size: $h5-size;
   line-height: 1.67;
   letter-spacing: -0.03px;
+  font-family: 'objectivitymedium';
+
+  em {
+    font-family: 'objectivitymedium_slanted';
+  }
 
   @media (max-width: $width-tablet-1) {
     font-size: $h6-size;
@@ -170,6 +180,11 @@ em {
   font-size: $h6-size;
   line-height: 1.8;
   letter-spacing: -0.03px;
+  font-family: 'objectivitymedium';
+
+  em {
+    font-family: 'objectivitymedium_slanted';
+  }
 
   @media (max-width: $width-tablet-1) {
     font-size: $p-size;

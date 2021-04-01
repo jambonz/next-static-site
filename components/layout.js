@@ -23,7 +23,7 @@ export default function Layout({ children, siteData, title = "jambonz" }) {
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <Navi siteData={siteData} />
-      <main>
+      <main className="main">
         {children}
       </main>
       <Footer siteData={siteData} />
