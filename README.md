@@ -3,15 +3,17 @@ jambonz
 
 > The "bring your own everything" CPaaS
 
-# Jamstack
+![](/public/jambonz.png)
+
+## Jamstack
 
 - [jambonz.vercel.com](https://jambonz.vercel.app)
 
-# AWS / CircleCI
+## AWS / CircleCI
 
 - TBD :)
 
-# Dev
+## Dev
 
 ### Install
 - `yarn install`
@@ -33,5 +35,3 @@ jambonz
 - Using [Nextra](https://nextra.vercel.app)
 - [Source repository](https://github.com/shuding/nextra/)
 - Source files in `/pages/docs/`
-
-![](/public/jambonz.png)
