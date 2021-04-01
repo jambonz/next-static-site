@@ -46,7 +46,6 @@ export function MXS({ children }) {
 export function Hero({ data, subStyle }) {
   const classes = {
     'hero': true,
-    'wrap': true,
   };
 
   if (subStyle) {
@@ -55,21 +54,23 @@ export function Hero({ data, subStyle }) {
 
   return (
     <div className={classNames(classes)}>
-      <div className="hero__headline">
-        <H1>{data.headline}</H1>
-      </div>
-      <div className="hero__subtext">
-        {Array.isArray(data.subtext) ? data.subtext.map((subtext) => {
-          return <H5 key={nanoid()}>{subtext}</H5>;
-        }) : (
-          <H5>{data.subtext}</H5>
+      <div className="wrap hero__wrap">
+        <div className="hero__headline">
+          <H1>{data.headline}</H1>
+        </div>
+        <div className="hero__subtext">
+          {Array.isArray(data.subtext) ? data.subtext.map((subtext) => {
+            return <H5 key={nanoid()}>{subtext}</H5>;
+          }) : (
+            <H5>{data.subtext}</H5>
+          )}
+        </div>
+        {data.cta && (
+          <div className="hero__cta">
+            <Button href={data.url} target="_blank">{data.cta}</Button>
+          </div>
         )}
       </div>
-      {data.cta && (
-        <div className="hero__cta">
-          <Button href={data.url} target="_blank">{data.cta}</Button>
-        </div>
-      )}
     </div>
   );
 }

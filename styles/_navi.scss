@@ -1,9 +1,7 @@
 .navi {
   padding: 16px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  position: relative;
+  z-index: $navi-index;
 
   // Menu / X icons for mobile nav interactions
   .icon {
@@ -80,7 +78,7 @@
     &.active {
       pointer-events: auto;
       opacity: 1;
-      z-index: 999;
+      z-index: $navi-index;
     }
 
     &__head {

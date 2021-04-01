@@ -5,3 +5,18 @@ hero:
     - built for communications service providers.
   cta: Sign up for free
   url: /#
+tech:
+  image: /images/Jambonz_app_screenshot.png
+  notes:
+    -
+      title: Adapts to your needs
+      text: Designed to plug-and-play with your chosen carriers and tech stack.
+    -
+      title: Privacy comes first
+      text: Our innovative design means that your customers' most sensitive personal information is never stored on our systems.
+    -
+      title: Open source
+      text: We work in the open, so that you can see all that we do and can gain the greatest value from our products.
+    -
+      title: Reliable
+      text: Built by a team that has been delivering five 9’s products to telcos since VoIP was a thing.
