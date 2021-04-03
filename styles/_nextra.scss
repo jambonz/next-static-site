@@ -1,0 +1,7 @@
+.nextra-container {
+  .sidebar > ul {
+    > li:not(:first-child) {
+      display: none;
+    }
+  }
+}
