@@ -1,5 +1,8 @@
 export default {
+  path: '/docs',
   repository: 'https://github.com/jambonz/next-static-site',
+  docsRepository: 'https://github.com/jambonz/next-static-site',
+  branch: 'main',
   titleSuffix: ' – Jambonz',
   logo: (
     <>
