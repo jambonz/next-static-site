@@ -107,8 +107,25 @@
 
 .btns {
   margin: 0 -2.2222222222vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $width-mobile) {
+    flex-direction: column;
+  }
 
   .btn {
     margin: 0 2.2222222222vw;
+
+    & + .btn {
+      @media (max-width: $width-mobile) {
+        margin-top: 16px;
+      }
+    }
+
+    @media (max-width: $width-mobile) {
+      margin: 0;
+    }
   }
 }
