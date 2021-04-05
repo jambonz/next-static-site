@@ -1,7 +1,7 @@
 navi:
   login:
     label: Log In
-    link: /#
+    link: https://jambonz.us
   links:
     -
       label: Why jambonz
@@ -13,7 +13,7 @@ navi:
       label: Pricing
       link: /pricing
 footer:
-  email: support@jambonz.com
+  email: support@jambonz.org
   links:
     -
       label: View on Github
