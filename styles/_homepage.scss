@@ -114,6 +114,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
 
       img {
         width: 50%;
@@ -127,9 +128,8 @@
     &__toggle {
       margin-left: auto;
       display: none;
-      cursor: pointer;
 
-      svg {
+      div, svg, span {
         pointer-events: none;
       }
 

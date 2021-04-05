@@ -33,6 +33,10 @@ function Dilemma({data}) {
   const [active, setActive] = useState(null);
 
   const handleToggle = (e) => {
+    if (!mobile) {
+      return;
+    }
+
     const toggleData = e.target.dataset;
 
     if (toggleData.key === active) {
@@ -67,22 +71,23 @@ function Dilemma({data}) {
         </div>
         <div className="dilemma__tables">
           {data.tables.map((table) => {
-            const classes = {
-              'dilemma__table': true,
-              'dilemma__table--jambonz': table.logo ? true : false,
-            };
             const slug = normalizeSlug(table.title);
             const isActiveToggle = (active === slug);
+            const isTableLogo = (table.logo ? true : false);
+            const tableClasses = {
+              'dilemma__table': true,
+              'dilemma__table--jambonz': isTableLogo,
+            };
             const pointsClasses = {
               'dilemma__table__points': true,
               'active': isActiveToggle,
             };
 
             return (
-              <div key={slug} className={classNames(classes)}>
-                <div className="dilemma__table__title">
+              <div key={slug} className={classNames(tableClasses)}>
+                <div className="dilemma__table__title" data-key={slug} onClick={handleToggle}>
                   {table.logo ? <img src={table.logo} /> : <P><strong>{table.title}</strong></P>}
-                  <span data-key={slug} className="dilemma__table__toggle" onClick={handleToggle}>
+                  <span className="dilemma__table__toggle" >
                     {isActiveToggle ? <Icon name="ChevronUp" /> : <Icon name="ChevronDown" />}
                   </span>
                 </div>
