@@ -115,6 +115,7 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      user-select: none;
 
       img {
         width: 50%;
@@ -128,10 +129,6 @@
     &__toggle {
       margin-left: auto;
       display: none;
-
-      div, svg, span {
-        pointer-events: none;
-      }
 
       @media (max-width: $width-tablet-2) {
         display: block;

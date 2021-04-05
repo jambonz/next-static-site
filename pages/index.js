@@ -32,18 +32,16 @@ function Dilemma({data}) {
   const initialRef = useRef();
   const [active, setActive] = useState(null);
 
-  const handleToggle = (e) => {
+  const handleToggle = (slug) => {
     if (!mobile) {
       return;
     }
 
-    const toggleData = e.target.dataset;
-
-    if (toggleData.key === active) {
+    if (slug === active) {
       setActive(null);
 
     } else {
-      setActive(toggleData.key);
+      setActive(slug);
     }
   };
 
@@ -85,7 +83,7 @@ function Dilemma({data}) {
 
             return (
               <div key={slug} className={classNames(tableClasses)}>
-                <div className="dilemma__table__title" data-key={slug} onClick={handleToggle}>
+                <div className="dilemma__table__title" onClick={() => handleToggle(slug)}>
                   {table.logo ? <img src={table.logo} /> : <P><strong>{table.title}</strong></P>}
                   <span className="dilemma__table__toggle" >
                     {isActiveToggle ? <Icon name="ChevronUp" /> : <Icon name="ChevronDown" />}
