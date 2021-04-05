@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
-import { Button, Icon } from './jambonz-ui';
-import { homeObj, mobileMedia } from '../lib/vars';
+import { Button, Icon, useMobileMedia } from './jambonz-ui';
+import { homeObj } from '../lib/vars';
 import { nanoid } from 'nanoid';
 
 function NaviItem({obj}) {
@@ -66,32 +66,16 @@ function NaviMobile({ active, handler, siteData }) {
 
 export default function Navi({ siteData }) {
   const [active, setActive] = useState(false);
-  const [mobile, setMobile] = useState(false);
+  const mobile = useMobileMedia();
 
   const handleNavi = () => {
     setActive(!active);
   };
 
-  const handleMedia = (e) => {
-    setMobile(e.matches);
-    
-    // Make sure mobile navi is closed on resizes...
-    if (!e.matches && active) {
-      setActive(false);
-    }
-  };
-
-  useEffect(() => {
-    const mql = window.matchMedia(mobileMedia);
-
-    mql.addListener(handleMedia);
-
-    setMobile(mql.matches);
-
-    return function cleanup() {
-      mql.removeListener(handleMedia);
-    }
-  }, [handleMedia, setMobile]);
+  // Make sure mobile navi is closed on resizes...
+  if (!mobile && active) {
+    setActive(false);
+  }
 
   return (
     <nav className="navi">

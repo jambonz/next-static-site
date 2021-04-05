@@ -2,14 +2,39 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import * as Icons from 'react-feather';
 import { nanoid } from 'nanoid';
+import { mobileMedia } from '../lib/vars';
+import { useState, useEffect } from 'react';
 
+// Normalize how we work with the subtext as an array[]
 export function normalizeSubtext(subtext) {
-  // Normalize how we work with the subtext as an array[]
   if (!Array.isArray(subtext)) {
     subtext = [subtext];
   }
 
   return subtext;
+}
+
+// Normalize how we listen for mobile media queries
+export function useMobileMedia() {
+  const [mobile, setMobile] = useState(false);
+
+  const handleMedia = (e) => {
+    setMobile(e.matches);
+  };
+
+  useEffect(() => {
+    const mql = window.matchMedia(mobileMedia);
+
+    mql.addListener(handleMedia);
+
+    setMobile(mql.matches);
+
+    return function cleanup() {
+      mql.removeListener(handleMedia);
+    }
+  }, [handleMedia, setMobile]);
+
+  return mobile;
 }
 
 export function H1({ children }) {
