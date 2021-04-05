@@ -9,18 +9,25 @@
   padding-right: $width-padding;
 }
 
-/******************************************************************************
- * Above the fold
-*******************************************************************************/
-.hero {
+.pad {
   padding-top: 96px;
   padding-bottom: 96px;
-  text-align: center;
 
   @media (max-width: $width-tablet-1) {
     padding-top: 64px;
     padding-bottom: 64px;
   }
+
+  img {
+    display: inline-block;
+  }
+}
+
+/******************************************************************************
+ * Above the fold
+*******************************************************************************/
+.hero {
+  text-align: center;
 
   &--why {
     .hero__subtext > div {
@@ -71,62 +78,6 @@
     > div {
       margin-left: auto;
       margin-right: auto;
-    }
-  }
-}
-
-/******************************************************************************
- * Homepage app screenshot
-*******************************************************************************/
-.tech {
-  display: flex;
-  padding-bottom: 96px;
-
-  @media (max-width: $width-tablet-1) {
-    flex-wrap: wrap;
-    padding-bottom: 64px;
-  }
-
-  &__image {
-    max-width: 66.6666666667vw;
-
-    @media (max-width: $width-tablet-1) {
-      max-width: 100%;
-      width: 100%;
-    }
-  }
-
-  &__notes {
-    max-width: 320px;
-    padding-left: 16px;
-    padding-top: 16px;
-
-    @media (max-width: $width-tablet-1) {
-      max-width: 100%;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0;
-    }
-
-    @media (max-width: $width-mobile) {
-      max-width: 320px;
-      margin: 0 auto;
-    }
-  }
-
-  &__note {
-    margin-top: 16px;
-
-    @media (max-width: $width-tablet-1) {
-      width: 50%;
-      margin: 0;
-      padding: 32px 16px;
-    }
-
-    @media (max-width: $width-mobile) {
-      text-align: center;
-      width: 100%;
     }
   }
 }

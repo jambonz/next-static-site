@@ -57,9 +57,17 @@
 }
 
 .icons {
-  margin: 0 -1.1111111111vw;
+  margin: 0 -16px;
+
+  @media (max-width: $width-mobile) {
+    margin: 0 -8px;
+  }
 
   .icon {
-    margin: 0 1.1111111111vw;
+    margin: 0 16px;
+
+    @media (max-width: $width-mobile) {
+      margin: 0 8px;
+    }
   }
 }

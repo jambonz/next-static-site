@@ -20,3 +20,74 @@ tech:
     -
       title: Reliable
       text: Built by a team that has been delivering five 9’s products to telcos since VoIP was a thing.
+dilemma:
+  headline: "Have you found yourself asking this question:"
+  subtext:
+    - “Do I buy a <span>commercial</span> platform/service? 
+    - Or do I <span>roll my own</span> using open source?”
+  tables:
+    -
+      title: Buy commercial
+      points:
+        -
+          icon: XCircle
+          text: expensive
+        -
+          icon: XCircle
+          text: inflexible
+        -
+          icon: XCircle
+          text: pay $$$ for every change
+        -
+          icon: XCircle
+          text: EOL = end of my business
+    -
+      title: Roll your own
+      points:
+        -
+          icon: CheckCircle
+          text: "cheaper up front, but:"
+        -
+          icon: XCircle
+          text: stitched-together “one off” open source = overly complex and brittle
+        -
+          icon: XCircle
+          text: multiple dependencies to manage and track
+        -
+          icon: XCircle
+          text:
+            - solution uniqueness 
+            - = no community 
+            - = no flow of new features/fixes
+        -
+          icon: XCircle
+          text: costly to manage over time
+    -
+      logo: /svg/jambonz.svg
+      points:
+        -
+          icon: CheckCircle
+          text: complete open source (MIT License)
+        -
+          icon: CheckCircle
+          text: connect to our our cloud service OR deploy on your own infrastructure
+        -
+          icon: CheckCircle
+          text: vibrant community of users and contributors
+        -
+          icon: CheckCircle
+          text: designed for simplicity and integrates with your existing tech stack
+        -
+          icon: CheckCircle
+          text: five 9's reliability coupled with excellent customer service
+byo:
+  headline: The “bring your own everything” CPaaS
+  subtext: Your infrastructure. Your SIP trunks. Your storage. Your cloud.
+  icons:
+    - Server
+    - PhoneCall
+    - Folder
+    - Cloud
+  comment: Why pay someone to upcharge you for all of that when it’s basically a one-click experience to provision all of those yourself in today's world. You know how to <a href="/#" target="_blank">click</a>, right?
+  cta: Get started for free
+  url: /#

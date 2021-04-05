@@ -6,7 +6,7 @@ export default function KitOfParts({pageData}) {
   return (
     <div className="kop">
       {/* High-level design information */}
-      <div className="hero">
+      <div className="hero pad">
         <div className="wrap">
           <H1>
             <div>Kit of Parts</div>

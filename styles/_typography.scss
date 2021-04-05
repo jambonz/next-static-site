@@ -163,6 +163,10 @@ em {
     font-family: 'objectivitymedium_slanted';
   }
 
+  span {
+    color: $jambonz;
+  }
+
   @media (max-width: $width-tablet-1) {
     font-size: $h6-size;
   }

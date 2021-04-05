@@ -3,6 +3,15 @@ import classNames from 'classnames';
 import * as Icons from 'react-feather';
 import { nanoid } from 'nanoid';
 
+export function normalizeSubtext(subtext) {
+  // Normalize how we work with the subtext as an array[]
+  if (!Array.isArray(subtext)) {
+    subtext = [subtext];
+  }
+
+  return subtext;
+}
+
 export function H1({ children }) {
   return <div className="h1">{children}</div>;
 }
@@ -46,11 +55,14 @@ export function MXS({ children }) {
 export function Hero({ data, subStyle }) {
   const classes = {
     'hero': true,
+    'pad': true,
   };
 
   if (subStyle) {
     classes[`hero--${subStyle}`] = true;
   }
+
+  data.subtext = normalizeSubtext(data.subtext);
 
   return (
     <div className={classNames(classes)}>
@@ -59,11 +71,9 @@ export function Hero({ data, subStyle }) {
           <H1>{data.headline}</H1>
         </div>
         <div className="hero__subtext">
-          {Array.isArray(data.subtext) ? data.subtext.map((subtext) => {
+          {data.subtext.map((subtext) => {
             return <H5 key={nanoid()}>{subtext}</H5>;
-          }) : (
-            <H5>{data.subtext}</H5>
-          )}
+          })}
         </div>
         {data.cta && (
           <div className="hero__cta">
