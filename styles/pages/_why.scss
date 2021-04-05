@@ -1,0 +1,76 @@
+/******************************************************************************
+ * Jambonz Facts
+*******************************************************************************/
+.facts {
+  padding-top: 96px;
+  padding-bottom: 32px;
+
+  @media (max-width: $width-tablet-1) {
+    padding-top: 64px;
+    padding-bottom: 0;
+  }
+
+  .icon {
+    transform: translateY(-4px);
+
+    @media (max-width: $width-tablet-1) {
+      transform: translateY(-8px);
+    }
+
+    @media (max-width: $width-tablet-2) {
+      transform: translateY(-10px);
+    }
+
+    @media (max-width: $width-mobile) {
+      transform: none;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 100%;
+    max-width: 50%;
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 64px;
+
+    @media (max-width: $width-tablet-2) {
+      max-width: 100%;
+    }
+
+    @media (max-width: $width-mobile) {
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    width: calc(100% - #{$icon-size-1});
+    padding-left: 16px;
+    padding-right: 64px;
+
+    > div + div {
+      margin-top: 16px;
+    }
+
+    @media (max-width: $width-tablet-1) {
+      padding-right: 32px;
+    }
+
+    @media (max-width: $width-tablet-2) {
+      padding-right: 0;
+    }
+
+    @media (max-width: $width-mobile) {
+      width: 100%;
+      padding: 0 16px;
+      margin-top: 16px;
+    }
+  }
+}

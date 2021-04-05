@@ -3,3 +3,36 @@ hero:
   subtext: jambonz is the communications platform that brings your ideas to life. So you can bring your best to your customers every day.
   cta: Get started for free
   url: https://jambonz.us
+facts:
+  -
+    icon: Layers
+    title: Leverage your existing architecture
+    text: You've already built value with your current architecture. We make it easy through our self- service portal to plug in your chosen carriers and speech APIs from Google or AWS.
+  -
+    icon: UserCheck
+    title: Pay only for what you need
+    text: We don't sell minutes, and we don’t try to make money by selling you AWS and Google speech services at heavily marked-up prices. Our hosted service charges are based on a simple capacity-based processing model. Or download and install the open source on your own infrastructure for free.
+  -
+    icon: Lock
+    title: Limit your customer’s data exposure
+    text: jambonz minimizes the storage of sensitive customer information. Unlike other CPaaS vendors, jambonz never stores artifacts like voicemail recordings and transcriptions that can contain credit card information, health record information and other sensitive information about your customers.
+  -
+    icon: ThumbsUp
+    title: We love driving your success
+    text: We're here to help. Whether it’s providing excellent customer service for our hosted platform, helping you set up your own platform on the open source, or working with you to add new capabilities to the paltform, we measure our success by helping you win.
+os:
+  headline: Oh, and we mean completely open source.
+  subtext: All of the jambonz core software and drachtio is available on github under the MIT License.
+  buttons:
+    -
+      icon: GitHub
+      text: github.com/jambonz
+      url: https://github.com/jambonz
+    -
+      icon: GitHub
+      text: github.com/drachtio
+      url: https://github.com/drachtio
+  logo: /svg/drachtio.svg
+  icon: Heart
+  cta: Get started for free
+  url: https://jambonz.us

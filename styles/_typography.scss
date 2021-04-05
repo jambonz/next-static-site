@@ -198,9 +198,10 @@ em {
     font-size: $m-size;
   }
 
-  @media (max-width: $width-mobile) {
-    font-size: $ms-size;
-  }
+  // @note: Consideration on stopping type reduction here
+  // @media (max-width: $width-mobile) {
+  //   font-size: $ms-size;
+  // }
 }
 
 .p {
@@ -211,9 +212,10 @@ em {
     font-size: $m-size;
   }
 
-  @media (max-width: $width-tablet-2) {
-    font-size: $ms-size;
-  }
+  // @note: Consideration on stopping type reduction here
+  // @media (max-width: $width-tablet-2) {
+  //   font-size: $ms-size;
+  // }
 }
 
 .m {
@@ -229,9 +231,10 @@ em {
   font-size: $ms-size;
   line-height: 2;
 
-  @media (max-width: $width-tablet-1) {
-    font-size: $mxs-size;
-  }
+  // @note: Consideration on stopping type reduction here
+  // @media (max-width: $width-tablet-1) {
+  //   font-size: $mxs-size;
+  // }
 }
 
 .mxs {
