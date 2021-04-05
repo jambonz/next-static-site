@@ -37,4 +37,4 @@ We are using static data with [yamljs](https://www.npmjs.com/package/yamljs) and
 
 ## Jambonz developer docs
 
-The project is using [Nextra.js](https://nextra.vercel.app) which provides a stylized developer docs theme for Next.js. We are currently loading theme CSS styles with the `styles/_nextra.scss` partial. Currently it is being used to hide the frontend page links from the Nextra sidebar nav as there is no current way to do this using pure nextra config. There is a [Github issue here](https://github.com/shuding/nextra/issues/59) referring to "Page exclusion from docs".
+The project is using [Nextra.js](https://nextra.vercel.app) which provides a stylized developer docs theme for Next.js. We are loading theme CSS styles with the `styles/_nextra.scss` partial. It is being used to hide the frontend page links from the Nextra sidebar nav as there is currently no way to do this using pure nextra config. There is a [Github issue here](https://github.com/shuding/nextra/issues/59) referring to "Page exclusion from docs".
