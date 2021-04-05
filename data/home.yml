@@ -63,6 +63,7 @@ dilemma:
           icon: XCircle
           text: costly to manage over time
     -
+      title: jambonz
       logo: /svg/jambonz.svg
       points:
         -

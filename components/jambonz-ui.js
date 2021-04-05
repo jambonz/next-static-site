@@ -14,6 +14,11 @@ export function normalizeSubtext(subtext) {
   return subtext;
 }
 
+// Simple method to normalize string as slug
+export function normalizeSlug(key) {
+  return String(key.toLowerCase()).split(' ').join('-');
+}
+
 // Normalize how we listen for mobile media queries
 export function useMobileMedia() {
   const [mobile, setMobile] = useState(false);
@@ -87,8 +92,6 @@ export function Hero({ data, subStyle }) {
     classes[`hero--${subStyle}`] = true;
   }
 
-  data.subtext = normalizeSubtext(data.subtext);
-
   return (
     <div className={classNames(classes)}>
       <div className="wrap hero__wrap">
@@ -96,7 +99,7 @@ export function Hero({ data, subStyle }) {
           <H1>{data.headline}</H1>
         </div>
         <div className="hero__subtext">
-          {data.subtext.map((subtext) => {
+          {normalizeSubtext(data.subtext).map((subtext) => {
             return <H5 key={nanoid()}>{subtext}</H5>;
           })}
         </div>

@@ -1,8 +1,9 @@
 import { nanoid } from 'nanoid';
 import classNames from 'classnames';
 import Layout from '../components/layout';
-import { Hero, Icon, Button, H6, H5, H2, P, MS, normalizeSubtext } from '../components/jambonz-ui';
+import { Hero, Icon, Button, H6, H5, H2, P, MS, normalizeSubtext, normalizeSlug, useMobileMedia } from '../components/jambonz-ui';
 import { getData } from '../lib/data';
+import { useState, useEffect, useRef } from 'react';
 
 function Tech({data}) {
   return (
@@ -27,7 +28,28 @@ function Tech({data}) {
 }
 
 function Dilemma({data}) {
-  data.subtext = normalizeSubtext(data.subtext);
+  const mobile = useMobileMedia();
+  const initialRef = useRef();
+  const [active, setActive] = useState(null);
+
+  const handleToggle = (e) => {
+    const toggleData = e.target.dataset;
+
+    if (toggleData.key === active) {
+      setActive(null);
+
+    } else {
+      setActive(toggleData.key);
+    }
+  };
+
+  // Make sure jambonz is the default open toggle on mobile...
+  useEffect(() => {
+    if (mobile && !active && !initialRef.current) {
+      initialRef.current = true;
+      setActive('jambonz');
+    }
+  }, [mobile, active, setActive, initialRef]);
 
   return (
     <div className="bg-grey dilemma pad">
@@ -37,7 +59,7 @@ function Dilemma({data}) {
         </div>
         <div className="dilemma__subtext">
           <H5>
-            {data.subtext.map((subtext) => {
+            {normalizeSubtext(data.subtext).map((subtext) => {
               {/* Use dangerouslySetInnerHTML to render inline spans from YAML data */}
               return <div key={nanoid()} dangerouslySetInnerHTML={{ __html: subtext }} />;
             })}
@@ -49,26 +71,33 @@ function Dilemma({data}) {
               'dilemma__table': true,
               'dilemma__table--jambonz': table.logo ? true : false,
             };
+            const slug = normalizeSlug(table.title);
+            const isActiveToggle = (active === slug);
+            const pointsClasses = {
+              'dilemma__table__points': true,
+              'active': isActiveToggle,
+            };
 
             return (
-              <div key={nanoid()} className={classNames(classes)}>
+              <div key={slug} className={classNames(classes)}>
                 <div className="dilemma__table__title">
                   {table.logo ? <img src={table.logo} /> : <P><strong>{table.title}</strong></P>}
+                  <span data-key={slug} className="dilemma__table__toggle" onClick={handleToggle}>
+                    {isActiveToggle ? <Icon name="ChevronUp" /> : <Icon name="ChevronDown" />}
+                  </span>
                 </div>
-                <div className="dilemma__table__points">
+                <div className={classNames(pointsClasses)}>
                   {table.points.map((point) => {
                     const classes = {
                       'dilemma__table__point': true,
                       [point.icon.toLowerCase()]: true,
                     };
 
-                    point.text = normalizeSubtext(point.text);
-
                     return (
                       <div key={nanoid()} className={classNames(classes)}>
                         <Icon name={point.icon} />
                         <MS>
-                          {point.text.map((text) => {
+                          {normalizeSubtext(point.text).map((text) => {
                             return <div key={nanoid()}>{text}</div>;
                           })}
                         </MS>

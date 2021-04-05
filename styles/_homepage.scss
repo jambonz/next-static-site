@@ -111,6 +111,10 @@
     }
 
     &__title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       img {
         width: 50%;
 
@@ -120,12 +124,36 @@
       }
     }
 
-    &__title,
-    &__point {
-      margin-bottom: 16px;
+    &__toggle {
+      margin-left: auto;
+      display: none;
+      cursor: pointer;
+
+      svg {
+        pointer-events: none;
+      }
+
+      @media (max-width: $width-tablet-2) {
+        display: block;
+      }
+    }
+
+    &__points {
+      margin-top: 16px;
+
+      @media (max-width: $width-tablet-2) {
+        display: none;
+      }
+
+      &.active {
+        @media (max-width: $width-tablet-2) {
+          display: block;
+        }
+      }
     }
 
     &__point {
+      margin-bottom: 16px;
       display: flex;
       align-items: flex-start;
       text-align: left;
