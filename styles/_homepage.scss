@@ -94,8 +94,14 @@
     }
 
     @media (max-width: $width-tablet-2) {
-      margin: 16px 0;
+      margin: 0;
       max-width: 100%;
+    }
+
+    & + .dilemma__table {
+      @media (max-width: $width-tablet-2) {
+        margin-top: 32px;
+      }
     }
 
     &--jambonz {
