@@ -3,3 +3,16 @@ hero:
   subtext:
     - There are no per-minute charges.
     - "You choose the application processing capacity that you need and pay a monthly fee based on:"
+touts:
+  -
+    icon: PhoneCall
+    color: purple
+    text: The number of simultaneous call sessions that you want to be able to support.
+  -
+    icon: Phone
+    color: teal
+    text: The number of SIP devices you want to be online/registered.
+  -
+    icon: Activity
+    color: blue
+    text: The rate at which you want to be able to send API requests to our servers.

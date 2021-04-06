@@ -1,0 +1,51 @@
+/******************************************************************************
+ * Hero Touts
+*******************************************************************************/
+.touts {
+  padding-bottom: 96px;
+  text-align: center;
+
+  @media (max-width: $width-tablet-1) {
+    padding-bottom: 64px;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media (max-width: $width-tablet-2) {
+      flex-wrap: wrap;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+
+  &__item {
+    max-width: 300px;
+    margin: 0 40px;
+
+    @media (max-width: $width-tablet-1) {
+      margin: 0 32px;
+    }
+
+    & + .touts__item {
+      @media (max-width: $width-tablet-2) {
+        margin-top: 64px;
+      }
+
+      @media (max-width: $width-mobile) {
+        margin-top: 32px;
+      }
+    }
+
+    @media (max-width: $width-tablet-2) {
+      margin: 0;
+      max-width: 100%;
+    }
+
+    .icon {
+      margin-bottom: 16px;
+    }
+  }
+}
