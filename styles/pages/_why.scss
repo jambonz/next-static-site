@@ -56,6 +56,7 @@
     }
 
     @media (max-width: $width-tablet-2) {
+      max-width: 480px;
       width: 100%;
       margin: 0;
       flex-wrap: wrap;
@@ -92,6 +93,10 @@
     > div {
       max-width: 735px;
       margin: 0 auto;
+
+      @media (max-width: $width-tablet-1) {
+        max-width: 615px;
+      }
     }
   }
 
