@@ -3,15 +3,7 @@
     src: url('/fonts/objectivity-boldslanted-webfont.woff2') format('woff2'),
          url('/fonts/objectivity-boldslanted-webfont.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'objectivityblack_slanted';
-    src: url('/fonts/objectivity-blackslanted-webfont.woff2') format('woff2'),
-         url('/fonts/objectivity-blackslanted-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-style: italic;
 }
 
 @font-face {
@@ -19,7 +11,7 @@
     src: url('/fonts/objectivity-regularslanted-webfont.woff2') format('woff2'),
          url('/fonts/objectivity-regularslanted-webfont.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
 }
 
 @font-face {
@@ -27,21 +19,13 @@
     src: url('/fonts/objectivity-mediumslanted-webfont.woff2') format('woff2'),
          url('/fonts/objectivity-mediumslanted-webfont.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
 }
 
 @font-face {
     font-family: 'objectivitybold';
     src: url('/fonts/objectivity-bold-webfont.woff2') format('woff2'),
          url('/fonts/objectivity-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'objectivityblack';
-    src: url('/fonts/objectivity-black-webfont.woff2') format('woff2'),
-         url('/fonts/objectivity-black-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

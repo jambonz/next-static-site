@@ -28,7 +28,9 @@ function OS({data}) {
     <div className="os pad">
       <div className="wrap os__wrap">
         <div className="os__headline">
-          <H2>{data.headline}</H2>
+          <H2>
+            <div dangerouslySetInnerHTML={{ __html: data.headline}} />
+          </H2>
         </div>
         <div className="os__subtext">
           <H5>{data.subtext}</H5>

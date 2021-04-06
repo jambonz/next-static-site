@@ -21,7 +21,7 @@ facts:
     title: We love driving your success
     text: We're here to help. Whether it’s providing excellent customer service for our hosted platform, helping you set up your own platform on the open source, or working with you to add new capabilities to the paltform, we measure our success by helping you win.
 os:
-  headline: Oh, and we mean completely open source.
+  headline: Oh, and we mean <em>completely</em> open source.
   subtext: All of the jambonz core software and drachtio is available on github under the MIT License.
   buttons:
     -
