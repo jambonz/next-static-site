@@ -7,17 +7,19 @@ function Facts({data}) {
   return (
     <div className="bg-pink facts">
       <div className="wrap facts__wrap">
-        {data.map((fact) => {
-          return (
-            <div key={nanoid()} className="facts__item">
-              <Icon name={fact.icon} style="fill" />
-              <div className="facts__text">
-                <H5><strong>{fact.title}</strong></H5>
-                <P>{fact.text}</P>
+        <div className="facts__items">
+          {data.map((fact) => {
+            return (
+              <div key={nanoid()} className="facts__item">
+                <Icon name={fact.icon} style="fill" />
+                <div className="facts__text">
+                  <H5><strong>{fact.title}</strong></H5>
+                  <P>{fact.text}</P>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
