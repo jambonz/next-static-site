@@ -16,3 +16,62 @@ touts:
     icon: Activity
     color: blue
     text: The rate at which you want to be able to send API requests to our servers.
+tiers:
+  -
+    title: Registered Devices
+    text: simple, flat $1 per registered device (per month)
+    color: teal
+  -
+    title: Simultaneous Call Sessions
+    text: cost per session for simultaneous call sessions
+    color: purple
+    table:
+      head:
+        - $10/session
+        - $9/session
+        - $8/session
+        - $7/session
+        - $6/session
+        - $5/session
+      body:
+        - 1-20 sessions
+        - 21-50 sessions
+        - 51-100 sessions
+        - 101-250 sessions
+        - 251-500 sessions
+        - 500+ sessions
+  -
+    title: API Rate Limits
+    text: flat cost for API requests per minute
+    color: blue
+    table:
+      head:
+        - Free
+        - $5
+        - $10
+        - $20
+        - $40
+      body:
+        - 1-10/min
+        - 11-30/min
+        - 31-60/min
+        - 61-120/min
+        - 121-300/min
+additional:
+  headline: Additional Services
+  services:
+    -
+      title: Static IP
+      text: Static IP address assigned only to you, to be used for routing your calls to carriers and devices.
+    -
+      title: Microsoft Teams Direct Routing
+      text: Ability to route PSTN calls to and from your MS teams clients.
+    -
+      title: Dedicated SBC
+      text: A private session border controller handling only your traffic, along with a grafana dashboard to let your NOC folks monitor your traffic in real-time.
+    -
+      title: Professional Services
+      text: Commission us to help build your voice applications, or to set up and manage a jambonz cluster on your own infrastructure.
+  cta: Contact us to get started
+  icon: Send
+  url: mailto:support@jambonz.org

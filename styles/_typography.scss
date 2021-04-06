@@ -7,11 +7,16 @@ body {
 
 a {
   color: $jambonz;
+  text-decoration: none;
 }
-/* Buttons have their own inline svg/span styles */
-a:not(.btn) {
-  svg, span {
-    display: inline-block;
+
+/*
+ * Buttons have their own inline svg/span styles
+ * This className lets us inline a flat icon with text
+ */
+.i {
+  svg, span, strong {
+    display: inline;
     vertical-align: middle;
   }
 
@@ -46,10 +51,11 @@ a:not(.btn) {
       height: 18px;
     }
 
-    @media (max-width: $width-mobile) {
-      width: 16px;
-      height: 16px;
-    }
+    // @note: Consideration on stopping type reduction here
+    // @media (max-width: $width-mobile) {
+    //   width: 16px;
+    //   height: 16px;
+    // }
   }
 }
 
@@ -167,6 +173,10 @@ em {
     color: $jambonz;
   }
 
+  a {
+    text-decoration: underline;
+  }
+
   @media (max-width: $width-tablet-1) {
     font-size: $h6-size;
   }
@@ -175,9 +185,10 @@ em {
     font-size: $p-size;
   }
 
-  @media (max-width: $width-mobile) {
-    font-size: $m-size;
-  }
+  // @note: Consideration on stopping type reduction here
+  // @media (max-width: $width-mobile) {
+  //   font-size: $m-size;
+  // }
 }
 
 .h6 {
@@ -208,23 +219,19 @@ em {
   font-size: $p-size;
   line-height: 1.9;
 
-  @media (max-width: $width-tablet-1) {
+  @media (max-width: $width-tablet-2) {
     font-size: $m-size;
   }
-
-  // @note: Consideration on stopping type reduction here
-  // @media (max-width: $width-tablet-2) {
-  //   font-size: $ms-size;
-  // }
 }
 
 .m {
   font-size: $m-size;
   line-height: 1.9;
 
-  @media (max-width: $width-tablet-1) {
-    font-size: $ms-size;
-  }
+  // @note: Consideration on stopping type reduction here
+  // @media (max-width: $width-tablet-1) {
+  //   font-size: $ms-size;
+  // }
 }
 
 .ms {
@@ -240,4 +247,16 @@ em {
 .mxs {
   font-size: $mxs-size;
   line-height: 2;
+}
+
+.color--teal {
+  color: $teal;
+}
+
+.color--blue {
+  color: $blue;
+}
+
+.color--purple {
+  color: $purple;
 }

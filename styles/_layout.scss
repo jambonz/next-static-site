@@ -83,3 +83,88 @@
     }
   }
 }
+
+/******************************************************************************
+ * Tables
+*******************************************************************************/
+.table {
+  margin: 0 auto;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: $width-tablet-2) {
+    flex-wrap: wrap;
+    max-width: 480px;
+  }
+
+  .table__row {
+    @media (max-width: $width-tablet-2) {
+      width: 100%;
+      display: flex;
+    }
+  }
+  
+  .table__head,
+  .table__cell {
+    text-align: center;
+    padding: 16px;
+
+    @media (max-width: $width-tablet-2) {
+      width: 50%;
+    }
+  }
+
+  $colors: (
+    'blue': $blue,
+    // 'teal': $teal,
+    'purple': $purple,
+    // 'jambonz': $jambonz
+  );
+
+  @each $name, $color in $colors {
+    &--#{$name} {
+      .table__row {
+        border-top: 2px solid $color;
+        border-bottom: 2px solid $color;
+
+        & + .table__row {
+          @media (max-width: $width-tablet-2) {
+            border-top: none;
+          }
+        }
+
+        &:last-child {
+          .table__head {
+            border-right: 2px solid $color;
+
+            @media (max-width: $width-tablet-2) {
+              border-right: none;
+            }
+          }
+
+          .table__cell {
+            border-right: 2px solid $color;
+          }
+        }
+      }
+
+      .table__head {
+        border-bottom: 2px solid $color;
+        border-left: 2px solid $color;
+
+        @media (max-width: $width-tablet-2) {
+          border-bottom: none;
+        }
+      }
+
+      .table__cell {
+        border-left: 2px solid $color;
+
+        @media (max-width: $width-tablet-2) {
+          border-right: 2px solid $color;
+        }
+      }
+    }
+  }
+}

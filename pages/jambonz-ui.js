@@ -22,7 +22,7 @@ export default function JambonzUI({ data }) {
               <div>Objectivity (free, large family—16 styles)</div>
               <div>
                 <Link href="https://www.behance.net/gallery/60530395/Objectivity-Free-Font-Family">
-                  <a target="_blank">
+                  <a className="i" target="_blank">
                     <span>design</span>
                     <Icon name="ExternalLink" />
                   </a>
@@ -30,7 +30,7 @@ export default function JambonzUI({ data }) {
               </div>
               <div>
                 <Link href="https://www.fontsquirrel.com/fonts/objectivity">
-                  <a target="_blank">
+                  <a className="i" target="_blank">
                     <span>specimen</span>
                     <Icon name="ExternalLink" />
                   </a>
@@ -41,7 +41,7 @@ export default function JambonzUI({ data }) {
               <div>Feather (free, large set—286 icons)</div>
               <div>
                 <Link href="https://feathericons.com">
-                  <a target="_blank">
+                  <a className="i" target="_blank">
                     <span>specimen</span>
                     <Icon name="ExternalLink" />
                   </a>
@@ -49,7 +49,7 @@ export default function JambonzUI({ data }) {
               </div>
               <div>
                 <Link href="https://github.com/feathericons/react-feather">
-                  <a target="_blank">
+                  <a className="i" target="_blank">
                     <span>react-feather</span>
                     <Icon name="ExternalLink" />
                   </a>

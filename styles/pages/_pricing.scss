@@ -49,3 +49,80 @@
     }
   }
 }
+
+/******************************************************************************
+ * Tier pricing
+*******************************************************************************/
+.tiers {
+  text-align: center;
+
+  &__item {
+    + .tiers__item {
+      margin-top: 96px;
+
+      @media (max-width: $width-tablet-1) {
+        margin-top: 64px;
+      }
+    }
+  }
+
+  &__table {
+    margin-top: 32px;
+  }
+}
+
+/******************************************************************************
+ * Additional Services
+*******************************************************************************/
+.services {
+  text-align: center;
+
+  &__options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (max-width: $width-tablet-1) {
+      margin: 0 -32px;
+    }
+
+    @media (max-width: $width-tablet-2) {
+      margin: 0;
+    }
+
+    svg {
+      stroke: $jambonz;
+    }
+
+    strong {
+      color: $jambonz;
+    }
+  }
+
+  &__option {
+    width: 33.3333333333vw;
+    max-width: 480px;
+    text-align: left;
+    padding-top: 64px;
+    margin: 0 50px;
+
+    @media (max-width: $width-tablet-1) {
+      width: calc(50% - 64px);
+      margin: 0 32px;
+    }
+
+    @media (max-width: $width-tablet-2) {
+      width: 100%;
+      margin: 0;
+      padding-top: 32px;
+    }
+  }
+
+  &__cta {
+    margin-top: 96px;
+
+    @media (max-width: $width-tablet-1) {
+      margin-top: 64px;
+    }
+  }
+}
