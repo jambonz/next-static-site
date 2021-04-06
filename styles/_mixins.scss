@@ -1,0 +1,19 @@
+/******************************************************************************
+ * Mixins
+*******************************************************************************/
+@mixin font-bold() {
+  font-family: 'objectivitybold';
+  font-weight: normal;
+
+  em {
+    font-family: 'objectivitybold_italic';
+  }
+}
+
+@mixin font-medium() {
+  font-family: 'objectivitymedium';
+
+  em {
+    font-family: 'objectivitymedium_slanted';
+  }
+}

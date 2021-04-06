@@ -60,7 +60,7 @@ a {
 }
 
 strong {
-  font-family: 'objectivitybold';
+  @include font-bold();
 }
 
 em {
@@ -71,11 +71,7 @@ em {
   font-size: $h1-size;
   line-height: 1.33;
   letter-spacing: -0.06px;
-  font-family: 'objectivitybold';
-
-  em {
-    font-family: 'objectivitybold_italic';
-  }
+  @include font-bold();
 
   @media (max-width: $width-tablet-1) {
     font-size: $h2-size;
@@ -94,11 +90,7 @@ em {
   font-size: $h2-size;
   line-height: 1.35;
   letter-spacing: -0.05px;
-  font-family: 'objectivitybold';
-
-  em {
-    font-family: 'objectivitybold_italic';
-  }
+  @include font-bold();
 
   @media (max-width: $width-tablet-1) {
     font-size: $h3-size;
@@ -117,11 +109,7 @@ em {
   font-size: $h3-size;
   line-height: 1.33;
   letter-spacing: -0.05px;
-  font-family: 'objectivitybold';
-
-  em {
-    font-family: 'objectivitybold_italic';
-  }
+  @include font-bold();
 
   @media (max-width: $width-tablet-1) {
     font-size: $h4-size;
@@ -140,11 +128,7 @@ em {
   font-size: $h4-size;
   line-height: 1.5;
   letter-spacing: -0.04px;
-  font-family: 'objectivitymedium';
-
-  em {
-    font-family: 'objectivitymedium_slanted';
-  }
+  @include font-medium();
 
   @media (max-width: $width-tablet-1) {
     font-size: $h5-size;
@@ -163,11 +147,7 @@ em {
   font-size: $h5-size;
   line-height: 1.67;
   letter-spacing: -0.03px;
-  font-family: 'objectivitymedium';
-
-  em {
-    font-family: 'objectivitymedium_slanted';
-  }
+  @include font-medium();
 
   span {
     color: $jambonz;
@@ -195,11 +175,7 @@ em {
   font-size: $h6-size;
   line-height: 1.8;
   letter-spacing: -0.03px;
-  font-family: 'objectivitymedium';
-
-  em {
-    font-family: 'objectivitymedium_slanted';
-  }
+  @include font-medium();
 
   @media (max-width: $width-tablet-1) {
     font-size: $p-size;

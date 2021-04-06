@@ -5,9 +5,9 @@
   background-color: $jambonz;
   color: $white;
   text-decoration: none;
-  font-family: 'objectivitybold';
   border-radius: 30px;
   display: inline-block;
+  @include font-bold();
 
   @media (max-width: $width-tablet-2) {
     font-size: $ms-size;
