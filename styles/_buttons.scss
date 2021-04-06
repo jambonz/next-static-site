@@ -13,9 +13,10 @@
     font-size: $ms-size;
   }
 
-  @media (max-width: $width-mobile) {
-    font-size: $mxs-size;
-  }
+  // @note: Consideration on stopping type reduction here
+  // @media (max-width: $width-mobile) {
+  //   font-size: $mxs-size;
+  // }
 
   &--login {
     font-family: 'objectivitymedium';
