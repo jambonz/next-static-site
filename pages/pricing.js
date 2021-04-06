@@ -68,12 +68,10 @@ function Services({data}) {
             return (
               <div key={nanoid()} className="services__option">
                 <P>
-                  <Link href={data.url}>
-                    <a className="i" target="_blank">
-                      <strong>{service.title}</strong>
-                      <Icon name="ExternalLink" />
-                    </a>
-                  </Link>
+                  <a className="i" href={`${data.url}?subject=${service.title} Support`} target="_blank">
+                    <strong>{service.title}</strong>
+                    <Icon name="ExternalLink" />
+                  </a>
                 </P>
                 <P>{service.text}</P>
               </div>
@@ -81,7 +79,7 @@ function Services({data}) {
           })}
         </div>
         <div className="services__cta">
-          <Button href={data.url} target="_blank" style="pill" subStyle="jambonz">
+          <Button href={`${data.url}?subject=Additional Services Support`} target="_blank" style="pill" subStyle="jambonz">
             <Icon name={data.icon} />
             <span>{data.cta}</span>
           </Button>

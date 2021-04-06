@@ -33,7 +33,7 @@ export default function Footer({ siteData }) {
           </ul>
         </div>
         <div className="foot__support">
-          <Button href={`mailto:${siteData.footer.email}`} target="_blank" subStyle="light">
+          <Button href={`mailto:${siteData.footer.email}?subject=Jambonz Support`} target="_blank" subStyle="light">
             {siteData.footer.email}
           </Button>
         </div>
