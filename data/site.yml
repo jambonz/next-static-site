@@ -21,7 +21,7 @@ footer:
       open: true
     -
       label: Join us on Slack
-      link: /#
+      link: https://joinslack.jambonz.org
       open: true
     -
       label: Privacy Policy
