@@ -59,6 +59,10 @@
     }
   }
 
+  &__link {
+    margin-bottom: 16px;
+  }
+
   &__item {
     + .docs__item {
       margin-top: 16px;
@@ -75,7 +79,7 @@
       height: 20px;
       stroke: $jambonz;
       margin-right: 8px;
-      transform: translateY(-2px);
+      transform: translateY(-2px) translateX(-2px);
     }
   }
 

@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
 import { Icon } from '../../components/jambonz-ui';
 import { getData, getDocs, getDocsPaths } from '../../lib/data';
+import { docsObj } from '../../lib/vars';
 
 function Sidebar({data}) {
   const router = useRouter();
@@ -32,6 +33,13 @@ function Sidebar({data}) {
 
   return (
     <nav className="docs__navi">
+      <div className="docs__link">
+        <Link href={docsObj.link}>
+          <a className="m">
+            <strong>{docsObj.label}</strong>
+          </a>
+        </Link>
+      </div>
       <ul className="docs__list">
         {data.navi.map((item) => {
           const isActiveToggle = (active[item.path] ? true : false);
