@@ -89,16 +89,18 @@
   }
 
   &__subitem {
+    margin-bottom: 8px;
+
+    &:first-child {
+      margin-top: 4px;
+    }
+
     a {
       line-height: 1.5;
 
       &.active {
         @include font-bold();
       }
-    }
-
-    + .docs__subitem {
-      margin-top: 8px;
     }
   }
 }
