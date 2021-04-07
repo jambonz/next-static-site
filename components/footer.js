@@ -1,7 +1,9 @@
+import { nanoid } from 'nanoid';
+
 import Link from 'next/link';
+
 import { Button } from './jambonz-ui';
 import { homeObj } from '../lib/vars';
-import { nanoid } from 'nanoid';
 
 function FooterItem({ obj }) {
   return (

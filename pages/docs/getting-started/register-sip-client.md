@@ -1,0 +1,3 @@
+# Register sip clients
+
+TODO 

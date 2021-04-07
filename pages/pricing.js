@@ -1,12 +1,12 @@
+import { nanoid } from 'nanoid';
+
 import Layout from '../components/layout';
-import Link from 'next/link';
 import { Hero, Icon, Button, H2, H5, P, M, MS } from '../components/jambonz-ui';
 import { getData } from '../lib/data';
-import { nanoid } from 'nanoid';
 
 function Touts({data}) {
   return (
-    <div className="bg-pink touts">
+    <section className="bg-pink touts">
       <div className="wrap touts__wrap">
         {data.map((tout) => {
           return (
@@ -17,13 +17,13 @@ function Touts({data}) {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }
 
 function Tiers({ data }) {
   return (
-    <div className="tiers pad">
+    <section className="tiers pad">
       <div className="wrap tiers__wrap">
         {data.map((tier) => {
           return (
@@ -52,13 +52,13 @@ function Tiers({ data }) {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }
 
 function Services({data}) {
   return (
-    <div className="bg-grey services pad">
+    <section className="bg-grey services pad">
       <div className="wrap services__wrap">
         <div className="services__headline">
           <H2>{data.headline}</H2>
@@ -85,7 +85,7 @@ function Services({data}) {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
