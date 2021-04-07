@@ -16,16 +16,13 @@
   }
 
   &__navi {
-    max-width: calc(224px + 32px);
-    padding: 16px;
+    max-width: 224px;
     width: 100%;
-    border-radius: 8px;
-    border: 2px solid $jambonz;
     margin-right: 32px;
 
     @media (max-width: $width-tablet-1) {
       max-width: 100%;
-      margin: 0 0 32px;
+      margin: 0 0 48px;
     }
   }
 
@@ -71,19 +68,18 @@
   &__label {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     cursor: pointer;
-    color: $jambonz;
 
     svg {
       width: 20px;
       height: 20px;
       stroke: $jambonz;
+      margin-right: 8px;
     }
   }
 
   &__sublist {
-    padding-left: 16px;
+    padding-left: 28px;
     display: none;
 
     &.active {
@@ -94,7 +90,6 @@
   &__subitem {
     a {
       line-height: 1.5;
-      color: $charcoal;
 
       &.active {
         @include font-bold();

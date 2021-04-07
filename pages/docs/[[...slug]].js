@@ -31,7 +31,7 @@ function Sidebar({data}) {
   };
 
   return (
-    <nav className="bg-pink docs__navi">
+    <nav className="docs__navi">
       <ul className="docs__list">
         {data.navi.map((item) => {
           const isActiveToggle = (active[item.path] ? true : false);
@@ -43,8 +43,8 @@ function Sidebar({data}) {
           return (
             <li key={nanoid()} className="docs__item">
               <div className="m docs__label" onClick={() => handleToggle(item.path)}>
+                {isActiveToggle ? <Icon name="ChevronDown" /> : <Icon name="ChevronRight" />}
                 <strong>{item.title}</strong>
-                {isActiveToggle ? <Icon name="ChevronUp" /> : <Icon name="ChevronDown" />}
               </div>
               <ul className={classNames(subClasses)}>
                 {item.pages.map((page) => {
