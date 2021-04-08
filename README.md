@@ -12,7 +12,7 @@ This app can easily be deployed to multiple targets including Vercel, Netlify or
 - Vercel
   - [jambonz.vercel.com](https://jambonz.vercel.app)
 - AWS+circleci
-  - Could easily be implemented as in this repo [here](https://github.com/kitajchuk/punxy#aws--circleci).
+  - Could easily be implemented similar to this Next.js repo [here](https://github.com/kitajchuk/uncle-toms-letters#aws--circleci).
 
 ## Dev start
 
