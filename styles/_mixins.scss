@@ -26,3 +26,11 @@
     font-size: $m-size;
   }
 }
+
+@mixin cta() {
+  margin-top: 96px;
+
+  @media (max-width: $width-tablet-1) {
+    margin-top: 64px;
+  }
+}

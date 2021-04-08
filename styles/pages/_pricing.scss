@@ -73,6 +73,14 @@
   &__table {
     margin-top: 32px;
   }
+
+  &__cta {
+    @include cta();
+
+    > :first-child {
+      margin-bottom: 32px;
+    }
+  }
 }
 
 /******************************************************************************
@@ -123,10 +131,6 @@
   }
 
   &__cta {
-    margin-top: 96px;
-
-    @media (max-width: $width-tablet-1) {
-      margin-top: 64px;
-    }
+    @include cta();
   }
 }

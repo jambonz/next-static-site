@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 
 import Layout from '../components/layout';
-import { Hero, Icon, Button, H2, H5, P, M, MS } from '../components/jambonz-ui';
+import { Hero, Icon, Button, H2, H5, H6, P, M, MS } from '../components/jambonz-ui';
 import { getData } from '../lib/data';
 
 function Touts({data}) {
@@ -25,7 +25,7 @@ function Tiers({ data }) {
   return (
     <section className="tiers pad">
       <div className="wrap tiers__wrap">
-        {data.map((tier) => {
+        {data.tiers.map((tier) => {
           return (
             <div key={nanoid()} className="tiers__item">
               <H5><strong className={`color--${tier.color}`}>{tier.title}</strong></H5>
@@ -51,6 +51,13 @@ function Tiers({ data }) {
             </div>
           );
         })}
+      </div>
+      <div className="tiers__cta">
+        <P>{data.text}</P>
+        <Button href={`${data.url}?subject=Additional Services Support`} target="_blank" style="pill" subStyle="jambonz">
+          <Icon name={data.icon} />
+          <span>{data.cta}</span>
+        </Button>
       </div>
     </section>
   );
@@ -94,7 +101,7 @@ export default function Pricing({ data }) {
     <Layout siteData={data.site}>
       <Hero data={data.pricing.hero} subStyle="pricing" />
       <Touts data={data.pricing.touts} />
-      <Tiers data={data.pricing.tiers} />
+      <Tiers data={data.pricing.structure} />
       <Services data={data.pricing.additional} />
     </Layout>
   );
