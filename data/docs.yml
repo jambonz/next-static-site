@@ -1,3 +1,6 @@
+root:
+  link: /docs/
+  label: For Developers
 navi:
   -
     path: getting-started

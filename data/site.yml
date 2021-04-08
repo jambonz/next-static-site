@@ -1,17 +1,20 @@
 navi:
+  home:
+    link: /
+    label: Home
   login:
     label: Log In
     link: https://jambonz.us
   links:
     -
       label: Why jambonz
-      link: /why
+      link: /why/
     -
       label: For Developers
-      link: /docs
+      link: /docs/
     -
       label: Pricing
-      link: /pricing
+      link: /pricing/
 footer:
   email: support@jambonz.org
   links:
@@ -25,7 +28,7 @@ footer:
       open: true
     -
       label: Privacy Policy
-      link: /privacy
+      link: /privacy/
     -
       label: Terms of Service
-      link: /terms
+      link: /terms/

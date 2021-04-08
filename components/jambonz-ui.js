@@ -5,9 +5,6 @@ import { useState, useEffect } from 'react';
 
 import Link from 'next/link';
 
-import { mobileMedia } from '../lib/vars';
-
-
 // Normalize how we work with the subtext as an array[]
 export function normalizeSubtext(subtext) {
   if (!Array.isArray(subtext)) {
@@ -24,6 +21,7 @@ export function normalizeSlug(key) {
 
 // Normalize how we listen for mobile media queries
 export function useMobileMedia() {
+  const mobileMedia = '(max-width: 768px)';
   const [mobile, setMobile] = useState(false);
 
   const handleMedia = (e) => {

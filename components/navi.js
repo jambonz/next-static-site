@@ -6,13 +6,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { Button, Icon, useMobileMedia } from './jambonz-ui';
-import { homeObj } from '../lib/vars';
 
 function NaviItem({obj}) {
   const router = useRouter();
   const classes = {
     navi__link: true,
-    active: (router.route.replace('/[[...slug]]', '') === obj.link),
+    active: (router.asPath === obj.link),
   };
 
   return (
@@ -47,7 +46,7 @@ function NaviMobile({ active, handler, siteData }) {
         </div>
       </div>
       <ul className="navi__mobile__links">
-        <NaviItem key="home" obj={homeObj} />
+        <NaviItem key="home" obj={siteData.navi.home} />
         {siteData.navi.links.map((obj) => {
           return <NaviItem key={nanoid()} obj={obj} />
         })}
