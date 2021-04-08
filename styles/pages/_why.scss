@@ -86,17 +86,19 @@
 *******************************************************************************/
 .os {
   text-align: center;
+  
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &__subtext {
     margin-top: 16px;
+    max-width: 735px;
 
-    > div {
-      max-width: 735px;
-      margin: 0 auto;
-
-      @media (max-width: $width-tablet-1) {
-        max-width: 615px;
-      }
+    @media (max-width: $width-tablet-1) {
+      max-width: 615px;
     }
   }
 

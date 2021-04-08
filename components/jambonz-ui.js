@@ -46,31 +46,31 @@ export function useMobileMedia() {
 }
 
 export function H1({ children }) {
-  return <div className="h1">{children}</div>;
+  return <h1>{children}</h1>;
 }
 
 export function H2({ children }) {
-  return <div className="h2">{children}</div>;
+  return <h2>{children}</h2>;
 }
 
 export function H3({ children }) {
-  return <div className="h3">{children}</div>;
+  return <h3>{children}</h3>;
 }
 
 export function H4({ children }) {
-  return <div className="h4">{children}</div>;
+  return <h4>{children}</h4>;
 }
 
 export function H5({ children }) {
-  return <div className="h5">{children}</div>;
+  return <h5>{children}</h5>;
 }
 
 export function H6({ children }) {
-  return <div className="h6">{children}</div>;
+  return <h6>{children}</h6>;
 }
 
 export function P({children}) {
-  return <div className="p">{children}</div>;
+  return <p>{children}</p>;
 }
 
 export function M({ children }) {
