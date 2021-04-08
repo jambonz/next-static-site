@@ -60,9 +60,25 @@
 .dilemma {
   text-align: center;
 
+  &__wrap {
+    @include flex-cols();
+  }
+
+  &__headline {
+    @media (max-width: $width-small) {
+        max-width: 320px;
+      }
+  }
+
   &__subtext {
     margin-top: 16px;
     margin-bottom: 64px;
+
+    div {
+      @media (max-width: $width-small) {
+        max-width: 270px;
+      }
+    }
   }
 
   &__tables {
@@ -111,6 +127,10 @@
       align-items: center;
       cursor: pointer;
       user-select: none;
+
+      p {
+        line-height: 1;
+      }
 
       img {
         width: 50%;
@@ -183,9 +203,13 @@
   text-align: center;
 
   &__wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-cols();
+  }
+
+  &__headline {
+    @media (max-width: $width-small) {
+      max-width: 320px;
+    }
   }
 
   &__subtext {

@@ -34,3 +34,9 @@
     margin-top: 64px;
   }
 }
+
+@mixin flex-cols() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
