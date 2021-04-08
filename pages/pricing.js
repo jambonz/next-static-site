@@ -52,7 +52,7 @@ function Tiers({ data }) {
           );
         })}
       </div>
-      <div className="tiers__cta">
+      <div className="wrap tiers__cta">
         <P>{data.text}</P>
         <Button href={`${data.url}?subject=Additional Services Support`} target="_blank" style="pill" subStyle="jambonz">
           <Icon name={data.icon} />
