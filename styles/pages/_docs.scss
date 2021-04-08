@@ -1,0 +1,110 @@
+.docs {
+  padding-top: 64px;
+  padding-bottom: 96px;
+
+  @media (max-width: $width-tablet-1) {
+    padding-top: 16px;
+    padding-bottom: 64px;
+  }
+
+  &__wrap {
+    display: flex;
+
+    @media (max-width: $width-tablet-1) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__navi {
+    max-width: 224px;
+    width: 100%;
+    margin-right: 32px;
+
+    @media (max-width: $width-tablet-1) {
+      max-width: 100%;
+      margin: 0 0 48px;
+    }
+  }
+
+  &__html {
+    max-width: $width-tablet-2;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: $width-tablet-1) {
+      max-width: 100%;
+    }
+
+    > div {
+      > h1, > h2, > h3, > h4, > h5, > h6, > p, > div, > ul, > ol {
+        margin: 16px 0;
+      }
+
+      > ol, > ul {
+        padding-left: 64px;
+
+        @media (max-width: $width-tablet-1) {
+          padding-left: 32px;
+        }
+
+        li {
+          list-style-type: disc;
+          @include p();
+        }
+      }
+    }
+
+    > div > :first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    + .docs__item {
+      margin-top: 16px;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      stroke: $jambonz;
+      margin-right: 8px;
+      transform: translateY(-2px) translateX(-2px);
+    }
+  }
+
+  &__sublist {
+    padding-left: 28px;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__subitem {
+    margin-bottom: 8px;
+
+    &:first-child {
+      margin-top: 4px;
+    }
+
+    a {
+      line-height: 1.5;
+
+      &.active {
+        @include font-bold();
+      }
+    }
+  }
+}

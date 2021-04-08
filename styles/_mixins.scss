@@ -17,3 +17,12 @@
     font-family: 'objectivitymedium_slanted';
   }
 }
+
+@mixin p() {
+  font-size: $p-size;
+  line-height: 1.9;
+
+  @media (max-width: $width-tablet-2) {
+    font-size: $m-size;
+  }
+}

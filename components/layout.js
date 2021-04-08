@@ -1,4 +1,5 @@
 import Head from 'next/head';
+
 import Navi from './navi';
 import Footer from './footer';
 

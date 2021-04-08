@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { nanoid } from 'nanoid';
+import classNames from 'classnames';
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import classNames from 'classnames';
+
 import { Button, Icon, useMobileMedia } from './jambonz-ui';
 import { homeObj } from '../lib/vars';
-import { nanoid } from 'nanoid';
 
 function NaviItem({obj}) {
   const router = useRouter();
   const classes = {
     navi__link: true,
-    active: (router.route === obj.link),
+    active: (router.route.replace('/[[...slug]]', '') === obj.link),
   };
 
   return (

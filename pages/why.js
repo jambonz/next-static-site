@@ -1,11 +1,12 @@
+import { nanoid } from 'nanoid';
+
 import Layout from '../components/layout';
 import { Hero, Icon, Button, H5, H2, P } from '../components/jambonz-ui';
 import { getData } from '../lib/data';
-import { nanoid } from 'nanoid';
 
 function Facts({data}) {
   return (
-    <div className="bg-pink facts">
+    <section className="bg-pink facts">
       <div className="wrap facts__wrap">
         <div className="facts__items">
           {data.map((fact) => {
@@ -21,13 +22,13 @@ function Facts({data}) {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 function OS({data}) {
   return (
-    <div className="os pad">
+    <section className="os pad">
       <div className="wrap os__wrap">
         <div className="os__headline">
           <H2>
@@ -55,7 +56,7 @@ function OS({data}) {
           <Button href={data.url} subStyle="dark" target="_blank">{data.cta}</Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

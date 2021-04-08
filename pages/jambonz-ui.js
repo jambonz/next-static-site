@@ -1,6 +1,6 @@
-import Layout from '../components/layout';
 import Link from 'next/link';
-import Image from 'next/image';
+
+import Layout from '../components/layout';
 import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Button, Icon } from '../components/jambonz-ui';
 import { getData } from '../lib/data';
 
@@ -109,7 +109,7 @@ export default function JambonzUI({ data }) {
             <MXS>{pageData.text}</MXS>
           </div>
           <div className="pad">
-            <Image src="/images/Jambonz_app_screenshot.png" width={1280 / 2} height={842 / 2} />
+            <img src="/images/Jambonz_app_screenshot.png" />
           </div>
           <div className="pad">
             <div className="icons">

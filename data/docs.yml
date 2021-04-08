@@ -1,0 +1,44 @@
+navi:
+  -
+    path: getting-started
+    title: Getting Started
+    pages:
+      -
+        path: add-carrier
+        title: Add a Carrier
+      -
+        path: add-speech
+        title: Add Speech Credentials
+      -
+        path: add-application
+        title: Add an Application
+      -
+        path: add-phone-numbers
+        title: Add Phone Numbers
+      -
+        path: register-sip-client
+        title: Register SIP clients
+  -
+    path: api
+    title: API Reference
+    pages:
+      -
+        path: webhooks
+        title: Webhooks
+      -
+        path: rest
+        title: REST APIs
+  -
+    path: tutorials
+    title: Tutorials
+    pages:
+      -
+        path: overview
+        title: Overview
+  -
+    path: open-source
+    title: Open Source
+    pages:
+      -
+        path: overview
+        title: Overview

@@ -12,7 +12,7 @@ This app can easily be deployed to multiple targets including Vercel, Netlify or
 - Vercel
   - [jambonz.vercel.com](https://jambonz.vercel.app)
 - AWS+circleci
-  - Could easily be implemented as in this repo [here](https://github.com/kitajchuk/punxy#aws--circleci).
+  - Could easily be implemented similar to this Next.js repo [here](https://github.com/kitajchuk/uncle-toms-letters#aws--circleci).
 
 ## Dev start
 
@@ -37,4 +37,6 @@ We are using static data with [yamljs](https://www.npmjs.com/package/yamljs) and
 
 ## Jambonz developer docs
 
-The project is using [Nextra.js](https://nextra.vercel.app) which provides a stylized developer docs theme for Next.js. We are loading theme CSS styles with the `styles/_nextra.scss` partial. It is being used to hide the frontend page links from the Nextra sidebar nav as there is currently no way to do this using pure nextra config. There is a [Github issue here](https://github.com/shuding/nextra/issues/59) referring to "Page exclusion from docs".
+The project is generating developer docs from markdown files using static file JS utilities alongside Next.js static paths/props system. We are leveraging their [catch-all](https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes) dynamic routes logic located at `pages/docs/[[...slug]].js`. The markdown files are in the `docs` directory. The docs structure is controlled in the docs page YAML data located in `data/docs.yaml`. You can create docs markdown files at will in the `docs` directory but they will not render in the sidebar nav until they are also added to the nav structure in this file.
+
+We are using [remark](https://github.com/remarkjs/remark) & [remark-html](https://github.com/remarkjs/remark-html) as well as [gray-matter](https://github.com/jonschlinkert/gray-matter) for parsing the docs markdown files. Code syntax highlighting is done with [prismjs](https://prismjs.com) and the associative babel config is in the `.babelrc` file. It's important to leave the preset in this file that merges our config with `next/babel` so Next.js works properly.

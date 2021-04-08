@@ -1,13 +1,14 @@
 import { nanoid } from 'nanoid';
 import classNames from 'classnames';
+import { useState, useEffect, useRef } from 'react';
+
 import Layout from '../components/layout';
 import { Hero, Icon, Button, H6, H5, H2, P, MS, normalizeSubtext, normalizeSlug, useMobileMedia } from '../components/jambonz-ui';
 import { getData } from '../lib/data';
-import { useState, useEffect, useRef } from 'react';
 
 function Tech({data}) {
   return (
-    <div className="tech wrap">
+    <section className="tech wrap">
       <div className="tech__image">
         <img src={data.image} />
       </div>
@@ -23,7 +24,7 @@ function Tech({data}) {
           );
         })}
       </ul>
-    </div>
+    </section>
   );
 }
 
@@ -54,7 +55,7 @@ function Dilemma({data}) {
   }, [mobile, active, setActive, initialRef]);
 
   return (
-    <div className="bg-grey dilemma pad">
+    <section className="bg-grey dilemma pad">
       <div className="wrap dilemma__wrap">
         <div className="dilemma__headline">
           <H2>{data.headline}</H2>
@@ -113,13 +114,13 @@ function Dilemma({data}) {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 function BYO({data}) {
   return (
-    <div className="byo pad">
+    <section className="byo pad">
       <div className="wrap byo__wrap">
         <div className="byo__headline">
           <H2>{data.headline}</H2>
@@ -142,7 +143,7 @@ function BYO({data}) {
           <Button href={data.url} subStyle="dark" target="_blank">{data.cta}</Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

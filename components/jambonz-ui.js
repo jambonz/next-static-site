@@ -1,9 +1,12 @@
-import Link from 'next/link';
 import classNames from 'classnames';
 import * as Icons from 'react-feather';
 import { nanoid } from 'nanoid';
-import { mobileMedia } from '../lib/vars';
 import { useState, useEffect } from 'react';
+
+import Link from 'next/link';
+
+import { mobileMedia } from '../lib/vars';
+
 
 // Normalize how we work with the subtext as an array[]
 export function normalizeSubtext(subtext) {
@@ -93,7 +96,7 @@ export function Hero({ data, subStyle }) {
   }
 
   return (
-    <div className={classNames(classes)}>
+    <section className={classNames(classes)}>
       <div className="wrap hero__wrap">
         <div className="hero__headline">
           <H1>{data.headline}</H1>
@@ -109,7 +112,7 @@ export function Hero({ data, subStyle }) {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 }
 
