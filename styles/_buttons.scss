@@ -65,6 +65,10 @@
     border: 2px solid $charcoal;
     color: $charcoal;
     padding: 18px 32px 17px;
+
+    @media (max-width: $width-mobile) {
+      padding: 15px 32px 16px;
+    }
     
     svg, span {
       display: inline-block;
