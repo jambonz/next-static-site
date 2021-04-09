@@ -100,9 +100,11 @@ export function Hero({ data, subStyle }) {
           <H1>{data.headline}</H1>
         </div>
         <div className="hero__subtext">
-          {normalizeSubtext(data.subtext).map((subtext) => {
-            return <H5 key={nanoid()}>{subtext}</H5>;
-          })}
+          <H5>
+            {normalizeSubtext(data.subtext).map((subtext) => {
+              return <div key={nanoid()}>{subtext}</div>;
+            })}
+          </H5>
         </div>
         {data.cta && (
           <div className="hero__cta">

@@ -68,7 +68,7 @@
       margin-bottom: 0;
       max-width: 820px;
 
-      > :nth-child(even) {
+      div + div {
         margin-top: 32px;
 
         @media (max-width: $width-mobile) {
