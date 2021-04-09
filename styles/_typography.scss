@@ -161,10 +161,9 @@ em {
     font-size: $p-size;
   }
 
-  // @note: Consideration on stopping type reduction here
-  // @media (max-width: $width-mobile) {
-  //   font-size: $m-size;
-  // }
+  @media (max-width: $width-mobile) {
+    font-size: $m-size;
+  }
 }
 
 .h6, h6 {

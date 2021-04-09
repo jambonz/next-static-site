@@ -70,6 +70,10 @@
 
       > :nth-child(even) {
         margin-top: 32px;
+
+        @media (max-width: $width-mobile) {
+          margin-top: 16px;
+        }
       }
 
       @media (max-width: $width-tablet-1) {

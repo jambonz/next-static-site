@@ -48,6 +48,7 @@
     }
 
     @media (max-width: $width-mobile) {
+      padding: 16px;
       text-align: center;
       width: 100%;
     }
@@ -74,9 +75,19 @@
     margin-top: 16px;
     margin-bottom: 64px;
 
+    @media (max-width: $width-mobile) {
+      margin-bottom: 48px;
+    }
+
     div {
       @media (max-width: $width-small) {
         max-width: 270px;
+      }
+
+      & + div {
+        @media (max-width: $width-small) {
+          margin-top: 8px;
+        }
       }
     }
   }
@@ -230,6 +241,10 @@
 
   &__comment {
     max-width: 800px;
+
+    @media (max-width: $width-small) {
+      max-width: 340px;
+    }
 
     a {
       text-decoration: underline;

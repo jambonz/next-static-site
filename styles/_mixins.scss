@@ -25,6 +25,10 @@
   @media (max-width: $width-tablet-2) {
     font-size: $m-size;
   }
+
+  @media (max-width: $width-mobile) {
+    font-size: $ms-size;
+  }
 }
 
 @mixin cta() {
