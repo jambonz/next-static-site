@@ -22,6 +22,10 @@ Clone this repository and install [yarn](https://yarnpkg.com/getting-started/ins
   - Installs node packages
 - `yarn dev`
   - Serves local dev at [localhost:3000](http://localhost:3000)
+- `yarn build && yarn start`
+  - Create an optimized Next.js production build and serve it locally
+- `yarn build && yarn export`
+  - Create a static production build for any static deploy target 
 
 Other packages being used prominently in this apps source code are [classnames](https://www.npmjs.com/package/classnames) and [nanoid](https://www.npmjs.com/package/nanoid#react).
 
