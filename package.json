@@ -22,16 +22,11 @@
   },
   "devDependencies": {
     "babel-plugin-prismjs": "^2.0.1",
-    "prettier": "^2.0.5",
-    "gray-matter": "^4.0.2",
     "env-cmd": "^10.1.0",
+    "gray-matter": "^4.0.2",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "sass": "^1.32.8",
     "yamljs": "^0.3.0"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
   }
 }
