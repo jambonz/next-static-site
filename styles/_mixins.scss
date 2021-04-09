@@ -26,6 +26,7 @@
     font-size: $m-size;
   }
 
+  // @note: Consideration on stopping type reduction here
   @media (max-width: $width-mobile) {
     font-size: $ms-size;
   }

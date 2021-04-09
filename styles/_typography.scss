@@ -161,9 +161,10 @@ em {
     font-size: $p-size;
   }
 
-  @media (max-width: $width-mobile) {
-    font-size: $m-size;
-  }
+  // @note: Consideration on stopping type reduction here
+  // @media (max-width: $width-mobile) {
+  //   font-size: $m-size;
+  // }
 }
 
 .h6, h6 {
@@ -194,10 +195,10 @@ em {
   font-size: $m-size;
   line-height: 1.9;
 
-  // @note: Consideration on stopping type reduction here
-  // @media (max-width: $width-tablet-1) {
-  //   font-size: $ms-size;
-  // }
+  // @note: Consideration on stopping type reduction here?
+  @media (max-width: $width-tablet-1) {
+    font-size: $ms-size;
+  }
 }
 
 .ms {
