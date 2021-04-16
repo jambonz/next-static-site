@@ -9,10 +9,10 @@ import { Button, Icon, useMobileMedia } from './jambonz-ui';
 
 function NaviItem({obj}) {
   const router = useRouter();
-  const regex = new RegExp( `^${obj.link}` );
+  const regex = new RegExp(`^${obj.link}`);
   const classes = {
     navi__link: true,
-    active: regex.test( router.asPath ),
+    active: regex.test(router.asPath),
   };
 
   return (

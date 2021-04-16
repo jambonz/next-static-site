@@ -12,8 +12,10 @@ import { getData, getDocs, getDocsPaths } from '../../lib/data';
 
 function Sidebar({data}) {
   const router = useRouter();
+  const parsedTab = router.asPath.replace(/^\/docs\/|^\/+|\/+$/g, '').split('/').shift();
+  const parsedPath = router.asPath.replace(/^\/+|\/+$/g, '').split('/').pop();
   const [active, setActive] = useState({
-    [data.navi[0].path]: true,
+    [parsedTab]: true,
   });
 
   const handleToggle = (slug) => {
@@ -55,7 +57,7 @@ function Sidebar({data}) {
               </div>
               <ul className={classNames(subClasses)}>
                 {item.pages.map((page) => {
-                  const isActiveItem = (router.asPath.split('/').pop() === page.path);
+                  const isActiveItem = (parsedPath === page.path);
                   const itemClasses = {
                     'ms': true,
                     'active': isActiveItem,
