@@ -32,6 +32,26 @@
   }
 }
 
+@mixin m() {
+  font-size: $m-size;
+  line-height: 1.9;
+
+  // @note: Consideration on stopping type reduction here?
+  @media (max-width: $width-tablet-1) {
+    font-size: $ms-size;
+  }
+}
+
+@mixin ms () {
+  font-size: $ms-size;
+  line-height: 2;
+
+  // @note: Consideration on stopping type reduction here
+  // @media (max-width: $width-tablet-1) {
+  //   font-size: $mxs-size;
+  // }
+}
+
 @mixin cta() {
   margin-top: 96px;
 

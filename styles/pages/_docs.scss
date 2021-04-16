@@ -36,7 +36,7 @@
     }
 
     > div {
-      > h1, > h2, > h3, > h4, > h5, > h6, > p, > div, > ul, > ol {
+      > h1, > h2, > h3, > h4, > h5, > h6, > p, > div, > ul, > ol, > table {
         margin: 16px 0;
       }
 
@@ -50,6 +50,33 @@
         li {
           list-style-type: disc;
           @include p();
+        }
+      }
+
+      > table {
+        @include ms();
+        width: 100%;
+
+        td, th {
+          padding: 8px 12px;
+          border: 1px solid $grey-light;
+        }
+
+        th {
+          @include font-bold();
+        }
+
+        tbody {
+          tr:nth-child(odd) {
+            background-color: $grey;
+          }
+        }
+      }
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        @media (max-width: $width-tablet-1) {
+          font-size: 13px;
         }
       }
     }
