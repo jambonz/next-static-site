@@ -36,6 +36,10 @@
     }
 
     > div {
+      p {
+        font-size: 14px;
+      }
+
       > h1, > h2, > h3, > h4, > h5, > h6, > p, > div, > ul, > ol, > table {
         margin: 16px 0;
       }
@@ -75,6 +79,7 @@
 
       code[class*="language-"],
       pre[class*="language-"] {
+        font-size: 0.82em;
         @media (max-width: $width-tablet-1) {
           font-size: 13px;
         }
