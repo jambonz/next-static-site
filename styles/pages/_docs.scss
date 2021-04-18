@@ -1,3 +1,5 @@
+$font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+
 .docs {
   padding-top: 64px;
   padding-bottom: 96px;
@@ -36,8 +38,8 @@
     }
 
     > div {
-      p {
-        font-size: 14px;
+      > p {
+        @include ms();
       }
 
       > h1, > h2, > h3, > h4, > h5, > h6, > p, > div, > ul, > ol, > table {
@@ -80,9 +82,15 @@
       code[class*="language-"],
       pre[class*="language-"] {
         font-size: 0.82em;
+
         @media (max-width: $width-tablet-1) {
           font-size: 13px;
         }
+      }
+
+      code:not([class*="language-"]) {
+        font-family: $font-mono;
+        font-size: 13px;
       }
     }
 
