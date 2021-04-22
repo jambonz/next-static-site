@@ -44,7 +44,7 @@ navi:
         title: pause
       -
         path: play
-        title: Dequeue
+        title: play
       -
         path: redirect
         title: redirect
