@@ -1,10 +1,10 @@
 # Webhooks 
 
-jambonz uses JSON payloads in HTTP messages to control calls.  
+jambonz uses JSON payloads that are exchanged in HTTP messages to control calls.  
 
-When an incoming call for your account is received, jambonz makes an HTTP request to the URL that you have configured and you return a JSON body in your response indicating how you want the call handled.
+When an incoming call for your account is received, jambonz makes an HTTP request to a URL that you have configured and your response contains a JSON body that indicates how you want the call handled.
 
-When you want to launch an outbound call via the [REST API](/docs/api/rest) it works similarly: you make an HTTP request and in it you provide a web callback url that will be invoked once the call is answered.  In your response to that request you will then provide your call handling instructions.
+When you want to launch an outbound call via the [REST API](/docs/api/rest) it works similarly: you make an HTTP request and in it you provide a web callback url that will be invoked once the call is answered.  In your response to that request you then provide your call handling instructions.
 
 ## Basic JSON message structure
 The JSON payload that you provide in response to a callback must be an array with each item describing a task that the platform shall perform.  These tasks are executed sequentially in the order they appear in the array.  Each task is identified by a verb (e.g. "dial", "gather", "hangup" etc) with associated detail and these verbs are described in more detail below.

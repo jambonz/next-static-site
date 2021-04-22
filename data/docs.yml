@@ -3,6 +3,71 @@ root:
   label: For Developers
 navi:
   -
+    path: webhooks
+    title: Using webhooks
+    pages:
+      -
+        path: overview
+        title: Overview
+      -
+        path: conference
+        title: conference
+      -
+        path: dequeue
+        title: dequeue
+      -
+        path: dial
+        title: dial
+      -
+        path: dialogflow
+        title: dialogflow
+      -
+        path: enqueue
+        title: enqueue
+      -
+        path: gather
+        title: gather
+      -
+        path: hangup
+        title: hangup
+      -
+        path: leave
+        title: leave
+      -
+        path: lex
+        title: lex
+      -
+        path: listen
+        title: listen
+      -
+        path: pause
+        title: pause
+      -
+        path: play
+        title: Dequeue
+      -
+        path: redirect
+        title: redirect
+      -
+        path: say
+        title: say
+      -
+        path: tag
+        title: tag
+      -
+        path: transcribe
+        title: transcribe
+  -
+    path: rest
+    title: API Reference
+    pages:
+      -
+        path: overview
+        title: Overview
+      -
+        path: applications
+        title: Applications
+  -
     path: getting-started
     title: Getting Started
     pages:
@@ -21,16 +86,6 @@ navi:
       -
         path: register-sip-client
         title: Register SIP clients
-  -
-    path: api
-    title: API Reference
-    pages:
-      -
-        path: webhooks
-        title: Webhooks
-      -
-        path: rest
-        title: REST APIs
   -
     path: tutorials
     title: Tutorials

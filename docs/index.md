@@ -1,13 +1,12 @@
-# jambonz
+## Welcome, developers!
 
-jambonz is a CPaaS that is designed for communications service providers.  As an API-driven platform, you will primarily interface with it using [Webhooks](/docs/api/webhooks) and [REST APIs](/docs/api/rest).  
+jambonz is an open source CPaaS platform that is primarily designed for use by communications service providers.  As an API-driven platform, you will primarily interface with it using [Webhooks](/docs/webhooks/overview/) and [REST APIs](/docs/rest/overview/).  Our client SDKs include a [Node.js SDK]() SDK as well as [Node-RED plugins]().  
 
-jambonz is available for use both as cloud APIs, or as an open source platform that you can run on your own infrastructure.  Either way, your applications are written in the same fashion, so you can start off by using the cloud APIs and later migrate to running your own platform if you like. 
+There are two ways to get started with jambonz:
+- create a free account on our hosted platform, or
+- download and install a jambonz system on your own infrastructure.
+A good idea is to start by creating a free account on the hosted platform. Then, based on your testing and traffic needs, you can bring up a jambonz cluster on your own infrastructure and migrate your applications seamlessly. 
 
-jambonz is also a "Bring Your Own Everything" (BYOE) CPaaS, meaning that you will [plug in your own SIP trunking providers](), and [use your own AWS or Google credentials]() for speech processing. 
+In these  pages you will find information about our SDKs and APIs, along with some useful tips for [Getting Started]() on the hosted platform, [tutorials]() describing how to perform common tasks, as well as some quick [how-to videos]().
 
-Follow the [Getting Started]() pages that follow to get yourself up and running on the cloud platform, or dive into the [API Reference]() or examine [client SDKs]() and [sample applications]() for inspiration.
-
-```javascript
-const foo = "bar";
-```
+As always, if you can't find the information you are looking for, please email us at support@jambonz.org and we'll be glad to help!
