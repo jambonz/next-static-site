@@ -51,16 +51,20 @@ $font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     }
 
     > div {
-      > p {
+      > p, > blockquote > p {
         @include ms();
       }
 
-      > h1, > h2, > h3, > h4, > h5, > h6, > p, > div, > ul, > ol, > table {
+      > blockquote > p {
+        font-family: 'objectivityregular_slanted';
+      }
+
+      > h1, > h2, > h3, > h4, > h5, > h6, > p, > div, > ul, > ol, > table, > blockquote {
         margin: 16px 0;
       }
 
       > ol, > ul {
-        padding-left: 64px;
+        padding-left: 48px;
 
         @media (max-width: $width-tablet-1) {
           padding-left: 32px;
