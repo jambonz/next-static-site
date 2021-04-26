@@ -1,6 +1,14 @@
 .terms__heading {
   margin: -6rem 6rem 3rem;
 
+  @media (max-width: $width-mobile) {
+    margin: -6rem 2rem 3rem;
+  }
+
+  @media (max-width: $width-small) {
+    margin: 0 1rem 3rem;
+  }
+
   &-pg {
     line-height: 1.5;
     margin-bottom: 1rem;
@@ -14,6 +22,14 @@
 
 .terms__content {
   margin: 0 6rem 3rem;
+
+  @media (max-width: $width-mobile) {
+    margin: 0 2rem 3rem;
+  }
+
+  @media (max-width: $width-small) {
+    margin: 0 1rem 3rem;
+  }
 
   &-caption {
     text-align: center;

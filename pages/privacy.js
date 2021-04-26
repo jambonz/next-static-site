@@ -25,10 +25,16 @@ export const Contents = ({ data }) => {
       {data.map((item) => (
         <div className="privacy__content__item" key={nanoid()}>
           {item.title ? <h4>{item.title}</h4> : ""}
-          <ul style={{ listStyle: getListStyle(item.format) }}>
+          <ul
+            style={{ listStyle: getListStyle(item.format) }}
+            className={`privacy__content__list ${getListStyle(item.format)}`}
+          >
             {item.text.map((iText) =>
               typeof iText === "object" ? (
-                <ul style={{ listStyle: getListStyle(iText.format) }} key={nanoid()}>
+                <ul
+                  style={{ listStyle: getListStyle(iText.format) }}
+                  key={nanoid()}
+                >
                   {iText.text.map((subText) => (
                     <li key={nanoid()}>
                       <p>{subText}</p>

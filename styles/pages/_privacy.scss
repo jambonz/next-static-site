@@ -4,6 +4,14 @@
 .privacy__content {
   margin: -9rem 6rem 6rem;
 
+  @media (max-width: $width-mobile) {
+    margin: -6rem 2rem 3rem;
+  }
+
+  @media (max-width: $width-small) {
+    margin: -6rem 1rem 3rem;
+  }
+
   &__item {
     margin-top: 3rem;
 
@@ -20,5 +28,9 @@
     & > ul > ul {
       margin-left: 2rem;
     }
+  }
+
+  &__list:not(.none) {
+    margin-left: 1rem;
   }
 }
