@@ -1,0 +1,38 @@
+.terms__heading {
+  margin: -6rem 6rem 3rem;
+
+  &-pg {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 18px;
+  }
+
+  b {
+    font-weight: bold;
+  }
+}
+
+.terms__content {
+  margin: 0 6rem 3rem;
+
+  &-caption {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &-text {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 18px;
+  }
+
+  &-subtext {
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    font-size: 18px;
+  }
+
+  &-list {
+    margin-left: 2rem;
+  }
+}
