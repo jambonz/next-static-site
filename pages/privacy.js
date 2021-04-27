@@ -1,20 +1,20 @@
-import { nanoid } from "nanoid";
-import Layout from "../components/layout";
-import { Hero } from "../components/jambonz-ui";
-import { getData } from "../lib/data";
+import { nanoid } from 'nanoid';
+import Layout from '../components/layout';
+import { Hero } from '../components/jambonz-ui';
+import { getData } from '../lib/data';
 
 export const Contents = ({ data }) => {
   const getListStyle = (format) => {
-    let style = "none";
+    let style = 'none';
 
     switch (format) {
-      case "number":
-        style = "decimal";
-        break;
-      case "circle":
-        style = "disc";
-        break;
-      default:
+    case 'number':
+      style = 'decimal';
+      break;
+    case 'circle':
+      style = 'disc';
+      break;
+    default:
     }
 
     return style;
@@ -24,13 +24,13 @@ export const Contents = ({ data }) => {
     <section className="privacy__content">
       {data.map((item) => (
         <div className="privacy__content__item" key={nanoid()}>
-          {item.title ? <h4>{item.title}</h4> : ""}
+          {item.title ? <h4>{item.title}</h4> : ''}
           <ul
             style={{ listStyle: getListStyle(item.format) }}
             className={`privacy__content__list ${getListStyle(item.format)}`}
           >
             {item.text.map((iText) =>
-              typeof iText === "object" ? (
+              typeof iText === 'object' ? (
                 <ul
                   style={{ listStyle: getListStyle(iText.format) }}
                   key={nanoid()}
@@ -64,7 +64,7 @@ export default function Privacy({ data }) {
 }
 
 export async function getStaticProps() {
-  const data = getData("privacy");
+  const data = getData('privacy');
 
   return {
     props: {

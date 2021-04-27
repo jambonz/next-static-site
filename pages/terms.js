@@ -1,8 +1,8 @@
-import { nanoid } from "nanoid";
-import Layout from "../components/layout";
-import { Hero } from "../components/jambonz-ui";
-import { getData } from "../lib/data";
-import React from "react";
+import { nanoid } from 'nanoid';
+import Layout from '../components/layout';
+import { Hero } from '../components/jambonz-ui';
+import { getData } from '../lib/data';
+import React from 'react';
 
 const Heading = ({ data }) => {
   return (
@@ -20,16 +20,16 @@ const Heading = ({ data }) => {
 
 const Content = ({ data }) => {
   const getListStyle = (format) => {
-    let style = "none";
+    let style = 'none';
 
     switch (format) {
-      case "number":
-        style = "decimal";
-        break;
-      case "circle":
-        style = "disc";
-        break;
-      default:
+    case 'number':
+      style = 'decimal';
+      break;
+    case 'circle':
+      style = 'disc';
+      break;
+    default:
     }
 
     return style;
@@ -42,7 +42,7 @@ const Content = ({ data }) => {
         <React.Fragment key={nanoid()}>
           <h6 className="terms__content-title">{title}</h6>
           {text.map((item) => {
-            return typeof item === "object" ? (
+            return typeof item === 'object' ? (
               <ul
                 className="terms__content-list"
                 key={nanoid()}
@@ -79,7 +79,7 @@ export default function Terms({ data }) {
 }
 
 export async function getStaticProps() {
-  const data = getData("terms");
+  const data = getData('terms');
 
   return {
     props: {
