@@ -1,0 +1,7 @@
+{
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "eslint.options": {
+      "configFile": ".eslintrc.json"
+    }
+}

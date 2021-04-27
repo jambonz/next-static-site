@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Navi from './navi';
 import Footer from './footer';
 
-export default function Layout({ children, siteData, title = "jambonz" }) {
+export default function Layout({ children, siteData, title = 'jambonz' }) {
   return (
     <>
       <Head>

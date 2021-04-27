@@ -130,7 +130,7 @@ function BYO({data}) {
         </div>
         <div className="byo__icons icons">
           {data.icons.map((icon) => {
-            return <Icon key={nanoid()} name={icon} style="fill" />
+            return <Icon key={nanoid()} name={icon} style="fill" />;
           })}
         </div>
         <div className="byo__comment">

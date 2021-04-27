@@ -75,7 +75,7 @@ function Services({data}) {
             return (
               <div key={nanoid()} className="services__option">
                 <P>
-                  <a className="i" href={`${data.url}?subject=${service.title} Support`} target="_blank">
+                  <a className="i" href={`${data.url}?subject=${service.title} Support`} target="_blank" rel="noreferrer">
                     <strong>{service.title}</strong>
                     <Icon name="ExternalLink" />
                   </a>

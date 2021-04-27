@@ -23,13 +23,13 @@ export default function Footer({ siteData }) {
         <div className="foot__navs">
           <ul className="foot__links">
             {siteData.footer.links.map((obj) => {
-              return <FooterItem key={nanoid()} obj={obj} />
+              return <FooterItem key={nanoid()} obj={obj} />;
             })}
           </ul>
           <ul className="foot__links">
             <FooterItem key="home" obj={siteData.navi.home} />
             {siteData.navi.links.map((obj) => {
-              return <FooterItem key={nanoid()} obj={obj} />
+              return <FooterItem key={nanoid()} obj={obj} />;
             })}
           </ul>
         </div>

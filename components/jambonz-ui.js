@@ -37,7 +37,7 @@ export function useMobileMedia() {
 
     return function cleanup() {
       mql.removeListener(handleMedia);
-    }
+    };
   }, [handleMedia, setMobile]);
 
   return mobile;

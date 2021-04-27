@@ -49,12 +49,12 @@ function NaviMobile({ active, handler, siteData }) {
       <ul className="navi__mobile__links">
         <NaviItem key="home" obj={siteData.navi.home} />
         {siteData.navi.links.map((obj) => {
-          return <NaviItem key={nanoid()} obj={obj} />
+          return <NaviItem key={nanoid()} obj={obj} />;
         })}
       </ul>
       <ul className="navi__mobile__footer">
         {siteData.footer.links.map((obj) => {
-          return <NaviItem key={nanoid()} obj={obj} />
+          return <NaviItem key={nanoid()} obj={obj} />;
         })}
       </ul>
       <div className="navi__mobile__support">
@@ -89,7 +89,7 @@ export default function Navi({ siteData }) {
         </Link>
         <ul className="navi__links">
           {siteData.navi.links.map((obj) => {
-            return <NaviItem key={nanoid()} obj={obj} />
+            return <NaviItem key={nanoid()} obj={obj} />;
           })}
         </ul>
         <div className="navi__icon" onClick={handleNavi}>

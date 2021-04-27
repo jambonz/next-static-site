@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
+    "prebuild": "yarn lint",
     "build": "next build",
-    "export": "next export"
+    "export": "next export",
+    "lint": "eslint ./ --ext js,jsx,ts,tsx"
   },
   "author": "Jambonz Developers",
   "license": "MIT",
@@ -23,6 +25,8 @@
   "devDependencies": {
     "babel-plugin-prismjs": "^2.0.1",
     "env-cmd": "^10.1.0",
+    "eslint": "^7.25.0",
+    "eslint-plugin-react": "^7.23.2",
     "gray-matter": "^4.0.2",
     "remark": "^13.0.0",
     "remark-gfm": "^1.0.0",
