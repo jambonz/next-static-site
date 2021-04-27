@@ -9,7 +9,7 @@
     "prebuild": "yarn lint",
     "build": "next build",
     "export": "next export",
-    "lint": "eslint ./ --ext js,jsx,ts,tsx"
+    "lint": "eslint components pages lib --ext js"
   },
   "author": "Jambonz Developers",
   "license": "MIT",
