@@ -2,7 +2,7 @@ $font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
 .text__layout {
   &__wrap {
-    margin: -80px 0 96px;
+    margin: -80px auto 96px;
   }
 
   &__html {
