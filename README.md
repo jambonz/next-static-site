@@ -37,7 +37,7 @@ This app is being composed in the manor of `module > component > element`, where
 
 You can view examples of the Jambonz UI component elements on this page [here](https://jambonz.vercel.app/jambonz-ui).
 
-#### Jambonz Typography
+### Jambonz Typography
 
 You should always use the reusable components from the `jambonz-ui` component library. These typographic components implement our type-scale for our design system. When styling pages in which we want to adjust or tweak the type-scale you should always use the `mixins` provided in the SASS. This ensures when we decide to break out of our standard type-scale implementation for any given element(s) we retain a harmonious nature to our type sizing as it retains its responsive nature provided by the `mixins`. A perfect example of how we have already done this is for the `docs` page(s) wherein we've chosen to have the `h1` element implement the `h2()` mixin and likewise the `h2` element to implement the `h3()` mixin. We even have the `li` element(s) implementing the `ms()` mixin.
 
