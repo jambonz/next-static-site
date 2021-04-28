@@ -10,9 +10,7 @@ jambonz
 This app can easily be deployed to multiple targets including Vercel, Netlify or AWS+circleci.
 
 - Vercel
-  - [jambonz.vercel.com](https://jambonz.vercel.app)
-- AWS+circleci
-  - Could easily be implemented similar to this Next.js repo [here](https://github.com/kitajchuk/uncle-toms-letters#aws--circleci).
+  - [jambonz.vercel.app](https://jambonz.vercel.app)
 
 ## Dev start
 
@@ -35,9 +33,13 @@ Other packages being used prominently in this apps source code are [classnames](
 
 ## Jambonz UI library
 
-This app is being composed in the manor of `module > component > element`, wherein a page is a module which is made up of components that are comprised of elements. We are using [Next.js](https://nextjs.org) [SASS](https://nextjs.org/learn/basics/assets-metadata-css/css-styling) located in the `styles` directory and loaded globally in [pages/_app.js](/pages/_app.js). A generally simple BEM CSS module naming convention is being used prominently. JS components are in the `components` directory. The `jambonz-ui` component consists of reusable design element components.
+This app is being composed in the manor of `module > component > element`, wherein a page is a module which is made up of components that are comprised of elements. We are using [Next.js](https://nextjs.org) [SASS](https://nextjs.org/learn/basics/assets-metadata-css/css-styling) located in the `styles` directory and loaded globally in [pages/_app.js](/pages/_app.js). A generally simple BEM CSS module naming convention is being used prominently. JS components are in the `components` directory. The `jambonz-ui` component library consists of reusable design element components.
 
 You can view examples of the Jambonz UI component elements on this page [here](https://jambonz.vercel.app/jambonz-ui).
+
+#### Jambonz Typography
+
+You should always use the reusable components from the `jambonz-ui` component library. These typographic components implement our type-scale for our design system. When styling pages in which we want to adjust or tweak the type-scale you should always use the `mixins` provided in the SASS. This ensures when we decide to break out of our standard type-scale implementation for any given element(s) we retain a harmonious nature to our type sizing as it retains its responsive nature provided by the `mixins`. A perfect example of how we have already done this is for the `docs` page(s) wherein we've chosen to have the `h1` element implement the `h2()` mixin and likewise the `h2` element to implement the `h3()` mixin. We even have the `li` element(s) implementing the `ms()` mixin.
 
 ## Static page data
 
