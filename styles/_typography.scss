@@ -68,123 +68,27 @@ em {
 }
 
 .h1, h1 {
-  font-size: $h1-size;
-  line-height: 1.33;
-  letter-spacing: -0.06px;
-  @include font-bold();
-
-  @media (max-width: $width-tablet-1) {
-    font-size: $h2-size;
-  }
-
-  @media (max-width: $width-tablet-2) {
-    font-size: $h3-size;
-  }
-
-  @media (max-width: $width-mobile) {
-    font-size: $h4-size;
-  }
+  @include h1();
 }
 
 .h2, h2 {
-  font-size: $h2-size;
-  line-height: 1.35;
-  letter-spacing: -0.05px;
-  @include font-bold();
-
-  @media (max-width: $width-tablet-1) {
-    font-size: $h3-size;
-  }
-
-  @media (max-width: $width-tablet-2) {
-    font-size: $h4-size;
-  }
-
-  @media (max-width: $width-mobile) {
-    font-size: $h5-size;
-  }
+  @include h2();
 }
 
 .h3, h3 {
-  font-size: $h3-size;
-  line-height: 1.33;
-  letter-spacing: -0.05px;
-  @include font-bold();
-
-  @media (max-width: $width-tablet-1) {
-    font-size: $h4-size;
-  }
-
-  @media (max-width: $width-tablet-2) {
-    font-size: $h5-size;
-  }
-
-  @media (max-width: $width-mobile) {
-    font-size: $h6-size;
-  }
+  @include h3();
 }
 
 .h4, h4 {
-  font-size: $h4-size;
-  line-height: 1.5;
-  letter-spacing: -0.04px;
-  @include font-medium();
-
-  @media (max-width: $width-tablet-1) {
-    font-size: $h5-size;
-  }
-
-  @media (max-width: $width-tablet-2) {
-    font-size: $h6-size;
-  }
-
-  @media (max-width: $width-mobile) {
-    font-size: $p-size;
-  }
+  @include h4();
 }
 
 .h5, h5 {
-  font-size: $h5-size;
-  line-height: 1.67;
-  letter-spacing: -0.03px;
-  @include font-medium();
-
-  span {
-    color: $jambonz;
-  }
-
-  @media (max-width: $width-tablet-1) {
-    font-size: $h6-size;
-  }
-
-  @media (max-width: $width-tablet-2) {
-    font-size: $p-size;
-  }
-
-  // @note: Consideration on stopping type reduction here
-  // @media (max-width: $width-mobile) {
-  //   font-size: $m-size;
-  // }
+  @include h5();
 }
 
 .h6, h6 {
-  font-size: $h6-size;
-  line-height: 1.8;
-  letter-spacing: -0.03px;
-  @include font-medium();
-
-  @media (max-width: $width-tablet-1) {
-    font-size: $p-size;
-  }
-
-  @media (max-width: $width-tablet-2) {
-    font-size: $m-size;
-  }
-
-  // @note: Consideration on stopping type reduction here
-  // @media (max-width: $width-mobile) {
-  //   font-size: $ms-size;
-  // }
+  @include h6();
 }
 
 .p, p {
@@ -200,8 +104,7 @@ em {
 }
 
 .mxs {
-  font-size: $mxs-size;
-  line-height: 2;
+  @include mxs();
 }
 
 .color--teal {
