@@ -164,3 +164,11 @@ export function Icon({ name, style = 'inline', subStyle = null, ...props }) {
   // Inline icon
   return <Component {...props} />;
 }
+
+export function TextLayout({ data }) {
+  return (
+    <div className="text__layout">
+      <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+    </div>
+  );
+}
