@@ -82,6 +82,10 @@
     }
   }
 
+  &--privacy, &--terms {
+    padding-bottom: 16px;
+  }
+
   &__wrap {
     @include flex-cols();
   }

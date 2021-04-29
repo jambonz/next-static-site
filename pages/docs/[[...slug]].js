@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Layout from '../../components/layout';
-import { Icon } from '../../components/jambonz-ui';
+import { Icon, TextLayout } from '../../components/jambonz-ui';
 import { getData, getDocs, getDocsPaths } from '../../lib/data';
 
 function Sidebar({data}) {
@@ -90,9 +90,7 @@ export default function Docs({ data, docs }) {
       <div className="docs">
         <div className="wrap docs__wrap">
           <Sidebar data={data.docs} />
-          <div className="docs__html">
-            <div dangerouslySetInnerHTML={{ __html: docs.contentHtml }} />
-          </div>
+          <TextLayout data={docs} />
         </div>
       </div>
     </Layout>
