@@ -39,7 +39,7 @@ $font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
         list-style-type: decimal;
         margin: 16px 0;
 
-        > p {
+        &::marker, > p {
           @include p();
           font-size: 14px;
         }

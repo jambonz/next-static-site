@@ -1,8 +1,6 @@
 import Layout from '../components/layout';
 import { Hero, TextLayout } from '../components/jambonz-ui';
 import { getData, getParsedMarkdown } from '../lib/data';
-
-// You'll need to load the nodejs path module
 import path from 'path';
 
 export default function Terms({ data, parsed }) {
