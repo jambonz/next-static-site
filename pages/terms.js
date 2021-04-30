@@ -7,7 +7,7 @@ export default function Terms({ data, parsed }) {
   return (
     <Layout siteData={data.site}>
       <Hero data={data.terms.hero} subStyle="terms" />
-      <div class="wrap">
+      <div className="wrap">
         <TextLayout data={parsed} />
       </div>
     </Layout>

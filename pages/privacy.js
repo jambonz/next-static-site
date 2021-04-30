@@ -7,7 +7,7 @@ export default function Privacy({ data, parsed }) {
   return (
     <Layout siteData={data.site}>
       <Hero data={data.privacy.hero} subStyle="privacy" />
-      <div class="wrap">
+      <div className="wrap">
         <TextLayout data={parsed} />
       </div>
     </Layout>
