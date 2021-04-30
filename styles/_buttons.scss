@@ -123,7 +123,7 @@
   .btn {
     margin: 0 2.2222222222vw;
 
-    &:nth-child(even) {
+    &:not(:first-child) {
       @media (max-width: $width-mobile) {
         margin-top: 16px;
       }
