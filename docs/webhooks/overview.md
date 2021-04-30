@@ -208,6 +208,7 @@ Alternatively, you can provide an object containing a url and optional method an
   "password": "bar"
 }
 ```
+In the sections that follow, we will describe each of the verbs in detail.
 
 <p>
 <a href="/docs/webhooks/conference" style="float: right;">Next: conference</a>

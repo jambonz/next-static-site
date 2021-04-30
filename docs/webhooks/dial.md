@@ -34,12 +34,12 @@ The `dial` verb is used to create a new call by dialing out to a telephone numbe
 ```
 As the example above illustrates, when you execute the dial command you are making one or more outbound call attempts in an effort to create one new call, which is bridged to a parent call. The `target` property specifies an array of call destinations that will be attempted simultaneously.  
 
-If multiple endpoints are specified in the `target` array, all targets are outdialed at the same time (e.g., "simring", or "blast outdial" as some folks call it) and the call will be connected to the first endpoint that answers the call (and, optionally, completes a call screening application as specified in the `url` property).
+If multiple endpoints are specified in the `target` array, all targets are outdialed at the same time (e.g., "simring", or "blast outdial" as some folks call it) and the call will be connected to the first endpoint that answers the call (or, optionally, the first call that completes a call screening application as specified in the `confirmHook` property).
 
-There are several types of endpoints:
+There are several types of endpoints that you can dial:
 
-* a telephone phone number that can be reached via your Carrier,
-* a webrtc or sip client that has registered directly with your application,
+* a telephone phone number -- this call attempt will be sent out through your configured Carrier,
+* a webrtc or sip client that has registered directly with your subdomain,
 * a sip endpoint, identified by a sip uri (and possibly authentication parameters), or
 * Microsoft Teams user
 
@@ -47,7 +47,7 @@ You can use the following attributes in the `dial` command:
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| actionHook | webhook to invoke when the call ends. | no |
+| actionHook | webhook to invoke when the call ends. The webhook will include [properties](#dial-action-properties) describing the outcome of the call attempt.| no |
 | answerOnBridge | If set to true, the inbound call will ring until the number that was dialed answers the call, and at that point a 200 OK will be sent on the inbound leg.  If false, the inbound call will be answered immediately as the outbound call is placed. <br/>Defaults to false. | no |
 | callerId | The inbound caller's phone number, which is displayed to the number that was dialed. The caller ID must be a valid E.164 number. <br/>Defaults to caller id on inbound call. | no |
 | confirmHook | webhook for an application to run on the callee's end after the dialed number answers but before the call is connected. This allows the caller to provide information to the dialed number, giving them the opportunity to decline the call, before they answer the call.  Note that if you want to run different applications on specific destinations, you can specify the 'url' property on the nested [target](#target-types) object.  | no |
@@ -59,9 +59,9 @@ You can use the following attributes in the `dial` command:
 | target | array of to 10 [destinations](#target-types) to simultaneously dial. The first person (or entity) to answer the call will be connected to the caller and the rest of the called numbers will be hung up.| yes |
 | timeLimit | max length of call in seconds | no |
 | timeout | ring no answer timeout, in seconds.  <br/>Defaults to 60. | no |
-| transcribe | a nested [transcribe](#transcribe) action, which will cause the call to be transcribed | no |
+| transcribe | a nested [transcribe](#transcribe) action, which will cause the call to be transcribed | no 
 
-##### target types
+<h5 id="target-types">target types</h5>
 
 *PSTN number*
 
@@ -106,6 +106,18 @@ If Microsoft Teams integration has been configured, you can dial out to  Teams u
 The `confirmHook` property that can be optionally specified as part of the target types is a web callback that will be invoked when the outdial call is answered.  That callback should return an application that will run on the outbound call before bridging it to the inbound call.  If the application completes with the outbound call still in a stable/connected state, then the two calls will be bridged together.
 
 This allows you to easily implement call screening applications (e.g. "You have a call from so-and-so.  Press 1 to decline").
+
+
+<h5 id="dial-action-properties">actionHook properties</h5>
+
+The actionHook that is invoked when the dial command ends will include the following properties:
+
+| property name  | description | 
+| ------------- |-------------|
+| dial_call_sid | the unique call_sid identifier for the child call |
+| dial_status | the final status of the call attempt, one of 'completed', 'failed', 'busy', 'no-answer', or 'queued'|
+| dial_sip_status | the sip status of the final response to the INVITE that was sent|
+
 
 <p>
 <a href="/docs/webhooks/dequeue" style="float: left;">Prev: dequeue</a>
