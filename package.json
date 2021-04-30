@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "dev": "next",
     "start": "next start",
     "prebuild": "yarn lint",
@@ -15,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.6",
+    "husky": "^6.0.0",
     "nanoid": "^3.1.22",
     "next": "^10.0.8-canary.9",
     "prismjs": "^1.23.0",
