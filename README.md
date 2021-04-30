@@ -16,7 +16,11 @@ This app can easily be deployed to multiple targets including Vercel, Netlify or
 
 Clone this repository and install [yarn](https://yarnpkg.com/getting-started/install). From app root:
 
-***Important for developers: Run a fresh `yarn install` and make sure Husky installs on your local machine***
+***Important for developers: Run a fresh `yarn install` and make sure [Husky](https://typicode.github.io/husky/) installs on your local machine***
+
+Your terminal output will show that husky has been installed after yarn resolves packages, something like this:
+
+![](/public/husky_screenshot.png)
 
 - `yarn install`
   - Installs node packages
@@ -26,7 +30,6 @@ Clone this repository and install [yarn](https://yarnpkg.com/getting-started/ins
   - Serves local dev at [localhost:3000](http://localhost:3000)
 - `yarn lint`
   - Runs [ESLint](https://eslint.org/) validations on source JS
-  - ESLint errors will fail your builds so check your code before pushing
   - Install the [ESLint plugin for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint&ssr=false#overview)
 - `yarn build && yarn start`
   - Create an optimized Next.js production build and serve it locally
