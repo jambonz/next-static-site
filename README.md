@@ -14,13 +14,11 @@ This app can easily be deployed to multiple targets including Vercel, Netlify or
 
 ## Dev start
 
-Clone this repository and install [yarn](https://yarnpkg.com/getting-started/install). From app root:
+Clone this repository and install [yarn](https://yarnpkg.com/getting-started/install). ***Important for developers: Run a fresh `yarn install` and make sure [Husky](https://typicode.github.io/husky/) installs on your local machine*** Your terminal output will show that husky has been installed after yarn resolves packages, something like this:
 
-***Important for developers: Run a fresh `yarn install` and make sure [Husky](https://typicode.github.io/husky/) installs on your local machine***
+<img src="/public/husky_screenshot.png" width="224" height="auto" />
 
-Your terminal output will show that husky has been installed after yarn resolves packages, something like this:
-
-![](/public/husky_screenshot.png)
+### Commands
 
 - `yarn install`
   - Installs node packages
