@@ -16,11 +16,11 @@ This app can easily be deployed to multiple targets including Vercel, Netlify or
 
 Clone this repository and install [yarn](https://yarnpkg.com/getting-started/install). From app root:
 
+***Important for developers: Run a fresh `yarn install` and make sure Husky installs on your local machine***
+
 - `yarn install`
   - Installs node packages
   - Installs [husky](https://typicode.github.io/husky/) for git `pre-commit` hooks
-    - If the `prepare` script doesn't run (issue with yarn v2+) you can run `npx husky install`
-    - Be warned this code-base is NOT tested with `yarn` v2+ (breaking changes)
   - Husky will run `yarn lint` before a git commit and stop the commit if `ESLint` fails
 - `yarn dev`
   - Serves local dev at [localhost:3000](http://localhost:3000)
