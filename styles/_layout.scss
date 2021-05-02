@@ -48,45 +48,15 @@
   }
 
   &--pricing {
-    position: relative;
-
-    &:before {
-      content: '';
-      background-color: $pink;
-      width: 100%;
-      height: calc(100% + #{$navi-height});
-      transform: translateY(-#{$navi-height});
-      z-index: 1;
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
+    padding-bottom: 0;
 
     .hero__wrap {
       position: relative;
       z-index: 2;
     }
 
-    .hero__headline {
-      color: $jambonz;
-    }
-
     .hero__subtext {
-      margin-bottom: 0;
-      max-width: 820px;
-
-      div + div {
-        margin-top: 32px;
-
-        @media (max-width: $width-mobile) {
-          margin-top: 16px;
-        }
-      }
-
-      @media (max-width: $width-tablet-1) {
-        max-width: 680px;
-      }
+      max-width: 770px;
     }
   }
 
@@ -105,116 +75,6 @@
     > div {
       margin-left: auto;
       margin-right: auto;
-    }
-  }
-}
-
-/******************************************************************************
- * Tables
-*******************************************************************************/
-.table {
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: $width-tablet-2) {
-    flex-wrap: wrap;
-    max-width: 420px;
-  }
-
-  &__row {
-    border-top: 2px solid $charcoal;
-    border-bottom: 2px solid $charcoal;
-
-    @media (max-width: $width-tablet-2) {
-      width: 100%;
-      display: flex;
-    }
-
-    &:last-child {
-      .table__head {
-        border-right: 2px solid $charcoal;
-
-        @media (max-width: $width-tablet-2) {
-          border-right: none;
-        }
-      }
-
-      .table__cell {
-        border-right: 2px solid $charcoal;
-      }
-    }
-
-    & + & {
-      @media (max-width: $width-tablet-2) {
-        border-top: none;
-      }
-    }
-  }
-
-  &__head {
-    border-bottom: 2px solid $charcoal;
-    border-left: 2px solid $charcoal;
-
-    @media (max-width: $width-tablet-2) {
-      border-bottom: none;
-    }
-  }
-
-  &__cell {
-    border-left: 2px solid $charcoal;
-
-    @media (max-width: $width-tablet-2) {
-      border-right: 2px solid $charcoal;
-    }
-  }
-  
-  &__head,
-  &__cell {
-    text-align: center;
-    padding: 16px;
-
-    @media (max-width: $width-tablet-2) {
-      width: 50%;
-    }
-  }
-
-  $colors: (
-    'blue': $blue,
-    // 'teal': $teal,
-    'purple': $purple,
-    // 'jambonz': $jambonz
-  );
-
-  @each $name, $color in $colors {
-    &--#{$name} {
-      .table__row {
-        border-top-color: $color;
-        border-bottom-color: $color;
-
-        &:last-child {
-          .table__head {
-            border-right-color: $color;
-          }
-
-          .table__cell {
-            border-right-color: $color;
-          }
-        }
-      }
-
-      .table__head {
-        border-bottom-color: $color;
-        border-left-color: $color;
-      }
-
-      .table__cell {
-        border-left-color: $color;
-
-        @media (max-width: $width-tablet-2) {
-          border-right-color: $color;
-        }
-      }
     }
   }
 }

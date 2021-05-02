@@ -1,62 +1,24 @@
 import { nanoid } from 'nanoid';
 
 import Layout from '../components/layout';
-import { Hero, Icon, Button, H2, H5, H6, P, M, MS } from '../components/jambonz-ui';
+import { Hero, Icon, Button, H2, H6, P, normalizeSubtext } from '../components/jambonz-ui';
 import { getData } from '../lib/data';
 
-function Touts({data}) {
+function Structure({data}) {
   return (
-    <section className="bg-pink touts">
-      <div className="wrap touts__wrap">
-        {data.map((tout) => {
-          return (
-            <div key={nanoid()} className="touts__item">
-              <Icon name={tout.icon} style="fill" subStyle={tout.color} />
-              <P>{tout.text}</P>
-            </div>
-          );
-        })}
+    <section className="structure">
+      <div className="wrap structure__text">
+        <>
+          {normalizeSubtext(data.text).map((text) => {
+            return <H6 key={nanoid()}>{text}</H6>;
+          })}
+        </>
       </div>
-    </section>
-  );
-}
-
-function Tiers({ data }) {
-  return (
-    <section className="tiers pad">
-      <div className="wrap tiers__wrap">
-        {data.tiers.map((tier) => {
-          return (
-            <div key={nanoid()} className="tiers__item">
-              <H5><strong className={`color--${tier.color}`}>{tier.title}</strong></H5>
-              <M>{tier.text}</M>
-              {tier.table && (
-                <div className={`table table--${tier.color} tiers__table`}>
-                  {tier.table.head.map((headText, index) => {
-                    const cellText = tier.table.body[index];
-
-                    return (
-                      <div key={nanoid()} className="table__row">
-                        <div className="table__head">
-                          <MS>{headText}</MS>
-                        </div>
-                        <div className="table__cell">
-                          <MS>{cellText}</MS>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-      <div className="wrap tiers__cta">
-        <H6>{data.text}</H6>
-        <Button href={`${data.url}?subject=Additional Services Support`} target="_blank" style="pill" subStyle="jambonz">
-          <Icon name={data.icon} />
-          <span>{data.cta}</span>
+      <div className="wrap structure__cta">
+        <P>{data.cta.text}</P>
+        <Button href={`${data.cta.url}?subject=Additional Services Support`} target="_blank" style="pill" subStyle="jambonz">
+          <Icon name={data.cta.icon} />
+          <span>{data.cta.cta}</span>
         </Button>
       </div>
     </section>
@@ -65,7 +27,7 @@ function Tiers({ data }) {
 
 function Services({data}) {
   return (
-    <section className="bg-grey services pad">
+    <section className="bg-pink services pad">
       <div className="wrap services__wrap">
         <div className="services__headline">
           <H2>{data.headline}</H2>
@@ -100,8 +62,7 @@ export default function Pricing({ data }) {
   return (
     <Layout siteData={data.site}>
       <Hero data={data.pricing.hero} subStyle="pricing" />
-      <Touts data={data.pricing.touts} />
-      <Tiers data={data.pricing.structure} />
+      <Structure data={data.pricing.structure} />
       <Services data={data.pricing.additional} />
     </Layout>
   );
