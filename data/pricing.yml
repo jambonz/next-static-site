@@ -1,67 +1,15 @@
 hero:
-  headline: Simple, capacity-based pricing.
-  subtext:
-    - There are no per-minute charges.
-    - "You choose the application processing capacity that you need and pay a monthly fee based on:"
-touts:
-  -
-    icon: PhoneCall
-    color: purple
-    text: The number of simultaneous call sessions that you want to be able to support.
-  -
-    icon: Phone
-    color: teal
-    text: The number of SIP devices you want to be online/registered.
-  -
-    icon: Activity
-    color: blue
-    text: The rate at which you want to be able to send API requests to our servers.
+  headline: Simple, capacity based pricing.
+  subtext: Choose the number of concurrent calls you want to handle, and pay $12 per call session MRC.
 structure:
-  tiers:
-    -
-      title: Registered Devices
-      text: simple, flat $1 per registered device (per month)
-      color: teal
-    -
-      title: Simultaneous Call Sessions
-      text: cost per session for simultaneous call sessions
-      color: purple
-      table:
-        head:
-          - $10/session
-          - $9/session
-          - $8/session
-          - $7/session
-          - $6/session
-          - $5/session
-        body:
-          - 1-20 sessions
-          - 21-50 sessions
-          - 51-100 sessions
-          - 101-250 sessions
-          - 251-500 sessions
-          - 500+ sessions
-    -
-      title: API Rate Limits
-      text: flat cost for API requests per minute
-      color: blue
-      table:
-        head:
-          - Free
-          - $5
-          - $10
-          - $20
-          - $40
-        body:
-          - 1-10/min
-          - 11-30/min
-          - 31-60/min
-          - 61-120/min
-          - 121-300/min
-  text: Have special pricing needs or large volumes?
-  cta: Contact us
-  icon: Send
-  url: mailto:support@jambonz.org
+  text:
+    - Oh, and with that you can register 5 x the number of devices - so if you purchased 100 sessions you can also register up to 500 devices.
+    - (Need more devices?  Add them to your monthly subscription at $1/device)
+  cta:
+    text: Have special pricing needs or large volumes?
+    cta: Contact us
+    icon: Send
+    url: mailto:support@jambonz.org
 additional:
   headline: Additional Services
   services:
