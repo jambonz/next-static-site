@@ -1,6 +1,6 @@
 hero:
   headline: Simple, capacity based pricing.
-  subtext: Choose the number of concurrent calls you want to handle, and pay $12 per call session MRC.
+  subtext: Choose the number of concurrent calls you need to support, and pay $12/call session on our hosted platform (MRC).
 structure:
   text:
     - Oh, and with that you can register 5 x the number of devices - so if you purchased 100 sessions you can also register up to 500 devices.
@@ -15,16 +15,16 @@ additional:
   services:
     -
       title: Static IP
-      text: Static IP address assigned only to you, to be used for routing your calls to carriers and devices.
+      text: A static IP address assigned only to you, to be used for routing your SIP traffic from carriers.
     -
       title: Microsoft Teams Direct Routing
       text: Ability to route PSTN calls to and from your MS teams clients.
     -
       title: Dedicated SBC
-      text: A private session border controller handling only your traffic, along with a grafana dashboard to let your NOC folks monitor your traffic in real-time.
+      text: A private session border controller handling only your traffic, along with grafana dashboards to provide real-time traffic monitoring.
     -
       title: Professional Services
-      text: Commission us to help build your voice applications, or to set up and manage a jambonz cluster on your own infrastructure.
-  cta: Contact us to get started
+      text: Take advantage of our expertise!  We offer on-call support plans to manage and install your self-hosted jambonz systems, as well as custom application development services. 
+  cta: Contact us to learn more
   icon: Send
   url: mailto:support@jambonz.org

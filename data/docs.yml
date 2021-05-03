@@ -67,6 +67,9 @@ navi:
       -
         path: applications
         title: Applications
+      -
+        path: calls
+        title: Calls
   -
     path: getting-started
     title: Getting Started

@@ -4,7 +4,7 @@ hero:
     - jambonz is the open source CPaaS 
     - built for communications service providers.
   cta: Sign up for free
-  url: https://jambonz.us
+  url: https://jambonz.us/register
 tech:
   image: /images/Jambonz_app_screenshot.png
   notes:
@@ -91,4 +91,4 @@ byo:
     - Cloud
   comment: Why pay someone to upcharge you for all of that when it’s basically a one-click experience to provision all of those yourself in today's world. You know how to <a href="https://jambonz.us" target="_blank">click</a>, right?
   cta: Get started for free
-  url: https://jambonz.us
+  url: https://jambonz.us/register
