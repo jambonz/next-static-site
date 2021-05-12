@@ -59,7 +59,7 @@ navi:
         title: transcribe
   -
     path: rest
-    title: API Reference
+    title: REST API
     pages:
       -
         path: overview
@@ -71,24 +71,18 @@ navi:
         path: calls
         title: Calls
   -
-    path: getting-started
-    title: Getting Started
+    path: client-sdks
+    title: Client SDKs
     pages:
       -
-        path: add-carrier
-        title: Add a Carrier
+        path: node-js-sdk
+        title: Node.js SDK
       -
-        path: add-speech
-        title: Add Speech Credentials
+        path: create-jambonz-app
+        title: create-jambonz-app
       -
-        path: add-application
-        title: Add an Application
-      -
-        path: add-phone-numbers
-        title: Add Phone Numbers
-      -
-        path: register-sip-client
-        title: Register SIP clients
+        path: node-red
+        title: Node-RED
   -
     path: tutorials
     title: Tutorials

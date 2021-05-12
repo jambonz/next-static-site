@@ -45,8 +45,8 @@ You can use the following options in the `lex` verb:
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| botID | Lex bot ID | yes |
-| botAliasId | Lex bot alias ID | yes |
+| botId | Lex bot ID | yes |
+| botAlias | Lex bot alias ID | yes |
 | credentials | AWS credentials | yes |
 | credentials.accessKey | AWS access key id | yes |
 | credentials.secretAccessKey | AWS secret access key id | yes |
