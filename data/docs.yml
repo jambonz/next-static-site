@@ -90,10 +90,3 @@ navi:
       -
         path: overview
         title: Overview
-  -
-    path: open-source
-    title: Open Source
-    pages:
-      -
-        path: overview
-        title: Overview
