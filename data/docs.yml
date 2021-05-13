@@ -75,7 +75,7 @@ navi:
     title: Client SDKs
     pages:
       -
-        path: node-js-sdk
+        path: nodejs-sdk
         title: Node.js SDK
       -
         path: create-jambonz-app
@@ -88,5 +88,14 @@ navi:
     title: Tutorials
     pages:
       -
-        path: overview
-        title: Overview
+        path: getting-started
+        title: Getting started
+      -
+        path: voxbone
+        title: Using Voxbone as a Carrier
+      -
+        path: simwood
+        title: Using Simwood as a Carrier
+      -
+        path: nodejs-sdk
+        title: Introduction to the Node.js SDK
