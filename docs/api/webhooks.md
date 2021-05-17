@@ -137,7 +137,7 @@ The last is interesting and worthy of further comment.  The intent is to let you
   {
     "verb": "say",
     "earlyMedia": true,
-    "text": "Please call back later, we are currently at lunch"
+    "text": "Please call back later, we are currently at lunch",
     "synthesizer": {
       "vendor": "aws",
       "language": "en-US",
@@ -155,6 +155,56 @@ The last is interesting and worthy of further comment.  The intent is to let you
 ```
 - The say, play, gather, listen, and transcribe verbs all support the "earlyMedia" property.  
 - The dial verb supports a similar feature of not answering the inbound call unless/until the dialed call is answered via the "answerOnBridge" property.
+
+## Authenticating SIP clients
+
+jambonz allows SIP clients such as softphones, SIP phones, and webrtc clients to register with the platform and make and receive calls.
+
+Managing sip registrations is a shared activity between the platform and your application, and uses webhooks.  The platform handles the sip messaging details, but the determination of whether to authenticate a specific sip user is the responsibility of the application, which is notified of incoming REGISTER or INVITE requests by means of a registration webhook.
+
+When the platform receives an incoming sip request from an endpoint that is not a carrier SIP trunk, the request is challenged with a 401 Unauthorized response that includes a WWW-Authenticate header.  When the originating sip device then resends the request with credentials (e.g. an Authorization header) the sip domain is used to retrieve the account information for the account that is associated with that domain.  Then, the associated registration webhook is invoked with the details provided in the Authorization header, e.g.:
+
+```
+{
+  "method": "REGISTER",
+  "realm": "example.com",
+  "username": "foo",
+  "expires": 3600,
+  "nonce": "InFriVGWVoKeCckYrTx7wg==",
+  "uri": "sip:example.com",
+  "algorithm": "MD5",
+  "qop": "auth",
+  "cnonce": "03d8d2aafd5a975f2b07dc90fe5f4100",
+  "nc": "00000001",
+  "response": "db7b7dbec7edc0c427c1708031f67cc6"
+}
+```
+The application's responsibility is to retrieve the password associated with the username, and perform [digest authentication](https://tools.ietf.org/html/rfc2617) to authenticate the request using the information provided, including the calculated response value.
+
+Regardless of whether the request is authenticated or not, the application should respond with a 200 OK to the http POST and with a JSON body.
+
+The JSON body in the response if the request is authenticated should simply contain a `status` attribute with a value of `ok`, e.g.:
+```
+{
+  "status": "ok"
+}
+```
+
+If the application wishes to enforce a shorter expires value, it may include that value in the response, e.g.:
+```
+{
+  "status": "ok",
+  "expires": 1800
+}
+```
+
+The JSON body in the response if the request is _not_ authentication should contain a status of `fail`, and optionally a `msg` attribute, e.g.
+```
+{
+  "status": "fail",
+  "msg" : "invalid password"
+}
+```
 
 ## Speech integration
 The platform makes use of text-to-speech as well as real-time speech recognition.  Both Google and AWS are supported for text to speech (TTS) as well as speech to text (STT). 

@@ -99,3 +99,13 @@ navi:
       -
         path: nodejs-sdk
         title: Introduction to the Node.js SDK
+  -
+    path: open-source
+    title: Open source
+    pages:
+      -
+        path: aws
+        title: Deploying on AWS
+      -
+        path: self-host
+        title: Deploying on bare metal or other hosting providers
