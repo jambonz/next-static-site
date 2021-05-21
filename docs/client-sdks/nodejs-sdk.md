@@ -4,7 +4,9 @@ The jambonz Node.js SDK is one of the simplest and most powerful ways to build j
 
 The video below provides a walk-through of how to create an application using the [create-jambonz-app](/docs/client-sdks/create-jambonz-app) utility, and then gives examples of building various webhooks applications that include collecting speech or dtmf input as well as integration with Google [Dialogflow](https://developers.google.com/learn/pathways/chatbots-dialogflow) and AWS [Lex V2](https://aws.amazon.com/blogs/aws/amazon-lex-enhanced-console-experience/).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/42jcqyvCstU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-wrap">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/42jcqyvCstU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 #### Up and running
 As mentioned above, the [create-jambonz-app](/docs/client-sdks/create-jambonz-app) will scaffold you an [express](https://expressjs.com/)-based app that provides a great starting point.
