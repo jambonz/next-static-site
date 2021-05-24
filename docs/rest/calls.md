@@ -19,7 +19,7 @@ Content-Type: application/json
   "from": "+15083728299",
   "to": {
     "type": "phone",
-    "name": "+16172375089"
+    "number": "+16172375089"
   },
   "tag": {
     "accountCode": "288fe284"
