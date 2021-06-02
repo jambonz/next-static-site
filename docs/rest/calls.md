@@ -8,7 +8,7 @@ Calls are created from the REST API by sending an HTTP POST request. A successfu
 
 An example is shown below:
 ```bash
-POST /v1/Accounts/fef61e75-cec3-496c-a7bc-8368e4d02a04/Calls HTTP/1.1
+POST https://jambonz.us/v1/Accounts/fef61e75-cec3-496c-a7bc-8368e4d02a04/Calls HTTP/1.1
 Content-Length: 175
 Accept: application/json
 Authorization: Bearer 9404e5f7-9a77-4bcc-b0fa-5665ace28ab3

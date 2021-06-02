@@ -64,12 +64,6 @@ navi:
       -
         path: overview
         title: Overview
-      -
-        path: applications
-        title: Applications
-      -
-        path: calls
-        title: Calls
   -
     path: client-sdks
     title: Client SDKs
