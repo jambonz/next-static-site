@@ -50,7 +50,10 @@ function OS({data}) {
         </div>
         <div className="os__logo">
           <img src={data.logo} />
-          <iframe src="https://github.com/sponsors/drachtio/button" title="Sponsor drachtio" height="35" width="116" border="0"></iframe>
+          <Button href="https://github.com/sponsors/drachtio/" target="_blank" style="pill" subStyle="jambonz">
+            <Icon name="Heart" />
+            <span>Sponsor</span>
+          </Button>
         </div>
         <div className="os__cta">
           <Button href={data.url} subStyle="dark" target="_blank">{data.cta}</Button>
