@@ -31,12 +31,12 @@ export function useMobileMedia() {
   useEffect(() => {
     const mql = window.matchMedia(mobileMedia);
 
-    mql.addListener(handleMedia);
+    mql.addEventListener('change', handleMedia);
 
     setMobile(mql.matches);
 
     return function cleanup() {
-      mql.removeListener(handleMedia);
+      mql.removeEventListener('change', handleMedia);
     };
   }, [handleMedia, setMobile]);
 
