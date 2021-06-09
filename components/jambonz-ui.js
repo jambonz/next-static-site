@@ -19,9 +19,13 @@ export function normalizeSlug(key) {
   return String(key.toLowerCase()).split(' ').join('-');
 }
 
-// Normalize how we listen for mobile media queries
-export function useMobileMedia() {
-  const mobileMedia = '(max-width: 768px)';
+// Normalize how we listen for media queries
+// Intentionally `null` default value -- will throw Error
+export function useMatchMedia(mediaQuery = null) {
+  if (!mediaQuery) {
+    throw new Error(`Jambonz UI "useMatchMedia" requires valid Media Query: ${mediaQuery} was passed.`);
+  }
+
   const [mobile, setMobile] = useState(false);
 
   const handleMedia = (e) => {
@@ -29,7 +33,7 @@ export function useMobileMedia() {
   };
 
   useEffect(() => {
-    const mql = window.matchMedia(mobileMedia);
+    const mql = window.matchMedia(mediaQuery);
 
     mql.addEventListener('change', handleMedia);
 
@@ -41,6 +45,11 @@ export function useMobileMedia() {
   }, [handleMedia, setMobile]);
 
   return mobile;
+}
+
+// Normalize for our mobile media query
+export function useMobileMedia() {
+  return useMatchMedia('(max-width: 768px)');
 }
 
 export function H1({ children }) {
