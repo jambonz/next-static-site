@@ -18,6 +18,7 @@
     "classnames": "^2.2.6",
     "nanoid": "^3.1.22",
     "next": "^10.0.8-canary.9",
+    "preact": "^10.5.13",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

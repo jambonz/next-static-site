@@ -5,6 +5,10 @@ jambonz
 
 ![](/public/jambonz.png)
 
+## Stack
+
+This is a [Next.js](https://nextjs.org) application using [Preact](https://preactjs.com/) for Production builds which reduces JavaScript payload sizes by more than half for deployments! We're using a model that only uses Preact when generating the Production builds from this article [here](https://darrenwhite.dev/blog/nextjs-replace-react-with-preact).
+
 ## Deploy targets
 
 This app can easily be deployed to multiple targets including Vercel, Netlify or AWS+circleci.
