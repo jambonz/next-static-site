@@ -57,7 +57,7 @@ function Sidebar({data}) {
               </div>
               <ul className={classNames(subClasses)}>
                 {item.pages.map((page) => {
-                  const isActiveItem = (parsedPath === page.path);
+                  const isActiveItem = (parsedPath === page.path && parsedTab === item.path) && isActiveToggle;
                   const itemClasses = {
                     'ms': true,
                     'active': isActiveItem,
