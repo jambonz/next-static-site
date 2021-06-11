@@ -7,14 +7,14 @@ jambonz
 
 ## Stack
 
-This is a [Next.js](https://nextjs.org) application using [Preact](https://preactjs.com/) for Production builds which reduces JavaScript payload sizes by more than half for deployments! We're using a model that only uses Preact when generating the Production builds from this article [here](https://darrenwhite.dev/blog/nextjs-replace-react-with-preact).
+- [Next.js](https://nextjs.org)
+- [Preact](https://preactjs.com/)
 
-## Deploy targets
+## Deploy target(s)
 
-This app can easily be deployed to multiple targets including Vercel, Netlify or AWS+circleci.
+This app is currently deploying on [Vercel](https://vercel.com).
 
-- Vercel
-  - [jambonz.vercel.app](https://jambonz.vercel.app)
+- [jambonz.vercel.app](https://jambonz.vercel.app)
 
 ## Dev start
 
@@ -27,7 +27,7 @@ Clone this repository and install [yarn](https://yarnpkg.com/getting-started/ins
 - `yarn install`
   - Installs node packages
   - Installs [husky](https://typicode.github.io/husky/) for git `pre-commit` hooks
-  - Husky will run `yarn lint` before a git commit and stop the commit if `ESLint` fails
+  - Husky will run `yarn build` before a git commit and stop the commit if `lint` or `build` fails
 - `yarn dev`
   - Serves local dev at [localhost:3000](http://localhost:3000)
 - `yarn lint`
@@ -44,7 +44,7 @@ Other packages being used prominently in this apps source code are [classnames](
 
 This app is being composed in the manor of `module > component > element`, wherein a page is a module which is made up of components that are comprised of elements. We are using [Next.js](https://nextjs.org) [SASS](https://nextjs.org/learn/basics/assets-metadata-css/css-styling) located in the `styles` directory and loaded globally in [pages/_app.js](/pages/_app.js). A generally simple BEM CSS module naming convention is being used prominently. JS components are in the `components` directory. The `jambonz-ui` component library consists of reusable design element components.
 
-You can view examples of the Jambonz UI component elements on this page [here](https://jambonz.vercel.app/jambonz-ui).
+You can view examples of the Jambonz UI component elements on this page [here](https://jambonz.org/jambonz-ui).
 
 ### Jambonz Typography
 
@@ -58,4 +58,4 @@ We are using static data with [yamljs](https://www.npmjs.com/package/yamljs) and
 
 The project is generating developer docs from markdown files using static file JS utilities alongside Next.js static paths/props system. We are leveraging their [catch-all](https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes) dynamic routes logic located at `pages/docs/[[...slug]].js`. The markdown files are in the `docs` directory. The docs structure is controlled in the docs page YAML data located in `data/docs.yaml`. You can create docs markdown files at will in the `docs` directory but they will not render in the sidebar nav until they are also added to the nav structure in this file.
 
-We are using [remark](https://github.com/remarkjs/remark) & [remark-html](https://github.com/remarkjs/remark-html) as well as [gray-matter](https://github.com/jonschlinkert/gray-matter) for parsing the docs markdown files. Code syntax highlighting is done with [prismjs](https://prismjs.com) and the associative babel config is in the `.babelrc` file. It's important to leave the preset in this file that merges our config with `next/babel` so Next.js works properly.
+We are using [remark](https://github.com/remarkjs/remark), [remark-html](https://github.com/remarkjs/remark-html) and [remark-gfm](https://github.com/remarkjs/remark-gfm) as well as [gray-matter](https://github.com/jonschlinkert/gray-matter) for parsing the docs markdown files. Code syntax highlighting is done with [prismjs](https://prismjs.com) and the associative babel config is in the `.babelrc` file. It's important to leave the preset in this file that merges our config with `next/babel` so Next.js works properly.
