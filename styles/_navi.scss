@@ -98,10 +98,6 @@
       text-align: center;
       padding-top: 32px;
 
-      li {
-        margin-top: 16px;
-      }
-
       .navi__link {
         color: $white;
         font-size: $h6-size;
@@ -110,8 +106,24 @@
       }
     }
 
+    &__links {
+      .navi__link {
+        padding: 4px 0;
+        margin: 12px 0;
+        display: inline-block;
+
+        &.active {
+          border-bottom: 2px solid $white;
+        }
+      }
+    }
+
     &__footer {
       padding-top: 48px;
+
+      li {
+        margin-top: 16px;
+      }
 
       .navi__link {
         font-size: $m-size;
