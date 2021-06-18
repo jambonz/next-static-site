@@ -23,7 +23,7 @@
 
   &__links {
     transform: translateY(-4px);
-    font-family: 'objectivitymedium';
+    font-family: $font-medium;
   }
 
   &__link {
@@ -105,7 +105,7 @@
       .navi__link {
         color: $white;
         font-size: $h6-size;
-        font-family: 'objectivitymedium';
+        font-family: $font-medium;
         margin: 0;
       }
     }
@@ -115,7 +115,7 @@
 
       .navi__link {
         font-size: $m-size;
-        font-family: 'objectivityregular';
+        font-family: $font-regular;
       }
     }
 

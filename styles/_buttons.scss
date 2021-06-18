@@ -19,7 +19,7 @@
   // }
 
   &--login {
-    font-family: 'objectivitymedium';
+    font-family: $font-medium;
     font-size: $ms-size;
     background-color: transparent;
     border: 2px solid $jambonz;
@@ -60,7 +60,7 @@
   }
 
   &--pill {
-    font-family: 'objectivityregular';
+    font-family: $font-regular;
     background-color: transparent;
     border: 2px solid $charcoal;
     color: $charcoal;
