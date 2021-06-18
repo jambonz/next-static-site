@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: 'objectivityregular';
+  font-family: $font-regular;
   letter-spacing: -0.02px;
   color: $charcoal;
 }
@@ -64,7 +64,7 @@ strong {
 }
 
 em {
-  font-family: 'objectivityregular_slanted';
+  font-family: $font-regular-italic;
 }
 
 .h1, h1 {

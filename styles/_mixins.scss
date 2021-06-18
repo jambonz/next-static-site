@@ -2,19 +2,19 @@
  * Mixins
 *******************************************************************************/
 @mixin font-bold() {
-  font-family: 'objectivitybold';
+  font-family: $font-bold;
   font-weight: normal;
 
   em {
-    font-family: 'objectivitybold_slanted';
+    font-family: $font-bold-italic;
   }
 }
 
 @mixin font-medium() {
-  font-family: 'objectivitymedium';
+  font-family: $font-medium;
 
   em {
-    font-family: 'objectivitymedium_slanted';
+    font-family: $font-medium-italic;
   }
 }
 
