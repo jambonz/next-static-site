@@ -113,24 +113,24 @@ export default function JambonzUI({ data }) {
           </div>
           <div className="pad">
             <div className="icons">
-              <Icon style="fill" name="Server" />
-              <Icon style="fill" name="Folder" />
-              <Icon style="fill" name="Cloud" />
-              <Icon style="fill" name="Layers" />
-              <Icon style="fill" name="UserCheck" />
-              <Icon style="fill" name="Lock" />
-              <Icon style="fill" name="ThumbsUp" />
-              <Icon style="fill" subStyle="purple" name="Phone" />
-              <Icon style="fill" subStyle="teal" name="PhoneCall" />
-              <Icon style="fill" subStyle="blue" name="Activity" />
-              <Icon style="pill" name="Heart" />
+              <Icon mainStyle="fill" name="Server" />
+              <Icon mainStyle="fill" name="Folder" />
+              <Icon mainStyle="fill" name="Cloud" />
+              <Icon mainStyle="fill" name="Layers" />
+              <Icon mainStyle="fill" name="UserCheck" />
+              <Icon mainStyle="fill" name="Lock" />
+              <Icon mainStyle="fill" name="ThumbsUp" />
+              <Icon mainStyle="fill" subStyle="purple" name="Phone" />
+              <Icon mainStyle="fill" subStyle="teal" name="PhoneCall" />
+              <Icon mainStyle="fill" subStyle="blue" name="Activity" />
+              <Icon mainStyle="pill" name="Heart" />
             </div>
           </div>
           <div className="pad">
             <img src="/svg/drachtio.svg" width="128" />
           </div>
           <div className="pad">
-            <Button href="#" style="login">Log In</Button>
+            <Button href="#" mainStyle="login">Log In</Button>
           </div>
           <div className="btns pad">
             <Button href="#">Button</Button>
@@ -142,17 +142,17 @@ export default function JambonzUI({ data }) {
             <Button href="#" subStyle="blue">styles...</Button>
           </div>
           <div className="btns pad">
-            <Button href="https://github.com/jambonz" target="_blank" style="pill">
+            <Button href="https://github.com/jambonz" target="_blank" mainStyle="pill">
               <Icon name="GitHub" />
               <span>github.com/jambonz</span>
             </Button>
-            <Button href="https://github.com/drachtio" target="_blank" style="pill">
+            <Button href="https://github.com/drachtio" target="_blank" mainStyle="pill">
               <Icon name="GitHub" />
               <span>github.com/drachtio</span>
             </Button>
           </div>
           <div className="pad">
-            <Button href="#" style="pill" subStyle="jambonz">
+            <Button href="#" mainStyle="pill" subStyle="jambonz">
               <Icon name="Send" />
               <span>Contact us to get started</span>
             </Button>

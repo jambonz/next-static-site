@@ -62,10 +62,8 @@ function Dilemma({data}) {
         </div>
         <div className="dilemma__subtext">
           <H5>
-            {normalizeSubtext(data.subtext).map((subtext) => {
-              {/* Use dangerouslySetInnerHTML to render inline spans from YAML data */}
-              return <div key={nanoid()} dangerouslySetInnerHTML={{ __html: subtext }} />;
-            })}
+            {/* Use dangerouslySetInnerHTML to render inline spans from YAML data */}
+            {normalizeSubtext(data.subtext).map((subtext) => <div key={nanoid()} dangerouslySetInnerHTML={{ __html: subtext }} />)}
           </H5>
         </div>
         <div className="dilemma__tables">
@@ -130,7 +128,7 @@ function BYO({data}) {
         </div>
         <div className="byo__icons icons">
           {data.icons.map((icon) => {
-            return <Icon key={nanoid()} name={icon} style="fill" />;
+            return <Icon key={nanoid()} name={icon} mainStyle="fill" />;
           })}
         </div>
         <div className="byo__comment">

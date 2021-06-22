@@ -12,7 +12,7 @@ function Facts({data}) {
           {data.map((fact) => {
             return (
               <div key={nanoid()} className="facts__item">
-                <Icon name={fact.icon} style="fill" />
+                <Icon name={fact.icon} mainStyle="fill" />
                 <div className="facts__text">
                   <H5><strong>{fact.title}</strong></H5>
                   <P>{fact.text}</P>
@@ -41,7 +41,7 @@ function OS({data}) {
         <div className="btns os__btns">
           {data.buttons.map((button) => {
             return (
-              <Button key={nanoid()} href={button.url} target="_blank" style="pill">
+              <Button key={nanoid()} href={button.url} target="_blank" mainStyle="pill">
                 <Icon name={button.icon} />
                 <span>{button.text}</span>
               </Button>
@@ -50,7 +50,7 @@ function OS({data}) {
         </div>
         <div className="os__logo">
           <img src={data.logo} />
-          <Button href="https://github.com/sponsors/drachtio/" target="_blank" style="pill" subStyle="jambonz">
+          <Button href="https://github.com/sponsors/drachtio/" target="_blank" mainStyle="pill" subStyle="jambonz">
             <Icon name="Heart" />
             <span>Sponsor</span>
           </Button>
