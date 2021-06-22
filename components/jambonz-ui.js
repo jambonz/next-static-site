@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import * as Icons from 'react-feather';
 import { nanoid } from 'nanoid';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import Link from 'next/link';
 
@@ -28,9 +28,9 @@ export function useMatchMedia(mediaQuery = null) {
 
   const [mobile, setMobile] = useState(false);
 
-  const handleMedia = (e) => {
+  const handleMedia = useCallback((e) => {
     setMobile(e.matches);
-  };
+  }, [setMobile]);
 
   useEffect(() => {
     const mql = window.matchMedia(mediaQuery);
@@ -42,7 +42,7 @@ export function useMatchMedia(mediaQuery = null) {
     return function cleanup() {
       mql.removeEventListener('change', handleMedia);
     };
-  }, [handleMedia, setMobile]);
+  }, [handleMedia, setMobile, mediaQuery]);
 
   return mobile;
 }
@@ -126,14 +126,14 @@ export function Hero({ data, subStyle }) {
 }
 
 // Extra {props} get passed to the <a> element
-export function Button({ children, href, style = 'fill', subStyle = null, ...props }) {
+export function Button({ children, href, mainStyle = 'fill', subStyle = null, ...props }) {
   const classes = {
     'btn': true,
-    [`btn--${style}`]: true,
+    [`btn--${mainStyle}`]: true,
   };
 
   if (subStyle) {
-    classes[`btn--${style}--${subStyle}`] = true;
+    classes[`btn--${mainStyle}--${subStyle}`] = true;
   }
 
   return (
@@ -146,15 +146,15 @@ export function Button({ children, href, style = 'fill', subStyle = null, ...pro
 // Extra {props} get passed to the feather Component
 // See react-feather for all 286 icons available
 // https://github.com/feathericons/react-feather
-export function Icon({ name, style = 'inline', subStyle = null, ...props }) {
+export function Icon({ name, mainStyle = 'inline', subStyle = null, ...props }) {
   const Component = Icons[name];
   const classes = {
     'icon': true,
-    [`icon--${style}`]: true,
+    [`icon--${mainStyle}`]: true,
   };
 
   if (subStyle) {
-    classes[`icon--${style}--${subStyle}`] = true;
+    classes[`icon--${mainStyle}--${subStyle}`] = true;
   }
 
   if (!Component) {
@@ -162,7 +162,7 @@ export function Icon({ name, style = 'inline', subStyle = null, ...props }) {
   }
 
   // Stylized icon
-  if (style !== 'inline') {
+  if (mainStyle !== 'inline') {
     return (
       <div className={classNames(classes)}>
         <Component {...props} />
