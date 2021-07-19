@@ -92,6 +92,33 @@ export function MXS({ children }) {
   return <div className="mxs">{children}</div>;
 }
 
+export function Latest({ data }) {
+  const classes = {
+    'latest': true,
+    [`latest--${data.label}`]: true,
+    'pad': true,
+    'bg-pink': true,
+  };
+
+  return (
+    <section className={classNames(classes)}>
+      <div className="wrap latest__wrap">
+        <div className="latest__headline">
+          <H2>{data.headline}</H2>
+        </div>
+        <div className="latest__subtext">
+          <H5>
+            {/* Use dangerouslySetInnerHTML to render inline links from YAML data */}
+            {normalizeSubtext(data.subtext).map((subtext) => {
+              return <div key={nanoid()} dangerouslySetInnerHTML={{ __html: subtext }} />;
+            })}
+          </H5>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function Hero({ data, subStyle }) {
   const classes = {
     'hero': true,

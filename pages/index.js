@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useState, useEffect, useRef } from 'react';
 
 import Layout from '../components/layout';
-import { Hero, Icon, Button, H6, H5, H2, P, MS, normalizeSubtext, normalizeSlug, useMobileMedia } from '../components/jambonz-ui';
+import { Latest, Hero, Icon, Button, H6, H5, H2, P, MS, normalizeSubtext, normalizeSlug, useMobileMedia } from '../components/jambonz-ui';
 import { getData } from '../lib/data';
 
 function Tech({data}) {
@@ -146,8 +146,11 @@ function BYO({data}) {
 }
 
 export default function Home({ data }) {
+  const latest = data.home.latest.find((item) => item.active);
+
   return (
     <Layout siteData={data.site}>
+      {latest && <Latest data={latest} />}
       <Hero data={data.home.hero} subStyle="home" />
       <Tech data={data.home.tech} />
       <Dilemma data={data.home.dilemma} />

@@ -1,3 +1,7 @@
+banner:
+  active: true
+  text: jambonz now available on AWS Marketplace
+  link: https://aws.amazon.com/marketplace/pp/prodview-7lmody7uv2sye
 navi:
   home:
     link: /
