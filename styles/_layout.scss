@@ -43,6 +43,9 @@
   color: $white;
   background: $jambonz;
   font-family: $font-medium;
+  position: sticky;
+  top: 0;
+  z-index: $navi-index + 1;
 }
 
 .latest {
