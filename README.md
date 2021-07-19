@@ -3,6 +3,8 @@ jambonz
 
 > The "bring your own everything" CPaaS
 
+[![CI](https://github.com/jambonz/next-static-site/actions/workflows/main.yml/badge.svg)](https://github.com/jambonz/next-static-site/actions/workflows/main.yml)
+
 ![](/public/jambonz.png)
 
 ## Stack
@@ -36,7 +38,9 @@ Clone this repository and install [yarn](https://yarnpkg.com/getting-started/ins
 - `yarn build && yarn start`
   - Create an optimized Next.js production build and serve it locally
 - `yarn build && yarn export`
-  - Create a static production build for any static deploy target 
+  - Create a static production export for any static deploy target 
+- `yarn build && yarn export && yarn test`
+  - Create a static production export and run [Cypress](https://docs.cypress.io) tests against it
 
 Other packages being used prominently in this apps source code are [classnames](https://www.npmjs.com/package/classnames) and [nanoid](https://www.npmjs.com/package/nanoid#react).
 

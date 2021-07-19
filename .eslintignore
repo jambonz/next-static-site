@@ -2,3 +2,4 @@
 **/out/*
 **/.next/*
 next.config.js
+**/cypress/*
