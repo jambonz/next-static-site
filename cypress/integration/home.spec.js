@@ -5,8 +5,8 @@ describe('Home page', () => {
   });
 
   it('Has latest', () => {
-    cy.get('@home').then((home) => {
-      const latest = home.latest.find((item) => item.active);
+    cy.get('@site').then((site) => {
+      const latest = site.latest.find((item) => item.active);
 
       if (latest) {
         cy.visit('../../out/index.html');
