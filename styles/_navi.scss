@@ -3,6 +3,10 @@
   position: relative;
   z-index: $navi-index;
 
+  @media (max-width: $width-tablet-2) {
+    z-index: $navi-index + 2;
+  }
+
   // Menu / X icons for mobile nav interactions
   .icon {
     width: $icon-size-3;
