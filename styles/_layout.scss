@@ -46,6 +46,10 @@
   position: sticky;
   top: 0;
   z-index: $navi-index + 1;
+
+  @media (max-width: $width-mobile) {
+    @include mxs();
+  }
 }
 
 .latest {
@@ -53,10 +57,10 @@
 
   &--tadhack {
     .latest__headline {
-      max-width: 960px;
+      max-width: 840px;
 
       @media (max-width: $width-tablet-1) {
-        max-width: 860px;
+        max-width: 760px;
       }
     }
 
@@ -96,6 +100,10 @@
 
 .hero {
   text-align: center;
+
+  &--home {
+    padding-bottom: 64px;
+  }
 
   &--why {
     .hero__subtext {
