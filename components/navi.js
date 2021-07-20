@@ -71,6 +71,11 @@ function NaviMobile({ active, handler, siteData }) {
 export default function Navi({ siteData }) {
   const [active, setActive] = useState(false);
   const mobile = useMobileMedia();
+  const classes = {
+    navi: true,
+    mobile,
+    active,
+  };
 
   const handleNavi = () => {
     setActive(!active);
@@ -82,7 +87,7 @@ export default function Navi({ siteData }) {
   }
 
   return (
-    <nav className="navi">
+    <nav className={classNames(classes)}>
       <div className="wrap navi__wrap">
         <Link href="/">
           <a className="navi__logo">

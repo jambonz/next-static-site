@@ -3,7 +3,7 @@
   position: relative;
   z-index: $navi-index;
 
-  @media (max-width: $width-tablet-2) {
+  &.mobile.active {
     z-index: $navi-index + 2;
   }
 
