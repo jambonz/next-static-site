@@ -1,5 +1,3 @@
-$font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-
 .text__layout {
   max-width: $width-tablet-2;
   width: 100%;
@@ -9,7 +7,11 @@ $font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     max-width: 100%;
   }
 
-  > div {
+  &__wrap {
+    > :first-child {
+      margin-top: 0;
+    }
+
     h1 {
       @include h2();
     }
@@ -22,10 +24,14 @@ $font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
       @include ms();
     }
 
-    > blockquote > p {
-      font-family: $font-regular-italic;
-      border-left: inset;
-      padding-left: 10px;
+    > blockquote {
+      padding-left: 16px;
+
+      > p {
+        font-family: $font-regular-italic;
+        border-left: 3px solid $jambonz;
+        padding-left: 10px;
+      }
     }
 
     > h1, > h2, > h3, > h4, > h5, > h6, > p, > div, > ul, > ol, > table, > blockquote {
@@ -47,11 +53,7 @@ $font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     }
 
     > ul {
-      padding-left: 48px;
-
-      @media (max-width: $width-tablet-1) {
-        padding-left: 32px;
-      }
+      padding-left: 32px;
 
       li {
         list-style-type: disc;
@@ -92,9 +94,5 @@ $font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
       font-family: $font-mono;
       font-size: 13px;
     }
-  }
-
-  > div > :first-child {
-    margin-top: 0;
   }
 }

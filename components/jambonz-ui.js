@@ -204,7 +204,7 @@ export function Icon({ name, mainStyle = 'inline', subStyle = null, ...props }) 
 export function TextLayout({ data }) {
   return (
     <div className="text__layout">
-      <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+      <div className="text__layout__wrap" dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
     </div>
   );
 }
