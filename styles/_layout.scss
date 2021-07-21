@@ -62,10 +62,18 @@
       @media (max-width: $width-tablet-1) {
         max-width: 760px;
       }
+
+      @media (max-width: 400px) {
+        max-width: 330px;
+      }
     }
 
     .latest__subtext {
       max-width: 740px;
+
+      @media (max-width: 400px) {
+        max-width: 300px;
+      }
 
       div {
         @media (max-width: $width-small) {
