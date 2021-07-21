@@ -37,6 +37,9 @@ navi:
     -
       label: Pricing
       link: /pricing/
+    -
+      label: Open Source
+      link: /open-source/
 footer:
   email: support@jambonz.org
   links:

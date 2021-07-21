@@ -49,7 +49,7 @@ export function useMatchMedia(mediaQuery = null) {
 
 // Normalize for our mobile media query
 export function useMobileMedia() {
-  return useMatchMedia('(max-width: 768px)');
+  return useMatchMedia('(max-width: 896px)');
 }
 
 export function H1({ children }) {

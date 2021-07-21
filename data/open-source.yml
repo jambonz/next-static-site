@@ -1,0 +1,18 @@
+root:
+  link: /open-source/
+  label: Open Source
+navi:
+  -
+    path: commitment
+    title: Our commitment
+    pages:
+      -
+        path: overview
+        title: Overview
+  -
+    path: install
+    title: How to install
+    pages:
+      -
+        path: overview
+        title: Overview

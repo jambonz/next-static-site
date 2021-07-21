@@ -47,7 +47,7 @@
 
   &__links,
   &__login {
-    @media (max-width: $width-tablet-2) {
+    .mobile & {
       display: none;
     }
   }
@@ -61,7 +61,7 @@
       transform: translateY(-5px);
     }
 
-    @media (max-width: $width-tablet-2) {
+    .mobile & {
       display: block;
     }
   }
@@ -138,6 +138,11 @@
     &__support {
       text-align: center;
       padding: 32px 0;
+
+      // Force mobile padding size on button
+      .btn {
+        padding: 18px 46px;
+      }
     }
   }
 }
