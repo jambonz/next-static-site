@@ -11,10 +11,10 @@ function NaviItem({obj}) {
   const router = useRouter();
   const rSlash = /^\/|\/$/g;
   const cleanLink = obj.link.replace(rSlash, '');
-  const cleanPath = router.asPath.replace(rSlash, '');
+  const cleanPath = router.asPath.replace(rSlash, '').split('/')[0];
   const classes = {
     navi__link: true,
-    active: cleanLink === cleanPath,
+    active: cleanLink && cleanLink === cleanPath,
   };
 
   return (
