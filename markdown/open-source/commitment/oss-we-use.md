@@ -20,13 +20,14 @@ Building an application like jambonz requires curating a selection of the best o
 | <a href="https://redis.io/" target="_blank">Redis</a> | key-value store | <a href="https://redis.io/topics/license" target="_blank">3-clause BSD</a> |
 | <a href="https://github.com/sipcapture" target="_blank">Homer (optional)</a> | SIP capture | <a href="https://github.com/sipcapture/homer/blob/homer7/LICENSE" target="_blank">AGPL v3.0</a><span style="vertical-align: super; color: #da1c5c; font-size: 80%">*</span> |
 | <a href="https://www.postgresql.org" target="_blank">Postgresl (optional)</a> | homer database | <a href="https://www.postgresql.org/about/licence/" target="_blank">PostgreSQL License</a> |
+| <a href="https://grafana.com/" target="_blank">Grafana (optional)</a> | Monitoring dashboard | <a href="https://github.com/grafana/grafana/blob/main/LICENSE" target="_blank">AGPL v3.0</a> |
 
 <p><span style="vertical-align: super; color: #da1c5c">*</span> Note that:</p>
 <p>
 <ol style="font-size: 80%; margin-left: 10px">
-<li>When using Homer with the AGPL v3 license, any changes that you make to the jambonz source code <strong>are not</strong> considered a "covered work" under the homer license, as the two programs are not linked.  <br/>TLDR: any changes you make to jambonz source code remain under the more permissive MIT license.</li>
+<li>When using Homer (or Grafana) with the AGPL v3 license, any changes that you make to the jambonz source code <strong>are not</strong> considered a "covered work" by that license, as the two programs are not linked.  <br/>TLDR: any changes you make to jambonz source code remain under the more permissive MIT license.</li>
 <li><a href="https://qxip.net/" target="_blank">QXIP</a>, the creator of Homer and the <a href="https://github.com/sipcapture/HEP" target="_blank">HEP protocol</a>, also offer a non-GPL option (<a href="https://hepic.tel" target="_blank">HEPIC</a>) that is specifically designed for the needs of large-scale telcos and Communications Service Providers.  We highly recommend it to those who need a carrier-class monitoring and SIP capture solution.</li>
-<li>If, after reading the above, you (or the company you work for) are still scared off by the AGPL v3 license, and are not interested in <a href="https://hepic.tel" target="_blank">HEPIC</a> (have you checked it out?), then know that Homer is not a required component of jambonz: simply don't install it or remove it.
+<li>If, after reading the above, you (or the company you work for) are still scared off by the AGPL v3 license, and are not interested in <a href="https://hepic.tel" target="_blank">HEPIC</a> (have you checked it out?), then know that neither Homer nor Grafana are required components of jambonz: simply don't install them, or remove if already installed.
 </li>
 </ol>
 </p>
