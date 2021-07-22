@@ -3,6 +3,8 @@ jambonz
 
 > The "bring your own everything" CPaaS
 
+[![CI](https://github.com/jambonz/next-static-site/actions/workflows/main.yml/badge.svg)](https://github.com/jambonz/next-static-site/actions/workflows/main.yml)
+
 ![](/public/jambonz.png)
 
 ## Stack
@@ -36,9 +38,26 @@ Clone this repository and install [yarn](https://yarnpkg.com/getting-started/ins
 - `yarn build && yarn start`
   - Create an optimized Next.js production build and serve it locally
 - `yarn build && yarn export`
-  - Create a static production build for any static deploy target 
+  - Create a static production export for any static deploy target
 
-Other packages being used prominently in this apps source code are [classnames](https://www.npmjs.com/package/classnames) and [nanoid](https://www.npmjs.com/package/nanoid#react).
+### Testing
+
+*Note cypress test suite is still a work in progress*
+
+You can run e2e tests for the site using [Cypress](https://docs.cypress.io). Cypress specs rely on running the Next.js site on port `3000` as the baseUrl so the best way to test locally is to `yarn dev` in one shell and then `yarn test` in another shell. Optionally, you can `yarn build && yarn start` to create an optimized production server locally and in another shell run `yarn test`. The GitHub workflow for this repository runs the Cypress tests by building and then starting Next.js in the background like `yarn build && (yarn start&) > /dev/null` and then `yarn test`.
+
+Cypress specs are located at `cypress/integration/...`. The source of truth static YAML data should always be used when authoring Cypress tests so we've implemented a script that generates `JSON` data fixtures for Cypress from the YAML data before tests are run. When running `yarn test` what happens is:
+
+* A `pretest` script runs and generates the JSON fixtures for Cypress
+* The Cypress tests are run in headless mode
+* A `posttest` script runs and performs cleanup on the Cypress fixtures
+
+### Packages
+
+Packages being used prominently in this apps source code are:
+
+* [classnames](https://www.npmjs.com/package/classnames)
+* [nanoid](https://www.npmjs.com/package/nanoid#react)
 
 ## Jambonz UI library
 
@@ -54,8 +73,8 @@ You should always use the reusable components from the `jambonz-ui` component li
 
 We are using static data with [yamljs](https://www.npmjs.com/package/yamljs) and [Next.js static props](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation). Data files are located in the `data` directory. There's a JS data utility in `lib/data.js` that provides a method for "fetching" the static data for use with a Next.js pages async `getStaticProps` SSR method.
 
-## Jambonz developer docs
+## Jambonz markdown data
 
-The project is generating developer docs from markdown files using static file JS utilities alongside Next.js static paths/props system. We are leveraging their [catch-all](https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes) dynamic routes logic located at `pages/docs/[[...slug]].js`. The markdown files are in the `docs` directory. The docs structure is controlled in the docs page YAML data located in `data/docs.yaml`. You can create docs markdown files at will in the `docs` directory but they will not render in the sidebar nav until they are also added to the nav structure in this file.
+The project is generating some dynamic layouts with markdown files using static file JS utilities alongside Next.js static paths/props system. We are leveraging their [catch-all](https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes) dynamic routes logic. Example located at `pages/docs/[[...slug]].js`. The markdown files are in the `markdown` directory organized by subfolders. The markdown navigation structure is controlled in the relevant page YAML data located in the `data` directory for each `markdown` subfolder. You can create markdown files at will but they will not render in the sidebar nav until they are also added to the nav structure in the relevant `data` file. For example, the markdown files for the developer docs are located at `markdown/docs/...` and the YAML data for this layout is located at `data/docs.yml`.
 
 We are using [remark](https://github.com/remarkjs/remark), [remark-html](https://github.com/remarkjs/remark-html) and [remark-gfm](https://github.com/remarkjs/remark-gfm) as well as [gray-matter](https://github.com/jonschlinkert/gray-matter) for parsing the docs markdown files. Code syntax highlighting is done with [prismjs](https://prismjs.com) and the associative babel config is in the `.babelrc` file. It's important to leave the preset in this file that merges our config with `next/babel` so Next.js works properly.

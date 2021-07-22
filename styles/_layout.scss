@@ -34,8 +34,84 @@
 /******************************************************************************
  * Above the fold
 *******************************************************************************/
+.banner {
+  @include flex-cols();
+  @include ms();
+  justify-content: center;
+  width: 100%;
+  height: 32px;
+  color: $white;
+  background: $jambonz;
+  font-family: $font-medium;
+  position: sticky;
+  top: 0;
+  z-index: $navi-index + 1;
+
+  @media (max-width: $width-mobile) {
+    @include mxs();
+  }
+}
+
+.latest {
+  text-align: center;
+
+  &--tadhack {
+    .latest__headline {
+      max-width: 840px;
+
+      @media (max-width: $width-tablet-1) {
+        max-width: 760px;
+      }
+
+      @media (max-width: 400px) {
+        max-width: 330px;
+      }
+    }
+
+    .latest__subtext {
+      max-width: 740px;
+
+      @media (max-width: 400px) {
+        max-width: 300px;
+      }
+
+      div {
+        @media (max-width: $width-small) {
+          display: inline;
+        }
+      }
+
+      div:last-child {
+        @media (max-width: $width-small) {
+          padding-left: 6px;
+        }
+      }
+    }
+  }
+
+  &__wrap {
+    @include flex-cols();
+  }
+
+  &__headline {
+    color: $jambonz;
+  }
+
+  &__subtext {
+    margin-top: 16px;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
 .hero {
   text-align: center;
+
+  &--home {
+    padding-bottom: 64px;
+  }
 
   &--why {
     .hero__subtext {
@@ -80,7 +156,7 @@
 }
 
 /******************************************************************************
- * Fluid video embeds
+ * Classes for extra markdown styling
 *******************************************************************************/
 .video-wrap {
   position: relative;
@@ -93,4 +169,9 @@
     left: 0;
     top: 0;
   }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
 }

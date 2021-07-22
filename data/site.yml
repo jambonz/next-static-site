@@ -1,3 +1,25 @@
+banner:
+  active: true
+  text: jambonz now available on AWS Marketplace
+  link: https://aws.amazon.com/marketplace/pp/prodview-7lmody7uv2sye
+latest:
+  -
+    active: true
+    label: tadhack
+    headline: jambonz is a proud sponsor of TADHACK 2021 in Orlando!
+    subtext:
+      - Sign up <a href="https://jambonz.us/register" target="_blank">here</a> for your free development account,
+      - and <a href="https://www.telecomsxchange.com/jambonz" target="_blank">visit our partner TelecomXChange</a> for $20 free credit!
+  -
+    active: false
+    label: econnect
+    headline: jambonz will be at Enterprise Connect 2021
+    subtext: Ping us at <a href="mailto:sales@jambonz.org" target="_blank">sales@jambonz.org</a> to set up a meeting!
+  -
+    active: false
+    label: aws
+    headline: jambonz now available on AWS Marketplace
+    subtext: <a href="https://aws.amazon.com/marketplace/pp/prodview-7lmody7uv2sye" target="_blank">Deploy jambonz</a> with AWS CloudFormation today!
 navi:
   home:
     link: /
@@ -15,6 +37,9 @@ navi:
     -
       label: Pricing
       link: /pricing/
+    -
+      label: Open Source
+      link: /open-source/
 footer:
   email: support@jambonz.org
   links:

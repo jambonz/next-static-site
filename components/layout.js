@@ -1,7 +1,16 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 import Navi from './navi';
 import Footer from './footer';
+
+function Banner({ data }) {
+  return (
+    <Link href={data.link}>
+      <a target="_blank" className="banner">{data.text}</a>
+    </Link>
+  );
+}
 
 export default function Layout({ children, siteData, title = 'jambonz' }) {
   return (
@@ -23,6 +32,7 @@ export default function Layout({ children, siteData, title = 'jambonz' }) {
         */}
         <link rel="manifest" href="/manifest.json" />
       </Head>
+      {siteData.banner && siteData.banner.active && <Banner data={siteData.banner} />}
       <Navi siteData={siteData} />
       <main className="main">
         {children}

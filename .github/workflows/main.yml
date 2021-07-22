@@ -1,0 +1,25 @@
+name: github
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  test:
+    environment: Production
+    # Available tools on this machine:
+    # https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-README.md
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup and Install
+        run: yarn install
+      - name: Build and Start Next.js
+        run: yarn build && (yarn start&) > /dev/null
+      - name: Run Tests
+        run: yarn test

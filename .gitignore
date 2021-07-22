@@ -36,3 +36,10 @@ packages
 
 # jambonz...
 /.notes
+
+# cypress
+/cypress/*
+!/cypress/integration
+!/cypress/plugins
+!/cypress/support
+!/cypress/scripts

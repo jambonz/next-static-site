@@ -1,0 +1,27 @@
+root:
+  link: /open-source/
+  label: Open Source
+navi:
+  -
+    path: commitment
+    title: Our commitment
+    pages:
+      -
+        path: oss-we-make
+        title: Open source we make
+      -
+        path: oss-we-use
+        title: Open source we use
+      -
+        path: oss-contributions
+        title: How we contribute
+      -
+        path: your-contributions
+        title: How you contribute
+  -
+    path: install
+    title: How to install
+    pages:
+      -
+        path: overview
+        title: Overview

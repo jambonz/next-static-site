@@ -10,6 +10,9 @@
     "prebuild": "yarn lint",
     "build": "next build",
     "export": "next export",
+    "pretest": "node cypress/scripts/fixtures.js",
+    "test": "cypress run --headless --browser chrome",
+    "posttest": "rm -rf cypress/fixtures",
     "lint": "eslint components pages lib --ext js"
   },
   "author": "Jambonz Developers",
@@ -27,6 +30,7 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "babel-plugin-prismjs": "^2.0.1",
+    "cypress": "^7.7.0",
     "env-cmd": "^10.1.0",
     "eslint": "^7.26.0",
     "eslint-config-react-app": "^6.0.0",

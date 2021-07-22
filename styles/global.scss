@@ -39,6 +39,7 @@
 *******************************************************************************/
 @import 'layout.scss';
 @import 'text-layout.scss';
+@import 'markdown.scss';
 
 /******************************************************************************
  * Navi
@@ -56,5 +57,4 @@
 @import 'pages/home.scss';
 @import 'pages/why.scss';
 @import 'pages/pricing.scss';
-@import 'pages/docs.scss';
 @import 'pages/jambonz-ui.scss';
