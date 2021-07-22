@@ -50,6 +50,13 @@
   @media (max-width: $width-mobile) {
     @include mxs();
   }
+
+  // Effects .navi @see _navi.scss
+  & + .navi {
+    .navi__mobile {
+      padding-top: 32px;
+    }
+  }
 }
 
 .latest {
