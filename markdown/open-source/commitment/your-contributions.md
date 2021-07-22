@@ -15,7 +15,7 @@ All of these can be really helpful in moving the project forward.
 
 There are also several easy ways you can provide direct financial support to the project:
 
-- <a href="mailto:support@jambonz.org?subject=Hey,%20I'd%20like%20to%20discuss%20a%20project%20with%20you!">Hire us for services</a>: our business model is providing services around jambonz and drachtio, and we are available to assist customers with jambonz deployments as well custom development of VoIP applications.
+- <a href="mailto:support@jambonz.org?subject=Hey,%20I'd%20like%20to%20discuss%20a%20project%20with%20you!">Hire us for services</a>: our business model is providing services around jambonz and drachtio, and we are available to assist customers with jambonz deployments as well as custom development of VoIP applications.
 - Sign up for a monthly subscription on [jambonz.us](https://jambonz.us) - you get a hosted jambonz account while supporting the project.
 - Use our [AWS Marketplace offering](https://aws.amazon.com/marketplace/pp/prodview-7lmody7uv2sye) to build your own cluster on AWS.
 - [Sponsor us on Github](https://github.com/sponsors/drachtio/).
