@@ -9,7 +9,7 @@ describe('Home page', () => {
       const latest = site.latest.find((item) => item.active);
 
       if (latest) {
-        cy.visit('../../out/index.html');
+        cy.visit('/');
         cy.get('.latest__headline h2')
           .contains(latest.headline);
       }
@@ -19,7 +19,7 @@ describe('Home page', () => {
   it('Has banner', () => {
     cy.get('@site').then((site) => {
       if (site.banner && site.banner.active) {
-        cy.visit('../../out/index.html');
+        cy.visit('/');
         cy.get('.banner')
           .contains(site.banner.text)
           .should('have.attr', 'href', site.banner.link);

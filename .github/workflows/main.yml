@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup and Install
         run: yarn install
-      - name: Build Next.js
-        run: yarn build && yarn export
+      - name: Build and Start Next.js
+        run: yarn build && (yarn start&) > /dev/null
       - name: Run Tests
         run: yarn test

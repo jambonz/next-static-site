@@ -12,7 +12,7 @@
     "export": "next export",
     "pretest": "node cypress/scripts/fixtures.js",
     "test": "cypress run --headless --browser chrome",
-    "posttest": "rm -rf cypress/fixtures out",
+    "posttest": "rm -rf cypress/fixtures",
     "lint": "eslint components pages lib --ext js"
   },
   "author": "Jambonz Developers",
