@@ -20,6 +20,10 @@
       @include h3();
     }
 
+    sup {
+      color: $jambonz;
+    }
+
     > p, > blockquote > p {
       @include ms();
     }

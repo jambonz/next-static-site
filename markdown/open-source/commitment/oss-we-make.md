@@ -1,12 +1,12 @@
 # Open source that we make
 
-We<span style="vertical-align: super; color: #da1c5c">*</span> make [jambonz](https://jambonz.org), a communication platform-as-a-service (CPaaS) designed for use by service providers.
+We<sup>*</sup> make [jambonz](https://jambonz.org), a communication platform-as-a-service (CPaaS) designed for use by service providers.
 
 We also make <a href="https://drachtio.org" target="_blank">drachtio</a>, a programmable [SIP]() server.  drachtio is one of the main open source components that is used in jambonz.
 
 We release both jambonz and drachtio under the <a href="https://github.com/jambonz/jambonz-feature-server/blob/main/LICENSE" target="_blank">MIT License</a>.
 
-<p><span style="vertical-align: super; color: #da1c5c">*</span><span style="font-size: 80%">We = Drachtio Communications Services, LLC.</span></p>
+<span class="mxs"><sup>*</sup>We = Drachtio Communications Services, LLC.</span>
 
 <div id="why-mit"></div>
 
