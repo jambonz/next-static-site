@@ -1,6 +1,6 @@
 # Our philosophy
 
-We're proud to offer jambonz in open-source format, available at no cost to our users and with very few restrictions.  Open source efforts have historically been a big driver of innovation in the real-time communications (RTC) industry, and we take pride in continuing that effort.
+We're proud to offer jambonz in open-source format, available at no cost to our users and with very few restrictions.  Open source software has driven many of the innovations in the real-time communications (RTC) industry, and we take pride in continuing that effort.
 
 We believe that the use and delivery of open source in RTC should be treated as an ecosystem; that is:
 - It is an environment where everyone that participates has responsibilities.
