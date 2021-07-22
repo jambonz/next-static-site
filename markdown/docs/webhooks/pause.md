@@ -14,7 +14,7 @@ You can use the following options in the `pause` action:
 | ------------- |-------------| -----|
 | length | number of seconds to wait before continuing the app | yes |
 
-<p>
-<a href="/docs/webhooks/listen" style="float: left;">Prev: listen</a>
-<a href="/docs/webhooks/play" style="float: right;">Next: play</a>
+<p class="flex">
+<a href="/docs/webhooks/listen">Prev: listen</a>
+<a href="/docs/webhooks/play">Next: play</a>
 </p>

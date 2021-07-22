@@ -16,7 +16,7 @@ You can use the following options in the `play` action:
 | loop | number of times to play the url(s) | no (default: 1) |
 | earlyMedia | if true and the call has not yet been answered, play the audio without answering call.  Defaults to false | no |
 
-<p>
-<a href="/docs/webhooks/pause" style="float: left;">Prev: pause</a>
-<a href="/docs/webhooks/redirect" style="float: right;">Next: redirect</a>
+<p class="flex">
+<a href="/docs/webhooks/pause">Prev: pause</a>
+<a href="/docs/webhooks/redirect">Next: redirect</a>
 </p>

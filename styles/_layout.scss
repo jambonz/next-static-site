@@ -156,7 +156,7 @@
 }
 
 /******************************************************************************
- * Fluid video embeds
+ * Classes for extra markdown styling
 *******************************************************************************/
 .video-wrap {
   position: relative;
@@ -169,4 +169,9 @@
     left: 0;
     top: 0;
   }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
 }

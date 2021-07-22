@@ -29,6 +29,7 @@ You can use the following options in the `transcribe` command:
 
 > **Note**: the `dualChannel` property is not currently implemented.
 
-<p>
-<a href="/docs/webhooks/tag" style="float: left;">Prev: tag</a>
+<p class="flex">
+<a href="/docs/webhooks/tag">Prev: tag</a>
+<span>&nbsp;</span>
 </p>

@@ -27,7 +27,7 @@ The *actionHook* webhook will contain a `dequeueResult` property indicating the 
 - 'timeout' - no call appeared in the named queue during the timeout interval
 - 'error' - a system error of some kind occurred
 
-<p>
-<a href="/docs/webhooks/conference" style="float: left;">Prev: conference</a>
-<a href="/docs/webhooks/dial" style="float: right;">Next: dial</a>
+<p class="flex">
+<a href="/docs/webhooks/conference">Prev: conference</a>
+<a href="/docs/webhooks/dial">Next: dial</a>
 </p>

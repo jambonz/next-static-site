@@ -75,7 +75,7 @@ The *eventHook* webhook will contain two parameters: `event` and `data`.  The `e
 - `stop-play`: an audio segment returned from Lex or TTS completing playing
 - `play-interrupted`: an audio segment was interrupted
 
-<p>
-<a href="/docs/webhooks/leave" style="float: left;">Prev: leave</a>
-<a href="/docs/webhooks/listen" style="float: right;">Next: listen</a>
+<p class="flex">
+<a href="/docs/webhooks/leave">Prev: leave</a>
+<a href="/docs/webhooks/listen">Next: listen</a>
 </p>

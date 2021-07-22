@@ -41,7 +41,7 @@ You can use the following options in the `listen` action:
 | wsAuth.username | HTTP basic auth username to use on websocket connection | no |
 | wsAuth.password | HTTP basic auth password to use on websocket connection | no |
 
-<p>
-<a href="/docs/webhooks/lex" style="float: left;">Prev: lex</a>
-<a href="/docs/webhooks/pause" style="float: right;">Next: pause</a>
+<p class="flex">
+<a href="/docs/webhooks/lex">Prev: lex</a>
+<a href="/docs/webhooks/pause">Next: pause</a>
 </p>

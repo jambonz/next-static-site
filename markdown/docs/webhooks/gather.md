@@ -62,7 +62,7 @@ In the case of digits input, the payload will simple include a `digits` property
 
 Note: the `partialResultCallback` web callback should not return content; any returned content will be discarded.
 
-<p>
-<a href="/docs/webhooks/enqueue" style="float: left;">Prev: enqueue</a>
-<a href="/docs/webhooks/hangup" style="float: right;">Next: hangup</a>
+<p class="flex">
+<a href="/docs/webhooks/enqueue">Prev: enqueue</a>
+<a href="/docs/webhooks/hangup">Next: hangup</a>
 </p>

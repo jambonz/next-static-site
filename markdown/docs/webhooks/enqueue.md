@@ -35,7 +35,7 @@ The *waitHook* webhook will contain the following additional parameters:
 - `queueTime`: the current number of seconds the call has spent in queue
 - `queueSize`: the current number of calls in the queue
 
-<p>
-<a href="/docs/webhooks/dialogflow" style="float: left;">Prev: dialogflow</a>
-<a href="/docs/webhooks/gather" style="float: right;">Next: gather</a>
+<p class="flex">
+<a href="/docs/webhooks/dialogflow">Prev: dialogflow</a>
+<a href="/docs/webhooks/gather">Next: gather</a>
 </p>

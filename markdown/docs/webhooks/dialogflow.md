@@ -82,7 +82,7 @@ if (evt.event === 'intent') {
 
 Please refer to [this tutorial](/tutorials/#dialogflow-part-2-adding-call-transfer-functionality) for a detailed example.
 
-<p>
-<a href="/docs/webhooks/dial" style="float: left;">Prev: dial</a>
-<a href="/docs/webhooks/enqueue" style="float: right;">Next: enqueue</a>
+<p class="flex">
+<a href="/docs/webhooks/dial">Prev: dial</a>
+<a href="/docs/webhooks/enqueue">Next: enqueue</a>
 </p>

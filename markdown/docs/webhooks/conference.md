@@ -44,7 +44,7 @@ Conference status webhooks will contain the following additional parameters:
 - members: the current number of members in the conference
 - duration: the current length of the conference in seconds
 
-<p>
-<a href="/docs/webhooks/overview" style="float: left;">Prev: Overview</a>
-<a href="/docs/webhooks/dequeue" style="float: right;">Next: dequeue</a>
+<p class="flex">
+<a href="/docs/webhooks/overview">Prev: Overview</a>
+<a href="/docs/webhooks/dequeue">Next: dequeue</a>
 </p>

@@ -50,7 +50,7 @@ You can use the following options in the `tag` command:
 | ------------- |-------------| -----|
 | data | a JSON object containing values to be saved and included in future action or call status notifications (HTTP POST only) for this call | yes |
 
-<p>
-<a href="/docs/webhooks/sip-decline" style="float: left;">Prev: sip:decline</a>
-<a href="/docs/webhooks/transcribe" style="float: right;">Next: transcribe</a>
+<p class="flex">
+<a href="/docs/webhooks/sip-decline">Prev: sip:decline</a>
+<a href="/docs/webhooks/transcribe">Next: transcribe</a>
 </p>

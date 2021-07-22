@@ -10,7 +10,7 @@ The `leave` verb transfers a call out of a queue.  The call then returns to the 
 
 There are no options for the `leave` verb.
 
-<p>
-<a href="/docs/webhooks/hangup" style="float: left;">Prev: hangup</a>
-<a href="/docs/webhooks/lex" style="float: right;">Next: lex</a>
+<p class="flex">
+<a href="/docs/webhooks/hangup">Prev: hangup</a>
+<a href="/docs/webhooks/lex">Next: lex</a>
 </p>

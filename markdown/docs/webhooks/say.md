@@ -25,7 +25,7 @@ You can use the following options in the `say` action:
 | loop | the number of times a text is to be repeated; 0 means repeat forever.  Defaults to 1. | no |
 | earlyMedia | if true and the call has not yet been answered, play the audio without answering call.  Defaults to false | no |
 
-<p>
-<a href="/docs/webhooks/redirect" style="float: left;">Prev: redirect</a>
-<a href="/docs/webhooks/sip-decline" style="float: right;">Next: sip:decline</a>
+<p class="flex">
+<a href="/docs/webhooks/redirect">Prev: redirect</a>
+<a href="/docs/webhooks/sip-decline">Next: sip:decline</a>
 </p>

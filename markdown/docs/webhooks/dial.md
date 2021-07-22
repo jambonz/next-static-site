@@ -119,7 +119,7 @@ The actionHook that is invoked when the dial command ends will include the follo
 | dial_sip_status | the sip status of the final response to the INVITE that was sent|
 
 
-<p>
-<a href="/docs/webhooks/dequeue" style="float: left;">Prev: dequeue</a>
-<a href="/docs/webhooks/dialogflow" style="float: right;">Next: dialogflow</a>
+<p class="flex">
+<a href="/docs/webhooks/dequeue">Prev: dequeue</a>
+<a href="/docs/webhooks/dialogflow">Next: dialogflow</a>
 </p>

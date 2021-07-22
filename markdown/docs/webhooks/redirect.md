@@ -15,7 +15,7 @@ You can use the following options in the `redirect` action:
 | ------------- |-------------| -----|
 | actionHook | URL of webhook to retrieve new application from.  | yes |
 
-<p>
-<a href="/docs/webhooks/play" style="float: left;">Prev: play</a>
-<a href="/docs/webhooks/say" style="float: right;">Next: say</a>
+<p class="flex">
+<a href="/docs/webhooks/play">Prev: play</a>
+<a href="/docs/webhooks/say">Next: say</a>
 </p>

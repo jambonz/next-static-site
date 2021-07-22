@@ -16,7 +16,7 @@ You can use the following options in the `hangup` action:
 | ------------- |-------------| -----|
 | headers | an object containing SIP headers to include in the BYE request | no |
 
-<p>
-<a href="/docs/webhooks/gather" style="float: left;">Prev: gather</a>
-<a href="/docs/webhooks/leave" style="float: right;">Next: leave</a>
+<p class="flex">
+<a href="/docs/webhooks/gather">Prev: gather</a>
+<a href="/docs/webhooks/leave">Next: leave</a>
 </p>

@@ -264,6 +264,7 @@ Alternatively, you can provide an object containing a url and optional method an
 ```
 In the sections that follow, we will describe each of the verbs in detail.
 
-<p>
-<a href="/docs/webhooks/conference" style="float: right;">Next: conference</a>
+<p class="flex">
+<span>&nbsp;</span>
+<a href="/docs/webhooks/conference">Next: conference</a>
 </p>

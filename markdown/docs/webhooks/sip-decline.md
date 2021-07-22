@@ -25,7 +25,7 @@ You can use the following options in the `sip:decline` action:
 | reason | a brief description | no (default: the well-known SIP reasons associated with the specified status code |
 | headers | SIP headers to include in the response | no
 
-<p>
-<a href="/docs/webhooks/say" style="float: left;">Prev: say</a>
-<a href="/docs/webhooks/tag" style="float: right;">Next: tag</a>
+<p class="flex">
+<a href="/docs/webhooks/say">Prev: say</a>
+<a href="/docs/webhooks/tag">Next: tag</a>
 </p>
