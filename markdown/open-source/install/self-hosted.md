@@ -1,4 +1,4 @@
-# Building a self-hosted solution
+# Building a self-hosted solution (not on AWS)
 
 If you are using your own hardware, or a hosting provider other than AWS, there is a little more elbow grease required.  Follow the instructions below to create a jambonz deployment consisting of one SBC and one Feature Server.  You will also be provisioning a mysql server and a redis server.
 

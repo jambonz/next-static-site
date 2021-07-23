@@ -11,7 +11,7 @@ Here are some easy (i.e. no cost) ways you can contribute:
 - Have coding skills (Node.js, React, Voip/SIP, or C++)? We'd love your help as a code contributor.
 - Evangelize.  Talk the project up to your friends and business contacts. Allow us to use your success stories in our marketing materials.
 
-All of these can be really helpful in moving a project forward.
+All of these things can be really helpful in moving a project forward.
 
 There are also several easy ways you can provide direct financial support to the project:
 
@@ -24,4 +24,6 @@ Finally, we encourage you to think about supporting open-source RTC projects mor
 
 In fact, we don't think you should think of supporting open-source in a purely symmetrical fashion - e.g., "I use project A, so I should figure out how to send money to project A".  
 
-We'd encourage you to think in a more asymmetric fashion. Supporting project A is great, but if you can't manage that, perhaps you can send some of your staff to an open-source conference this year, or maybe even provide sponsorship for one.  Or maybe you can allow project A to use your experience publicly as a success story on their web site.  The point is, there are many ways to support the overall ecosystem that you are now part of. All you need to do is care.
+We'd encourage you to think asymmetrically. Supporting project A is great, but if you can't manage that, perhaps you can send some of your staff to an open-source conference this year, or maybe even provide sponsorship for one.  Or maybe you can allow project A to use your experience publicly as a success story on their web site.  The point is, there are many ways to support the overall ecosystem that you are now a part of. 
+
+All **you** need to do, is care.
