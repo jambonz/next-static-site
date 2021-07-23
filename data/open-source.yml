@@ -23,5 +23,8 @@ navi:
     title: How to install
     pages:
       -
-        path: overview
-        title: Overview
+        path: aws
+        title: Installing on AWS
+      -
+        path: self-hosted
+        title: Installing elsewhere

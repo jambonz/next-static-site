@@ -11,7 +11,7 @@ We release both jambonz and drachtio under the <a href="https://github.com/jambo
 <div id="why-mit"></div>
 
 #### Why we chose the MIT License
-A few words might be in order on why we chose the MIT License, because we notice that quite often purveyors of "free as in beer" FOSS seem to be pictured by their user base as an austere sect of itinerant, karma-seeking monks who have taken a vow of poverty and wander the open source-scape doing saintly good deeds here and there - like providing free support, or adding any old feature that anyone thinks up, at any time, at no charge.  
+A few words might be in order on why we chose the MIT License, because we notice that sometimes consumers of "free as in beer" FOSS seem to picture the software providers as some sort of austere sect of itinerant, karma-seeking monks who have taken a vow of poverty and wander the open source landscape doing saintly good deeds here and there - like providing free support, or adding any old feature that anyone thinks up, at any time, at no charge.  
 
 And sometimes, the fact that software is provided at no cost seems to result in a sense on the part of the consumer (not all mind you, but some) that it must accordingly have little or no value.
 

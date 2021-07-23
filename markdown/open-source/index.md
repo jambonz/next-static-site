@@ -8,9 +8,9 @@ We believe that the use and delivery of open source in RTC should be treated as 
 
 The health of the RTC open source ecosystem, like any ecosystem, is inherently fragile and should not be taken for granted. 
 
-To that end, we believe that all companies in the RTC space that are engaged with open source -- both consumers and makers -- should provide an annual report summarizing their commitment to the open source ecosystem.  
+To that end, we believe that all companies in the RTC space that are engaged with open source -- both consumers and makers -- should provide a report summarizing their commitment to the open source ecosystem, on at least an annual basis.  
 
-As a point of comparison, many companies feel that they have a social mission responsibility and will report  on the actions they've taken to fulfill that responsibility apart and aside from their financial results. Our shared responsibility to the stewardship of the open source RTC ecosystem should be treated in the same manner.
+As a point of comparison, many companies feel that they have a social mission responsibility, and will report  on the actions they've taken to fulfill that responsibility apart and aside from their financial results. Our shared responsibility to the stewardship of the open source RTC ecosystem should be treated in the same respectful manner.
 
 On these pages you will find our own statement of commitment as well as instructions on how to install and use the open source.
 
