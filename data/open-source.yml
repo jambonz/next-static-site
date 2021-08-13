@@ -28,3 +28,6 @@ navi:
       -
         path: self-hosted
         title: Installing elsewhere
+      -
+        path: homer
+        title: Customizing Homer
