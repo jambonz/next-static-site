@@ -1,7 +1,7 @@
 banner:
   active: true
   text: jambonz now available on AWS Marketplace
-  link: https://aws.amazon.com/marketplace/pp/prodview-7lmody7uv2sye
+  link: https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo
 latest:
   -
     active: true
@@ -19,7 +19,7 @@ latest:
     active: false
     label: aws
     headline: jambonz now available on AWS Marketplace
-    subtext: <a href="https://aws.amazon.com/marketplace/pp/prodview-7lmody7uv2sye" target="_blank">Deploy jambonz</a> with AWS CloudFormation today!
+    subtext: <a href="https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo" target="_blank">Deploy jambonz</a> with AWS CloudFormation today!
 navi:
   home:
     link: /

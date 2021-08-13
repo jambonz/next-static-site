@@ -35,6 +35,8 @@ The *waitHook* webhook will contain the following additional parameters:
 - `queueTime`: the current number of seconds the call has spent in queue
 - `queueSize`: the current number of calls in the queue
 
+YOu can also optionally receive [queue webhook notifications](/docs/webhooks/queue-notifications) any time a members joins or leaves a queue.
+
 <p class="flex">
 <a href="/docs/webhooks/dialogflow">Prev: dialogflow</a>
 <a href="/docs/webhooks/gather">Next: gather</a>
