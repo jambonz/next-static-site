@@ -4,14 +4,14 @@ Homer is installed when you use either the AWS Marketplace or the terraform scri
 
 To do so, follow these steps:
 
-* Log into homer at http://<public-ip>:9080 using default username/password admin/sipcapture. (Note: it's a good idea to change the default password).
+* Log into the Homer GUI (listening on port 9080 by default) using default username/password admin/sipcapture. (Note: it's a good idea to change the default password after you log in for the first time).
 * Click Settings on the top nav, and then Mapping on the left-hand side nav.
 * On the row of the table with Profile = call, click the pencil icon on the right side of the row.
 * Replace the contents in the text edit box labeled "Correlation Mapping" with the content below, then click Save.
 
 After this, when yoiu download the pcap for an inbound call it will include the associated outbound call trace as well.
 
-Content to paste:
+Content to paste (copy text inclusive of square brackets below):
 ```
 [
     {
