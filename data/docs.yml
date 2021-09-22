@@ -99,3 +99,13 @@ navi:
       -
         path: nodejs-sdk
         title: Introduction to the Node.js SDK
+  -
+    path: release-notes
+    title: Release Notes
+    pages:
+      -
+        path: v0.6.6
+        title: v0.6.6
+      -
+        path: v0.6.5
+        title: v0.6.5
