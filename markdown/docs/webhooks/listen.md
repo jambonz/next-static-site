@@ -43,5 +43,5 @@ You can use the following options in the `listen` action:
 
 <p class="flex">
 <a href="/docs/webhooks/lex">Prev: lex</a>
-<a href="/docs/webhooks/pause">Next: pause</a>
+<a href="/docs/webhooks/message">Next: message</a>
 </p>
