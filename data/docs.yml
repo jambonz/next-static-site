@@ -40,11 +40,17 @@ navi:
         path: listen
         title: listen
       -
+        path: message
+        title: message
+      -
         path: pause
         title: pause
       -
         path: play
         title: play
+      -
+        path: rasa
+        title: rasa
       -
         path: redirect
         title: redirect

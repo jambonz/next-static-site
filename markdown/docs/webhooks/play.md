@@ -18,5 +18,5 @@ You can use the following options in the `play` action:
 
 <p class="flex">
 <a href="/docs/webhooks/pause">Prev: pause</a>
-<a href="/docs/webhooks/redirect">Next: redirect</a>
+<a href="/docs/webhooks/rasa">Next: rasa</a>
 </p>

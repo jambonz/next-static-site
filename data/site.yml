@@ -57,3 +57,7 @@ footer:
     -
       label: Terms of Service
       link: /terms/
+    -
+      label: Blog
+      link: https://blog.jambonz.org
+      open: true
