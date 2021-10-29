@@ -1,7 +1,7 @@
 banner:
   active: true
   text: View our presentation at ClueCon 2021! - "The case for an open-source CPaaS"
-  link: https://s3.amazonaws.com/jambonz-assets/Cluecon-2021-jambonz.pdf
+  link: https://bit.ly/3CrNAIc
 latest:
   -
     active: false
