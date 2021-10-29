@@ -16,10 +16,10 @@ latest:
       headline: jambonz will be at Enterprise Connect 2021
       subtext: Ping us at <a href="mailto:sales@jambonz.org" target="_blank">sales@jambonz.org</a> to set up a meeting!
   -
-    active: false
+    active: true
     label: aws
-    headline: jambonz now available on AWS Marketplace
-    subtext: <a href="https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo" target="_blank">Deploy jambonz</a> with AWS CloudFormation today!
+    headline: Are you looking to self-host your CPaaS? 
+    subtext: Deploy jambonz in seconds on AWS <a href="https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo" target="_blank">our CloudFormation script!</a>
 navi:
   home:
     link: /
