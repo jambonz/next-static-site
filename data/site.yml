@@ -19,7 +19,7 @@ latest:
     active: true
     label: aws
     headline: Are you looking to self-host your CPaaS? 
-    subtext: Deploy jambonz in seconds on AWS <a href="https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo" target="_blank">our CloudFormation script!</a>
+    subtext: Deploy jambonz in seconds on AWS using <a href="https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo" target="_blank">our CloudFormation script!</a>
 navi:
   home:
     link: /
