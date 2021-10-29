@@ -10,7 +10,7 @@ There are two supported methods for deploying a jambonz system in your AWS accou
 
 ##### AWS Marketplace
 
-You can deploy a single-server jambonz "mini" system on AWS in a snap by [clicking here](https://aws.amazon.com/marketplace/pp/prodview-7lmody7uv2sye).  This AMI is available in all AWS regions and is a great way to quickly stand up a low-cost jambonz system for testing or development purposes.
+You can deploy a single-server jambonz "mini" system on AWS in a snap by [clicking here](https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo?).  This AMI is available in all AWS regions and is a great way to quickly stand up a low-cost jambonz system for testing or development purposes.
 
 > Coming soon on AWS Marketplace: we will be offering additional jambonz subscriptions that are suited for a wider variety of deployments - alongside with the "mini" you will be able to choose from a small, medium, or large deployment (just like buying an ice cream cone!).
 
