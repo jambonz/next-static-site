@@ -61,18 +61,19 @@ Once a `playAudio` command has finished playing out the audio, a `playDone` json
 {
   "type": "playDone"
 }
-
+```
 A `killAudio` command can also be sent by the websocket server to stop the playout of audio that was started via a previous `playAudio` command:
 ```json
 {
   "type": "killAudio"
 }
-
+```
 And finally, if the websocket connection wishes to end the `listen`, it can send a `disconnect` command:
 ```json
 {
   "type": "disconnect"
 }
+```
 
 <p class="flex">
 <a href="/docs/webhooks/lex">Prev: lex</a>
