@@ -1,5 +1,5 @@
 # rasa
-> New in v0.6.6
+> Added in v0.6.6
 The `rasa` verb is used to connect a call to a [Rasa](https://rasa.com/) assistant.
 
 ```json

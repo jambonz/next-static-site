@@ -10,8 +10,6 @@ The listen verb can also be nested in a [dial](#dial) verb, which allows the aud
 
 To utilize the listen verb, the customer must implement a websocket server to receive and process the audio.  The endpoint should be prepared to accept websocket connections with a subprotocol name of 'audio.jambonz.org'.  
 
-The listen verb includes a **url** property which is the url of the remote websocket server to send the audio to. The url may be an absolute or relative URL. HTTP Basic Authentication can optionally be used to protect the websocket endpoint by using the **wsAuth** property.
-
 The format of the audio data sent over the websocket is 16-bit PCM encoding, with a user-specified sample rate.  The audio is sent in binary frames over the websocket connection.  
 
 Additionally, one text frame is sent immediately after the websocket connection is established.  This text frame contains a JSON string with all of the call attributes normally sent on an HTTP request (e.g. callSid, etc), plus **sampleRate** and **mixType** properties describing the audio sample rate and stream(s).  Additional metadata can also be added to this payload using the **metadata** property as described in the table below.  Once the intial text frame containing the metadata has been sent, the remote side should expect to receive only binary frames, containing audio.  The remote side is not expected to send any data back over the websocket.
@@ -40,6 +38,44 @@ You can use the following options in the `listen` action:
 | url | url of remote server to connect to | yes |
 | wsAuth.username | HTTP basic auth username to use on websocket connection | no |
 | wsAuth.password | HTTP basic auth password to use on websocket connection | no |
+
+<h4 id="#birectional_audio">Bidirectional audio</h4>
+
+Audio can also be sent back over the websocket to jambonz.  This audio, if supplied, will be played out to the caller.  (Note: Bidirectional audio is not supported when the `listen` is nested in the context of a `dial` verb).
+
+The far-end websocket server supplies bidirectional audio by sending a JSON text frame over the websocket connection:
+```json
+{
+  "type": "playAudio",
+  "data": {
+    "audioContent": "base64-encoded content..",
+    "audioContentType": "raw",
+    "sampleRate": "16000"
+  }
+}
+```
+In the example above, raw (headerless) audio is sent.  The audio must be 16-bit pcm encoded audio, with a configurable sample rate of either 8000, 16000, 24000, 32000, 48000, or 64000 khz.  Alternatively, a wave file format can be supplied by using type "wav" (or "wave"), and in this case no `sampleRate` property is needed.  In all cases, the audio must be base64 encoded when sent over the socket.
+
+If multiple playAudio commands are sent before the first has finished playing they will be queued and played in order. You may have up to 10 queued playAudio commands at any time.
+
+Once a `playAudio` command has finished playing out the audio, a `playDone` json text frame will be sent over the websocket connection:
+```json
+{
+  "type": "playDone"
+}
+```
+A `killAudio` command can also be sent by the websocket server to stop the playout of audio that was started via a previous `playAudio` command:
+```json
+{
+  "type": "killAudio"
+}
+```
+And finally, if the websocket connection wishes to end the `listen`, it can send a `disconnect` command:
+```json
+{
+  "type": "disconnect"
+}
+```
 
 <p class="flex">
 <a href="/docs/webhooks/lex">Prev: lex</a>

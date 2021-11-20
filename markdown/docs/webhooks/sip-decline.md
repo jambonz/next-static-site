@@ -27,5 +27,5 @@ You can use the following options in the `sip:decline` action:
 
 <p class="flex">
 <a href="/docs/webhooks/say">Prev: say</a>
-<a href="/docs/webhooks/tag">Next: tag</a>
+<a href="/docs/webhooks/sip-refer">Next: sip:refer</a>
 </p>
