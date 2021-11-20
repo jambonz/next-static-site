@@ -56,6 +56,8 @@ The far-end websocket server supplies bidirectional audio by sending a JSON text
 ```
 In the example above, raw (headerless) audio is sent.  The audio must be 16-bit pcm encoded audio, with a configurable sample rate of either 8000, 16000, 24000, 32000, 48000, or 64000 khz.  Alternatively, a wave file format can be supplied by using type "wav" (or "wave"), and in this case no `sampleRate` property is needed.  In all cases, the audio must be base64 encoded when sent over the socket.
 
+If multiple playAudio commands are sent before the first has finished playing they will be queued and played in order. You may have up to 10 queued playAudio commands at any time.
+
 Once a `playAudio` command has finished playing out the audio, a `playDone` json text frame will be sent over the websocket connection:
 ```json
 {
