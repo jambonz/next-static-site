@@ -1,5 +1,5 @@
 # sip:refer
-> Added in v0.6.7
+> Coming in v0.6.7
 
 The sip:refer action is used to blind transfer a call.  It will send a sip REFER to the far end carrier or sip phone, which must support the REFER in order for the transfer to work. After the sip:refer completes successfully, the call leg will have left the jambonz platform.
 
