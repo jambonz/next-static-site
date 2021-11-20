@@ -18,14 +18,12 @@ You can use the following options in the `say` action:
 | option        | description | required  |
 | ------------- |-------------| -----|
 | text | text to speak; may contain SSML tags | yes |
-| synthesizer.vendor | speech vendor to use: Google or aws (polly is also an alias for aws)| no |
+| synthesizer.vendor | speech vendor to use: <br>- 'google', <br>- 'aws', <br>- 'microsoft' (added v0.6.7)| no |
 | synthesizer.language | language code to use.  | no |
 | synthesizer.gender | (Google only) MALE, FEMALE, or NEUTRAL.  | no |
 | synthesizer.voice | voice to use.  Note that the voice list differs whether you are using aws or Google. Defaults to application setting, if provided. | no |
 | loop | the number of times a text is to be repeated; 0 means repeat forever.  Defaults to 1. | no |
 | earlyMedia | if true and the call has not yet been answered, play the audio without answering call.  Defaults to false | no |
-
-> Microsoft/Azure has been added as a synthesizer in v0.6.7 (vendor name 'microsoft')
 
 <p class="flex">
 <a href="/docs/webhooks/redirect">Prev: redirect</a>
