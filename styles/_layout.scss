@@ -36,19 +36,26 @@
 *******************************************************************************/
 .banner {
   @include flex-cols();
-  @include ms();
   justify-content: center;
   width: 100%;
   height: 32px;
-  color: $white;
   background: $jambonz;
-  font-family: $font-medium;
   position: sticky;
   top: 0;
   z-index: $navi-index + 1;
+  text-align: center;
 
-  @media (max-width: $width-mobile) {
-    @include mxs();
+  a {
+    @include ms();
+    color: $white;
+    font-family: $font-medium;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media (max-width: $width-mobile) {
+      @include mxs();
+    }
   }
 
   // Effects .navi @see _navi.scss
