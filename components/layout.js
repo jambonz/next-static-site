@@ -6,9 +6,11 @@ import Footer from './footer';
 
 function Banner({ data }) {
   return (
-    <Link href={data.link}>
-      <a target="_blank" className="banner">{data.text}</a>
-    </Link>
+    <div className="banner">
+      <Link href={data.link}>
+        <a target="_blank" className="wrap">{data.text}</a>
+      </Link>
+    </div>
   );
 }
 

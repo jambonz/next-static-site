@@ -11,10 +11,10 @@ latest:
       - Sign up <a href="https://jambonz.us/register" target="_blank">here</a> for your free development account,
       - and <a href="https://www.telecomsxchange.com/jambonz" target="_blank">visit our partner TelecomXChange</a> for $20 free credit!
   -
-      active: false
-      label: econnect
-      headline: jambonz will be at Enterprise Connect 2021
-      subtext: Ping us at <a href="mailto:sales@jambonz.org" target="_blank">sales@jambonz.org</a> to set up a meeting!
+    active: false
+    label: econnect
+    headline: jambonz will be at Enterprise Connect 2021
+    subtext: Ping us at <a href="mailto:sales@jambonz.org" target="_blank">sales@jambonz.org</a> to set up a meeting!
   -
     active: true
     label: aws
