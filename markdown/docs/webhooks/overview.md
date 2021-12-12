@@ -2,9 +2,11 @@
 
 jambonz uses JSON payloads that are exchanged in HTTP messages to control calls.  
 
-When an incoming call for your account is received, jambonz makes an HTTP request to a URL that you have configured and your response will contain a JSON body that indicates how you want the call handled.
+When an incoming call for your account is received, jambonz makes an HTTP request to a URL that you have configured and your webapp will then return a response containing a JSON body that indicates how you want the call handled.
 
-When you want to launch an outbound call it works similarly: you will make an HTTP request using the [REST API](/docs/api/rest) and in it you will specify a URL or application identifier that will be invoked once the call is answered.  Once again, your response to that HTTP request will contain a JSON body that indicates how you want the call handled.
+> You can develop your webapp using whatever language or framework you like, but the quickest way to scaffold up a webapp is by using our [Node.js framework](/docs/client-sdks/create-jambonz-app/.)
+
+If you want to generate an outbound call it works similarly: you will make an HTTP request using the [REST API](/docs/api/rest) and in it you will specify a URL or application identifier that will be invoked once the call is answered.  Once again, your response to that HTTP request will contain a JSON body that indicates how you want the call handled.
 
 Simple enough, right?
 

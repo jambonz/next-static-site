@@ -1,7 +1,7 @@
 banner:
   active: true
-  text: View our presentation at ClueCon 2021! - "The case for an open-source CPaaS"
-  link: https://bit.ly/3CrNAIc
+  text: Click here to install from AWS Marketplace
+  link: https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo
 latest:
   -
     active: false
@@ -16,7 +16,7 @@ latest:
     headline: jambonz will be at Enterprise Connect 2021
     subtext: Ping us at <a href="mailto:sales@jambonz.org" target="_blank">sales@jambonz.org</a> to set up a meeting!
   -
-    active: true
+    active: false
     label: aws
     headline: Are you looking to self-host your CPaaS? 
     subtext: Deploy jambonz in seconds on AWS using <a href="https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo" target="_blank">our CloudFormation script!</a>
@@ -32,7 +32,7 @@ navi:
       label: Why jambonz
       link: /why/
     -
-      label: For Developers
+      label: Docs
       link: /docs/
     -
       label: Pricing
