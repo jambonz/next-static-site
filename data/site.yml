@@ -1,6 +1,6 @@
 banner:
   active: true
-  text: Are you looking to self-host?  Click here to install from AWS Marketplace in seconds.
+  text: Looking to self-host?  Click to install from AWS Marketplace.
   link: https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo
 latest:
   -
