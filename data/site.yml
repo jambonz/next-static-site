@@ -1,7 +1,7 @@
 banner:
   active: true
-  text: Click here to install from AWS Marketplace
-  link: https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo
+  text: We are hiring!  Join us and get paid to work on jambonz and drachtio!
+  link: /docs/jobs/lead-dev
 latest:
   -
     active: false

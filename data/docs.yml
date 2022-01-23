@@ -121,3 +121,9 @@ navi:
       -
         path: v0.6.5
         title: v0.6.5
+  - path: jobs 
+    title: jobs 
+    pages: 
+      - 
+        path: lead-dev 
+        title: Lead Opensource Developer
