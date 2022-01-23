@@ -122,7 +122,7 @@ navi:
         path: v0.6.5
         title: v0.6.5
   - path: jobs 
-    title: jobs 
+    title: Jobs 
     pages: 
       - 
         path: lead-dev 
