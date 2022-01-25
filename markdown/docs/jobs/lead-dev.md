@@ -20,7 +20,7 @@ Part of joining a small team means that you will have diverse responsibilities, 
 
 Two key points to emphasize: 
 
-First, doing a lot of different things means you must be interested and eager to learn new thingsm - we don't expect you to know them all at the start. We need you to come with some skills, but more important to us is how quickly you can learn new things.
+First, doing a lot of different things means you must be interested and eager to learn new things - we don't expect you to know them all at the start. We need you to come with some skills, but more important to us is how quickly you can learn new things.
 
 Second: that "supporting customers" thing is key.  Our success follows that of our customers, so part of everyone's job is helping our customers win, and this can involve some amount of after-hour support in responding to critical production issues.
 
