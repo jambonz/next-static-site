@@ -8,20 +8,21 @@ The success of the these projects has enabled us to expand the team, and we are 
 
 **What you will do**
 
-Part of joining a small team is that you will have a lot of responsibility: 
+Part of joining a small team means that you will have diverse responsibilities, including: 
 - writing software (obviously), 
 - doing devops stuff (packaging, CI/CD, etc)
 - developing test automation
 - writing docs
 - helping to grow the open source communities involved with the projects,
+- helping drive the roadmap with your ideas,
 - supporting customers,
 - etc.
 
-Two key points to emphasize here: 
+Two key points to emphasize: 
 
 First, doing a lot of different things means you must be interested and eager to learn new thingsm - we don't expect you to know them all at the start. We need you to come with some skills, but more important to us is how quickly you can learn new things.
 
-And second, that "supporting customers" thing is key.  Our success follows that of our customers, so part of everyone's job is helping our customers win, and this can involve some amount of after-hour support in responding to critical production issues.
+Second: that "supporting customers" thing is key.  Our success follows that of our customers, so part of everyone's job is helping our customers win, and this can involve some amount of after-hour support in responding to critical production issues.
 
 The core of your job will be adding new features and fixing bugs in the drachtio [server](https://github.com/drachtio/drachtio-server) and [client](https://github.com/drachtio/drachtio-srf) projects as well as the [jambonz](https://github.com/jambonz) projects.  We're looking to extend these projects quite dramatically in the upcoming year and you will be a key driver of this work.
 
