@@ -1,19 +1,14 @@
 banner:
   active: true
-  text: Click here to deploy jambonz on AWS.
+  text: Click here to launch a jambonz CPaaS on AWS.
   link: https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo
 latest:
   -
     active: true
     label: jobs
-    headline: We're hiring!
+    headline: Hey there! We're hiring!
     subtext:
       - We're looking for a <a href="/docs/jobs/lead-dev">lead open source developer</a> to join our team.  Check us out!
-  -
-    active: false
-    label: aws
-    headline: Are you looking to self-host your CPaaS? 
-    subtext: Deploy jambonz in seconds on AWS using <a href="https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo" target="_blank">our CloudFormation script!</a>
 navi:
   home:
     link: /
