@@ -1,25 +1,14 @@
 banner:
   active: true
-  text: We are hiring!  Join us and get paid to work on jambonz and drachtio!
-  link: /docs/jobs/lead-dev
+  text: Click here to launch a jambonz CPaaS on AWS.
+  link: https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo
 latest:
   -
-    active: false
-    label: tadhack
-    headline: jambonz is a proud sponsor of TADHACK 2021 in Orlando!
+    active: true
+    label: jobs
+    headline: Hey there! We're hiring!
     subtext:
-      - Sign up <a href="https://jambonz.us/register" target="_blank">here</a> for your free development account,
-      - and <a href="https://www.telecomsxchange.com/jambonz" target="_blank">visit our partner TelecomXChange</a> for $20 free credit!
-  -
-    active: false
-    label: econnect
-    headline: jambonz will be at Enterprise Connect 2021
-    subtext: Ping us at <a href="mailto:sales@jambonz.org" target="_blank">sales@jambonz.org</a> to set up a meeting!
-  -
-    active: false
-    label: aws
-    headline: Are you looking to self-host your CPaaS? 
-    subtext: Deploy jambonz in seconds on AWS using <a href="https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo" target="_blank">our CloudFormation script!</a>
+      - We're looking for a <a href="/docs/jobs/lead-dev">lead open source developer</a> to join our team.  Check us out!
 navi:
   home:
     link: /
