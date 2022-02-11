@@ -20,14 +20,33 @@ You can use the following options in the `transcribe` command:
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| recognizer.dualChannel | if true, transcribe the parent call as well as the child call | no |
-| recognizer.interim | if true interim transcriptions are sent | no (default: false) |
-| recognizer.language | language to use for speech transcription | yes |
-| recognizer.profanityFilter | if true, filter profanity from speech transcription.  Default:  no| no |
-| recognizer.vendor | speech vendor to use (currently only Google supported) | no |
-| transcriptionHook | webhook to call when a transcription is received. Due to the richness of information in the transcription an HTTP POST will always be sent. | yes |
-
-> **Note**: the `dualChannel` property is not currently implemented.
+| recognizer.vendor | Speech vendor to use (google, aws, or microsoft) | no |
+| recognizer.language | Language code to use for speech detection.  Defaults to the application level setting, or 'en-US' if not set | no |
+| recognizer.interim | If true interim transcriptions are sent | no (default: false) |
+| recognizer.vad.enable|If true, delay connecting to cloud recognizer until speech is detected|no|
+| recognizer.vad.voiceMs|If vad is enabled, the number of milliseconds of speech required before connecting to cloud recognizer|no|
+| recognizer.vad.mode|If vad is enabled, this setting governs the sensitivity of the voice activity detector; value must be between 0 to 3 inclusive, lower numbers mean more sensitive|no|
+| recognizer.separateRecognitionPerChannel | If true, recognize both caller and called party speech | no |
+| recognizer.altLanguages |(google only) An array of alternative languages that the speaker may be using | no |
+| recognizer.punctuation |(google only) Enable automatic punctuation | no |
+| recognizer.enhancedModel |(google only) Use enhanced model | no |
+| recognizer.words |(google only) Enable word offsets | no |
+| recognizer.diarization |(google only) Enable speaker diarization | no |
+| recognizer.diarizationMinSpeakers |(google only) Set the minimum speaker count | no |
+| recognizer.diarizationMaxSpeakers |(google only) Set the maximum speaker count | no |
+| recognizer.interactionType |(google only) Set the interaction type: discussion, presentation, phone_call, voicemail, professionally_produced, voice_search, voice_command, dictation | no |
+| recognizer.naicsCode |(google only) set an industry [NAICS](https://www.census.gov/naics/?58967?yearbck=2022) code that is relevant to the speech  | no |
+| recognizer.hints | (google and microsoft only) Array of words or phrases to assist speech detection | no |
+| recognizer.profanityFilter | (google only) If true, filter profanity from speech transcription .  Default:  no| no |
+| recognizer.vocabularyName |  (aws only) The name of a vocabulary to use when processing the speech.| no |
+| recognizer.vocabularyFilterName |  (aws only) The name of a vocabulary filter to use when processing the speech.| no |
+| recognizer.filterMethod |  (aws only) The method to use when filtering the speech: remove, mask, or tag.| no |
+| recognizer.identifyChannels |  (aws only) Enable channel identification. | no |
+| recognizer.profanityOption | (microsoft only) masked, removed, or raw.  Default:  raw| no |
+| recognizer.outputFormat | (microsoft only) simple or detailed.  Default:  simple| no |
+| recognizer.requestSnr | (microsoft only) Request signal to noise information| no |
+| recognizer.initialSpeechTimeoutMs | (microsoft only) Initial speech timeout in milliseconds| no |
+| transcriptionHook | Webhook to receive an HTPP POST when an interim or final transcription is received. | yes |
 
 <p class="flex">
 <a href="/docs/webhooks/tag">Prev: tag</a>

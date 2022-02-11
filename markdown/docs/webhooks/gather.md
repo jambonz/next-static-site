@@ -28,17 +28,28 @@ You can use the following options in the `gather` command:
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| actionHook | webhook POST to invoke with the collected digits or speech. The payload will include a 'speech' or 'dtmf' property along with the standard attributes.  See below for more detail.| yes |
-| finishOnKey | dmtf key that signals the end of input | no |
-| input | array, specifying allowed types of input: ['digits'], ['speech'], or ['digits', 'speech'].  Default: ['digits'] | no |
-| numDigits | number of dtmf digits expected to gather | no |
-| partialResultHook | webhook to send interim transcription results to. Partial transcriptions are only generated if this property is set. | no |
-| play | nested [play](#play) command that can be used to prompt the user | no |
-| recognizer.hints | array of words or phrases to assist speech detection | no |
-| recognizer.language | language code to use for speech detection.  Defaults to the application level setting, or 'en-US' if not set | no |
-| recognizer.profanityFilter | if true, filter profanity from speech transcription.  Default:  no| no |
-| recognizer.vendor | speech vendor to use (currently only Google supported) | no |
-| say | nested [say](#say) command that can be used to prompt the user | no |
+| actionHook | Webhook POST to invoke with the collected digits or speech. The payload will include a 'speech' or 'dtmf' property along with the standard attributes.  See below for more detail.| yes |
+| finishOnKey | Dmtf key that signals the end of input | no |
+| input |Array, specifying allowed types of input: ['digits'], ['speech'], or ['digits', 'speech'].  Default: ['digits'] | no |
+| numDigits | Number of dtmf digits expected to gather | no |
+| partialResultHook | Webhook to send interim transcription results to. Partial transcriptions are only generated if this property is set. | no |
+| play | nested [play](#play) Command that can be used to prompt the user | no |
+| recognizer.vendor | Speech vendor to use (google, aws, or microsoft) | no |
+| recognizer.language | Language code to use for speech detection.  Defaults to the application level setting| no |
+| recognizer.vad.enable|If true, delay connecting to cloud recognizer until speech is detected|no|
+| recognizer.vad.voiceMs|If vad is enabled, the number of milliseconds of speech required before connecting to cloud recognizer|no|
+| recognizer.vad.mode|If vad is enabled, this setting governs the sensitivity of the voice activity detector; value must be between 0 to 3 inclusive (lower numbers mean more sensitivity, i.e. more likely to return a false positive). Default: 2|no|
+| recognizer.hints | (google and microsoft only) Array of words or phrases to assist speech detection | no |
+| recognizer.altLanguages |(google only) An array of alternative languages that the speaker may be using | no |
+| recognizer.profanityFilter | (google only) If true, filter profanity from speech transcription .  Default:  no| no |
+| recognizer.vocabularyName |  (aws only) The name of a vocabulary to use when processing the speech.| no |
+| recognizer.vocabularyFilterName |  (aws only) The name of a vocabulary filter to use when processing the speech.| no |
+| recognizer.filterMethod |  (aws only) The method to use when filtering the speech: remove, mask, or tag.| no |
+| recognizer.profanityOption | (microsoft only) masked, removed, or raw.  Default:  raw| no |
+| recognizer.outputFormat | (microsoft only) simple or detailed.  Default:  simple| no |
+| recognizer.requestSnr | (microsoft only) Request signal to noise information| no |
+| recognizer.initialSpeechTimeoutMs | (microsoft only) Initial speech timeout in milliseconds| no |
+| say | nested [say](#say) Command that can be used to prompt the user | no |
 | timeout | The number of seconds of silence or inaction that denote the end of caller input.  The timeout timer will begin after any nested play or say command completes.  Defaults to 5 | no |
 
 In the case of speech input, the actionHook payload will include a `speech` object with the response from Google speech:
