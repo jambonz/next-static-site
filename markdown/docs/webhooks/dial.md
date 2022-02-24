@@ -15,13 +15,14 @@ The `dial` verb is used to create a new call by dialing out to a telephone numbe
   "target": [
     {
       "type": "phone",
-      "number": "+15083084809"
+      "number": "+15083084809",
+      "trunk": "Twilio"
     },
     {
       "type": "sip",
       "sipUri": "sip:1617333456@sip.trunk1.com",
       "auth": {
-        "user": "foo",
+        "username": "foo",
         "password": "bar"
       }
     },
@@ -69,7 +70,8 @@ You can use the following attributes in the `dial` command:
 | ------------- |-------------| -----|
 | type | must be "phone" | yes |
 | confirmHook | A webhook for an application to run on the callee's end after the dialed number answers but before the call is connected. This will override the confirmHook property set on the parent dial verb, if any.| no |
-| number | a telephone numnber in E.164 number | yes |
+| number | a telephone numnber in E.164 number. | yes |
+| trunk | if provided, this should be the name of a Carrier that you created in the jambonz portal or API, which you want to use to complete this call.  If not provided, jambonz will selectone of your configured Carriers that has an outbound trunk. | no |
 
 *sip endpoint*
 
@@ -79,7 +81,7 @@ You can use the following attributes in the `dial` command:
 | confirmHook | A webhook for an application to run on the callee's end after the dialed number answers but before the call is connected. This will override the confirmHook property set on the parent dial verb, if any.| no |
 | sipUri | sip uri to send call to | yes |
 | auth | authentication credentials | no |
-| auth.user | sip username | no |
+| auth.username | sip username | no |
 | auth.password | sip password | no |
 
 Using this approach, it is possible to send calls out a sip trunk.  If the sip trunking provider enforces username/password authentication, supply the credentials in the `auth` property.
