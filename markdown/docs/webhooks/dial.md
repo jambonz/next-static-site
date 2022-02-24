@@ -70,7 +70,7 @@ You can use the following attributes in the `dial` command:
 | ------------- |-------------| -----|
 | type | must be "phone" | yes |
 | confirmHook | A webhook for an application to run on the callee's end after the dialed number answers but before the call is connected. This will override the confirmHook property set on the parent dial verb, if any.| no |
-| number | a telephone numnber in E.164 number. | yes |
+| number | a telephone number in E.164 number. | yes |
 | trunk | if provided, this should be the name of a Carrier that you created in the jambonz portal or API, which you want to use to complete this call.  If not provided, jambonz will selectone of your configured Carriers that has an outbound trunk. | no |
 
 *sip endpoint*
