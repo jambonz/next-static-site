@@ -13,6 +13,9 @@ navi:
         path: conference
         title: conference
       -
+        path: config
+        title: config
+      -
         path: dequeue
         title: dequeue
       -
