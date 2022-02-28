@@ -31,7 +31,10 @@ You can use the following options in the `gather` command:
 | actionHook | Webhook POST to invoke with the collected digits or speech. The payload will include a 'speech' or 'dtmf' property along with the standard attributes.  See below for more detail.| yes |
 | finishOnKey | Dmtf key that signals the end of input | no |
 | input |Array, specifying allowed types of input: ['digits'], ['speech'], or ['digits', 'speech'].  Default: ['digits'] | no |
-| numDigits | Number of dtmf digits expected to gather | no |
+| numDigits | Exact number of dtmf digits expected to gather | no |
+| minDigits | Minimum number of dtmf digits expected to gather.  Defaults to 1. | no |
+| maxDigits | Maximum number of dtmf digits expected to gather | no |
+| interDigitTimeout | Amount of time to wait between digits after minDigits have been entered.| no |
 | partialResultHook | Webhook to send interim transcription results to. Partial transcriptions are only generated if this property is set. | no |
 | play | nested [play](#play) Command that can be used to prompt the user | no |
 | recognizer.vendor | Speech vendor to use (google, aws, or microsoft) | no |
