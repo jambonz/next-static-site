@@ -41,6 +41,6 @@ You can use the following attributes in the `config` command:
 
 
 <p class="flex">
-<a href="/docs/webhooks/conference">Prev: Overview</a>
+<a href="/docs/webhooks/conference">Prev: Conference</a>
 <a href="/docs/webhooks/dequeue">Next: dequeue</a>
 </p>
