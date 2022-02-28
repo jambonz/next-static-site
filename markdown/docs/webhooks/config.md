@@ -28,9 +28,9 @@ You can use the following attributes in the `config` command:
 | ------------- |-------------| -----|
 | synthesizer | change the session-level default text-to-speech settings. See [the say verb](/docs/webhooks/say) for details on the `synthesizer` property.| no |
 | recognizer | change the session-level default speech recognition settings. See [the transcribe verb](/docs/webhooks/transcribe) for details on the `recognizer` property.| no |
-| bargeIn.enable| if true, begin listening for speech or dtmf input while the session is executing other verbs.  This allows the developer to capture user input outside of a [gather verb](/docs/webhooks/gather).  If false, stop this background listening task.| no|
+| bargeIn.enable| if true, begin listening for speech or dtmf input while the session is executing other verbs.  This allows the developer to capture user input outside of a [gather verb](/docs/webhooks/gather).  If false, stop any background listening task that is in progress| no|
 | bargeIn.actionHook | A webhook to call if user input is collected from the background listening task.| no |
-| bargeIn.input |Array, specifying allowed types of input: ['digits'], ['speech'], or ['digits', 'speech'].  Default: ['digits'] | no |
+| bargeIn.input |Array, specifying allowed types of input: ['digits'], ['speech'], or ['digits', 'speech']. | yes |
 | bargeIn.finishOnKey | Dmtf key that signals the end of dtmf input | no |
 | bargeIn.numDigits | Exact number of dtmf digits expected to gather | no |
 | bargeIn.minDigits | Minimum number of dtmf digits expected to gather.  Defaults to 1. | no |

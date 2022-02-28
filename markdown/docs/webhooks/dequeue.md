@@ -28,6 +28,6 @@ The *actionHook* webhook will contain a `dequeueResult` property indicating the 
 - 'error' - a system error of some kind occurred
 
 <p class="flex">
-<a href="/docs/webhooks/conference">Prev: conference</a>
+<a href="/docs/webhooks/config">Prev: config</a>
 <a href="/docs/webhooks/dial">Next: dial</a>
 </p>
