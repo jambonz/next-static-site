@@ -12,7 +12,9 @@ The `gather` command is used to collect dtmf or speech input.
   "timeout": 8,
   "recognizer": {
     "vendor": "Google",
-    "language": "en-US"
+    "language": "en-US",
+    "hints": ["sales", "support"],
+    "hintsBoost": 10
   },
   "say": {
     "text": "To speak to Sales press 1.  To speak to customer support press 2.",
@@ -43,6 +45,7 @@ You can use the following options in the `gather` command:
 | recognizer.vad.voiceMs|If vad is enabled, the number of milliseconds of speech required before connecting to cloud recognizer|no|
 | recognizer.vad.mode|If vad is enabled, this setting governs the sensitivity of the voice activity detector; value must be between 0 to 3 inclusive (lower numbers mean more sensitivity, i.e. more likely to return a false positive). Default: 2|no|
 | recognizer.hints | (google and microsoft only) Array of words or phrases to assist speech detection | no |
+| recognizer.hintsBoost | (google only) A value between 0 to 20 inclusive; higher number means assign more weight to the hints | no |
 | recognizer.altLanguages |(google only) An array of alternative languages that the speaker may be using | no |
 | recognizer.profanityFilter | (google only) If true, filter profanity from speech transcription .  Default:  no| no |
 | recognizer.vocabularyName |  (aws only) The name of a vocabulary to use when processing the speech.| no |
@@ -52,6 +55,7 @@ You can use the following options in the `gather` command:
 | recognizer.outputFormat | (microsoft only) simple or detailed.  Default:  simple| no |
 | recognizer.requestSnr | (microsoft only) Request signal to noise information| no |
 | recognizer.initialSpeechTimeoutMs | (microsoft only) Initial speech timeout in milliseconds| no |
+| recognizer.azureServiceEndpoint | (microsoft only) URI of a custom speech endpoint to connect to| no |
 | say | nested [say](#say) Command that can be used to prompt the user | no |
 | timeout | The number of seconds of silence or inaction that denote the end of caller input.  The timeout timer will begin after any nested play or say command completes.  Defaults to 5 | no |
 
