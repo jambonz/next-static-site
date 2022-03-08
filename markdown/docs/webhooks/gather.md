@@ -37,11 +37,12 @@ You can use the following options in the `gather` command:
 | dtmfBargein | allow dtmf bargein, i.e. kill audio playback if caller enters dtmf | no |
 | finishOnKey | Dmtf key that signals the end of input | no |
 | input |Array, specifying allowed types of input: ['digits'], ['speech'], or ['digits', 'speech'].  Default: ['digits'] | no |
-| numDigits | Exact number of dtmf digits expected to gather | no |
+| interDigitTimeout | Amount of time to wait between digits after minDigits have been entered.| no |
+|listenDuringPrompt| if false, do not listen for user speech until say or play has completed.  Defaults to true|no|
 | minBargeinWordCount | if bargein is true, only kill speech when this many words are spoken.  Defaults to 1 | no|
 | minDigits | Minimum number of dtmf digits expected to gather.  Defaults to 1. | no |
 | maxDigits | Maximum number of dtmf digits expected to gather | no |
-| interDigitTimeout | Amount of time to wait between digits after minDigits have been entered.| no |
+| numDigits | Exact number of dtmf digits expected to gather | no |
 | partialResultHook | Webhook to send interim transcription results to. Partial transcriptions are only generated if this property is set. | no |
 | play | nested [play](#play) Command that can be used to prompt the user | no |
 | recognizer.vendor | Speech vendor to use (google, aws, or microsoft) | no |
