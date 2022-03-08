@@ -7,6 +7,8 @@ The `gather` command is used to collect dtmf or speech input.
   "verb": "gather",
   "actionHook": "http://example.com/collect",
   "input": ["digits", "speech"],
+  "bargein": true,
+  "dtmfBargein": true,
   "finishOnKey": "#",
   "numDigits": 5,
   "timeout": 8,
@@ -17,7 +19,7 @@ The `gather` command is used to collect dtmf or speech input.
     "hintsBoost": 10
   },
   "say": {
-    "text": "To speak to Sales press 1.  To speak to customer support press 2.",
+    "text": "To speak to Sales press 1 or say Sales.  To speak to customer support press 2 or say Support",
     "synthesizer": {
       "vendor": "Google",
       "language": "en-US"
@@ -31,9 +33,12 @@ You can use the following options in the `gather` command:
 | option        | description | required  |
 | ------------- |-------------| -----|
 | actionHook | Webhook POST to invoke with the collected digits or speech. The payload will include a 'speech' or 'dtmf' property along with the standard attributes.  See below for more detail.| yes |
+| bargein | allow speech bargein, i.e. kill audio playback if caller begins speaking | no |
+| dtmfBargein | allow dtmf bargein, i.e. kill audio playback if caller enters dtmf | no |
 | finishOnKey | Dmtf key that signals the end of input | no |
 | input |Array, specifying allowed types of input: ['digits'], ['speech'], or ['digits', 'speech'].  Default: ['digits'] | no |
 | numDigits | Exact number of dtmf digits expected to gather | no |
+| minBargeinWordCount | if bargein is true, only kill speech when this many words are spoken.  Defaults to 1 | no|
 | minDigits | Minimum number of dtmf digits expected to gather.  Defaults to 1. | no |
 | maxDigits | Maximum number of dtmf digits expected to gather | no |
 | interDigitTimeout | Amount of time to wait between digits after minDigits have been entered.| no |
