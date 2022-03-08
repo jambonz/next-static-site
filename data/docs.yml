@@ -25,6 +25,9 @@ navi:
         path: dialogflow
         title: dialogflow
       -
+        path: dtmf
+        title: dtmf
+      -
         path: enqueue
         title: enqueue
       -
