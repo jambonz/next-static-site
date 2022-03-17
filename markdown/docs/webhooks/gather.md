@@ -53,6 +53,7 @@ You can use the following options in the `gather` command:
 | recognizer.hints | (google and microsoft only) Array of words or phrases to assist speech detection | no |
 | recognizer.hintsBoost | (google only) A value between 0 to 20 inclusive; higher number means assign more weight to the hints | no |
 | recognizer.altLanguages |(google only) An array of alternative languages that the speaker may be using | no |
+| recognizer.punctuation |(google only) Enable automatic punctuation | no |
 | recognizer.profanityFilter | (google only) If true, filter profanity from speech transcription .  Default:  no| no |
 | recognizer.vocabularyName |  (aws only) The name of a vocabulary to use when processing the speech.| no |
 | recognizer.vocabularyFilterName |  (aws only) The name of a vocabulary filter to use when processing the speech.| no |
