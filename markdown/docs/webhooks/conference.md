@@ -47,5 +47,5 @@ Conference status webhooks will contain the following additional parameters:
 
 <p class="flex">
 <a href="/docs/webhooks/overview">Prev: Overview</a>
-<a href="/docs/webhooks/dequeue">Next: dequeue</a>
+<a href="/docs/webhooks/config">Next: config</a>
 </p>

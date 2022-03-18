@@ -13,6 +13,9 @@ navi:
         path: conference
         title: conference
       -
+        path: config
+        title: config
+      -
         path: dequeue
         title: dequeue
       -
@@ -21,6 +24,9 @@ navi:
       -
         path: dialogflow
         title: dialogflow
+      -
+        path: dtmf
+        title: dtmf
       -
         path: enqueue
         title: enqueue
@@ -109,6 +115,9 @@ navi:
     path: release-notes
     title: Release Notes
     pages:
+      -
+        path: v0.7.4
+        title: v0.7.4
       -
         path: v0.7.3
         title: v0.7.3
