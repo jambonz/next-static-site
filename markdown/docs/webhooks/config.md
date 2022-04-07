@@ -1,6 +1,7 @@
 # config
+> Added in v0.7.4
 
-The `config` verb allows the developer to change the default speech settings for the current session, or to listen in the background while other verbs are executing.  The latter technique is useful mainly for certain scenarios when integrating with some conversational AI systems.
+The `config` verb allows the developer to change the default speech settings for the current session, or to gather speech or dtmf input in the background while other verbs are executing.  The latter technique is useful mainly for certain scenarios when integrating with certain conversational AI systems.
 
 This verb is non-blocking; i.e. the specified settings are changed and execution immediately continues with the next verb in the application.
 
@@ -29,6 +30,7 @@ You can use the following attributes in the `config` command:
 | synthesizer | change the session-level default text-to-speech settings. See [the say verb](/docs/webhooks/say) for details on the `synthesizer` property.| no |
 | recognizer | change the session-level default speech recognition settings. See [the transcribe verb](/docs/webhooks/transcribe) for details on the `recognizer` property.| no |
 | bargeIn.enable| if true, begin listening for speech or dtmf input while the session is executing other verbs.  This is known as a "background gather" and an application to capture user input outside of a [gather verb](/docs/webhooks/gather).  If false, stop any background listening task that is in progress| no|
+|bargein|this object contains properties that are used to instantiate a 'background' [gather verb](/docs/webhooks/gather)|no|
 | bargeIn.actionHook | A webhook to call if user input is collected from the background gather.| no |
 | bargeIn.input |Array, specifying allowed types of input: ['digits'], ['speech'], or ['digits', 'speech']. | yes |
 | bargeIn.finishOnKey | Dmtf key that signals the end of dtmf input | no |
