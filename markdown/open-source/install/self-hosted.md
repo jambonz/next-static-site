@@ -7,7 +7,7 @@ You'll need two servers -- one will be the public-facing SBC, while the other wi
 
 If desired, you can install mysql and redis on the SBC server, but as long as they are reachable from both the SBC and the Feature Server you'll be fine.  We will be using ansible to build up the servers, which means from your laptop you need ssh connectivity to both the SBC and the Feature Server.
 
-The base software distribution for both the SBC and the Feature Server should be Debian 9.  A vanilla install that includes sudo and python is all that is needed (python is used by [ansible](https://www.ansible.com/), which we will be using to build up the servers in the next step).
+The base software distribution for both the SBC and the Feature Server should be Debian 10.  A vanilla install that includes sudo and python is all that is needed (python is used by [ansible](https://www.ansible.com/), which we will be using to build up the servers in the next step).
 
 ### B. Use ansible to install base software
 If you don't have ansible installed on your laptop, install it now [following these instructions](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
@@ -64,14 +64,20 @@ You need to install a mysql database server.  Example instructions for installin
 
 Once the mysql server is installed, create a new database named 'jambones' with an associated username 'admin' and a password of your choice.  For the remainder of these instructions, we'll assume a password of 'JambonzR0ck$' was assigned, but you may create a password of your own choosing.
 
-Once the database and user has been created, then create [this schema](https://github.com/jambonz/jambonz-api-server/blob/master/db/jambones-sql.sql).
+Once the database and user has been created, then create the database schema by running [this script](https://github.com/jambonz/jambonz-api-server/blob/main/db/jambones-sql.sql).
 
-Once the database schema has been created, run [this database script](https://github.com/jambonz/jambonz-api-server/blob/master/db/create-admin-token.sql) as well as [this database script](https://github.com/jambonz/jambonz-api-server/blob/master/db/create-default-account.sql) to seed the database with initial data.
+Next, run [this database script](https://github.com/jambonz/jambonz-api-server/blob/main/db/seed-production-database-open-source.sql) to seed the database.
 
-### D. Create redis server
-Install redis somewhere in your network by following [these instructions](https://redis.io/topics/quickstart) and save the redis hostname that you will use to connect to it.
+### D. Install influxdb
+Influxdb is used to call detail records and platform metrics.  You will need to install an influxdb database either on the SBC or somewhere else in your network.  For an example install script, refer to [this bash script](https://github.com/jambonz/jambonz-infrastructure/blob/main/packer/jambonz-mini/scripts/install_influxdb.sh).
 
-### E. Configure SBC
+### E. Install telegraf
+Telegraf should be installed on the SBC.  Telegraf is used to receive platform metrics and forward them to influxdb  For an example install script, refer to [this bash script](https://github.com/jambonz/jambonz-infrastructure/blob/main/packer/jambonz-mini/scripts/install_telegraf.sh) and configure /etc/telegraf.conf to send data onwards to influxdb [as shown here](https://github.com/jambonz/jambonz-infrastructure/blob/d41c3fc508f45e579d2a68403cc3a8f39d0fa3e0/packer/jambonz-mini/files/telegraf.conf#L105)
+
+### F. Create redis server
+Install redis somewhere either on the SBC or somewhere in your network by following [these instructions](https://redis.io/topics/quickstart) and save the redis hostname that you will use to connect to it.
+
+### G. Configure SBC
 Your SBC should have both a public IP and a private IP.  The public IP needs to be reachable from the internet, while the private IP should be on the internal subnet, and thus reachable by the Feature Server.
 
 > In the examples below, we assume that the public IP is 190.144.12.220 and the private IP is 192.168.3.11.  Your IPs will be different of course, so substitute the correct IPs in the changes below.
@@ -99,7 +105,7 @@ ExecStart=/usr/local/bin/drachtio --daemon \
 --contact sip:192.168.3.11;transport=tcp \
 --address 0.0.0.0 --port 9022
 ```
-Then, edit `/etc/drachtio/conf.xml` to uncomment the request-handler xml tag and edit it to look like this:
+Then, edit `/etc/drachtio.conf.xml` to uncomment the request-handler xml tag and edit it to look like this:
 ```xml
     <request-handlers>
 	    <request-handler sip-method="INVITE">http://127.0.0.1:4000</request-handler>
@@ -146,6 +152,7 @@ git clone https://github.com/jambonz/sbc-outbound.git
 git clone https://github.com/jambonz/sbc-inbound.git 
 git clone https://github.com/jambonz/sbc-registrar.git
 git clone https://github.com/jambonz/sbc-call-router.git 
+git clone https://github.com/jambonz/sbc-options-handler.git 
 git clone https://github.com/jambonz/jambonz-api-server.git 
 git clone https://github.com/jambonz/jambonz-webapp.git
 ```
@@ -166,6 +173,7 @@ cd sbc-inbound && sudo npm install --unsafe-perm
 cd ../sbc-outbound && sudo npm install --unsafe-perm
 cd ../sbc-registrar && sudo npm install --unsafe-perm
 cd ../sbc-call-router && sudo npm install --unsafe-perm
+cd ../sbc-options-handler && sudo npm install --unsafe-perm
 cd ../jambonz-api-server && sudo npm install --unsafe-perm
 cd ../jambonz-webapp && sudo npm install --unsafe-perm && npm run build
 
@@ -183,144 +191,205 @@ Next, copy this file below into `~/apps/ecosystem.config.js`.
 
 ```js
 module.exports = {
-	apps: [{
-			name: 'jambonz-api-server',
-			cwd: '/home/admin/apps/jambonz-api-server',
-			script: 'app.js',
-			out_file: '/home/admin/.pm2/logs/jambonz-api-server.log',
-			err_file: '/home/admin/.pm2/logs/jambonz-api-server.log',
-			combine_logs: true,
-			instance_var: 'INSTANCE_ID',
-			exec_mode: 'fork',
-			instances: 1,
-			autorestart: true,
-			watch: false,
-			max_memory_restart: '1G',
-			env: {
-				NODE_ENV: 'production',
-				JAMBONES_MYSQL_HOST: '<your-mysql-host>',
-				JAMBONES_MYSQL_USER: 'admin',
-				JAMBONES_MYSQL_PASSWORD: 'JambonzR0ck$',
-				JAMBONES_MYSQL_DATABASE: 'jambones',
-				JAMBONES_MYSQL_CONNECTION_LIMIT: 10,
-				JAMBONES_REDIS_HOST: '<your-redis-host>',
-				JAMBONES_REDIS_PORT: 6379,
-				JAMBONES_LOGLEVEL: 'info',
-				JAMBONE_API_VERSION: 'v1',
-				JAMBONES_CLUSTER_ID: 'jb',
-				HTTP_PORT: 3000
-			},
-		},
+	apps: [
+    {
+      name: 'jambonz-api-server',
+      cwd: '/home/admin/apps/jambonz-api-server',
+      script: 'app.js',
+      out_file: '/home/admin/.pm2/logs/jambonz-api-server.log',
+      err_file: '/home/admin/.pm2/logs/jambonz-api-server.log',
+      combine_logs: true,
+      instance_var: 'INSTANCE_ID',
+      exec_mode: 'fork',
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '1G',
+      env: {
+        NODE_ENV: 'production',
+        JAMBONES_MYSQL_HOST: '<your-mysql-host>',
+        JAMBONES_MYSQL_USER: 'admin',
+        JAMBONES_MYSQL_PASSWORD: 'JambonzR0ck$',
+        JAMBONES_MYSQL_DATABASE: 'jambones',
+        JAMBONES_MYSQL_CONNECTION_LIMIT: 10,
+        JAMBONES_REDIS_HOST: '<your-redis-host>',
+        JAMBONES_REDIS_PORT: 6379,
+        JAMBONES_LOGLEVEL: 'info',
+        JAMBONE_API_VERSION: 'v1',
+        JAMBONES_TIME_SERIES_HOST: '<your-influxdb-host>',
+        ENABLE_METRICS: 1,
+        STATS_HOST: '127.0.0.1',
+        STATS_PORT: 8125,
+        STATS_PROTOCOL: 'tcp',
+        STATS_TELEGRAF: 1,
+        HTTP_PORT:  3000,
+        HOMER_BASE_URL: 'http://127.0.0.1:9080',
+        HOMER_USERNAME: 'admin',
+        HOMER_PASSWORD: 'sipcapture'      
+      }
+    },
+    {
+      name: 'sbc-call-router',
+      cwd: '/home/admin/apps/sbc-call-router',
+      script: 'app.js',
+      instance_var: 'INSTANCE_ID',
+      out_file: '/home/admin/.pm2/logs/jambonz-sbc-call-router.log',
+      err_file: '/home/admin/.pm2/logs/jambonz-sbc-call-router.log',
+      exec_mode: 'fork',
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '1G',
+      env: {
+        NODE_ENV: 'production',
+        HTTP_PORT: 4000,
+        JAMBONES_INBOUND_ROUTE: '127.0.0.1:4002',
+        JAMBONES_OUTBOUND_ROUTE: '127.0.0.1:4003',
+        JAMBONZ_TAGGED_INBOUND: 1,
+        ENABLE_METRICS: 1,
+        STATS_HOST: '127.0.0.1',
+        STATS_PORT: 8125,
+        STATS_PROTOCOL: 'tcp',
+        STATS_TELEGRAF: 1,
+        JAMBONES_NETWORK_CIDR: '192.168.0.0/16'
+      }
+    },
 		{
-			name: 'sbc-call-router',
-			cwd: '/home/admin/apps/sbc-call-router',
-			script: 'app.js',
-			instance_var: 'INSTANCE_ID',
-			out_file: '/home/admin/.pm2/logs/jambonz-sbc-call-router.log',
-			err_file: '/home/admin/.pm2/logs/jambonz-sbc-call-router.log',
-			exec_mode: 'fork',
-			instances: 1,
-			autorestart: true,
-			watch: false,
-			max_memory_restart: '1G',
-			env: {
-				NODE_ENV: 'production',
-				HTTP_PORT: 4000,
-				JAMBONES_INBOUND_ROUTE: '127.0.0.1:4002',
-				JAMBONES_OUTBOUND_ROUTE: '127.0.0.1:4003',
-				JAMBONZ_TAGGED_INBOUND: 1,
-				JAMBONES_NETWORK_CIDR: '192.168.0.0/16'
+      name: 'sbc-registrar',
+      cwd: '/home/admin/apps/sbc-registrar',
+      script: 'app.js',
+      instance_var: 'INSTANCE_ID',
+      out_file: '/home/admin/.pm2/logs/jambonz-sbc-registrar.log',
+      err_file: '/home/admin/.pm2/logs/jambonz-sbc-registrar.log',
+      exec_mode: 'fork',
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '1G',
+      env: {
+        NODE_ENV: 'production',
+        JAMBONES_LOGLEVEL: 'info',
+        DRACHTIO_HOST: '127.0.0.1',
+        DRACHTIO_PORT: 9022,
+        DRACHTIO_SECRET: 'cymru',
+        JAMBONES_MYSQL_HOST: '<your-mysql-host>',
+        JAMBONES_MYSQL_USER: 'admin',
+        JAMBONES_MYSQL_PASSWORD: 'JambonzR0ck$',
+        JAMBONES_MYSQL_DATABASE: 'jambones',
+        JAMBONES_MYSQL_CONNECTION_LIMIT: 10,
+        JAMBONES_REDIS_HOST: '<your-redis-host>',
+        JAMBONES_REDIS_PORT: 6379,
+        JAMBONES_TIME_SERIES_HOST: '<your-influxdb-host>',
+        ENABLE_METRICS: 1,
+        STATS_HOST: '127.0.0.1',
+        STATS_PORT: 8125,
+        STATS_PROTOCOL: 'tcp',
+        STATS_TELEGRAF: 1
+      }
+    },
+    {
+      name: 'sbc-outbound',
+      cwd: '/home/admin/apps/sbc-outbound',
+      script: 'app.js',
+      instance_var: 'INSTANCE_ID',
+      out_file: '/home/admin/.pm2/logs/jambonz-sbc-outbound.log',
+      err_file: '/home/admin/.pm2/logs/jambonz-sbc-outbound.log',
+      exec_mode: 'fork',
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '1G',
+      env: {
+        NODE_ENV: 'production',
+        JAMBONES_LOGLEVEL: 'info',
+        DRACHTIO_HOST: '127.0.0.1',
+        DRACHTIO_PORT: 9022,
+        DRACHTIO_SECRET: 'cymru',
+        JAMBONES_RTPENGINES: '127.0.0.1:22222',
+        JAMBONES_MYSQL_HOST: '<your-mysql-host>',
+        JAMBONES_MYSQL_USER: 'admin',
+        JAMBONES_MYSQL_PASSWORD: 'JambonzR0ck$',
+        JAMBONES_MYSQL_DATABASE: 'jambones',
+        JAMBONES_MYSQL_CONNECTION_LIMIT: 10,
+        JAMBONES_REDIS_HOST: '<your-redis-host>',
+        JAMBONES_REDIS_PORT: 6379,
+        JAMBONES_NETWORK_CIDR: '192.168.0.0/16',
+        JAMBONES_TIME_SERIES_HOST: '<your-influxdb-host>',
+        ENABLE_METRICS: 1,
+        STATS_HOST: '127.0.0.1',
+        STATS_PORT: 8125,
+        STATS_PROTOCOL: 'tcp',
+        STATS_TELEGRAF: 1
+      }
+    },
+    {
+      name: 'sbc-inbound',
+      cwd: '/home/admin/apps/sbc-inbound',
+      script: 'app.js',
+      instance_var: 'INSTANCE_ID',
+      out_file: '/home/admin/.pm2/logs/jambonz-sbc-inbound.log',
+      err_file: '/home/admin/.pm2/logs/jambonz-sbc-inbound.log',
+      exec_mode: 'fork',
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '1G',
+      env: {
+        NODE_ENV: 'production',
+        JAMBONES_NETWORK_CIDR: '192.168.0.0/16',
+        JAMBONES_LOGLEVEL: 'info',
+        DRACHTIO_HOST: '127.0.0.1',
+        DRACHTIO_PORT: 9022,
+        DRACHTIO_SECRET: 'cymru',
+        JAMBONES_RTPENGINES: '127.0.0.1:22222',
+        JAMBONES_MYSQL_HOST: '<your-mysql-host>',
+        JAMBONES_MYSQL_USER: 'admin',
+        JAMBONES_MYSQL_PASSWORD: 'JambonzR0ck$',
+        JAMBONES_MYSQL_DATABASE: 'jambones',
+        JAMBONES_MYSQL_CONNECTION_LIMIT: 10,
+        JAMBONES_REDIS_HOST: '<your-redis-host>',
+        JAMBONES_REDIS_PORT: 6379,
+        JAMBONES_TIME_SERIES_HOST: '<your-influxdb-host>',
+        ENABLE_METRICS: 1,
+        STATS_HOST: '127.0.0.1',
+        STATS_PORT: 8125,
+        STATS_PROTOCOL: 'tcp',
+        STATS_TELEGRAF: 1
 			}
 		},
+    {
+      name: 'sbc-options-handler',
+      cwd: '/home/admin/apps/sbc-options-handler',
+      script: 'app.js',
+      instance_var: 'INSTANCE_ID',
+      out_file: '/home/admin/.pm2/logs/jambonz-sbc-options-handler.log',
+      err_file: '/home/admin/.pm2/logs/jambonz-sbc-options-handler.log',
+      exec_mode: 'fork',
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '1G',
+      env: {
+        NODE_ENV: 'production',
+        JAMBONES_NETWORK_CIDR: '192.168.0.0/16',
+        JAMBONES_LOGLEVEL: 'info',
+        DRACHTIO_HOST: '127.0.0.1',
+        DRACHTIO_PORT: 9022,
+        DRACHTIO_SECRET: 'cymru',
+        JAMBONES_REDIS_HOST: '<your-redis-host>',
+        JAMBONES_REDIS_PORT: 6379,
+        ENABLE_METRICS: 1,
+        STATS_HOST: '127.0.0.1',
+        STATS_PORT: 8125,
+        STATS_PROTOCOL: 'tcp',
+        STATS_TELEGRAF: 1
+      }
+    },
 		{
-			name: 'sbc-registrar',
-			cwd: '/home/admin/apps/sbc-registrar',
-			script: 'app.js',
-			instance_var: 'INSTANCE_ID',
-			out_file: '/home/admin/.pm2/logs/jambonz-sbc-registrar.log',
-			err_file: '/home/admin/.pm2/logs/jambonz-sbc-registrar.log',
-			exec_mode: 'fork',
-			instances: 1,
-			autorestart: true,
-			watch: false,
-			max_memory_restart: '1G',
-			env: {
-				NODE_ENV: 'production',
-				JAMBONES_LOGLEVEL: 'info',
-				DRACHTIO_HOST: '127.0.0.1',
-				DRACHTIO_PORT: 9022,
-				DRACHTIO_SECRET: 'cymru',
-				JAMBONES_MYSQL_HOST: '<your-mysql-host>',
-				JAMBONES_MYSQL_USER: 'admin',
-				JAMBONES_MYSQL_PASSWORD: 'JambonzR0ck$',
-				JAMBONES_MYSQL_DATABASE: 'jambones',
-				JAMBONES_MYSQL_CONNECTION_LIMIT: 10,
-				JAMBONES_REDIS_HOST: '<your-redis-host>',
-				JAMBONES_REDIS_PORT: 6379,
-			}
-		},
-		{
-			name: 'sbc-outbound',
-			cwd: '/home/admin/apps/sbc-outbound',
-			script: 'app.js',
-			instance_var: 'INSTANCE_ID',
-			out_file: '/home/admin/.pm2/logs/jambonz-sbc-outbound.log',
-			err_file: '/home/admin/.pm2/logs/jambonz-sbc-outbound.log',
-			exec_mode: 'fork',
-			instances: 1,
-			autorestart: true,
-			watch: false,
-			max_memory_restart: '1G',
-			env: {
-				NODE_ENV: 'production',
-				JAMBONES_LOGLEVEL: 'info',
-				DRACHTIO_HOST: '127.0.0.1',
-				DRACHTIO_PORT: 9022,
-				DRACHTIO_SECRET: 'cymru',
-				JAMBONES_RTPENGINES: '127.0.0.1:22222',
-				JAMBONES_MYSQL_HOST: '<your-mysql-host>',
-				JAMBONES_MYSQL_USER: 'admin',
-				JAMBONES_MYSQL_PASSWORD: 'JambonzR0ck$',
-				JAMBONES_MYSQL_DATABASE: 'jambones',
-				JAMBONES_MYSQL_CONNECTION_LIMIT: 10,
-				JAMBONES_REDIS_HOST: '<your-redis-host>',
-				JAMBONES_REDIS_PORT: 6379
-			}
-		},
-		{
-			name: 'sbc-inbound',
-			cwd: '/home/admin/apps/sbc-inbound',
-			script: 'app.js',
-			instance_var: 'INSTANCE_ID',
-			out_file: '/home/admin/.pm2/logs/jambonz-sbc-inbound.log',
-			err_file: '/home/admin/.pm2/logs/jambonz-sbc-inbound.log',
-			exec_mode: 'fork',
-			instances: 1,
-			autorestart: true,
-			watch: false,
-			max_memory_restart: '1G',
-			env: {
-				NODE_ENV: 'production',
-				JAMBONES_LOGLEVEL: 'info',
-				DRACHTIO_HOST: '127.0.0.1',
-				DRACHTIO_PORT: 9022,
-				DRACHTIO_SECRET: 'cymru',
-				JAMBONES_RTPENGINES: '127.0.0.1:22222',
-				JAMBONES_MYSQL_HOST: '<your-mysql-host>',
-				JAMBONES_MYSQL_USER: 'admin',
-				JAMBONES_MYSQL_PASSWORD: 'JambonzR0ck$',
-				JAMBONES_MYSQL_DATABASE: 'jambones',
-				JAMBONES_MYSQL_CONNECTION_LIMIT: 10,
-				JAMBONES_REDIS_HOST: '<your-redis-host>',
-				JAMBONES_REDIS_PORT: 6379,
-				JAMBONES_CLUSTER_ID: 'jb'
-			}
-		},
-		{
-			name: 'jambonz-webapp',
-			script: 'npm',
-			cwd: '/home/admin/apps/jambonz-webapp',
-			args: 'run serve'
+      name: 'jambonz-webapp',
+      script: 'npm',
+      cwd: '/home/admin/apps/jambonz-webapp',
+      args: 'run serve'
 		}
 	]
 };
@@ -496,11 +565,13 @@ module.exports = {
     max_memory_restart: '1G',
     env: {
       NODE_ENV: 'production',
-      GOOGLE_APPLICATION_CREDENTIALS: '/home/admin/credentials/gcp.json',
-      AWS_ACCESS_KEY_ID: '<your-aws-access-key-id>',
-      AWS_SECRET_ACCESS_KEY: '<your-aws-secret-access-key>',
-      AWS_REGION: 'us-west-1',
+      ENABLE_METRICS: 1,
+      STATS_HOST: '127.0.0.1',
+      STATS_PORT: 8125,
+      STATS_PROTOCOL: 'tcp',
+      STATS_TELEGRAF: 1,
       JAMBONES_NETWORK_CIDR: '192.168.0.0/16',
+      JAMBONES_API_BASE_URL: 'http://<sbc-public-ip>:3000',
       JAMBONES_MYSQL_HOST: '<your-mysql-host>',
       JAMBONES_MYSQL_USER: 'admin',
       JAMBONES_MYSQL_PASSWORD: 'JambonzR0ck$',
@@ -508,13 +579,13 @@ module.exports = {
       JAMBONES_MYSQL_CONNECTION_LIMIT: 10,
       JAMBONES_REDIS_HOST: '<your-redis-host>',
       JAMBONES_REDIS_PORT: 6379,
-      JAMBONES_LOGLEVEL: 'info',
+      JAMBONES_LOGLEVEL: 'debug',
+      JAMBONES_TIME_SERIES_HOST: '<your-influxdb-host>',
       HTTP_PORT: 3000,
       DRACHTIO_HOST: '127.0.0.1',
       DRACHTIO_PORT: 9022,
       DRACHTIO_SECRET: 'cymru',
-      JAMBONES_SBCS: '192.168.3.11',
-      JAMBONES_FEATURE_SERVERS: '127.0.0.1:9022:cymru',
+      JAMBONES_SBCS: '<your-sbc-address>',
       JAMBONES_FREESWITCH: '127.0.0.1:8021:JambonzR0ck$'
     }
   }]
