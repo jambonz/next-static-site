@@ -23,6 +23,7 @@ export default function Layout({ children, siteData, title = 'jambonz' }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
+        <meta name="image" property="og:image" content="https://www.jambonz.org/jambonz.png" />
         <meta
           name="description"
           content="The “bring your own everything” CPaaS"
