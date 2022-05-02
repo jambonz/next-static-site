@@ -7,7 +7,6 @@
     "prepare": "husky install",
     "dev": "next",
     "start": "next start",
-    "prebuild": "yarn lint",
     "build": "next build",
     "export": "next export",
     "pretest": "node cypress/scripts/fixtures.js",
@@ -20,8 +19,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "nanoid": "^3.1.22",
-    "next": "^10.0.8-canary.9",
-    "preact": "^10.5.13",
+    "next": "^12.1.4",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -41,10 +39,91 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "gray-matter": "^4.0.2",
     "husky": "^6.0.0",
+    "lint-staged": "^12.4.1",
     "remark": "^13.0.0",
     "remark-gfm": "^1.0.0",
     "remark-html": "^13.0.1",
     "sass": "^1.32.8",
     "yamljs": "^0.3.0"
+  },
+  "lint-staged": {
+    "*.js": "yarn lint"
+  },
+  "eslintConfig": {
+    "settings": {
+      "react": {
+      "version": "detect"
+      }
+    },
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "react-app"
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "jsx-a11y/anchor-is-valid": "off",
+      "jsx-a11y/alt-text": "off",
+      "indent": [
+        "error",
+        2
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    },
+    "ignorePatterns": [
+      "**/node_modules/*",
+      "**/out/*",
+      "**/.next/*",
+      "next.config.js",
+      "**/cypress/*"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      [
+        "prismjs",
+        {
+          "languages": [
+            "javascript",
+            "js",
+            "json",
+            "bash",
+            "http"
+          ],
+          "plugins": [
+            "line-numbers",
+            "show-language"
+          ],
+          "theme": "okaidia",
+          "css": true
+        }
+      ]
+    ]
   }
 }

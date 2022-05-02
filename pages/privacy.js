@@ -18,7 +18,7 @@ export async function getStaticProps() {
   const data = getData('privacy');
 
   // Use the new public method in a more ad hoc manner like this...
-  const parsed = await getParsedMarkdown(path.join(process.cwd(), 'pages', 'privacy.md'));
+  const parsed = await getParsedMarkdown(path.join(process.cwd(), 'markdown', 'privacy.md'));
 
   return {
     props: {
