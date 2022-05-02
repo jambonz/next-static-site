@@ -100,30 +100,5 @@
       "next.config.js",
       "**/cypress/*"
     ]
-  },
-  "babel": {
-    "presets": [
-      "next/babel"
-    ],
-    "plugins": [
-      [
-        "prismjs",
-        {
-          "languages": [
-            "javascript",
-            "js",
-            "json",
-            "bash",
-            "http"
-          ],
-          "plugins": [
-            "line-numbers",
-            "show-language"
-          ],
-          "theme": "okaidia",
-          "css": true
-        }
-      ]
-    ]
   }
 }
