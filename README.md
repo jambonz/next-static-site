@@ -10,7 +10,6 @@ jambonz
 ## Stack
 
 - [Next.js](https://nextjs.org)
-- [Preact](https://preactjs.com/)
 
 ## Deploy target(s)
 
