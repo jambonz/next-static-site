@@ -1,15 +1,17 @@
-import Layout from '../components/layout';
-import { Hero, TextLayout } from '../components/jambonz-ui';
-import { getData, getParsedMarkdown } from '../lib/data';
+import Layout from '../src/components/layout';
+import { Hero, TextLayout, normalizeTextLayout } from '../src/components/jambonz-ui';
+import { getData, getParsedMarkdown } from '../src/lib/data';
 import path from 'path';
 
 export default function Privacy({ data, parsed }) {
+  parsed.contentHtml = normalizeTextLayout(parsed.contentHtml);
+
   return (
     <Layout siteData={data.site}>
       <Hero data={data.privacy.hero} subStyle="privacy" />
-      <div className="wrap pad-b">
-        <TextLayout data={parsed} />
-      </div>
+      <section className="wrap pad-b">
+        <TextLayout data={parsed} name="privacy" />
+      </section>
     </Layout>
   );
 }

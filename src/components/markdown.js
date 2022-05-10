@@ -84,7 +84,7 @@ export default function Markdown({scope, data, docs}) {
     <div className="markdown">
       <div className="wrap markdown__wrap">
         <MarkdownSidebar scope={scope} data={data} />
-        <TextLayout data={docs} />
+        <TextLayout data={docs} name={scope} />
       </div>
     </div>
   );

@@ -4,6 +4,7 @@
          url('/fonts/objectivity-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: $font-regular-italic;
@@ -11,6 +12,7 @@
          url('/fonts/objectivity-regularslanted-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -19,6 +21,7 @@
          url('/fonts/objectivity-medium-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: $font-medium-italic;
@@ -26,6 +29,7 @@
          url('/fonts/objectivity-mediumslanted-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -34,6 +38,7 @@
          url('/fonts/objectivity-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: $font-bold-italic;
@@ -41,4 +46,5 @@
          url('/fonts/objectivity-boldslanted-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }

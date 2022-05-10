@@ -1,8 +1,8 @@
 import { nanoid } from 'nanoid';
 
-import Layout from '../components/layout';
-import { Hero, Icon, Button, H5, H2, P } from '../components/jambonz-ui';
-import { getData } from '../lib/data';
+import Layout from '../src/components/layout';
+import { Hero, Icon, Button, H3, H2, P } from '../src/components/jambonz-ui';
+import { getData } from '../src/lib/data';
 
 function Facts({data}) {
   return (
@@ -14,7 +14,7 @@ function Facts({data}) {
               <div key={nanoid()} className="facts__item">
                 <Icon name={fact.icon} mainStyle="fill" />
                 <div className="facts__text">
-                  <H5><strong>{fact.title}</strong></H5>
+                  <P className="h5"><strong>{fact.title}</strong></P>
                   <P>{fact.text}</P>
                 </div>
               </div>
@@ -36,7 +36,7 @@ function OS({data}) {
           </H2>
         </div>
         <div className="os__subtext">
-          <H5>{data.subtext}</H5>
+          <H3 className="h5">{data.subtext}</H3>
         </div>
         <div className="btns os__btns">
           {data.buttons.map((button) => {
@@ -49,7 +49,7 @@ function OS({data}) {
           })}
         </div>
         <div className="os__logo">
-          <img src={data.logo} />
+          <img src={data.logo} width="313" height="71" alt="drachtio" />
           <Button href="https://github.com/sponsors/drachtio/" target="_blank" mainStyle="pill" subStyle="jambonz">
             <Icon name="Heart" />
             <span>Sponsor</span>

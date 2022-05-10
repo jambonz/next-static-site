@@ -90,8 +90,8 @@ export default function Navi({ siteData }) {
     <nav className={classNames(classes)}>
       <div className="wrap navi__wrap">
         <Link href="/">
-          <a className="navi__logo">
-            <img src="/svg/jambonz.svg" width="128" />
+          <a className="navi__logo" title="jambonz">
+            <img src="/svg/jambonz.svg" width="128" height="42" alt="jambonz" />
           </a>
         </Link>
         <ul className="navi__links">

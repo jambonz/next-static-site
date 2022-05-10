@@ -13,7 +13,7 @@
     max-width: 960px;
     @include flex-cols();
 
-    h6 + h6 {
+    p + p {
       margin-top: 32px;
 
       @media (max-width: $width-mobile) {

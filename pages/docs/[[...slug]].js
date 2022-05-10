@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 
 import Prism from 'prismjs';
 
-import Layout from '../../components/layout';
-import Markdown from '../../components/markdown';
-import { getData, getMarkdown, getMarkdownPaths } from '../../lib/data';
+import Layout from '../../src/components/layout';
+import Markdown from '../../src/components/markdown';
+import { getData, getMarkdown, getMarkdownPaths } from '../../src/lib/data';
 
 export default function Docs({ data, docs }) {
   useEffect(() => {

@@ -1,8 +1,8 @@
 import { nanoid } from 'nanoid';
 
-import Layout from '../components/layout';
-import { Hero, Icon, Button, H2, H6, P, normalizeSubtext } from '../components/jambonz-ui';
-import { getData } from '../lib/data';
+import Layout from '../src/components/layout';
+import { Hero, Icon, Button, H2, P, normalizeSubtext } from '../src/components/jambonz-ui';
+import { getData } from '../src/lib/data';
 
 function Structure({data}) {
   return (
@@ -10,7 +10,7 @@ function Structure({data}) {
       <div className="wrap structure__text">
         <>
           {normalizeSubtext(data.text).map((text) => {
-            return <H6 key={nanoid()}>{text}</H6>;
+            return <P className="h6" key={nanoid()}>{text}</P>;
           })}
         </>
       </div>

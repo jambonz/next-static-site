@@ -1,6 +1,6 @@
-import Layout from '../components/layout';
-import { Hero } from '../components/jambonz-ui';
-import { getData } from '../lib/data';
+import Layout from '../src/components/layout';
+import { Hero } from '../src/components/jambonz-ui';
+import { getData } from '../src/lib/data';
 
 export default function Page404({ data }) {
   return (

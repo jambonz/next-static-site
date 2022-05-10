@@ -6,7 +6,11 @@ hero:
   cta: Sign up for free
   url: https://jambonz.us/register
 tech:
-  image: /images/Jambonz_app_screenshot.png
+  image:
+    src: /images/Jambonz_app_screenshot.png
+    alt: jambonz node-red screenshot
+    width: 1280
+    height: 842
   notes:
     -
       title: Adapts to your needs

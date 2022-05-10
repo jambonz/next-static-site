@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import Layout from '../components/layout';
-import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Button, Icon } from '../components/jambonz-ui';
-import { getData } from '../lib/data';
+import Layout from '../src/components/layout';
+import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Button, Icon } from '../src/components/jambonz-ui';
+import { getData } from '../src/lib/data';
 
 export default function JambonzUI({ data }) {
   const pageData = data['jambonz-ui'];

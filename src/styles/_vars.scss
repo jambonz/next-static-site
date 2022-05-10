@@ -28,23 +28,23 @@ $font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 /******************************************************************************
  * Font sizes
 *******************************************************************************/
-$h1-size: 48px;
-$h2-size: 40px;
-$h3-size: 36px;
-$h4-size: 32px;
-$h5-size: 24px;
-$h6-size: 20px;
-$p-size: 18px;
-$m-size: 16px;
-$ms-size: 14px;
-$mxs-size: 12px;
+$h1-size: 3rem;
+$h2-size: 2.5rem;
+$h3-size: 2.25rem;
+$h4-size: 2rem;
+$h5-size: 1.5rem;
+$h6-size: 1.25rem;
+$p-size: 1.125rem;
+$m-size: 1rem;
+$ms-size: 0.875rem;
+$mxs-size: 0.75rem;
 
 /******************************************************************************
  * Icon sizes
 *******************************************************************************/
-$icon-size-1: 48px;
-$icon-size-2: 40px;
-$icon-size-3: 36px;
+$icon-size-1: $h1-size;
+$icon-size-2: $h2-size;
+$icon-size-3: $h3-size;
 
 /******************************************************************************
  * Sizes

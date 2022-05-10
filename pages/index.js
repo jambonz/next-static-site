@@ -2,15 +2,15 @@ import { nanoid } from 'nanoid';
 import classNames from 'classnames';
 import { useState, useEffect, useRef } from 'react';
 
-import Layout from '../components/layout';
-import { Latest, Hero, Icon, Button, H6, H5, H2, P, MS, normalizeSubtext, normalizeSlug, useMobileMedia } from '../components/jambonz-ui';
-import { getData } from '../lib/data';
+import Layout from '../src/components/layout';
+import { Latest, Hero, Icon, Button, H6, H4, H3, H2, P, MS, normalizeSubtext, normalizeSlug, useMobileMedia } from '../src/components/jambonz-ui';
+import { getData } from '../src/lib/data';
 
 function Tech({data}) {
   return (
     <section className="tech wrap">
       <div className="tech__image">
-        <img src={data.image} />
+        <img src={data.image.src} width={data.image.width} height={data.image.height} alt={data.image.alt} />
       </div>
       <ul className="tech__notes">
         {data.notes.map((note) => {
@@ -61,10 +61,10 @@ function Dilemma({data}) {
           <H2>{data.headline}</H2>
         </div>
         <div className="dilemma__subtext">
-          <H5>
+          <H3 className="h5">
             {/* Use dangerouslySetInnerHTML to render inline spans from YAML data */}
             {normalizeSubtext(data.subtext).map((subtext) => <div key={nanoid()} dangerouslySetInnerHTML={{ __html: subtext }} />)}
-          </H5>
+          </H3>
         </div>
         <div className="dilemma__tables">
           {data.tables.map((table) => {
@@ -83,7 +83,7 @@ function Dilemma({data}) {
             return (
               <div key={slug} className={classNames(tableClasses)}>
                 <div className="dilemma__table__title" onClick={() => handleToggle(slug)}>
-                  {table.logo ? <img src={table.logo} /> : <P><strong>{table.title}</strong></P>}
+                  {table.logo ? <img src={table.logo} width="128" height="42" alt="jambonz" /> : <P><strong>{table.title}</strong></P>}
                   <span className="dilemma__table__toggle" >
                     {isActiveToggle ? <Icon name="ChevronUp" /> : <Icon name="ChevronDown" />}
                   </span>
@@ -124,7 +124,7 @@ function BYO({data}) {
           <H2>{data.headline}</H2>
         </div>
         <div className="byo__subtext">
-          <H5>{data.subtext}</H5>
+          <H3 className="h5">{data.subtext}</H3>
         </div>
         <div className="byo__icons icons">
           {data.icons.map((icon) => {
@@ -132,10 +132,10 @@ function BYO({data}) {
           })}
         </div>
         <div className="byo__comment">
-          <H5>
+          <H4 className="h5">
             {/* Use dangerouslySetInnerHTML to render inline link from YAML data */}
             <div dangerouslySetInnerHTML={{ __html: data.comment }} />
-          </H5>
+          </H4>
         </div>
         <div className="byo__cta">
           <Button href={data.url} subStyle="dark" target="_blank">{data.cta}</Button>

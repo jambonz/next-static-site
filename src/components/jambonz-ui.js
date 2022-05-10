@@ -19,6 +19,17 @@ export function normalizeSlug(key) {
   return String(key.toLowerCase()).split(' ').join('-');
 }
 
+// For accessibility issues we can "fix" our limitations with markdown and remark-html
+export function normalizeTextLayout(html) {
+  return html
+    .replace(/<(h[1-6])>/g, (m, p1) => {
+      return `<div class="${p1}">`;
+    })
+    .replace(/<\/(h[1-6])>/g, (m, p1) => {
+      return '</div>';
+    });
+}
+
 // Normalize how we listen for media queries
 // Intentionally `null` default value -- will throw Error
 export function useMatchMedia(mediaQuery = null) {
@@ -52,32 +63,32 @@ export function useMobileMedia() {
   return useMatchMedia('(max-width: 896px)');
 }
 
-export function H1({ children }) {
-  return <h1>{children}</h1>;
+export function H1({ children, ...rest }) {
+  return <h1 {...rest}>{children}</h1>;
 }
 
-export function H2({ children }) {
-  return <h2>{children}</h2>;
+export function H2({ children, ...rest }) {
+  return <h2 {...rest}>{children}</h2>;
 }
 
-export function H3({ children }) {
-  return <h3>{children}</h3>;
+export function H3({ children, ...rest }) {
+  return <h3 {...rest}>{children}</h3>;
 }
 
-export function H4({ children }) {
-  return <h4>{children}</h4>;
+export function H4({ children, ...rest }) {
+  return <h4 {...rest}>{children}</h4>;
 }
 
-export function H5({ children }) {
-  return <h5>{children}</h5>;
+export function H5({ children, ...rest }) {
+  return <h5 {...rest}>{children}</h5>;
 }
 
-export function H6({ children }) {
-  return <h6>{children}</h6>;
+export function H6({ children, ...rest }) {
+  return <h6 {...rest}>{children}</h6>;
 }
 
-export function P({children}) {
-  return <p>{children}</p>;
+export function P({ children, ...rest }) {
+  return <p {...rest}>{children}</p>;
 }
 
 export function M({ children }) {
@@ -107,12 +118,12 @@ export function Latest({ data }) {
           <H2>{data.headline}</H2>
         </div>
         <div className="latest__subtext">
-          <H5>
+          <H3 className="h5">
             {/* Use dangerouslySetInnerHTML to render inline links from YAML data */}
             {normalizeSubtext(data.subtext).map((subtext) => {
               return <div key={nanoid()} dangerouslySetInnerHTML={{ __html: subtext }} />;
             })}
-          </H5>
+          </H3>
         </div>
       </div>
     </section>
@@ -136,11 +147,11 @@ export function Hero({ data, subStyle }) {
           <H1>{data.headline}</H1>
         </div>
         <div className="hero__subtext">
-          <H5>
+          <H2 className="h5">
             {normalizeSubtext(data.subtext).map((subtext) => {
               return <div key={nanoid()}>{subtext}</div>;
             })}
-          </H5>
+          </H2>
         </div>
         {data.cta && (
           <div className="hero__cta">
@@ -201,10 +212,10 @@ export function Icon({ name, mainStyle = 'inline', subStyle = null, ...props }) 
   return <Component {...props} />;
 }
 
-export function TextLayout({ data }) {
+export function TextLayout({ data, name }) {
   return (
-    <div className="text__layout">
-      <div className="text__layout__wrap" dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+    <div className={`text-layout text-layout--${name}`}>
+      <div className="text-layout__wrap" dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
     </div>
   );
 }
