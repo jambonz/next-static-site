@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useState, useEffect, useRef } from 'react';
 
 import Layout from '../src/components/layout';
-import { Latest, Hero, Icon, Button, H6, H4, H3, H2, P, MS, normalizeSubtext, normalizeSlug, useMobileMedia } from '../src/components/jambonz-ui';
+import { Latest, Hero, Icon, Button, H4, H3, H2, P, MS, normalizeSubtext, normalizeSlug, useMobileMedia } from '../src/components/jambonz-ui';
 import { getData } from '../src/lib/data';
 
 function Tech({data}) {
@@ -16,9 +16,9 @@ function Tech({data}) {
         {data.notes.map((note) => {
           return (
             <li key={nanoid()} className="tech__note">
-              <H6>
+              <P className="h6">
                 <strong>{note.title}</strong>
-              </H6>
+              </P>
               <MS>{note.text}</MS>
             </li>
           );
