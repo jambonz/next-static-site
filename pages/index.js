@@ -10,7 +10,14 @@ function Tech({data}) {
   return (
     <section className="tech wrap">
       <div className="tech__image">
-        <img src={data.image.src} width={data.image.width} height={data.image.height} alt={data.image.alt} />
+        <img
+          src={data.image.src}
+          srcSet={`${data.image.src} 1280w, ${data.image.src2} 640w`}
+          sizes="(max-width: 640px) 640px, 1280px"
+          width={data.image.width}
+          height={data.image.height}
+          alt={data.image.alt}
+        />
       </div>
       <ul className="tech__notes">
         {data.notes.map((note) => {

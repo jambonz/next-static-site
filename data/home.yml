@@ -7,7 +7,8 @@ hero:
   url: https://jambonz.us/register
 tech:
   image:
-    src: /images/Jambonz_app_screenshot.png
+    src: /images/Jambonz_app_screenshot.webp
+    src2: /images/Jambonz_app_screenshot_small.webp
     alt: jambonz node-red screenshot
     width: 1280
     height: 842

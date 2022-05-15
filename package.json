@@ -44,6 +44,7 @@
     "remark-gfm": "^1.0.0",
     "remark-html": "^13.0.1",
     "sass": "^1.32.8",
+    "sharp": "^0.30.4",
     "yamljs": "^0.3.0"
   },
   "lint-staged": {
@@ -52,7 +53,7 @@
   "eslintConfig": {
     "settings": {
       "react": {
-      "version": "detect"
+        "version": "detect"
       }
     },
     "env": {

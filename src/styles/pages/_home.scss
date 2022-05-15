@@ -12,6 +12,7 @@
 
   &__image {
     max-width: 66.6666666667vw;
+    width: 1120px; // Largest render size per max-width of site container
 
     @media (max-width: $width-tablet-1) {
       max-width: 100%;
