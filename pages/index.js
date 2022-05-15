@@ -12,8 +12,7 @@ function Tech({data}) {
       <div className="tech__image">
         <img
           src={data.image.src}
-          srcSet={`${data.image.src} 1280w, ${data.image.src2} 640w`}
-          sizes="(max-width: 640px) 640px, 1280px"
+          srcSet={`${data.image.src} 2x, ${data.image.src2} 1.5x`}
           width={data.image.width}
           height={data.image.height}
           alt={data.image.alt}
