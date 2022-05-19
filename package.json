@@ -20,10 +20,14 @@
     "classnames": "^2.2.6",
     "nanoid": "^3.1.22",
     "next": "^12.1.4",
+    "next-plugin-preact": "^3.0.6",
+    "preact": "^10.7.2",
+    "preact-render-to-string": "^5.2.0",
     "prismjs": "^1.23.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-feather": "^2.0.9"
+    "react": "npm:@preact/compat",
+    "react-dom": "npm:@preact/compat",
+    "react-feather": "^2.0.9",
+    "react-ssr-prepass": "npm:preact-ssr-prepass"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
