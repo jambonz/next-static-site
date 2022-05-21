@@ -3,8 +3,10 @@
   position: relative;
   z-index: $navi-index;
 
-  &.mobile.active {
-    z-index: $navi-index + 2;
+  &.active {
+    @media ( max-width: $mobile-width ) {
+      z-index: $navi-index + 2;
+    }
   }
 
   // Menu / X icons for mobile nav interactions
@@ -47,7 +49,7 @@
 
   &__links,
   &__login {
-    .mobile & {
+    @media ( max-width: $mobile-width ) {
       display: none;
     }
   }
@@ -61,7 +63,7 @@
       transform: translateY(-5px);
     }
 
-    .mobile & {
+    @media ( max-width: $mobile-width ) {
       display: block;
     }
   }

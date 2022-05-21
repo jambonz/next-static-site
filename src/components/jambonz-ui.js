@@ -30,13 +30,8 @@ export function normalizeTextLayout(html) {
     });
 }
 
-// Normalize how we listen for media queries
-// Intentionally `null` default value -- will throw Error
-export function useMatchMedia(mediaQuery = null) {
-  if (!mediaQuery) {
-    throw new Error(`Jambonz UI "useMatchMedia" requires valid Media Query: ${mediaQuery} was passed.`);
-  }
-
+// Normalize for our mobile media query
+export function useMobileMedia() {
   const [mobile, setMobile] = useState(false);
 
   const handleMedia = useCallback((e) => {
@@ -44,7 +39,9 @@ export function useMatchMedia(mediaQuery = null) {
   }, [setMobile]);
 
   useEffect(() => {
-    const mql = window.matchMedia(mediaQuery);
+    const str = window.getComputedStyle(document.documentElement);
+    const qry = str.getPropertyValue('--mobile-media');
+    const mql = window.matchMedia(`(max-width: ${qry})`);
 
     mql.addEventListener('change', handleMedia);
 
@@ -53,14 +50,9 @@ export function useMatchMedia(mediaQuery = null) {
     return function cleanup() {
       mql.removeEventListener('change', handleMedia);
     };
-  }, [handleMedia, setMobile, mediaQuery]);
+  }, [handleMedia, setMobile]);
 
   return mobile;
-}
-
-// Normalize for our mobile media query
-export function useMobileMedia() {
-  return useMatchMedia('(max-width: 896px)');
 }
 
 export function H1({ children, ...rest }) {
