@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import * as Icons from 'react-feather';
 import { nanoid } from 'nanoid';
 import { useState, useEffect, useCallback } from 'react';
 
@@ -166,6 +165,15 @@ export function Button({ children, href, mainStyle = 'fill', subStyle = null, ..
 // See react-feather for all 286 icons available
 // https://github.com/feathericons/react-feather
 export function Icon({ name, mainStyle = 'inline', subStyle = null, ...props }) {
+  const [Icons, setIcons] = useState({});
+
+  // Lazy load react-feather as it's own webpack chunk
+  useEffect(() => {
+    import('react-feather').then(( FeatherIcons ) => {
+      setIcons(FeatherIcons);
+    });
+  }, []);
+
   const Component = Icons[name];
   const classes = {
     'icon': true,
