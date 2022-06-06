@@ -110,7 +110,7 @@ export function Latest({ data }) {
   );
 }
 
-export function Hero({ data, subStyle }) {
+export function Hero({ data = {}, subStyle, altStyle, children }) {
   const classes = {
     'hero': true,
     'pad': true,
@@ -120,24 +120,33 @@ export function Hero({ data, subStyle }) {
     classes[`hero--${subStyle}`] = true;
   }
 
+  if (altStyle) {
+    classes[`hero--${altStyle}`] = true;
+  }
+
   return (
     <section className={classNames(classes)}>
       <div className="wrap hero__wrap">
-        <div className="hero__headline">
-          <H1>{data.headline}</H1>
-        </div>
-        <div className="hero__subtext">
-          <H2 className="h5">
-            {normalizeSubtext(data.subtext).map((subtext) => {
-              return <div key={nanoid()}>{subtext}</div>;
-            })}
-          </H2>
-        </div>
+        {data.headline && (
+          <div className="hero__headline">
+            <H1>{data.headline}</H1>
+          </div>
+        )}
+        {data.subtext && (
+          <div className="hero__subtext">
+            <H2 className="h5">
+              {normalizeSubtext(data.subtext).map((subtext) => {
+                return <div key={nanoid()}>{subtext}</div>;
+              })}
+            </H2>
+          </div>
+        )}
         {data.cta && (
           <div className="hero__cta">
             <Button href={data.url} target="_blank">{data.cta}</Button>
           </div>
         )}
+        {children}
       </div>
     </section>
   );

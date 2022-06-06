@@ -140,11 +140,6 @@
   &--pricing {
     padding-bottom: 0;
 
-    .hero__wrap {
-      position: relative;
-      z-index: 2;
-    }
-
     .hero__subtext {
       max-width: 770px;
     }
@@ -152,6 +147,28 @@
 
   &--privacy, &--terms {
     padding-bottom: 16px;
+  }
+
+  &--pink {
+    position: relative;
+
+    .hero__wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    &:before {
+      content: '';
+      background-color: $pink;
+      width: 100%;
+      height: calc(100% + #{$navi-height});
+      transform: translateY(-#{$navi-height});
+      z-index: 1;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
   }
 
   &__wrap {

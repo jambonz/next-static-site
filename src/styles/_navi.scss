@@ -1,5 +1,6 @@
 .navi {
-  padding: 16px 0;
+  height: $navi-height;
+  display: flex;
   position: relative;
   z-index: $navi-index;
 

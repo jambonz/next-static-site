@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import Layout from '../src/components/layout';
-import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Button, Icon } from '../src/components/jambonz-ui';
+import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Button, Icon, Hero } from '../src/components/jambonz-ui';
 import { getData } from '../src/lib/data';
 
 export default function JambonzUI({ data }) {
@@ -11,7 +11,7 @@ export default function JambonzUI({ data }) {
     <Layout siteData={data.site}>
       <div className="jambonz-ui">
         {/* High-level design information */}
-        <div className="hero pad">
+        <Hero subStyle="jambonz-ui" altStyle="pink">
           <div className="wrap">
             <H1>
               <div>Jambonz UI</div>
@@ -57,7 +57,7 @@ export default function JambonzUI({ data }) {
               </div>
             </H5>
           </div>
-        </div>
+        </Hero>
         {/* Show black background style */}
         <div className="pad bg-black">
           <div className="wrap">
