@@ -12,14 +12,6 @@
       margin-top: 0;
     }
 
-    h1 {
-      @include h2();
-    }
-
-    h2 {
-      @include h3();
-    }
-
     sup {
       color: $jambonz;
     }
@@ -38,7 +30,7 @@
       }
     }
 
-    > h1, > h2, > h3, > h4, > h5, > h6, > p, > div, > ul, > ol, > table, > blockquote {
+    > p, > div, > ul, > ol, > table, > blockquote {
       margin: 16px 0;
     }
 

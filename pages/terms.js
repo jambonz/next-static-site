@@ -1,11 +1,9 @@
 import Layout from '../src/components/layout';
-import { Hero, TextLayout, normalizeTextLayout } from '../src/components/jambonz-ui';
+import { Hero, TextLayout } from '../src/components/jambonz-ui';
 import { getData, getParsedMarkdown } from '../src/lib/data';
 import path from 'path';
 
 export default function Terms({ data, parsed }) {
-  parsed.contentHtml = normalizeTextLayout(parsed.contentHtml);
-
   return (
     <Layout siteData={data.site}>
       <Hero data={data.terms.hero} subStyle="terms" />

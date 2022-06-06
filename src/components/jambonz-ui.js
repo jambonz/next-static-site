@@ -19,17 +19,6 @@ export function normalizeSlug(key) {
   return String(key.toLowerCase()).split(' ').join('-');
 }
 
-// For accessibility issues we can "fix" our limitations with markdown and remark-html
-export function normalizeTextLayout(html) {
-  return html
-    .replace(/<(h[1-6])>/g, (m, p1) => {
-      return `<div class="${p1}">`;
-    })
-    .replace(/<\/(h[1-6])>/g, (m, p1) => {
-      return '</div>';
-    });
-}
-
 // Normalize for our mobile media query
 export function useMobileMedia() {
   const [mobile, setMobile] = useState(false);

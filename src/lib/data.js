@@ -9,6 +9,23 @@ const dataDir = path.join(process.cwd(), 'data');
 const markdownDir = path.join(process.cwd(), 'markdown');
 
 /**
+ * For accessibility issues we can "fix" our limitations with markdown and remark-html
+ * The ideal solution would be to comb over every markdown file and fix our headings...
+ * The issue is headings out of order, as in an h2 coming after an h3 etc...
+ * @param {string} html The contentHtml to make changes to
+ * @returns {Object}
+ */
+function _normalizeHTML(html) {
+  return html
+    .replace(/<(h[1-6])>/g, (m, p1) => {
+      return `<div class="${p1}">`;
+    })
+    .replace(/<\/(h[1-6])>/g, (m, p1) => {
+      return '</div>';
+    });
+}
+
+/**
  * Parse YAML data to generate the static props for Next.js page components
  * @param {string} key The fileName without extension to load from ./data
  * @returns {Object}
@@ -46,7 +63,7 @@ export async function getParsedMarkdown(filePath) {
     .use(remarkGfm)
     .use(remarkHtml)
     .process(fileMatter.content);
-  const contentHtml = processedContent.toString();
+  const contentHtml = _normalizeHTML(processedContent.toString());
 
   // Combine the data with the slug and contentHtml
   return {
