@@ -14,7 +14,7 @@ function Regions({ data }) {
     <section className="regions">
       {data.regions.map((region) => {
         return (
-          <div key={nanoid()} region={region.name} className="wrap regions__wrap" something={cta}>
+          <div key={nanoid()} region={region.name} className="wrap regions__wrap">
             <div className="regions__icon">
               <Link href={cta === 'login' ? region.url : region.altUrl}>
                 <a>
