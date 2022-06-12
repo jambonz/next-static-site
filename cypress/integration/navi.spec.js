@@ -30,8 +30,6 @@ describe('Navigation', () => {
 
       cy.get('.navi__login .btn')
         .contains(site.navi.login.label)
-        .should('have.attr', 'href', site.navi.login.link)
-        .should('have.attr', 'target', '_blank');
     });
   });
 
