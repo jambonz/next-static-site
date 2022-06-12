@@ -4,7 +4,7 @@ import Layout from '../src/components/layout';
 import { Hero, Icon, Button, H3, H2, P } from '../src/components/jambonz-ui';
 import { getData } from '../src/lib/data';
 
-function Facts({data}) {
+function Facts({ data }) {
   return (
     <section className="bg-pink facts">
       <div className="wrap facts__wrap">
@@ -26,13 +26,13 @@ function Facts({data}) {
   );
 }
 
-function OS({data}) {
+function OS({ data }) {
   return (
     <section className="os pad">
       <div className="wrap os__wrap">
         <div className="os__headline">
           <H2>
-            <div dangerouslySetInnerHTML={{ __html: data.headline}} />
+            <div dangerouslySetInnerHTML={{ __html: data.headline }} />
           </H2>
         </div>
         <div className="os__subtext">
@@ -56,7 +56,7 @@ function OS({data}) {
           </Button>
         </div>
         <div className="os__cta">
-          <Button href={data.url} subStyle="dark" target="_blank">{data.cta}</Button>
+          <Button href={data.link} subStyle="dark" >{data.cta}</Button>
         </div>
       </div>
     </section>

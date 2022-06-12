@@ -6,7 +6,7 @@ import Layout from '../src/components/layout';
 import { Latest, Hero, Icon, Button, H4, H3, H2, P, MS, normalizeSubtext, normalizeSlug, useMobileMedia } from '../src/components/jambonz-ui';
 import { getData } from '../src/lib/data';
 
-function Tech({data}) {
+function Tech({ data }) {
   return (
     <section className="tech wrap">
       <div className="tech__image">
@@ -34,7 +34,7 @@ function Tech({data}) {
   );
 }
 
-function Dilemma({data}) {
+function Dilemma({ data }) {
   const mobile = useMobileMedia();
   const initialRef = useRef();
   const [active, setActive] = useState(null);
@@ -122,7 +122,7 @@ function Dilemma({data}) {
   );
 }
 
-function BYO({data}) {
+function BYO({ data }) {
   return (
     <section className="byo pad">
       <div className="wrap byo__wrap">
@@ -144,7 +144,7 @@ function BYO({data}) {
           </H4>
         </div>
         <div className="byo__cta">
-          <Button href={data.url} subStyle="dark" target="_blank">{data.cta}</Button>
+          <Button href={data.link} subStyle="dark">{data.cta}</Button>
         </div>
       </div>
     </section>
@@ -153,7 +153,6 @@ function BYO({data}) {
 
 export default function Home({ data }) {
   const latest = data.site.latest.find((item) => item.active);
-
   return (
     <Layout siteData={data.site}>
       {latest && <Latest data={latest} />}

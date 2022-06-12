@@ -1,0 +1,25 @@
+/******************************************************************************
+ * Regions
+*******************************************************************************/
+.regions {
+  text-align: center;
+
+  &__wrap {
+    @include flex-cols();
+    padding-bottom: 72px;
+  }
+
+  &__icon {
+    padding-bottom: 24px;
+  }
+
+  &__title {
+
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
