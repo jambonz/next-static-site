@@ -151,7 +151,7 @@ function BYO({data}) {
   );
 }
 
-export default function Home({data}) {
+export default function Home({ data }) {
   const latest = data.site.latest.find((item) => item.active);
   return (
     <Layout siteData={data.site}>
