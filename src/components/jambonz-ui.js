@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { nanoid } from 'nanoid';
 import { useState, useEffect, useCallback } from 'react';
+import Icons from './icons';
 
 import Link from 'next/link';
 
@@ -174,16 +175,6 @@ export function Button({ children, href, mainStyle = 'fill', subStyle = null, ..
 // See react-feather for all 286 icons available
 // https://github.com/feathericons/react-feather
 export function Icon({ name, mainStyle = 'inline', subStyle = null, ...props }) {
-  const [Icons, setIcons] = useState({});
-  const svgPlaceholder = <svg width="24" height="24" />;
-
-  // Lazy load react-feather as it's own webpack chunk
-  useEffect(() => {
-    import('react-feather').then(( FeatherIcons ) => {
-      setIcons(FeatherIcons);
-    });
-  }, []);
-
   const Component = Icons[name];
   const classes = {
     'icon': true,
@@ -194,17 +185,21 @@ export function Icon({ name, mainStyle = 'inline', subStyle = null, ...props }) 
     classes[`icon--${mainStyle}--${subStyle}`] = true;
   }
 
+  if (!Component) {
+    return null;
+  }
+
   // Stylized icon
   if (mainStyle !== 'inline') {
     return (
       <div className={classNames(classes)}>
-        {Component ? <Component {...props} /> : svgPlaceholder}
+        <Component {...props} />
       </div>
     );
   }
 
   // Inline icon
-  return Component ? <Component {...props} /> : svgPlaceholder;
+  return <Component {...props} />;
 }
 
 export function TextLayout({ data, name }) {
