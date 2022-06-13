@@ -11,12 +11,12 @@ function Regions({ data }) {
   const redirect = router.query.redirect;
 
   return (
-    <>
+    <section className="regions">
       {data.regions.map((region) => {
         const href = (redirect === 'login') ? region.url : region.altUrl;
 
         return (
-          <div key={nanoid()} region={region.name} className="wrap regions__wrap">
+          <div key={nanoid()} className="wrap regions__wrap">
             <div className="regions__icon">
               <Icon name={region.icon} subStyle={region.color} mainStyle="fill" />
             </div>
@@ -36,7 +36,7 @@ function Regions({ data }) {
           </div>
         );
       })}
-    </>
+    </section>
   );
 }
 
