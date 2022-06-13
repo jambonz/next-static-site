@@ -6,7 +6,7 @@ import Layout from '../src/components/layout';
 import { Latest, Hero, Icon, Button, H4, H3, H2, P, MS, normalizeSubtext, normalizeSlug, useMobileMedia } from '../src/components/jambonz-ui';
 import { getData } from '../src/lib/data';
 
-function Tech({ data }) {
+function Tech({data}) {
   return (
     <section className="tech wrap">
       <div className="tech__image">
@@ -34,7 +34,7 @@ function Tech({ data }) {
   );
 }
 
-function Dilemma({ data }) {
+function Dilemma({data}) {
   const mobile = useMobileMedia();
   const initialRef = useRef();
   const [active, setActive] = useState(null);

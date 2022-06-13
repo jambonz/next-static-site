@@ -9,7 +9,7 @@ regions:
     text: jambonz.us
     url: https://jambonz.us/sign-in
     altUrl: https://jambonz.us/register
-    icon: MapPin # placeholder, probably?
+    icon: MapPin
     color: blue
   -
     name: eu

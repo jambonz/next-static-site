@@ -3,6 +3,7 @@
 *******************************************************************************/
 .regions {
   text-align: center;
+  margin-top: 64px;
 
   &__wrap {
     @include flex-cols();
@@ -11,15 +12,5 @@
 
   &__icon {
     padding-bottom: 24px;
-  }
-
-  &__title {
-
-  }
-
-  &__text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
