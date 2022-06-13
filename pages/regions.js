@@ -18,20 +18,16 @@ function Regions({ data }) {
         return (
           <div key={nanoid()} region={region.name} className="wrap regions__wrap">
             <div className="regions__icon">
-              <Link href={href}>
-                <a>
-                  <Icon name={region.icon} subStyle={region.color} mainStyle="fill" />
-                </a>
-              </Link>
+              <Icon name={region.icon} subStyle={region.color} mainStyle="fill" />
             </div>
-            <P className='h6'>
-              <span style={`color:${region.color}`}>{region.title}</span>
+            <P className="h6">
+              <span className={`color--${region.color}`}>{region.title}</span>
             </P>
             <div className="i">
               <Link href={href}>
-                <a>
-                  <P className='h6'>
-                    <span style='color:black'>{region.text}</span>
+                <a title={`jambonz ${region.title}`}>
+                  <P className="h6">
+                    <span className="regions__text">{region.text}</span>
                     <Icon name="ExternalLink" />
                   </P>
                 </a>
