@@ -107,6 +107,10 @@ em {
   @include mxs();
 }
 
+.med {
+  @include font-medium();
+}
+
 .color--teal {
   color: $teal;
 }

@@ -175,19 +175,6 @@ export function Button({ children, href, mainStyle = 'fill', subStyle = null, ..
 // See react-feather for all 286 icons available
 // https://github.com/feathericons/react-feather
 export function Icon({ name, mainStyle = 'inline', subStyle = null, ...props }) {
-<<<<<<< HEAD
-=======
-  const [Icons, setIcons] = useState({});
-  const svgPlaceholder = <svg width="24" height="24" />;
-
-  // Lazy load react-feather as it's own webpack chunk
-  useEffect(() => {
-    import('react-feather').then(( FeatherIcons ) => {
-      setIcons(FeatherIcons);
-    });
-  }, []);
-
->>>>>>> 30fe037 (less random stylistic changes)
   const Component = Icons[name];
   const classes = {
     'icon': true,

@@ -21,20 +21,16 @@ function Regions({ data }) {
               <Icon name={region.icon} subStyle={region.color} mainStyle="fill" />
             </div>
             <div className="regions__title">
-              <P className="h6">
-                <span className={`color--${region.color}`}>
-                  {region.title}
-                </span>
+              <P className={`med color--${region.color}`}>
+                {region.title}
               </P>
             </div>
             <div className="regions__text">
-              <P className="h6">
+              <P className="med">
                 <Link href={href}>
-                  <a title={`jambonz ${region.title}`}>
-                    <P className="i">
-                      <span className="regions__text">{region.text}</span>
-                      <Icon name="ExternalLink" />
-                    </P>
+                  <a className="i" title={`jambonz ${region.title}`}>
+                    <span className="regions__text">{region.text}</span>
+                    <Icon name="ExternalLink" />
                   </a>
                 </Link>
               </P>
@@ -49,7 +45,7 @@ function Regions({ data }) {
 export default function RegionsPage({ data }) {
   return (
     <Layout siteData={data.site}>
-      <Hero data={data.regions.hero} altStyle='pink'>
+      <Hero data={data.regions.hero} altStyle="pink">
         <Regions data={data.regions} />
       </Hero>
     </Layout>
