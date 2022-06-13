@@ -122,7 +122,7 @@ function Dilemma({data}) {
   );
 }
 
-function BYO({ data }) {
+function BYO({data}) {
   return (
     <section className="byo pad">
       <div className="wrap byo__wrap">
@@ -151,9 +151,8 @@ function BYO({ data }) {
   );
 }
 
-export default function Home({ data }) {
+export default function Home({data}) {
   const latest = data.site.latest.find((item) => item.active);
-  
   return (
     <Layout siteData={data.site}>
       {latest && <Latest data={latest} />}
