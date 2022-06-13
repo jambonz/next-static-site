@@ -175,6 +175,7 @@ export function Button({ children, href, mainStyle = 'fill', subStyle = null, ..
 // https://github.com/feathericons/react-feather
 export function Icon({ name, mainStyle = 'inline', subStyle = null, ...props }) {
   const [Icons, setIcons] = useState({});
+  const svgPlaceholder = <svg width="24" height="24" />;
 
   // Lazy load react-feather as it's own webpack chunk
   useEffect(() => {
@@ -193,21 +194,17 @@ export function Icon({ name, mainStyle = 'inline', subStyle = null, ...props }) 
     classes[`icon--${mainStyle}--${subStyle}`] = true;
   }
 
-  if (!Component) {
-    return null;
-  }
-
   // Stylized icon
   if (mainStyle !== 'inline') {
     return (
       <div className={classNames(classes)}>
-        <Component {...props} />
+        {Component ? <Component {...props} /> : svgPlaceholder}
       </div>
     );
   }
 
   // Inline icon
-  return <Component {...props} />;
+  return Component ? <Component {...props} /> : svgPlaceholder;
 }
 
 export function TextLayout({ data, name }) {

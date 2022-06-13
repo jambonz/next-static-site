@@ -17,9 +17,9 @@ export default function JambonzUI({ data }) {
               <div>Jambonz UI</div>
               <div>&nbsp;</div>
             </H1>
-            <H5>
+            <H2 className="h5">
               <div><strong>font</strong></div>
-              <div>Objectivity (free, large family—16 styles)</div>
+              <div>Objectivity (os, large family—16 styles)</div>
               <div>
                 <Link href="https://www.behance.net/gallery/60530395/Objectivity-Free-Font-Family">
                   <a className="i" target="_blank">
@@ -38,7 +38,7 @@ export default function JambonzUI({ data }) {
               </div>
               <div>&nbsp;</div>
               <div><strong>icons</strong></div>
-              <div>Feather (free, large set—286 icons)</div>
+              <div>Feather (os, large set—286 icons)</div>
               <div>
                 <Link href="https://feathericons.com">
                   <a className="i" target="_blank">
@@ -55,7 +55,7 @@ export default function JambonzUI({ data }) {
                   </a>
                 </Link>
               </div>
-            </H5>
+            </H2>
           </div>
         </Hero>
         {/* Show black background style */}
@@ -109,7 +109,7 @@ export default function JambonzUI({ data }) {
             <MXS>{pageData.text}</MXS>
           </div>
           <div className="pad">
-            <img src="/images/Jambonz_app_screenshot.png" />
+            <img src="/images/Jambonz_app_screenshot.webp" width="1280" height="842" alt="jambonz node-red screenshot" />
           </div>
           <div className="pad">
             <div className="icons">
@@ -127,7 +127,7 @@ export default function JambonzUI({ data }) {
             </div>
           </div>
           <div className="pad">
-            <img src="/svg/drachtio.svg" width="128" />
+            <img src="/svg/drachtio.svg" width="313" height="71" alt="drachtio" />
           </div>
           <div className="pad">
             <Button href="#" mainStyle="login">Log In</Button>
