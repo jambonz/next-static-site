@@ -1,0 +1,20 @@
+/******************************************************************************
+ * Regions
+*******************************************************************************/
+.regions {
+  text-align: center;
+  margin-top: 64px;
+
+  &__wrap {
+    @include flex-cols();
+    padding-bottom: 72px;
+  }
+
+  &__icon {
+    padding-bottom: 24px;
+  }
+
+  &__text {
+    color: $black;
+  }
+}

@@ -2,7 +2,10 @@ hero:
   headline: Why choose jambonz?
   subtext: jambonz is the communications platform that brings your ideas to life. So you can bring your best to your customers every day.
   cta: Get started for free
-  url: https://jambonz.us/register
+  url: 
+    pathname: /regions/
+    query:
+      redirect: register
 facts:
   -
     icon: Layers
@@ -34,4 +37,7 @@ os:
       url: https://github.com/drachtio
   logo: /svg/drachtio.svg
   cta: Get started for free
-  url: https://jambonz.us/register
+  url:
+    pathname: /regions/
+    query:
+      redirect: register

@@ -4,7 +4,10 @@ hero:
     - jambonz is the open source CPaaS 
     - built for communications service providers.
   cta: Sign up for free
-  url: https://jambonz.us/register
+  url:
+    pathname: /regions/
+    query:
+      redirect: register
 tech:
   image:
     src: /images/Jambonz_app_screenshot.webp
@@ -94,6 +97,9 @@ byo:
     - PhoneCall
     - Folder
     - Cloud
-  comment: Why pay someone to upcharge you for all of that when it’s basically a one-click experience to provision all of those yourself in today's world. You know how to <a href="https://jambonz.us" target="_blank">click</a>, right?
+  comment: Why pay someone to upcharge you for all of that when it’s basically a one-click experience to provision all of those yourself in today's world. You know how to <a href="/regions/?=register">click</a>, right?
   cta: Get started for free
-  url: https://jambonz.us/register
+  url:
+    pathname: /regions/
+    query:
+      redirect: register

@@ -56,7 +56,7 @@ function OS({data}) {
           </Button>
         </div>
         <div className="os__cta">
-          <Button href={data.url} subStyle="dark" target="_blank">{data.cta}</Button>
+          <Button href={data.url} subStyle="dark" >{data.cta}</Button>
         </div>
       </div>
     </section>

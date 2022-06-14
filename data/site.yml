@@ -15,7 +15,10 @@ navi:
     label: Home
   login:
     label: Log In
-    link: https://jambonz.us
+    link: 
+      pathname: /regions/
+      query:
+        redirect: login
   links:
     -
       label: Why jambonz

@@ -144,7 +144,7 @@ function BYO({data}) {
           </H4>
         </div>
         <div className="byo__cta">
-          <Button href={data.url} subStyle="dark" target="_blank">{data.cta}</Button>
+          <Button href={data.url} subStyle="dark">{data.cta}</Button>
         </div>
       </div>
     </section>
@@ -153,7 +153,6 @@ function BYO({data}) {
 
 export default function Home({ data }) {
   const latest = data.site.latest.find((item) => item.active);
-
   return (
     <Layout siteData={data.site}>
       {latest && <Latest data={latest} />}

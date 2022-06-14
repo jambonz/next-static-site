@@ -40,7 +40,7 @@ function NaviMobile({ active, handler, siteData }) {
     <div className={classNames(classes)}>
       <div className="navi__mobile__head">
         <div className="navi__mobile__login">
-          <Button href={siteData.navi.login.link} target="_blank" mainStyle="login" subStyle="white">
+          <Button href={siteData.navi.login.link} mainStyle="login" subStyle="white" onClick={handler}>
             {siteData.navi.login.label}
           </Button>
         </div>
@@ -103,7 +103,7 @@ export default function Navi({ siteData }) {
           <Icon mainStyle="fill" name="Menu" />
         </div>
         <div className="navi__login">
-          <Button href={siteData.navi.login.link} target="_blank" mainStyle="login">
+          <Button href={siteData.navi.login.link} mainStyle="login">
             {siteData.navi.login.label}
           </Button>
         </div>
