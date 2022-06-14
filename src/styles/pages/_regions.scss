@@ -5,13 +5,25 @@
   text-align: center;
   margin-top: 64px;
 
+  @media (max-width: $width-tablet-1) {
+    margin-top: 32px;
+  }
+
   &__wrap {
     @include flex-cols();
     padding-bottom: 72px;
+
+    @media (max-width: $width-mobile) {
+      padding-bottom: 36px;
+    }
   }
 
   &__icon {
     padding-bottom: 24px;
+
+    @media (max-width: $width-mobile) {
+      padding-bottom: 16px;
+    }
   }
 
   &__text {
