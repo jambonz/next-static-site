@@ -89,7 +89,7 @@ export function Latest({ data }) {
     'latest': true,
     [`latest--${data.label}`]: true,
     'pad': true,
-    'bg-pink': true,
+    'bg--pink': true,
   };
 
   return (

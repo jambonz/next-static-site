@@ -18,7 +18,7 @@ function FooterItem({ obj }) {
 
 export default function Footer({ siteData }) {
   return (
-    <footer className="bg-jambonz foot">
+    <footer className="bg--jambonz foot">
       <div className="wrap foot__wrap">
         <div className="foot__navs">
           <ul className="foot__links">

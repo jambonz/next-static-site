@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { nanoid } from 'nanoid';
 
 import Layout from '../src/components/layout';
-import { Hero, Icon, P, H6 } from '../src/components/jambonz-ui';
+import { Hero, Icon, P } from '../src/components/jambonz-ui';
 import { getData } from '../src/lib/data';
 
 function Regions({ data }) {

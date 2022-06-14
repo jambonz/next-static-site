@@ -33,6 +33,38 @@
     svg {
       stroke: $jambonz;
     }
+
+    &--dark {
+      border: 2px solid $charcoal;
+
+      svg {
+        stroke: $charcoal;
+      }
+    }
+
+    &--blue {
+      border: 2px solid $blue;
+
+      svg {
+        stroke: $blue;
+      }
+    }
+
+    &--teal {
+      border: 2px solid $teal;
+
+      svg {
+        stroke: $teal;
+      }
+    }
+
+    &--purple {
+      border: 2px solid $purple;
+
+      svg {
+        stroke: $purple;
+      }
+    }
   }
 
   &--fill {
@@ -46,6 +78,10 @@
 
     &--teal {
       background-color: $teal;
+    }
+
+    &--dark {
+      background-color: $charcoal;
     }
 
     &--white {
@@ -70,6 +106,16 @@
 
     @media (max-width: $width-mobile) {
       margin: 0 8px;
+    }
+  }
+
+  &--set {
+    .icon {
+      margin: 16px;
+  
+      @media (max-width: $width-mobile) {
+        margin: 8px;
+      }
     }
   }
 }

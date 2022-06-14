@@ -1,22 +1,34 @@
-.bg-jambonz {
+.bg--jambonz {
   background-color: $jambonz;
   color: $white;
 }
 
-.bg-black {
+.bg--black {
   background-color: $black;
   color: $white;
 }
 
-.bg-charcoal {
+.bg--charcoal {
   background-color: $charcoal;
   color: $white;
 }
 
-.bg-grey {
+.bg--grey {
   background-color: $grey;
 }
 
-.bg-pink {
+.bg--pink {
   background-color: $pink;
+}
+
+.bg--blue {
+  background-color: $blue;
+}
+
+.bg--purple {
+  background-color: $purple;
+}
+
+.bg--teal {
+  background-color: $teal;
 }

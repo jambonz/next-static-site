@@ -27,7 +27,7 @@ function Structure({data}) {
 
 function Services({data}) {
   return (
-    <section className="bg-pink services pad">
+    <section className="bg--pink services pad">
       <div className="wrap services__wrap">
         <div className="services__headline">
           <H2>{data.headline}</H2>

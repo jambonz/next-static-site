@@ -6,7 +6,7 @@ import { getData } from '../src/lib/data';
 
 function Facts({data}) {
   return (
-    <section className="bg-pink facts">
+    <section className="bg--pink facts">
       <div className="wrap facts__wrap">
         <div className="facts__items">
           {data.map((fact) => {

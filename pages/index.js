@@ -61,7 +61,7 @@ function Dilemma({data}) {
   }, [mobile, active, setActive, initialRef]);
 
   return (
-    <section className="bg-grey dilemma pad">
+    <section className="bg--grey dilemma pad">
       <div className="wrap dilemma__wrap">
         <div className="dilemma__headline">
           <H2>{data.headline}</H2>

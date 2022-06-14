@@ -30,7 +30,7 @@ function NaviItem({obj}) {
 
 function NaviMobile({ active, handler, siteData }) {
   const classes = {
-    'bg-jambonz': true,
+    'bg--jambonz': true,
     'wrap': true,
     'navi__mobile': true,
     'active': active,
