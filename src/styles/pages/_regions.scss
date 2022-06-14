@@ -11,10 +11,10 @@
 
   &__wrap {
     @include flex-cols();
-    padding-bottom: 72px;
+    padding-bottom: 64px;
 
     @media (max-width: $width-mobile) {
-      padding-bottom: 36px;
+      padding-bottom: 32px;
     }
   }
 
