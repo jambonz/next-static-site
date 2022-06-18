@@ -4,6 +4,9 @@ import { useState, useEffect, useCallback } from 'react';
 import Icons from './icons';
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+export const rSlash = /^\/|\/$/g;
 
 // Normalize how we work with the subtext as an array[]
 export function normalizeSubtext(subtext) {
@@ -17,6 +20,12 @@ export function normalizeSubtext(subtext) {
 // Simple method to normalize string as slug
 export function normalizeSlug(key) {
   return String(key.toLowerCase()).split(' ').join('-');
+}
+
+export function useActiveNavi() {
+  const router = useRouter();
+  const cleanPath = router.asPath.replace(rSlash, '').split('/')[0];
+  return cleanPath;
 }
 
 // Normalize for our mobile media query

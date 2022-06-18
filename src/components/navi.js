@@ -3,18 +3,15 @@ import { nanoid } from 'nanoid';
 import classNames from 'classnames';
 
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
-import { Button, Icon, useMobileMedia } from './jambonz-ui';
+import { Button, Icon, useMobileMedia, useActiveNavi, rSlash } from './jambonz-ui';
 
 function NaviItem({obj}) {
-  const router = useRouter();
-  const rSlash = /^\/|\/$/g;
+  const activeNavi = useActiveNavi();
   const cleanLink = obj.link.replace(rSlash, '');
-  const cleanPath = router.asPath.replace(rSlash, '').split('/')[0];
   const classes = {
     navi__link: true,
-    active: cleanLink && cleanLink === cleanPath,
+    active: cleanLink === activeNavi,
   };
 
   return (
@@ -30,7 +27,7 @@ function NaviItem({obj}) {
 
 function NaviMobile({ active, handler, siteData }) {
   const classes = {
-    'bg--jambonz': true,
+    'bg--charcoal': true,
     'wrap': true,
     'navi__mobile': true,
     'active': active,

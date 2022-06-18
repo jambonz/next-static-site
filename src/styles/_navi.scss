@@ -6,7 +6,7 @@
 
   &.active {
     @media ( max-width: $mobile-width ) {
-      z-index: $navi-index + 2;
+      z-index: $navi-index + 1;
     }
   }
 
@@ -38,8 +38,13 @@
     color: $charcoal;
     margin-left: 32px;
 
+    &:hover {
+      color: $jambonz;
+    }
+
     &.active {
       color: $jambonz;
+      border-bottom: 1px solid $jambonz;
     }
   }
 
@@ -88,6 +93,23 @@
       z-index: $navi-index;
     }
 
+    // Overrides for mobile navi links
+    .navi__link {
+      color: $white;
+      font-size: $h6-size;
+      font-family: $font-medium;
+      margin: 0;
+
+      &:hover {
+        color: $jambonz;
+      }
+
+      &.active {
+        color: $jambonz;
+        border-bottom: 1px solid $jambonz;
+      }
+    }
+
     &__head {
       padding: 16px 0;
       display: flex;
@@ -104,24 +126,13 @@
     &__footer {
       text-align: center;
       padding-top: 32px;
-
-      .navi__link {
-        color: $white;
-        font-size: $h6-size;
-        font-family: $font-medium;
-        margin: 0;
-      }
     }
 
     &__links {
       .navi__link {
         padding: 4px 0;
-        margin: 12px 0;
+        margin: 6px 0;
         display: inline-block;
-
-        &.active {
-          border-bottom: 2px solid $white;
-        }
       }
     }
 

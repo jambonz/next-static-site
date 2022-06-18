@@ -28,5 +28,10 @@
 
   &__text {
     color: $black;
+    transition: color $base-dur $base-ease;
+
+    &:hover {
+      color: $jambonz;
+    }
   }
 }
