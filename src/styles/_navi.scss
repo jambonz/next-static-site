@@ -6,7 +6,7 @@
 
   &.active {
     @media ( max-width: $mobile-width ) {
-      z-index: $navi-index + 2;
+      z-index: $navi-index + 1;
     }
   }
 
@@ -120,7 +120,8 @@
         display: inline-block;
 
         &.active {
-          border-bottom: 2px solid $white;
+          color: $jambonz;
+          border-bottom: 1px solid $jambonz;
         }
       }
     }
@@ -135,6 +136,11 @@
       .navi__link {
         font-size: $m-size;
         font-family: $font-regular;
+
+        &.active {
+          color: $jambonz;
+          border-bottom: 1px solid $jambonz;
+        }
       }
     }
 

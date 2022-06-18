@@ -1,14 +1,22 @@
 import { nanoid } from 'nanoid';
+import classNames from 'classnames';
 
 import Link from 'next/link';
 
-import { Button } from './jambonz-ui';
+import { Button, useActiveNavi, rSlash } from './jambonz-ui';
 
 function FooterItem({ obj }) {
+  const activeNavi = useActiveNavi();
+  const cleanLink = obj.link.replace(rSlash, '');
+  const classes = {
+    foot__link: true,
+    active: cleanLink === activeNavi,
+  };
+
   return (
     <li>
       <Link href={obj.link}>
-        <a target={obj.open ? '_blank' : null} className="foot__link">
+        <a target={obj.open ? '_blank' : null} className={classNames(classes)}>
           {obj.label}
         </a>
       </Link>
@@ -18,7 +26,7 @@ function FooterItem({ obj }) {
 
 export default function Footer({ siteData }) {
   return (
-    <footer className="bg--jambonz foot">
+    <footer className="bg--charcoal foot">
       <div className="wrap foot__wrap">
         <div className="foot__navs">
           <ul className="foot__links">
