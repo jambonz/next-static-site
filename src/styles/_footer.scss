@@ -41,6 +41,10 @@
     color: $white;
     text-decoration: none;
 
+    &:hover {
+      color: $jambonz;
+    }
+
     &.active {
       color: $jambonz;
       border-bottom: 1px solid $jambonz;

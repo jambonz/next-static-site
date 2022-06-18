@@ -7,7 +7,14 @@
   text-decoration: none;
   border-radius: 30px;
   display: inline-block;
+  transition: background-color $base-dur $base-ease,
+              border-color $base-dur $base-ease,
+              color $base-dur $base-ease;
   @include font-bold();
+
+  &:hover {
+    background-color: mix($pink, $jambonz, $mix-amount);
+  }
 
   @media (max-width: $width-tablet-2) {
     font-size: $ms-size;
@@ -26,9 +33,19 @@
     color: $jambonz;
     padding: 10px 26px;
 
+    &:hover {
+      background-color: $jambonz;
+      color: $white;
+    }
+
     &--white {
       color: $white;
       border-color: $white;
+
+      &:hover {
+        background-color: $white;
+        color: $charcoal;
+      }
     }
 
     @media (max-width: $width-tablet-2) {
@@ -39,23 +56,43 @@
   &--fill {
     &--dark {
       background-color: $charcoal;
+
+      &:hover {
+        background-color: mix($white, $charcoal, $mix-amount);
+      }
     }
 
     &--purple {
       background-color: $purple;
+
+      &:hover {
+        background-color: mix($white, $purple, $mix-amount);
+      }
     }
 
     &--teal {
       background-color: $teal;
+
+      &:hover {
+        background-color: mix($white, $teal, $mix-amount);
+      }
     }
 
     &--blue {
       background-color: $blue;
+
+      &:hover {
+        background-color: mix($white, $blue, $mix-amount);
+      }
     }
 
     &--light {
       background-color: $white;
       color: $jambonz;
+
+      &:hover {
+        background-color: mix($grey-light, $white, $mix-amount);
+      }
     }
   }
 
@@ -65,6 +102,11 @@
     border: 2px solid $charcoal;
     color: $charcoal;
     padding: 18px 32px 17px;
+
+    &:hover {
+      background-color: $charcoal;
+      color: $white;
+    }
 
     @media (max-width: $width-mobile) {
       padding: 15px 32px 16px;
@@ -96,6 +138,15 @@
     &--jambonz {
       border-color: $jambonz;
       color: $jambonz;
+
+      &:hover {
+        background-color: $jambonz;
+        color: $white;
+
+        svg {
+          stroke: $white;
+        }
+      }
 
       svg {
         stroke: $jambonz;

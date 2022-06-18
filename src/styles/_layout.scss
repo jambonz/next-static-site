@@ -115,7 +115,7 @@
     margin-top: 16px;
 
     a {
-      text-decoration: underline;
+      border-bottom: 1px solid $jambonz;
     }
   }
 }
@@ -143,10 +143,6 @@
     .hero__subtext {
       max-width: 770px;
     }
-  }
-
-  &--privacy, &--terms {
-    padding-bottom: 16px;
   }
 
   &--pink {

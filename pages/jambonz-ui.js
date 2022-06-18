@@ -152,7 +152,7 @@ export default function JambonzUI({ data }) {
             <Button href="/regions/?redirect=login" mainStyle="login">Log In</Button>
           </div>
         </div>
-        <div className="bg--jambonz">
+        <div className="bg--charcoal">
           <div className="pad">
             <Button href="/regions/?redirect=login" mainStyle="login" subStyle="white">Log In</Button>
           </div>

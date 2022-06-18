@@ -1,3 +1,7 @@
+svg {
+  transition: stroke $base-dur $base-ease;
+}
+
 .icon {
   display: inline-block;
   background-color: $jambonz;
