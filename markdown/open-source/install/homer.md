@@ -9,10 +9,11 @@ To do so, follow these steps:
 * On the row of the table with Profile = call, click the pencil icon on the right side of the row.
 * Replace the contents in the text edit box labeled "Correlation Mapping" with the content below, then click Save.
 
-After this, when yoiu download the pcap for an inbound call it will include the associated outbound call trace as well.
+After this, when you download the pcap for an inbound call it will include the associated outbound call trace as well.
 
 Content to paste (copy text inclusive of square brackets below):
-```
+
+```json
 [
     {
         "source_field": "data_header.callid",
