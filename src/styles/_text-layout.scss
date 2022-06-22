@@ -8,8 +8,10 @@
   }
 
   &__wrap {
-    > :first-child {
-      margin-top: 0;
+    // CSS Owl Selector
+    // https://dev.to/kevtiq/an-ode-to-the-css-owl-selector-359c
+    > * + * {
+      margin-top: 24px;
     }
 
     a {
@@ -20,39 +22,36 @@
       color: $jambonz;
     }
 
-    > p, > blockquote > p {
+    p {
       @include ms();
     }
 
-    > blockquote {
+    blockquote {
       padding-left: 16px;
 
-      > p {
+      p {
         font-family: $font-regular-italic;
         border-left: 3px solid $jambonz;
         padding-left: 10px;
       }
     }
 
-    > p, > div, > ul, > ol, > table, > blockquote {
-      margin: 16px 0;
-    }
-
-    > ol {
+    ol {
       padding-left: 16px;
 
-      > li {
+      li {
         list-style-type: decimal;
         margin: 16px 0;
 
-        &::marker, > p {
+        p,
+        &::marker {
           @include p();
           font-size: 14px;
         }
       }
     }
 
-    > ul {
+    ul {
       padding-left: 32px;
 
       li {
@@ -61,7 +60,7 @@
       }
     }
 
-    > table {
+    table {
       @include ms();
       width: 100%;
 
@@ -79,6 +78,10 @@
           background-color: $grey;
         }
       }
+    }
+
+    pre[class*="language-"] {
+      margin: 0;
     }
 
     code[class*="language-"],
