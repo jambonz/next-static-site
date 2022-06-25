@@ -1,12 +1,11 @@
-import { useState } from 'react';
-
-import { nanoid } from 'nanoid';
-import classNames from 'classnames';
-
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { Icon, TextLayout } from './jambonz-ui';
+import { useState } from 'react';
+import { nanoid } from 'nanoid';
+import { classNames, Icon } from '@jambonz/ui';
+
+import { TextLayout } from './layout';
 
 function MarkdownSidebar({scope, data}) {
   const router = useRouter();

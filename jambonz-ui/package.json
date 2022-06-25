@@ -1,0 +1,127 @@
+{
+  "name": "@jambonz/ui",
+  "version": "0.0.1",
+  "description": "jambonz UI component and design style library",
+  "main": "build/index.js",
+  "module": "dist/index.js",
+  "scripts": {
+    "build:bundle": "rm -rf build && rollup --config rollup.config.js",
+    "build:es": "rm -rf dist && babel src --out-dir dist --copy-files",
+    "build:styles": "rm -rf css && sass styles/index.scss css/styles.css --style=compressed",
+    "test:build": "rm -rf test/dist && rollup --config rollup.config.test.js",
+    "build": "concurrently \"yarn:build:*\"",
+    "package": "rm -rf pkg && mkdir pkg && cp package.json pkg/package.json && mv css pkg/css && mv dist pkg/dist && mv build pkg/build && cp -R styles pkg/styles && cp -R fonts pkg/fonts",
+    "serve": "serve test -p 8888",
+    "lint": "eslint . --ext js"
+  },
+  "files": [
+    "dist",
+    "es"
+  ],
+  "contributors": [
+    {
+      "name": "Brandon Lee Kitajchuk",
+      "email": "bk@kitajchuk.com",
+      "url": "https://www.kitajchuk.com"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "react-feather": "^2.0.9"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^7.2.2",
+    "eslint": "^7.26.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "rollup": "^2.75.7",
+    "sass": "^1.32.8",
+    "serve": "^13.0.2"
+  },
+  "eslintConfig": {
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "react-app"
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "jsx-a11y/anchor-is-valid": "off",
+      "jsx-a11y/alt-text": "off",
+      "indent": [
+        "error",
+        2
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    },
+    "ignorePatterns": [
+      "**/node_modules/*",
+      "**/dist/*",
+      "**/test/*",
+      "**/build/*",
+      "webpack.config.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "modules": false
+        }
+      ],
+      "@babel/react"
+    ],
+    "plugins": [
+      "@babel/proposal-object-rest-spread"
+    ]
+  }
+}

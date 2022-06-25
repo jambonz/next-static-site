@@ -1,8 +1,11 @@
-import { nanoid } from 'nanoid';
+import Link from 'next/link';
 
-import Layout from '../src/components/layout';
-import { Hero, Icon, Button, H2, P, normalizeSubtext } from '../src/components/jambonz-ui';
+import { nanoid } from 'nanoid';
+import { Icon, Button, H2, P } from '@jambonz/ui';
+
 import { getData } from '../src/lib/data';
+import Layout, { Hero } from '../src/components/layout';
+import { normalizeSubtext } from '../src/components/utils';
 
 function Structure({data}) {
   return (
@@ -16,7 +19,7 @@ function Structure({data}) {
       </div>
       <div className="wrap structure__cta">
         <P>{data.cta.text}</P>
-        <Button href={`${data.cta.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
+        <Button Link={Link} href={`${data.cta.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
           <Icon name={data.cta.icon} />
           <span>{data.cta.cta}</span>
         </Button>
@@ -48,7 +51,7 @@ function Services({data}) {
           })}
         </div>
         <div className="services__cta">
-          <Button href={`${data.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
+          <Button Link={Link} href={`${data.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
             <Icon name={data.icon} />
             <span>{data.cta}</span>
           </Button>

@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
-
 import Prism from 'prismjs';
+import { useEffect } from 'react';
 
 import Layout from '../../src/components/layout';
 import Markdown from '../../src/components/markdown';

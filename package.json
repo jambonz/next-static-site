@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
+    "preinstall": "cd ./jambonz-ui/ && yarn && yarn build && yarn package",
+    "postinstall": "cp -R ./node_modules/@jambonz/ui/fonts ./public/fonts",
+    "up": "yarn upgrade @jambonz/ui",
     "dev": "next",
     "start": "next start",
     "build": "next build",
@@ -14,10 +17,16 @@
     "posttest": "rm -rf cypress/fixtures",
     "lint": "eslint src/components src/lib pages --ext js"
   },
-  "author": "Jambonz Developers",
+  "contributors": [
+    {
+      "name": "Brandon Lee Kitajchuk",
+      "email": "bk@kitajchuk.com",
+      "url": "https://www.kitajchuk.com"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
-    "classnames": "^2.2.6",
+    "@jambonz/ui": "./jambonz-ui/pkg/",
     "nanoid": "^3.1.22",
     "next": "^12.1.4",
     "next-plugin-preact": "^3.0.6",
@@ -26,7 +35,6 @@
     "prismjs": "^1.23.0",
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
-    "react-feather": "^2.0.9",
     "react-ssr-prepass": "npm:preact-ssr-prepass"
   },
   "devDependencies": {

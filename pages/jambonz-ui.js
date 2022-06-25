@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import Layout from '../src/components/layout';
-import Icons from '../src/components/icons';
-import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Button, Icon, Hero } from '../src/components/jambonz-ui';
+import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Button, Icon, Icons, ButtonGroup, IconGroup } from '@jambonz/ui';
+
 import { getData } from '../src/lib/data';
+import Layout, { Hero } from '../src/components/layout';
 
 export default function JambonzUI({ data }) {
   const pageData = data['jambonz-ui'];
@@ -122,70 +122,67 @@ export default function JambonzUI({ data }) {
             <MXS>MXS: {pageData.text}</MXS>
           </div>
           <div className="pad">
-            <div className="icons icons--set">
+            <IconGroup set>
               {Object.keys(Icons).map((icon) => {
                 return <Icon key={icon} mainStyle="fill" name={icon} />;
               })}
-            </div>
+            </IconGroup>
           </div>
           <div className="pad">
-            <div className="icons icons--set">
+            <IconGroup set>
               <Icon mainStyle="fill" subStyle="dark" name="MapPin" />
               <Icon mainStyle="fill" subStyle="purple" name="MapPin" />
               <Icon mainStyle="fill" subStyle="teal" name="MapPin" />
               <Icon mainStyle="fill" subStyle="blue" name="MapPin" />
-            </div>
+            </IconGroup>
           </div>
           <div className="pad">
-            <div className="icons icons--set">
+            <IconGroup set>
               <Icon mainStyle="pill" subStyle="dark" name="Heart" />
               <Icon mainStyle="pill" subStyle="purple" name="Heart" />
               <Icon mainStyle="pill" subStyle="teal" name="Heart" />
               <Icon mainStyle="pill" subStyle="blue" name="Heart" />
               <Icon mainStyle="pill" name="Heart" />
-            </div>
+            </IconGroup>
           </div>
           <div className="pad">
-            <img src="/svg/drachtio.svg" width="313" height="71" alt="drachtio" />
-          </div>
-          <div className="pad">
-            <Button href="/regions/?redirect=login" mainStyle="login">Log In</Button>
+            <Button Link={Link} href="/regions/?redirect=login" mainStyle="login">Log In</Button>
           </div>
         </div>
         <div className="bg--charcoal">
           <div className="pad">
-            <Button href="/regions/?redirect=login" mainStyle="login" subStyle="white">Log In</Button>
+            <Button Link={Link} href="/regions/?redirect=login" mainStyle="login" subStyle="white">Log In</Button>
           </div>
         </div>
         <div className="wrap">
-          <div className="btns pad">
-            <Button href="/regions/?redirect=register">Sign up for free</Button>
-            <Button href="/regions/?redirect=register" subStyle="dark">Get started for free</Button>
-          </div>
-          <div className="btns pad">
-            <Button href="/regions/?redirect=register" subStyle="purple">Do it</Button>
-            <Button href="/regions/?redirect=register" subStyle="teal">Do it</Button>
-            <Button href="/regions/?redirect=register" subStyle="blue">Do it</Button>
-          </div>
+          <ButtonGroup className="pad">
+            <Button Link={Link} href="/regions/?redirect=register">Sign up for free</Button>
+            <Button Link={Link} href="/regions/?redirect=register" subStyle="dark">Get started for free</Button>
+          </ButtonGroup>
+          <ButtonGroup className="pad">
+            <Button subStyle="purple">Do it</Button>
+            <Button subStyle="teal">Do it</Button>
+            <Button subStyle="blue">Do it</Button>
+          </ButtonGroup>
         </div>
         <div className="bg--jambonz">
           <div className="pad">
-            <Button href="mailto:support@jambonz.org?subject=Jambonz Support" subStyle="light" target="_blank">support@jambonz.org</Button>
+            <Button Link={Link} href="mailto:support@jambonz.org?subject=Jambonz Support" subStyle="light" target="_blank">support@jambonz.org</Button>
           </div>
         </div>
         <div className="wrap">
-          <div className="btns pad">
-            <Button href="https://github.com/jambonz" target="_blank" mainStyle="pill">
+          <ButtonGroup className="pad">
+            <Button Link={Link} href="https://github.com/jambonz" target="_blank" mainStyle="pill">
               <Icon name="GitHub" />
               <span>github.com/jambonz</span>
             </Button>
-            <Button href="https://github.com/drachtio" target="_blank" mainStyle="pill">
+            <Button Link={Link} href="https://github.com/drachtio" target="_blank" mainStyle="pill">
               <Icon name="GitHub" />
               <span>github.com/drachtio</span>
             </Button>
-          </div>
+          </ButtonGroup>
           <div className="pad">
-            <Button href="mailto:support@jambonz.org?subject=Additional Services Support" mainStyle="pill" subStyle="jambonz" target="_blank">
+            <Button Link={Link} href="mailto:support@jambonz.org?subject=Additional Services Support" mainStyle="pill" subStyle="jambonz" target="_blank">
               <Icon name="Send" />
               <span>Contact us</span>
             </Button>

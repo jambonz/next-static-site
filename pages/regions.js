@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { nanoid } from 'nanoid';
 
-import Layout from '../src/components/layout';
-import { Hero, Icon, P } from '../src/components/jambonz-ui';
+import { nanoid } from 'nanoid';
+import { Icon, P } from '@jambonz/ui';
+
 import { getData } from '../src/lib/data';
+import Layout, { Hero } from '../src/components/layout';
 
 function Regions({ data }) {
   const router = useRouter();

@@ -25,18 +25,14 @@ yarn-error.log*
 package-lock.json
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# nextra...
-dist
-examples
-packages
+.env*
 
 # jambonz...
-/.notes
+pkg
+css
+dist
+build
+public/fonts
 
 # cypress
 /cypress/*

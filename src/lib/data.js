@@ -1,3 +1,9 @@
+/**
+ * These utils are for Next.js Static Generation (SSG) at build time
+ * They are used with Next.js `getStaticProps` and `getStaticPaths`
+ * https://nextjs.org/docs/basic-features/pages#static-generation-recommended
+ */
+
 const fs = require('fs');
 const path = require('path');
 const yamljs = require('yamljs');

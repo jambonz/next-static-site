@@ -1,8 +1,10 @@
-import { nanoid } from 'nanoid';
+import Link from 'next/link';
 
-import Layout from '../src/components/layout';
-import { Hero, Icon, Button, H3, H2, P } from '../src/components/jambonz-ui';
+import { nanoid } from 'nanoid';
+import { Icon, Button, H3, H2, P, ButtonGroup } from '@jambonz/ui';
+
 import { getData } from '../src/lib/data';
+import Layout, { Hero } from '../src/components/layout';
 
 function Facts({data}) {
   return (
@@ -38,25 +40,25 @@ function OS({data}) {
         <div className="os__subtext">
           <H3 className="h5">{data.subtext}</H3>
         </div>
-        <div className="btns os__btns">
+        <ButtonGroup className="os__btns">
           {data.buttons.map((button) => {
             return (
-              <Button key={nanoid()} href={button.url} target="_blank" mainStyle="pill">
+              <Button Link={Link} key={nanoid()} href={button.url} target="_blank" mainStyle="pill">
                 <Icon name={button.icon} />
                 <span>{button.text}</span>
               </Button>
             );
           })}
-        </div>
+        </ButtonGroup>
         <div className="os__logo">
           <img src={data.logo} width="313" height="71" alt="drachtio" />
-          <Button href="https://github.com/sponsors/drachtio/" target="_blank" mainStyle="pill" subStyle="jambonz">
+          <Button Link={Link} href="https://github.com/sponsors/drachtio/" target="_blank" mainStyle="pill" subStyle="jambonz">
             <Icon name="Heart" />
             <span>Sponsor</span>
           </Button>
         </div>
         <div className="os__cta">
-          <Button href={data.url} subStyle="dark" >{data.cta}</Button>
+          <Button Link={Link} href={data.url} subStyle="dark" >{data.cta}</Button>
         </div>
       </div>
     </section>
