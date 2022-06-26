@@ -7,7 +7,7 @@
     "prepare": "husky install",
     "preinstall": "cd ./jambonz-ui/ && yarn && yarn build && yarn package",
     "postinstall": "cp -R ./node_modules/@jambonz/ui/fonts ./public/fonts",
-    "up": "yarn upgrade @jambonz/ui",
+    "up": "rm -rf ./node_modules/@jambonz && yarn upgrade @jambonz/ui",
     "dev": "next",
     "start": "next start",
     "build": "next build",

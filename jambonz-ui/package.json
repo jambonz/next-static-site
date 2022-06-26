@@ -5,19 +5,17 @@
   "main": "build/index.js",
   "module": "dist/index.js",
   "scripts": {
-    "build:bundle": "rm -rf build && rollup --config rollup.config.js",
-    "build:es": "rm -rf dist && babel src --out-dir dist --copy-files",
-    "build:styles": "rm -rf css && sass styles/index.scss css/styles.css --style=compressed",
-    "test:build": "rm -rf test/dist && rollup --config rollup.config.test.js",
+    "build:bundle": "rollup --config rollup.config.js",
+    "build:es": "babel src/js --out-dir dist --copy-files",
+    "build:styles": "sass src/styles/index.scss css/styles.css --style=compressed",
+    "prebuild": "rm -rf build && rm -rf dist && rm -rf test-app/dist",
     "build": "concurrently \"yarn:build:*\"",
-    "package": "rm -rf pkg && mkdir pkg && cp package.json pkg/package.json && mv css pkg/css && mv dist pkg/dist && mv build pkg/build && cp -R styles pkg/styles && cp -R fonts pkg/fonts",
-    "serve": "serve test -p 8888",
+    "postbuild": "cp test-app/index.html test-app/dist/index.html && cp -R fonts test-app/dist/fonts",
+    "prepackage": "rm -rf pkg && mkdir pkg",
+    "package": "cp package.json pkg/package.json && mv css pkg/css && mv dist pkg/dist && mv build pkg/build && cp -R fonts pkg/fonts && cp -R src pkg/src",
+    "serve": "serve test-app/dist -p 8888",
     "lint": "eslint . --ext js"
   },
-  "files": [
-    "dist",
-    "es"
-  ],
   "contributors": [
     {
       "name": "Brandon Lee Kitajchuk",
@@ -55,6 +53,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "rollup": "^2.75.7",
+    "rollup-plugin-css-only": "^3.1.0",
     "sass": "^1.32.8",
     "serve": "^13.0.2"
   },
