@@ -83,11 +83,11 @@ import '@jambonz/ui/css/styles.css';
 The core package SASS, including useful variables and mixins, can be loaded via the main partials included with the package. Optionally you can also just load the entire core styles into your SASS and skip the CSS import approach above. We do that for this app in `./src/styles/global.scss`:
 
 ```scss
-@import '@jambonz/ui/src/styles/index';
+@import '@jambonz/ui/src/styles/index.scss';
 
 // Optionally you can load just the utilities if you're loading the distributed CSS instead
-@import '@jambonz/ui/src/styles/vars';
-@import '@jambonz/ui/src/styles/mixins';
+@import '@jambonz/ui/src/styles/_vars.scss';
+@import '@jambonz/ui/src/styles/_mixins.scss';
 ```
 
 Lastly, you can import any of the reusable atomic design components for use in your jambonz React/Preact applications. Note that the [classNames](./jambonz-ui/utils.js) method here is NOT the widely used package from `npm` but rather a very simple local utility used inside of the UI library and exposed for use in your app JS as well:
