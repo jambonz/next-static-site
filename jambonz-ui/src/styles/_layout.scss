@@ -1,12 +1,14 @@
-/******************************************************************************
- * Main container wrap
-*******************************************************************************/
 .wrap {
   max-width: calc(#{$width-max} + #{$width-padding} * 2);
   width: 100%;
   margin: 0 auto;
   padding-left: $width-padding;
   padding-right: $width-padding;
+}
+
+.wrap-text {
+  display: flex;
+  justify-content: center;
 }
 
 .pad {

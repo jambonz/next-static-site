@@ -112,6 +112,10 @@ em {
   @include font-medium();
 }
 
+.color--jambonz {
+  color: $jambonz;
+}
+
 .color--teal {
   color: $teal;
 }

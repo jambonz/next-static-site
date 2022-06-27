@@ -7,12 +7,15 @@
   "scripts": {
     "build:bundle": "rollup --config rollup.config.js",
     "build:es": "babel src/js --out-dir dist --copy-files",
-    "build:styles": "sass src/styles/index.scss css/styles.css --style=compressed",
+    "build:styles": "sass src/styles/index.scss css/styles.css && sass src/styles/index.scss css/styles.min.css --style=compressed",
     "prebuild": "rm -rf build && rm -rf dist && rm -rf test-app/dist",
     "build": "concurrently \"yarn:build:*\"",
-    "postbuild": "cp test-app/index.html test-app/dist/index.html && cp -R fonts test-app/dist/fonts",
+    "postbuild": "yarn package",
+    "testbuild": "export NODE_ENV=test && concurrently \"yarn:build:*\"",
+    "posttestbuild": "yarn package && cp test-app/index.html test-app/dist/index.html && cp -R fonts test-app/dist/fonts",
     "prepackage": "rm -rf pkg && mkdir pkg",
-    "package": "cp package.json pkg/package.json && mv css pkg/css && mv dist pkg/dist && mv build pkg/build && cp -R fonts pkg/fonts && cp -R src pkg/src",
+    "package": "cp package.json pkg/package.json && mkdir pkg/public && mv css pkg/public/css && mv dist pkg/dist && mv build pkg/build && cp -R fonts pkg/public/fonts && cp -R src pkg/src",
+    "postpackage": "gzip -k pkg/public/css/styles.min.css && cp -R pkg/build pkg/public/js",
     "serve": "serve test-app/dist -p 8888"
   },
   "contributors": [
@@ -32,36 +35,32 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-replace": "^4.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "concurrently": "^7.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "rollup": "^2.75.7",
     "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-gzip": "^3.0.1",
+    "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.32.8",
     "serve": "^13.0.2"
   },
   "babel": {
     "presets": [
       [
-        "@babel/env",
+        "@babel/preset-env",
         {
           "modules": false
         }
       ],
-      "@babel/react"
-    ],
-    "plugins": [
-      "@babel/proposal-object-rest-spread"
+      "@babel/preset-react"
     ]
   }
 }

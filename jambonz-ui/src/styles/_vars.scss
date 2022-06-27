@@ -1,11 +1,8 @@
-/******************************************************************************
- * Colors
-*******************************************************************************/
 $black: #000;
 $white: #fff;
 $charcoal: #231f20;
 $grey: #f8f8f8;
-$grey-light: mix($white, $charcoal, 75%);
+$grey-light: #c8c7c7;
 $jambonz: #da1c5c;
 $pink: #fff3f6;
 $purple: #9662b2;
@@ -15,20 +12,16 @@ $green: #008a1a;
 $red: #e10e22;
 $mix-amount: 25%;
 
-/******************************************************************************
- * Font family
-*******************************************************************************/
 $font-regular: 'objectivityregular';
 $font-regular-italic: 'objectivityregular_slanted';
 $font-medium: 'objectivitymedium';
 $font-medium-italic: 'objectivitymedium_slanted';
 $font-bold: 'objectivitybold';
 $font-bold-italic: 'objectivitybold_slanted';
+$font-black: 'objectivityblack';
+$font-black-italic: 'objectivityblack_slanted';
 $font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
-/******************************************************************************
- * Font sizes
-*******************************************************************************/
 $h1-size: 3rem;
 $h2-size: 2.5rem;
 $h3-size: 2.25rem;
@@ -40,16 +33,10 @@ $m-size: 1rem;
 $ms-size: 0.875rem;
 $mxs-size: 0.75rem;
 
-/******************************************************************************
- * Icon sizes
-*******************************************************************************/
 $icon-size-1: $h1-size;
 $icon-size-2: $h2-size;
 $icon-size-3: $h3-size;
 
-/******************************************************************************
- * Sizes
-*******************************************************************************/
 $width-max: 1440px;
 $width-tablet-1: 1024px;
 $width-tablet-2: 768px;
@@ -57,8 +44,5 @@ $width-mobile: 640px;
 $width-small: 480px;
 $width-padding: 4.4444444444vw;
 
-/******************************************************************************
- * Animation / transitions
-*******************************************************************************/
 $base-dur: 200ms;
 $base-ease: ease;

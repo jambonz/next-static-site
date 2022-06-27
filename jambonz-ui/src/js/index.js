@@ -14,6 +14,7 @@ import {
   Icon,
   Button,
   IconGroup,
+  KitOfParts,
   ButtonGroup,
 } from './components';
 
@@ -33,5 +34,6 @@ export {
   Button,
   IconGroup,
   classNames,
+  KitOfParts,
   ButtonGroup,
 };
