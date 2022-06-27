@@ -15,7 +15,7 @@
     "posttestbuild": "yarn package && cp test-app/index.html test-app/dist/index.html && cp -R fonts test-app/dist/fonts",
     "prepackage": "rm -rf pkg && mkdir pkg",
     "package": "cp package.json pkg/package.json && mkdir pkg/public && mv css pkg/public/css && mv dist pkg/dist && mv build pkg/build && cp -R fonts pkg/public/fonts && cp -R src pkg/src",
-    "postpackage": "gzip -k pkg/public/css/styles.min.css && cp -R pkg/build pkg/public/js",
+    "postpackage": "gzip --help && gzip -k pkg/public/css/styles.min.css && cp -R pkg/build pkg/public/js",
     "serve": "serve test-app/dist -p 8888"
   },
   "contributors": [
