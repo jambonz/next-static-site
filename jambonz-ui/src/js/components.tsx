@@ -1,57 +1,113 @@
-import React from 'react';
+import React, { useContext, ReactNode, ElementType } from 'react';
+
+import type { IconsMapType } from './icons';
+import type { ClassNameObjectType } from './utils';
 
 import Icons from './icons';
 import { classNames } from './utils';
 
-export function H1({ children, ...rest }) {
+interface FontProps {
+  children: ReactNode,
+}
+
+interface ButtonProps {
+  to?: string | null; // For <Link> from `react-router-dom`
+  href?: string | null; // For <Link> from `next/link`
+  Link?: ElementType | null; // Provide the <Link> component
+  children: ReactNode;
+  subStyle?: string | null;
+  mainStyle?: string | null;
+}
+
+interface ButtonGroupProps {
+  children: ReactNode;
+  className?: string;
+}
+
+interface IconProps {
+  name: string;
+  subStyle?: string | null;
+  IconsMap?: IconsMapType; // Allows overriding with more icons
+  mainStyle?: string;
+}
+
+interface IconGroupProps {
+  children: ReactNode;
+  className?: string;
+  set: boolean;
+}
+
+interface JambonzUIContextDef {
+  Link?: ElementType | null;
+  Icons?: IconsMapType;
+}
+
+interface JambonzUIProviderProps {
+  value: JambonzUIContextDef;
+  children: ReactNode;
+}
+
+const defaultUIContext: JambonzUIContextDef = { Link: null, Icons };
+
+export const JambonzUIContext = React.createContext(defaultUIContext);
+
+export function JambonzUIProvider({ value, children }: JambonzUIProviderProps) {
+  return (
+    <JambonzUIContext.Provider value={value}>
+      {children}
+    </JambonzUIContext.Provider>
+  );
+}
+
+export function H1({ children, ...rest }: FontProps) {
   return <h1 {...rest}>{children}</h1>;
 }
 
-export function H2({ children, ...rest }) {
+export function H2({ children, ...rest }: FontProps) {
   return <h2 {...rest}>{children}</h2>;
 }
 
-export function H3({ children, ...rest }) {
+export function H3({ children, ...rest }: FontProps) {
   return <h3 {...rest}>{children}</h3>;
 }
 
-export function H4({ children, ...rest }) {
+export function H4({ children, ...rest }: FontProps) {
   return <h4 {...rest}>{children}</h4>;
 }
 
-export function H5({ children, ...rest }) {
+export function H5({ children, ...rest }: FontProps) {
   return <h5 {...rest}>{children}</h5>;
 }
 
-export function H6({ children, ...rest }) {
+export function H6({ children, ...rest }: FontProps) {
   return <h6 {...rest}>{children}</h6>;
 }
 
-export function P({ children, ...rest }) {
+export function P({ children, ...rest }: FontProps) {
   return <p {...rest}>{children}</p>;
 }
 
-export function M({ children }) {
+export function M({ children }: FontProps) {
   return <div className="m">{children}</div>;
 }
 
-export function MS({ children }) {
+export function MS({ children }: FontProps) {
   return <div className="ms">{children}</div>;
 }
 
-export function MXS({ children }) {
+export function MXS({ children }: FontProps) {
   return <div className="mxs">{children}</div>;
 }
 
 export function Button({
-  to = null, // For <Link> from `react-router-dom`
-  href = null, // For <Link> from `next/link`
-  Link = null, // Provide the <Link> component -- for now...
+  to = null,
+  href = null,
+  Link = null,
   children,
   subStyle = null,
   mainStyle = 'fill',
   ...rest
-}) {
+}: ButtonProps) {
   const classes = {
     'btn': true,
     [`btn--${mainStyle}`]: true,
@@ -89,8 +145,8 @@ export function Button({
 }
 
 // Simple grouping of multiple <Button>'s
-export function ButtonGroup({ children, className = '' }) {
-  const classes = {
+export function ButtonGroup({ children, className = '' }: ButtonGroupProps) {
+  const classes: ClassNameObjectType = {
     'btns': true,
   };
 
@@ -107,12 +163,12 @@ export function ButtonGroup({ children, className = '' }) {
 // See react-feather for all 286 icons available
 // https://github.com/feathericons/react-feather
 export function Icon({
-  name = null,
+  name,
   subStyle = null,
-  IconsMap = Icons, // Allows overriding with more icons...
+  IconsMap = Icons,
   mainStyle = 'inline',
   ...rest
-}) {
+}: IconProps) {
   const Component = IconsMap[name];
   const classes = {
     'icon': true,
@@ -145,8 +201,8 @@ export function IconGroup({
   set = false,
   children,
   className = ''
-}) {
-  const classes = {
+}: IconGroupProps) {
+  const classes: ClassNameObjectType = {
     'icons': true,
     'icons--set': set,
   };
@@ -273,7 +329,7 @@ export function KitOfParts() {
       </div>
       <div className="bg--jambonz">
         <div className="pad">
-          <Button subStyle="light" target="_blank">support@jambonz.org</Button>
+          <Button subStyle="light">support@jambonz.org</Button>
         </div>
       </div>
       <div className="wrap">
@@ -288,7 +344,7 @@ export function KitOfParts() {
           </Button>
         </ButtonGroup>
         <div className="pad">
-          <Button mainStyle="pill" subStyle="jambonz" target="_blank">
+          <Button mainStyle="pill" subStyle="jambonz">
             <Icon name="Send" />
             <span>Contact us</span>
           </Button>

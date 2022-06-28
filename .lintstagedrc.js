@@ -9,5 +9,6 @@ const buildEslintCommand = (filenames) => {
 };
 
 module.exports = {
-  '*.{js,jsx,ts,tsx}': [buildEslintCommand],
+  'src/**/*.{js,jsx,ts,tsx}': [buildEslintCommand],
+  'pages/**/*.{js,jsx,ts,tsx}': [buildEslintCommand],
 };

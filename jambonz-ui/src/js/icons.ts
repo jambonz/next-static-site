@@ -1,4 +1,3 @@
-// Icons dictionary of just what we're using
 import {
   X,
   Lock,
@@ -23,8 +22,13 @@ import {
   ChevronRight,
   ExternalLink,
 } from 'react-feather';
+import type { Icon } from 'react-feather';
 
-export const Icons = {
+export interface IconsMapType {
+  [key: string]: Icon;
+}
+
+export const Icons: IconsMapType = {
   X,
   Lock,
   Send,

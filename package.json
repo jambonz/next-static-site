@@ -35,6 +35,7 @@
     "prismjs": "^1.23.0",
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
+    "react-feather": "^2.0.10",
     "react-ssr-prepass": "npm:preact-ssr-prepass"
   },
   "devDependencies": {

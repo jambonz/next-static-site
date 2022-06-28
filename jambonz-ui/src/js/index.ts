@@ -16,6 +16,7 @@ import {
   IconGroup,
   KitOfParts,
   ButtonGroup,
+  JambonzUIProvider,
 } from './components';
 
 export {
@@ -36,4 +37,5 @@ export {
   classNames,
   KitOfParts,
   ButtonGroup,
+  JambonzUIProvider,
 };
