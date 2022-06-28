@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "husky install",
     "preinstall": "cd ./jambonz-ui/ && yarn && yarn build",
-    "postinstall": "rm -rf public/fonts && cp -R ./node_modules/@jambonz/ui/public/fonts ./public/fonts",
+    "postinstall": "yarn up && rm -rf public/fonts && cp -R ./node_modules/@jambonz/ui/public/fonts ./public/fonts",
     "up": "rm -rf ./node_modules/@jambonz && yarn upgrade @jambonz/ui",
     "dev": "next",
     "lint": "next lint",
