@@ -1,4 +1,5 @@
 import type { ReactNode, ElementType } from 'react';
+import type { Icon as IconType } from 'react-feather';
 import React from 'react'
 
 import type { IconsMapObject } from './icons';
@@ -170,7 +171,7 @@ export function Icon({
   mainStyle = 'inline',
   ...rest
 }: IconProps) {
-  const Component = IconsMap[name];
+  const Component: IconType = IconsMap[name];
   const classes: ClassNameObject = {
     'icon': true,
     [`icon--${mainStyle}`]: true,
