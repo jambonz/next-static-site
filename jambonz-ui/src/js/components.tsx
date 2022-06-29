@@ -17,8 +17,8 @@ interface ButtonProps {
   href?: string | null; // For <Link> from `next/link`
   Link?: ElementType | null; // Provide the <Link> component
   children: ReactNode;
-  subStyle?: string | null;
-  mainStyle?: string;
+  subStyle?: 'white' | 'light' | 'dark' | 'teal' | 'blue' | 'purple' | 'jambonz' | null;
+  mainStyle?: 'fill' | 'pill' | 'login';
 }
 
 interface ButtonGroupProps {
@@ -28,9 +28,9 @@ interface ButtonGroupProps {
 
 interface IconProps {
   name: string;
-  subStyle?: string | null;
+  subStyle?: 'white' | 'dark' | 'teal' | 'blue' | 'purple' | null;
   IconsMap?: IconsMapObject; // Allows overriding with more icons
-  mainStyle?: string;
+  mainStyle?: 'pill' | 'fill';
 }
 
 interface IconGroupProps {
