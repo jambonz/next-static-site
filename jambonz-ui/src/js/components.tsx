@@ -177,16 +177,16 @@ export function Icon({
     [`icon--${mainStyle}`]: true,
   };
 
-  if (subStyle) {
-    classes[`icon--${mainStyle}--${subStyle}`] = true;
-  }
-
   if (!Component) {
     return null;
   }
 
   // Stylized icon
-  if (mainStyle !== 'inline') {
+  if (mainStyle) {
+    if (subStyle) {
+      classes[`icon--${mainStyle}--${subStyle}`] = true;
+    }
+
     return (
       <div className={classNames(classes)}>
         <Component {...rest} />
