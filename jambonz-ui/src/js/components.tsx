@@ -28,9 +28,9 @@ interface ButtonGroupProps {
 
 interface IconProps {
   name: string;
-  subStyle?: 'white' | 'dark' | 'teal' | 'blue' | 'purple' | null;
   IconsMap?: IconsMapObject; // Allows overriding with more icons
-  mainStyle?: 'pill' | 'fill';
+  subStyle?: 'white' | 'dark' | 'teal' | 'blue' | 'purple' | null;
+  mainStyle?: 'pill' | 'fill' | null;
 }
 
 interface IconGroupProps {
@@ -168,7 +168,7 @@ export function Icon({
   name,
   subStyle = null,
   IconsMap = Icons,
-  mainStyle = 'inline',
+  mainStyle = null,
   ...rest
 }: IconProps) {
   const Component: IconType = IconsMap[name];
