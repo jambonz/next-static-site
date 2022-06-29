@@ -1,8 +1,8 @@
 import type { ReactNode, ElementType } from 'react';
 import React from 'react'
 
-import type { IconsMapType } from './icons';
-import type { ClassNameObjectType } from './utils';
+import type { IconsMapObject } from './icons';
+import type { ClassNameObject } from './utils';
 
 import Icons from './icons';
 import { classNames } from './utils';
@@ -28,7 +28,7 @@ interface ButtonGroupProps {
 interface IconProps {
   name: string;
   subStyle?: string | null;
-  IconsMap?: IconsMapType; // Allows overriding with more icons
+  IconsMap?: IconsMapObject; // Allows overriding with more icons
   mainStyle?: string;
 }
 
@@ -40,7 +40,7 @@ interface IconGroupProps {
 
 interface JambonzUIContextObject {
   Link?: ElementType | null;
-  Icons?: IconsMapType;
+  Icons?: IconsMapObject;
 }
 
 interface JambonzUIProviderProps {
@@ -109,7 +109,7 @@ export function Button({
   mainStyle = 'fill',
   ...rest
 }: ButtonProps) {
-  const classes = {
+  const classes: ClassNameObject = {
     'btn': true,
     [`btn--${mainStyle}`]: true,
   };
@@ -147,7 +147,7 @@ export function Button({
 
 // Simple grouping of multiple <Button>'s
 export function ButtonGroup({ children, className = '' }: ButtonGroupProps) {
-  const classes: ClassNameObjectType = {
+  const classes: ClassNameObject = {
     'btns': true,
   };
 
@@ -171,7 +171,7 @@ export function Icon({
   ...rest
 }: IconProps) {
   const Component = IconsMap[name];
-  const classes = {
+  const classes: ClassNameObject = {
     'icon': true,
     [`icon--${mainStyle}`]: true,
   };
@@ -203,7 +203,7 @@ export function IconGroup({
   children,
   className = ''
 }: IconGroupProps) {
-  const classes: ClassNameObjectType = {
+  const classes: ClassNameObject = {
     'icons': true,
     'icons--set': set,
   };
