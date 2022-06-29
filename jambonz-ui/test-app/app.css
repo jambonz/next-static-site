@@ -1,0 +1,44 @@
+.kit-of-parts {
+  text-align: center;
+}
+
+.kit-of-parts .wrap-text h1 {
+  max-width: 1024px;
+}
+
+.kit-of-parts .wrap-text h2 {
+  max-width: 950px;
+}
+
+.kit-of-parts .wrap-text h3 {
+  max-width: 860px;
+}
+
+.kit-of-parts .wrap-text h4 {
+  max-width: 875px;
+}
+
+.kit-of-parts .wrap-text h5 {
+  max-width: 768px;
+}
+
+.kit-of-parts .wrap-text h6 {
+  max-width: 640px;
+}
+
+.kit-of-parts .wrap-text p {
+  max-width: 640px;
+}
+
+.kit-of-parts .wrap-text .m,
+.kit-of-parts .wrap-text .ms {
+  max-width: 500px;
+}
+
+.kit-of-parts .wrap-text .mxs {
+  max-width: 380px;
+}
+
+.kit-of-parts .wrap-text > div {
+  margin: 0 auto;
+}

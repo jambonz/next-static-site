@@ -19,22 +19,39 @@ import '@jambonz/ui/public/css/styles.css';
 
 ###### Available CSS selectors
 
-A more comprehensive table of available selectors here is coming soon. For now the easiest place to visualize this is in the source files for the styles [here](https://github.com/jambonz/next-static-site/tree/main/jambonz-ui/src/styles/).
+Most of the styles are utilized directly by the [components](/dacs/jambonz-ui/components/) so you're better off just using those. These are the basic utility styles that can be used in and ad-hoc manor in your jambonz apps.
 
-| CSS selector | Notes | JS component? |
-|--------------|-------|---------------|
-| `bg--jambonz` | Applies main brand color as element `background-color` | no |
-| `bg--black` | Applies color as element `background-color` | no |
-| `bg--charcoal` | Applies color as element `background-color` | no |
-| `bg--grey` | Applies color as element `background-color` | no |
-| `bg--pink` | Applies color as element `background-color` | no |
-| `bg--blue` | Applies color as element `background-color` | no |
-| `bg--purple` | Applies color as element `background-color` | no |
-| `bg--teal` | Applies color as element `background-color` | no |
-| `color--jambonz` | Applies main brand color as element `color` | no |
-| `color--blue` | Applies color as element `color` | no |
-| `color--purple` | Applies color as element `color` | no |
-| `color--teal` | Applies color as element `color` | no |
+| CSS selector | Application |
+|--------------|-------------|
+| `bg--jambonz` | Applies main brand color as element `background-color` |
+| `bg--black` | Applies color as element `background-color` |
+| `bg--charcoal` | Applies color as element `background-color` |
+| `bg--grey` | Applies color as element `background-color` |
+| `bg--pink` | Applies color as element `background-color` |
+| `bg--blue` | Applies color as element `background-color` |
+| `bg--purple` | Applies color as element `background-color` |
+| `bg--teal` | Applies color as element `background-color` |
+| `color--jambonz` | Applies main brand color as element `color` |
+| `color--blue` | Applies color as element `color` |
+| `color--purple` | Applies color as element `color` |
+| `color--teal` | Applies color as element `color` |
+| `wrap` | Center contains content with a `max-width` and default left/right `padding` |
+| `wrap-text` | Flex center justifies text—combine with a `max-width` |
+| `pad` | Applies normalized top/bottom `padding` |
+| `pad-b` | Applies normalized bottom `padding` |
+| `pad-t` | Applies normalized top `padding` |
+| `i` | Inline icon wrapper—normalizes display of `Icon` alongside text |
+
+That `i` class is pretty useful. Here's an example of how it's used on this site to inline an icon with some text.
+
+```jsx
+<Link href="https://www.behance.net/gallery/60530395/Objectivity-Free-Font-Family">
+  <a className="i" target="_blank">
+    <span>design</span>
+    <Icon name="ExternalLink" />
+  </a>
+</Link>
+```
 
 
 ###### Loading in SASS

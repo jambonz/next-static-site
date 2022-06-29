@@ -16,7 +16,7 @@ a {
  * This className lets us inline a flat icon with text
  */
 .i {
-  svg, span, strong {
+  em, svg, span, strong {
     display: inline;
     vertical-align: middle;
   }

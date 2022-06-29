@@ -119,11 +119,8 @@ navi:
         path: getting-started
         title: Getting started
       -
-        path: fonts
-        title: Fonts
-      -
-        path: icons
-        title: Icons
+        path: fonts-and-icons
+        title: Fonts and icons
       -
         path: styles
         title: Styles
