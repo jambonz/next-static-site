@@ -52,7 +52,7 @@ const defaultUIContext: JambonzUIContextObject = { Link: null, Icons };
 
 const JambonzUIContext = React.createContext(defaultUIContext);
 
-export JambonzUIProvider({ value, children }: JambonzUIProviderProps) {
+export function JambonzUIProvider({ value, children }: JambonzUIProviderProps) {
   return (
     <JambonzUIContext.Provider value={value}>
       {children}
