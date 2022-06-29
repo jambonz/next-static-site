@@ -1,4 +1,5 @@
-import React, { useContext, ReactNode, ElementType } from 'react';
+import type { ReactNode, ElementType } from 'react';
+import React from 'react'
 
 import type { IconsMapType } from './icons';
 import type { ClassNameObjectType } from './utils';
@@ -16,7 +17,7 @@ interface ButtonProps {
   Link?: ElementType | null; // Provide the <Link> component
   children: ReactNode;
   subStyle?: string | null;
-  mainStyle?: string | null;
+  mainStyle?: string;
 }
 
 interface ButtonGroupProps {
@@ -37,21 +38,21 @@ interface IconGroupProps {
   set: boolean;
 }
 
-interface JambonzUIContextDef {
+interface JambonzUIContextObject {
   Link?: ElementType | null;
   Icons?: IconsMapType;
 }
 
 interface JambonzUIProviderProps {
-  value: JambonzUIContextDef;
+  value: JambonzUIContextObject;
   children: ReactNode;
 }
 
-const defaultUIContext: JambonzUIContextDef = { Link: null, Icons };
+const defaultUIContext: JambonzUIContextObject = { Link: null, Icons };
 
-export const JambonzUIContext = React.createContext(defaultUIContext);
+const JambonzUIContext = React.createContext(defaultUIContext);
 
-export function JambonzUIProvider({ value, children }: JambonzUIProviderProps) {
+export JambonzUIProvider({ value, children }: JambonzUIProviderProps) {
   return (
     <JambonzUIContext.Provider value={value}>
       {children}
