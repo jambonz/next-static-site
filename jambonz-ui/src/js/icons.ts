@@ -22,10 +22,10 @@ import {
   ChevronRight,
   ExternalLink,
 } from 'react-feather';
-import type { Icon } from 'react-feather';
+import type { Icon as IconType } from 'react-feather';
 
 export interface IconsMapObject {
-  [key: string]: Icon;
+  [key: string]: IconType;
 }
 
 export const Icons: IconsMapObject = {
