@@ -24,11 +24,11 @@ import {
 } from 'react-feather';
 import type { Icon } from 'react-feather';
 
-export interface IconsMapType {
+export interface IconsMapObject {
   [key: string]: Icon;
 }
 
-export const Icons: IconsMapType = {
+export const Icons: IconsMapObject = {
   X,
   Lock,
   Send,
