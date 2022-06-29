@@ -8,6 +8,9 @@ import type { ClassNameObject } from './utils';
 import Icons from './icons';
 import { classNames } from './utils';
 
+type mainStyles = 'pill' | 'fill';
+type subStyles = 'white' | 'dark' | 'teal' | 'blue' | 'purple' | null;
+
 interface FontProps {
   children: ReactNode,
 }
@@ -17,8 +20,8 @@ interface ButtonProps {
   href?: string | null; // For <Link> from `next/link`
   Link?: ElementType | null; // Provide the <Link> component
   children: ReactNode;
-  subStyle?: 'white' | 'light' | 'dark' | 'teal' | 'blue' | 'purple' | 'jambonz' | null;
-  mainStyle?: 'fill' | 'pill' | 'login';
+  subStyle?: subStyles | 'light' | 'jambonz';
+  mainStyle?: mainStyles | 'login';
 }
 
 interface ButtonGroupProps {
@@ -29,36 +32,14 @@ interface ButtonGroupProps {
 interface IconProps {
   name: string;
   IconsMap?: IconsMapObject; // Allows overriding with more icons
-  subStyle?: 'white' | 'dark' | 'teal' | 'blue' | 'purple' | null;
-  mainStyle?: 'pill' | 'fill' | null;
+  subStyle?: subStyles;
+  mainStyle?: mainStyles | null;
 }
 
 interface IconGroupProps {
   children: ReactNode;
   className?: string;
-  set: boolean;
-}
-
-interface JambonzUIContextObject {
-  Link?: ElementType | null;
-  Icons?: IconsMapObject;
-}
-
-interface JambonzUIProviderProps {
-  value: JambonzUIContextObject;
-  children: ReactNode;
-}
-
-const defaultUIContext: JambonzUIContextObject = { Link: null, Icons };
-
-const JambonzUIContext = React.createContext(defaultUIContext);
-
-export function JambonzUIProvider({ value, children }: JambonzUIProviderProps) {
-  return (
-    <JambonzUIContext.Provider value={value}>
-      {children}
-    </JambonzUIContext.Provider>
-  );
+  set?: boolean;
 }
 
 export function H1({ children, ...rest }: FontProps) {
@@ -311,6 +292,11 @@ export function KitOfParts() {
         </div>
         <div className="pad">
           <Button mainStyle="login">Log In</Button>
+        </div>
+      </div>
+      <div className="bg--charcoal">
+        <div className="pad">
+          <Icon mainStyle="pill" subStyle="white" name="Heart" />
         </div>
       </div>
       <div className="bg--charcoal">

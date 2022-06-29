@@ -8,14 +8,14 @@
   "scripts": {
     "prebuild": "rm -rf build && rm -rf dist && rm -rf test-app/dist",
     "build": "yarn build:esm && yarn build:cjs && yarn build:defs && yarn build:styles",
-    "postbuild": "yarn package",
-    "build:esm": "tsc --module esnext --outDir dist/esm",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "postbuild": "yarn package && yarn build:rollup",
+    "build:esm": "tsc --module esnext --outDir dist/esm --sourceMap",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs --sourceMap",
     "build:defs": "tsc --declaration --outDir dist/defs --emitDeclarationOnly --declarationMap",
     "build:styles": "sass src/styles/index.scss css/styles.css",
     "postbuild:styles": "sass src/styles/index.scss css/styles.min.css --style=compressed",
-    "testbuild": "",
-    "posttestbuild": "yarn package && cp test-app/index.html test-app/dist/index.html && cp -R fonts test-app/dist/fonts",
+    "build:rollup": "rollup --config rollup.config.js",
+    "postbuild:rollup": "cp test-app/index.html test-app/dist/index.html && cp -R fonts test-app/dist/fonts",
     "prepackage": "rm -rf pkg && mkdir pkg",
     "package": "cp package.json pkg/package.json && mkdir pkg/public && mv css pkg/public/css && mv dist pkg/dist && cp -R fonts pkg/public/fonts && cp -R src pkg/src",
     "postpackage": "gzip --stdout pkg/public/css/styles.min.css > pkg/public/css/styles.min.css.gz",
@@ -36,14 +36,37 @@
     "react-feather": ">=2.0.9"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@rollup/plugin-sucrase": "^4.0.4",
+    "@rollup/plugin-typescript": "^8.3.3",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-router-dom": "^6.3.0",
+    "rollup": "^2.75.7",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-gzip": "^3.0.1",
+    "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.32.8",
     "serve": "^13.0.2",
+    "tslib": "^2.4.0",
     "typescript": "^4.7.4"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": false
+        }
+      ],
+      "@babel/preset-react"
+    ]
   }
 }

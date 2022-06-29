@@ -4,8 +4,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
 import { KitOfParts } from '../src/js/index';
 
-import '../css/styles.css';
-import './app.css';
+import '../pkg/public/css/styles.css';
 
 const AppLayout = () => (
   <Outlet />
@@ -29,7 +28,7 @@ const App = () => {
   );
 };
 
-export const elem = document.getElementById('root');
+export const elem = document.getElementById('root') as HTMLElement;
 export const root = createRoot(elem);
 
 root.render(<App />);

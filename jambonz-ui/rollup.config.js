@@ -2,20 +2,21 @@ import css from 'rollup-plugin-css-only';
 import gzipPlugin from 'rollup-plugin-gzip';
 import { babel } from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
-import commonjs from '@rollup/plugin-commonjs';
+import sucrase from '@rollup/plugin-sucrase';
 import { terser } from "rollup-plugin-terser";
+import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
 
-const configs = [
-  // Unminified
+export default [
+  // Compiled and bundled
   {
-    input: './src/js/index.js',
+    input: './pkg/dist/esm/index.js',
     output: {
-      file: 'build/index.js',
+      file: './pkg/public/js/index.js',
       format: 'cjs',
-      sourcemap: true,
     },
-    external: ['react'],
+    external: ['react', 'react-dom', 'react-feather'],
     plugins: [
       babel({
         exclude: 'node_modules/**',
@@ -23,14 +24,14 @@ const configs = [
     ],
   },
 
-  // Minified and Gzipped
+  // Minified and Gzipped version of ESM output
   {
-    input: './src/js/index.js',
+    input: './pkg/dist/esm/index.js',
     output: {
-      file: 'build/index.min.js',
+      file: './pkg/public/js/index.min.js',
       format: 'cjs',
     },
-    external: ['react'],
+    external: ['react', 'react-dom', 'react-feather'],
     plugins: [
       babel({
         exclude: 'node_modules/**',
@@ -39,18 +40,21 @@ const configs = [
       gzipPlugin(),
     ],
   },
-];
 
-if (process.env.NODE_ENV === 'test') {
-  configs.push({
-    input: './test-app/app.js',
+  // Built static dist for test-app, which is a React/TypeScript thing
+  {
+    input: './test-app/app.tsx',
     output: {
       file: './test-app/dist/app.js',
       format: 'iife',
     },
     plugins: [
-      babel({
-        exclude: 'node_modules/**',
+      sucrase({
+        exclude: ['node_modules/**', '**/*.css'],
+        transforms: ['typescript', 'jsx'],
+      }),
+      typescript({
+        tsconfig: './tsconfig.json',
       }),
       replace({
         'process.env.NODE_ENV': JSON.stringify('development'),
@@ -59,7 +63,5 @@ if (process.env.NODE_ENV === 'test') {
       commonjs(),
       css({ output: 'styles.css' })
     ],
-  });
-}
-
-export default configs;
+  }
+];
