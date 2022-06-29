@@ -69,6 +69,14 @@ svg {
         stroke: $purple;
       }
     }
+
+    &--white {
+      border: 2px solid $white;
+
+      svg {
+        stroke: $white;
+      }
+    }
   }
 
   &--fill {
