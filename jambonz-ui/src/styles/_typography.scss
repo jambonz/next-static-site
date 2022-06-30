@@ -34,11 +34,11 @@ a {
    * https://github.com/feathericons/react-feather
    * Default size is 24x24 for SVG icons
    * Sizing can be passed in component JS as in:
-   * <Icon size={18} name="GitHub" />
+   * <Icon size={18}><GitHub /></Icon>
    * However the inline, in-text SVG icons need to be
    *    responsive with the text scaling so some CSS
    *    can achieve the desired result in this case:
-   *    e.g. <span>text</span><Icon name="ExternalLink" />
+   *    e.g. <span>text</span><Icons.ExternalLink />
    *
    */
   svg {

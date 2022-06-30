@@ -2,7 +2,8 @@ import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
-import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Icon, Button, IconGroup, ButtonGroup, Icons } from '../src/js/index';
+import { Icons } from '../src/js/icons';
+import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Icon, Button, IconGroup, ButtonGroup } from '../src/js/index';
 
 import '../pkg/public/css/styles.css';
 import './app.css';
@@ -79,25 +80,48 @@ const HomePage = () => (
       <div className="pad">
         <IconGroup set>
           {Object.keys(Icons).map((icon) => {
-            return <Icon key={icon} mainStyle="fill" name={icon} />;
+            const SvgIcon = Icons[icon];
+            return (
+              <Icon key={icon} mainStyle="fill">
+                <SvgIcon />
+              </Icon>
+            );
           })}
         </IconGroup>
       </div>
       <div className="pad">
         <IconGroup set>
-          <Icon mainStyle="fill" subStyle="dark" name="MapPin" />
-          <Icon mainStyle="fill" subStyle="purple" name="MapPin" />
-          <Icon mainStyle="fill" subStyle="teal" name="MapPin" />
-          <Icon mainStyle="fill" subStyle="blue" name="MapPin" />
+          <Icon mainStyle="fill" subStyle="dark">
+            <Icons.MapPin />
+          </Icon>
+          <Icon mainStyle="fill" subStyle="purple">
+            <Icons.MapPin />
+          </Icon>
+          <Icon mainStyle="fill" subStyle="teal">
+            <Icons.MapPin />
+          </Icon>
+          <Icon mainStyle="fill" subStyle="blue">
+            <Icons.MapPin />
+          </Icon>
         </IconGroup>
       </div>
       <div className="pad">
         <IconGroup set>
-          <Icon mainStyle="pill" subStyle="dark" name="Heart" />
-          <Icon mainStyle="pill" subStyle="purple" name="Heart" />
-          <Icon mainStyle="pill" subStyle="teal" name="Heart" />
-          <Icon mainStyle="pill" subStyle="blue" name="Heart" />
-          <Icon mainStyle="pill" name="Heart" />
+          <Icon mainStyle="pill" subStyle="dark">
+            <Icons.Heart />
+          </Icon>
+          <Icon mainStyle="pill" subStyle="purple">
+            <Icons.Heart />
+          </Icon>
+          <Icon mainStyle="pill" subStyle="teal">
+            <Icons.Heart />
+          </Icon>
+          <Icon mainStyle="pill" subStyle="blue">
+            <Icons.Heart />
+          </Icon>
+          <Icon mainStyle="pill">
+            <Icons.Heart />
+          </Icon>
         </IconGroup>
       </div>
       <div className="pad">
@@ -106,7 +130,9 @@ const HomePage = () => (
     </div>
     <div className="bg--charcoal">
       <div className="pad">
-        <Icon mainStyle="pill" subStyle="white" name="Heart" />
+        <Icon mainStyle="pill" subStyle="white">
+          <Icons.Heart />
+        </Icon>
       </div>
     </div>
     <div className="bg--charcoal">
@@ -133,17 +159,17 @@ const HomePage = () => (
     <div className="wrap">
       <ButtonGroup className="pad">
         <Button mainStyle="pill">
-          <Icon name="GitHub" />
+          <Icons.GitHub />
           <span>github.com/jambonz</span>
         </Button>
         <Button mainStyle="pill">
-          <Icon name="GitHub" />
+          <Icons.GitHub />
           <span>github.com/drachtio</span>
         </Button>
       </ButtonGroup>
       <div className="pad">
         <Button mainStyle="pill" subStyle="jambonz">
-          <Icon name="Send" />
+          <Icons.Send />
           <span>Contact us</span>
         </Button>
       </div>

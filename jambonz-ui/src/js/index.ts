@@ -1,4 +1,3 @@
-import Icons from './icons';
 import { classNames } from './utils';
 import {
   P,
@@ -29,7 +28,6 @@ export {
   MS,
   MXS,
   Icon,
-  Icons,
   Button,
   IconGroup,
   classNames,

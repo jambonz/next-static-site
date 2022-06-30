@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { Button, Icon, classNames } from '@jambonz/ui';
 
+import { Icons } from './icons';
 import { rSlash } from './utils';
 import { useMobileMedia, useActiveNavi } from './hooks';
 
@@ -43,7 +44,9 @@ function NaviMobile({ active, handler, siteData }) {
           </Button>
         </div>
         <div className="navi__mobile__icon" onClick={handler}>
-          <Icon mainStyle="fill" subStyle="white" name="X" />
+          <Icon mainStyle="fill" subStyle="white">
+            <Icons.X />
+          </Icon>
         </div>
       </div>
       <ul className="navi__mobile__links">
@@ -98,7 +101,9 @@ export default function Navi({ siteData }) {
           })}
         </ul>
         <div className="navi__icon" onClick={handleNavi}>
-          <Icon mainStyle="fill" name="Menu" />
+          <Icon mainStyle="fill">
+            <Icons.Menu />
+          </Icon>
         </div>
         <div className="navi__login">
           <Button Link={Link} href={siteData.navi.login.link} mainStyle="login">

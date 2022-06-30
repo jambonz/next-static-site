@@ -1,11 +1,8 @@
 import type { ReactNode, ElementType } from 'react';
-import type { Icon as IconType } from 'react-feather';
-import React from 'react'
+import React from 'react';
 
-import type { IconsMapObject } from './icons';
 import type { ClassNameObject } from './utils';
 
-import Icons from './icons';
 import { classNames } from './utils';
 
 type mainStyles = 'pill' | 'fill';
@@ -30,10 +27,9 @@ interface ButtonGroupProps {
 }
 
 interface IconProps {
-  name: string;
-  IconsMap?: IconsMapObject; // Allows overriding with more icons
+  children: ReactNode;
   subStyle?: subStyles;
-  mainStyle?: mainStyles | null;
+  mainStyle: mainStyles;
 }
 
 interface IconGroupProps {
@@ -146,37 +142,25 @@ export function ButtonGroup({ children, className = '' }: ButtonGroupProps) {
 // See react-feather for all 286 icons available
 // https://github.com/feathericons/react-feather
 export function Icon({
-  name,
+  children,
   subStyle = null,
-  IconsMap = Icons,
-  mainStyle = null,
-  ...rest
+  mainStyle = 'fill',
 }: IconProps) {
-  const Component: IconType = IconsMap[name];
   const classes: ClassNameObject = {
     'icon': true,
     [`icon--${mainStyle}`]: true,
   };
 
-  if (!Component) {
-    return null;
-  }
-
   // Stylized icon
-  if (mainStyle) {
-    if (subStyle) {
-      classes[`icon--${mainStyle}--${subStyle}`] = true;
-    }
-
-    return (
-      <div className={classNames(classes)}>
-        <Component {...rest} />
-      </div>
-    );
+  if (subStyle) {
+    classes[`icon--${mainStyle}--${subStyle}`] = true;
   }
 
-  // Inline icon
-  return <Component {...rest} />;
+  return (
+    <div className={classNames(classes)}>
+      {children}
+    </div>
+  );
 }
 
 // Simple grouping of multiple <Icon>'s

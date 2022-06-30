@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Icon, Button, H4, H3, H2, P, MS, classNames, IconGroup } from '@jambonz/ui';
 
 import { getData } from '../src/lib/data';
+import { Icons } from '../src/components/icons';
 import { useMobileMedia } from '../src/components/hooks';
 import Layout, { Latest, Hero } from '../src/components/layout';
 import { normalizeSubtext, normalizeSlug } from '../src/components/utils';
@@ -95,7 +96,7 @@ function Dilemma({data}) {
                 <div className="dilemma__table__title" onClick={() => handleToggle(slug)}>
                   {table.logo ? <img src={table.logo} width="128" height="42" alt="jambonz" /> : <P><strong>{table.title}</strong></P>}
                   <span className="dilemma__table__toggle" >
-                    {isActiveToggle ? <Icon name="ChevronUp" /> : <Icon name="ChevronDown" />}
+                    {isActiveToggle ? <Icons.ChevronUp /> : <Icons.ChevronDown />}
                   </span>
                 </div>
                 <div className={classNames(pointsClasses)}>
@@ -104,10 +105,11 @@ function Dilemma({data}) {
                       'dilemma__table__point': true,
                       [point.icon.toLowerCase()]: true,
                     };
+                    const SvgIcon = Icons[point.icon];
 
                     return (
                       <div key={nanoid()} className={classNames(classes)}>
-                        <Icon name={point.icon} />
+                        <SvgIcon />
                         <MS>
                           {normalizeSubtext(point.text).map((text) => {
                             return <div key={nanoid()}>{text}</div>;
@@ -138,7 +140,12 @@ function BYO({data}) {
         </div>
         <IconGroup className="byo__icons">
           {data.icons.map((icon) => {
-            return <Icon key={nanoid()} name={icon} mainStyle="fill" />;
+            const SvgIcon = Icons[icon];
+            return (
+              <Icon key={nanoid()} mainStyle="fill">
+                <SvgIcon />
+              </Icon>
+            );
           })}
         </IconGroup>
         <div className="byo__comment">

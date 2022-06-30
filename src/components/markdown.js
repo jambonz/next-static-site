@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { classNames, Icon } from '@jambonz/ui';
 
+import { Icons } from './icons';
 import { TextLayout } from './layout';
 
 function MarkdownSidebar({scope, data}) {
@@ -50,7 +51,7 @@ function MarkdownSidebar({scope, data}) {
           return (
             <li key={nanoid()} className="markdown__item">
               <div className="m markdown__label" onClick={() => handleToggle(item.path)}>
-                {isActiveToggle ? <Icon name="ChevronDown" /> : <Icon name="ChevronRight" />}
+                {isActiveToggle ? <Icons.ChevronDown /> : <Icons.ChevronRight />}
                 <strong>{item.title}</strong>
               </div>
               <ul className={classNames(subClasses)}>
