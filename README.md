@@ -41,7 +41,7 @@ Clone this repository and install [yarn](https://yarnpkg.com/getting-started/ins
 
 ## Jambonz UI library
 
-Head on over to the [jambonz-ui README](./jambonz-ui/) for full documentation. Also check out the [Jambonz UI Docs]() as an additional resource. To work on the UI library:
+Head on over to the [@jambonz/ui README](./jambonz-ui/) for full documentation. Also check out the [@jambonz/ui docs](https://jambonz.org/docs/jambonz-ui/getting-started/) as a more in-depth resource. To work on the UI library:
 
 ```shell
 # preinstall will build and package
