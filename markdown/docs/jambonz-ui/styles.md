@@ -2,7 +2,7 @@
 
 Jambonz UI styles are provided a couple of ways. The raw source for the styles is [SASS]() so if you're also using SASS you have the beneficial ability to directly import either all the UI SASS or just the variables and mixins for use extending the UI kit in your jambonz app. If you import all the SASS you don't need to use the raw CSS anywhere in your app. The imported SASS will compile into your final CSS output.
 
-###### Loading the CSS
+##### Loading the CSS
 
 You can load the raw CSS directly into your app with a `<link>` tag if you prefer that method. It is provided compiled, minified and minified + gzipped. Assuming you've copied the CSS from the `public` directory provided with the package into your own static directory and renamed it `jambonz-ui.css`:
 
@@ -17,9 +17,9 @@ You can also import the CSS directly into your jambonz app entry point (JS) as m
 import '@jambonz/ui/public/css/styles.css';
 ```
 
-###### Available CSS selectors
+##### Available CSS selectors
 
-Most of the styles are utilized directly by the [components](/dacs/jambonz-ui/components/) so you're better off just using those. These are the basic utility styles that can be used in and ad-hoc manor in your jambonz apps.
+Most of the styles are utilized directly by the [components](/dacs/jambonz-ui/components/) so you're better off just using those. These are the basic utility styles that can be used in an ad-hoc manor in your jambonz apps.
 
 | CSS selector | Application |
 |--------------|-------------|
@@ -48,13 +48,13 @@ That `i` class is pretty useful. Here's an example of how it's used on this site
 <Link href="https://www.behance.net/gallery/60530395/Objectivity-Free-Font-Family">
   <a className="i" target="_blank">
     <span>design</span>
-    <Icon name="ExternalLink" />
+    <Icons.ExternalLink />
   </a>
 </Link>
 ```
 
 
-###### Loading in SASS
+##### Loading in SASS
 
 As mentioned you can import either the whole kit or just the variables and mixins. If you're already using SASS for your jambonz app the recommendation would be to just import the whole thing and not worry about managing another CSS import target anywhere in your frontend stack.
 
@@ -67,12 +67,12 @@ As mentioned you can import either the whole kit or just the variables and mixin
 @import '@jambonz/ui/src/styles/_mixins.scss';
 ```
 
-###### Available SASS variables
+##### Available SASS variables
 
 A more comprehensive table of available variables here is coming soon. For now the easiest place to visualize this is in the source file for the variables [here](https://github.com/jambonz/next-static-site/tree/main/jambonz-ui/src/styles/_vars.scss).
 
 
-###### Available SASS mixins
+##### Available SASS mixins
 
 A more comprehensive table of available mixins here is coming soon. For now the easiest place to visualize this is in the source file for the mixins [here](https://github.com/jambonz/next-static-site/tree/main/jambonz-ui/src/styles/_mixins.scss).
 

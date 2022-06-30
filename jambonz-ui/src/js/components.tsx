@@ -145,6 +145,7 @@ export function Icon({
   children,
   subStyle = null,
   mainStyle = 'fill',
+  ...rest
 }: IconProps) {
   const classes: ClassNameObject = {
     'icon': true,
@@ -157,7 +158,7 @@ export function Icon({
   }
 
   return (
-    <div className={classNames(classes)}>
+    <div {...rest} className={classNames(classes)}>
       {children}
     </div>
   );

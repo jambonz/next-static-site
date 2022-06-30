@@ -8,11 +8,11 @@ A primary goal of the library is to have a small footprint. Current sizes:
 
 | Output format | CSS size | JS size |
 |---------------|----------|---------|
-| Minified and Gzipped | `2 KB` | `812 bytes` |
+| Minified and Gzipped | `2 KB` | `624 bytes` |
 | Minified | `10 KB` | `2 KB` |
-| Compiled | `14 KB` | `5 KB` |
+| Compiled | `14 KB` | `4 KB` |
 
-###### Installation
+##### Installation
 
 Installing the package is easy. You can use any typical package manager for frontend stacks.
 
@@ -20,7 +20,7 @@ Installing the package is easy. You can use any typical package manager for fron
 npm install @jambonz/ui # or yarn add @jambonz/ui
 ```
 
-###### General usage
+##### General usage
 
 The UI kit can be used in any typical way we pull things into our modern frontend stacks. You can import the CSS, SASS and JS directly into your specific target entry points for bundling or you can load them statically the good-old-fashioned way. For the latter the package provides a singular `public` directory that consists of all static assets: CSS, JS and fonts. You can literally just copy these assets into your jambonz applications static directory if you want to. This is also handy for serving extra static assets during development with tools like [webpack-dev-server](https://webpack.js.org/configuration/dev-server/) and also for copying just the raw static assets at build time when bundling.
 

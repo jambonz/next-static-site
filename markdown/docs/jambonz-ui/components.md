@@ -6,13 +6,13 @@ The component library requires that some JS peer dependencies are met in your ja
 
 ```json
 "peerDependencies": {
-  "react": ">=17.1.1",
-  "react-dom": ">=17.1.1",
+  "react": ">=18.2.0",
+  "react-dom": ">=18.2.0",
   "react-feather": ">=2.0.9"
 }
 ```
 
-###### Using components
+##### Using components
 
 You can import available components from the package into your jambonz app JS.
 
@@ -23,11 +23,11 @@ function MyComponent() {
   return (
     <ButtonGroup className="pad">
       <Button mainStyle="pill">
-        <Icon name="GitHub" />
+        <Icons.GitHub />
         <span>github.com/jambonz</span>
       </Button>
       <Button mainStyle="pill">
-        <Icon name="GitHub" />
+        <Icons.GitHub />
         <span>github.com/drachtio</span>
       </Button>
     </ButtonGroup>
@@ -35,7 +35,7 @@ function MyComponent() {
 }
 ```
 
-###### Button with Link
+##### Button with Link
 
 The `Button` component takes a few props that are specific to rendering a link element, `<a>`, with button styles. If you just need a button, you can ignore these props. But if you would like links to be styled like buttons (CTAs) and you want them to route within the [React](https://reactjs.org/) context you can do that. The distinction between which one has to do with passing either the `to` or the `href` props that are passed on to the `Link` component in question.
 
@@ -75,35 +75,59 @@ function MyComponent() {
 }
 ```
 
-###### Extending the icon set
+##### Importing your icon set
 
-You can extend the default icon set by importing whatever you would like to use from [react-feather]() and combining that with the default `Icons` exported from the UI library.
+By default the UI library doesn't import any icons from [feathericons](https://feathericons.com/), however it declares [react-feather](https://github.com/feathericons/react-feather) as a peer dependency. This means you can import just the icons you are using in your jambonz app. This allows for [tree-shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) to take effect and ensures we don't load extra bloat into our dist JS that isn't explicitly used. The `Icon` component renders a stylized design icon with many visual variations.
+
+You can see how we import the feather icons used on this site [here](https://github.com/jambonz/next-static-site/blob/main/src/components/icons.js). But for a quick reference here is a compressed example.
+
+First we create a module in our jambonz app and import the icons we would like to use and export them for use in the rest of the app.
 
 ```jsx
-import { Icons } from '@jambonz/ui';
-import { Twitch, YouTube } from 'react-feather';
+import {
+  X,
+  Lock,
+  Send,
+  Menu,
+  Phone,
+  Heart,
+  ExternalLink,
+  // ...
+} from 'react-feather';
 
-export const MyIcons = {
-  ...Icons,
-  Twitch,
-  YouTube,
+export const Icons = {
+  X,
+  Lock,
+  Send,
+  Menu,
+  Phone,
+  Heart,
+  ExternalLink,
+  // ...
 };
+
+export default Icons;
 ```
 
-You can then pass an optional `IconsMap` prop along to the `Icon` component when you would like to use your new icons.
+Then we can use these icons both `inline` and with the `Icon` component for stylized designer icons.
 
 ```jsx
-import { MyIcons } from './my-icons';
+import { Icons, Heart } from './my-icons';
 import { Icon } from '@jambonz/ui';
 
 function MyComponent() {
   return (
-    <Icon
-      IconsMap={MyIcons}
-      mainStyle="pill"
-      subStyle="dark"
-      name="Twitch"
-    />
+    <>
+      <Icon mainStyle="pill" subStyle="dark">
+        <Icons.Heart />
+      </Icon>
+      <Link href="https://www.behance.net/gallery/60530395/Objectivity-Free-Font-Family">
+        <a className="i" target="_blank">
+          <span>design</span>
+          <Icons.ExternalLink />
+        </a>
+      </Link>
+    </>
   );
 }
 ```
@@ -112,9 +136,9 @@ function MyComponent() {
 
 | Component | Props |
 |-----------|-------|
-| Icon | `{ name, subStyle, mainStyle, IconsMap, ...rest }` |
+| Icon | `{ children, subStyle, mainStyle, ...rest }` |
 | IconGroup | `{ children, className, set }` |
-| Button | `{ to, href, Link, children, subStyle, mainStyle, ...rest }` |
+| Button | `{ children, to, href, Link, subStyle, mainStyle, ...rest }` |
 | ButtonGroup | `{ children, className }` |
 
 ###### Typography components
