@@ -19,7 +19,9 @@
     "prepackage": "rm -rf pkg && mkdir pkg",
     "package": "cp package.json pkg/package.json && mkdir pkg/public && mv css pkg/public/css && mv dist pkg/dist && cp -R fonts pkg/public/fonts && cp -R src pkg/src",
     "postpackage": "gzip --stdout pkg/public/css/styles.min.css > pkg/public/css/styles.min.css.gz",
-    "serve": "serve test-app/dist -p 8888"
+    "serve": "serve test-app/dist -p 8888",
+    "watch:rollup": "rollup --config rollup.config.js --watch",
+    "watch": "concurrently \"yarn watch:rollup\" \"yarn serve\""
   },
   "contributors": [
     {
@@ -47,6 +49,7 @@
     "@rollup/plugin-typescript": "^8.3.3",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
+    "concurrently": "^7.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",

@@ -1,5 +1,5 @@
 import type { ReactNode, ElementType } from 'react';
-import React from 'react';
+import React, { HtmlHTMLAttributes } from 'react';
 
 import type { ClassNameObject } from './utils';
 
@@ -8,11 +8,15 @@ import { classNames } from './utils';
 type mainStyles = 'pill' | 'fill';
 type subStyles = 'white' | 'dark' | 'teal' | 'blue' | 'purple' | null;
 
-interface FontProps {
+interface BaseProps extends HtmlHTMLAttributes<HTMLElement> {
+  // Just a base for our HTMLElement props...
+}
+
+interface FontProps extends BaseProps {
   children: ReactNode,
 }
 
-interface ButtonProps {
+interface ButtonProps extends BaseProps {
   to?: string | null; // For <Link> from `react-router-dom`
   href?: string | null; // For <Link> from `next/link`
   Link?: ElementType | null; // Provide the <Link> component
@@ -21,18 +25,18 @@ interface ButtonProps {
   mainStyle?: mainStyles | 'login';
 }
 
-interface ButtonGroupProps {
+interface ButtonGroupProps extends BaseProps {
   children: ReactNode;
   className?: string;
 }
 
-interface IconProps {
+interface IconProps extends BaseProps {
   children: ReactNode;
   subStyle?: subStyles;
   mainStyle: mainStyles;
 }
 
-interface IconGroupProps {
+interface IconGroupProps extends BaseProps {
   children: ReactNode;
   className?: string;
   set?: boolean;

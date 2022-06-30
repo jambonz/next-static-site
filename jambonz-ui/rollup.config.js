@@ -43,7 +43,7 @@ export default [
 
   // Built static dist for test-app, which is a React/TypeScript thing
   {
-    input: './test-app/app.tsx',
+    input: './test-app/src/app.tsx',
     output: {
       file: './test-app/dist/app.js',
       format: 'iife',
