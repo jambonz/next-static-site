@@ -41,18 +41,7 @@ Clone this repository and install [yarn](https://yarnpkg.com/getting-started/ins
 
 ## Jambonz UI library
 
-Head on over to the [jambonz-ui README](./jambonz-ui/) for full documentation. Also check out the [jambonz-ui docs](https://jambonz.org/docs/jambonz-ui/getting-started/) as a more in-depth resource. To work on the UI library:
-
-```shell
-# preinstall will build and package
-yarn
-
-# to pull newly built package into Next.js
-yarn up
-
-# that's it, now you can
-yarn dev
-```
+Head on over to the [jambonz-ui](https://github.com/jambonz/jambonz-ui) repo for full documentation. Also check out the [jambonz-ui docs](https://jambonz.org/docs/jambonz-ui/getting-started/) as a more in-depth resource.
 
 ### UI Design
 
