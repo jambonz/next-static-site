@@ -8,77 +8,70 @@ import { classNames } from './utils';
 type mainStyles = 'pill' | 'fill';
 type subStyles = 'white' | 'dark' | 'teal' | 'blue' | 'purple' | null;
 
+// Just a base for our HTMLElement props...
 interface BaseProps extends HtmlHTMLAttributes<HTMLElement> {
-  // Just a base for our HTMLElement props...
-}
-
-interface FontProps extends BaseProps {
-  children: ReactNode,
+  children: ReactNode;
 }
 
 interface ButtonProps extends BaseProps {
   to?: string | null; // For <Link> from `react-router-dom`
   href?: string | null; // For <Link> from `next/link`
   Link?: ElementType | null; // Provide the <Link> component
-  children: ReactNode;
   subStyle?: subStyles | 'light' | 'jambonz';
   mainStyle?: mainStyles | 'login';
 }
 
 interface ButtonGroupProps extends BaseProps {
-  children: ReactNode;
   className?: string;
 }
 
 interface IconProps extends BaseProps {
-  children: ReactNode;
   subStyle?: subStyles;
   mainStyle: mainStyles;
 }
 
 interface IconGroupProps extends BaseProps {
-  children: ReactNode;
   className?: string;
   set?: boolean;
 }
 
-export function H1({ children, ...rest }: FontProps) {
+export function H1({ children, ...rest }: BaseProps) {
   return <h1 {...rest}>{children}</h1>;
 }
 
-export function H2({ children, ...rest }: FontProps) {
+export function H2({ children, ...rest }: BaseProps) {
   return <h2 {...rest}>{children}</h2>;
 }
 
-export function H3({ children, ...rest }: FontProps) {
+export function H3({ children, ...rest }: BaseProps) {
   return <h3 {...rest}>{children}</h3>;
 }
 
-export function H4({ children, ...rest }: FontProps) {
+export function H4({ children, ...rest }: BaseProps) {
   return <h4 {...rest}>{children}</h4>;
 }
 
-export function H5({ children, ...rest }: FontProps) {
+export function H5({ children, ...rest }: BaseProps) {
   return <h5 {...rest}>{children}</h5>;
 }
 
-export function H6({ children, ...rest }: FontProps) {
+export function H6({ children, ...rest }: BaseProps) {
   return <h6 {...rest}>{children}</h6>;
 }
 
-export function P({ children, ...rest }: FontProps) {
+export function P({ children, ...rest }: BaseProps) {
   return <p {...rest}>{children}</p>;
 }
 
-export function M({ children }: FontProps) {
+export function M({ children }: BaseProps) {
   return <div className="m">{children}</div>;
 }
 
-export function MS({ children }: FontProps) {
+export function MS({ children }: BaseProps) {
   return <div className="ms">{children}</div>;
 }
 
-export function MXS({ children }: FontProps) {
+export function MXS({ children }: BaseProps) {
   return <div className="mxs">{children}</div>;
 }
 
@@ -142,9 +135,6 @@ export function ButtonGroup({ children, className = '' }: ButtonGroupProps) {
   );
 }
 
-// Extra {props} get passed to the feather Component
-// See react-feather for all 286 icons available
-// https://github.com/feathericons/react-feather
 export function Icon({
   children,
   subStyle = null,
@@ -156,7 +146,6 @@ export function Icon({
     [`icon--${mainStyle}`]: true,
   };
 
-  // Stylized icon
   if (subStyle) {
     classes[`icon--${mainStyle}--${subStyle}`] = true;
   }
