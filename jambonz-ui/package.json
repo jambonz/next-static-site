@@ -1,6 +1,6 @@
 {
   "name": "jambonz-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The Jambonz UI library is a minimal, light-weight UI design package for developing frontends for jambonz apps.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -17,7 +17,7 @@
     "build:rollup": "rollup --config rollup.config.js",
     "postbuild:rollup": "cp test-app/index.html test-app/dist/index.html && cp -R fonts test-app/dist/fonts",
     "prepackage": "rm -rf pkg && mkdir pkg",
-    "package": "cp package.json pkg/package.json && cp LICENSE ./pkg/LICENSE && mkdir pkg/public && mv css pkg/public/css && mv dist pkg/dist && cp -R fonts pkg/public/fonts && cp -R src pkg/src",
+    "package": "cp package.json pkg/package.json && cp LICENSE pkg/LICENSE && cp README.md pkg/README.md && mkdir pkg/public && mv css pkg/public/css && mv dist pkg/dist && cp -R fonts pkg/public/fonts && cp -R src pkg/src",
     "postpackage": "gzip --stdout pkg/public/css/styles.min.css > pkg/public/css/styles.min.css.gz",
     "serve": "serve test-app/dist -p 8888",
     "watch:rollup": "rollup --config rollup.config.js --watch",
