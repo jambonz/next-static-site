@@ -39,7 +39,7 @@ function NaviMobile({ active, handler, siteData }) {
     <div className={classNames(classes)}>
       <div className="navi__mobile__head">
         <div className="navi__mobile__login">
-          <Button Link={Link} href={siteData.navi.login.link} mainStyle="login" subStyle="white" onClick={handler}>
+          <Button as={Link} href={siteData.navi.login.link} mainStyle="login" subStyle="white" onClick={handler}>
             {siteData.navi.login.label}
           </Button>
         </div>
@@ -61,7 +61,7 @@ function NaviMobile({ active, handler, siteData }) {
         })}
       </ul>
       <div className="navi__mobile__support">
-        <Button Link={Link} href={`mailto:${siteData.footer.email}`} target="_blank" subStyle="light">
+        <Button as={Link} href={`mailto:${siteData.footer.email}`} target="_blank" subStyle="light">
           {siteData.footer.email}
         </Button>
       </div>
@@ -106,7 +106,7 @@ export default function Navi({ siteData }) {
           </Icon>
         </div>
         <div className="navi__login">
-          <Button Link={Link} href={siteData.navi.login.link} mainStyle="login">
+          <Button as={Link} href={siteData.navi.login.link} mainStyle="login">
             {siteData.navi.login.label}
           </Button>
         </div>

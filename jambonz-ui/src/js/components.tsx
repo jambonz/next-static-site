@@ -1,22 +1,23 @@
 import type { ReactNode, ElementType } from 'react';
-import React, { HtmlHTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 
 import type { ClassNameObject } from './utils';
 
 import { classNames } from './utils';
 
 type mainStyles = 'pill' | 'fill';
-type subStyles = 'white' | 'dark' | 'teal' | 'blue' | 'purple' | null;
+type subStyles = 'white' | 'dark' | 'teal' | 'blue' | 'purple';
 
-// Just a base for our HTMLElement props...
-interface BaseProps extends HtmlHTMLAttributes<HTMLElement> {
+/** Should work on a more explicit way of typing these props, e.g. don't accept ALL attributes */
+/** https://react-typescript-cheatsheet.netlify.app/docs/advanced/patterns_by_usecase/#wrappingmirroring */
+interface BaseProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
 }
 
 interface ButtonProps extends BaseProps {
-  to?: string | null; // For <Link> from `react-router-dom`
-  href?: string | null; // For <Link> from `next/link`
-  Link?: ElementType | null; // Provide the <Link> component
+  as?: ElementType; /** Provide the <Link> component */
+  to?: string; /** For <Link> from `react-router-dom` */
+  href?: string | object; /** For <Link> from `next/link` */
   subStyle?: subStyles | 'light' | 'jambonz';
   mainStyle?: mainStyles | 'login';
 }
@@ -76,11 +77,11 @@ export function MXS({ children }: BaseProps) {
 }
 
 export function Button({
-  to = null,
-  href = null,
-  Link = null,
+  as: Link,
+  to,
+  href,
   children,
-  subStyle = null,
+  subStyle,
   mainStyle = 'fill',
   ...rest
 }: ButtonProps) {
@@ -93,7 +94,7 @@ export function Button({
     classes[`btn--${mainStyle}--${subStyle}`] = true;
   }
 
-  // For <Link> from `react-router-dom`
+  /** For <Link> from `react-router-dom` */
   if (to && Link) {
     return (
       <Link {...rest} to={to} className={classNames(classes)}>
@@ -102,7 +103,7 @@ export function Button({
     );
   }
   
-  // For <Link> from `next/link`
+  /** For <Link> from `next/link` */
   if (href && Link) {
     return (
       <Link href={href}>
@@ -120,7 +121,7 @@ export function Button({
   );
 }
 
-// Simple grouping of multiple <Button>'s
+/** Simple grouping of multiple <Button>'s */
 export function ButtonGroup({ children, className = '' }: ButtonGroupProps) {
   const classes: ClassNameObject = {
     'btns': true,
@@ -137,7 +138,7 @@ export function ButtonGroup({ children, className = '' }: ButtonGroupProps) {
 
 export function Icon({
   children,
-  subStyle = null,
+  subStyle,
   mainStyle = 'fill',
   ...rest
 }: IconProps) {
@@ -157,7 +158,7 @@ export function Icon({
   );
 }
 
-// Simple grouping of multiple <Icon>'s
+/** Simple grouping of multiple <Icon>'s */
 export function IconGroup({
   set = false,
   children,

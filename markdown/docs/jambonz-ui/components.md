@@ -48,7 +48,7 @@ import { Button } from '@jambonz/ui';
 function MyComponent() {
   return (
     <Button
-      Link={Link}
+      as={Link}
       to="/someurl/"
       subStyle="dark">
         Some text
@@ -66,7 +66,7 @@ import { Button } from '@jambonz/ui';
 function MyComponent() {
   return (
     <Button
-      Link={Link}
+      as={Link}
       href="/someurl/"
       subStyle="dark">
         Some text
@@ -138,7 +138,7 @@ function MyComponent() {
 |-----------|-------|
 | Icon | `{ children, subStyle, mainStyle, ...rest }` |
 | IconGroup | `{ children, className, set }` |
-| Button | `{ children, to, href, Link, subStyle, mainStyle, ...rest }` |
+| Button | `{ children, to, href, as, subStyle, mainStyle, ...rest }` |
 | ButtonGroup | `{ children, className }` |
 
 ###### Typography components

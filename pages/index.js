@@ -155,7 +155,7 @@ function BYO({data}) {
           </H4>
         </div>
         <div className="byo__cta">
-          <Button Link={Link} href={data.url} subStyle="dark">{data.cta}</Button>
+          <Button as={Link} href={data.url} subStyle="dark">{data.cta}</Button>
         </div>
       </div>
     </section>

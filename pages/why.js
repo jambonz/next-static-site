@@ -48,7 +48,7 @@ function OS({data}) {
           {data.buttons.map((button) => {
             const BtnIcon = Icons[button.icon];
             return (
-              <Button Link={Link} key={nanoid()} href={button.url} target="_blank" mainStyle="pill">
+              <Button as={Link} key={nanoid()} href={button.url} target="_blank" mainStyle="pill">
                 <BtnIcon />
                 <span>{button.text}</span>
               </Button>
@@ -57,13 +57,13 @@ function OS({data}) {
         </ButtonGroup>
         <div className="os__logo">
           <img src={data.logo} width="313" height="71" alt="drachtio" />
-          <Button Link={Link} href="https://github.com/sponsors/drachtio/" target="_blank" mainStyle="pill" subStyle="jambonz">
+          <Button as={Link} href="https://github.com/sponsors/drachtio/" target="_blank" mainStyle="pill" subStyle="jambonz">
             <Icons.Heart />
             <span>Sponsor</span>
           </Button>
         </div>
         <div className="os__cta">
-          <Button Link={Link} href={data.url} subStyle="dark" >{data.cta}</Button>
+          <Button as={Link} href={data.url} subStyle="dark" >{data.cta}</Button>
         </div>
       </div>
     </section>

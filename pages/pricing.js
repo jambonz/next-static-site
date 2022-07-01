@@ -21,7 +21,7 @@ function Structure({data}) {
       </div>
       <div className="wrap structure__cta">
         <P>{data.cta.text}</P>
-        <Button Link={Link} href={`${data.cta.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
+        <Button as={Link} href={`${data.cta.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
           <CtaIcon />
           <span>{data.cta.cta}</span>
         </Button>
@@ -54,7 +54,7 @@ function Services({data}) {
           })}
         </div>
         <div className="services__cta">
-          <Button Link={Link} href={`${data.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
+          <Button as={Link} href={`${data.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
             <SvgIcon />
             <span>{data.cta}</span>
           </Button>
