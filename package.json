@@ -5,19 +5,26 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
+    "postinstall": "rm -rf public/fonts && cp -R ./node_modules/jambonz-ui/public/fonts ./public/fonts",
     "dev": "next",
+    "lint": "next lint",
     "start": "next start",
     "build": "next build",
     "export": "next export",
     "pretest": "node cypress/scripts/fixtures.js",
     "test": "cypress run --headless --browser chrome",
-    "posttest": "rm -rf cypress/fixtures",
-    "lint": "eslint src/components src/lib pages --ext js"
+    "posttest": "rm -rf cypress/fixtures"
   },
-  "author": "Jambonz Developers",
+  "contributors": [
+    {
+      "name": "Brandon Lee Kitajchuk",
+      "email": "bk@kitajchuk.com",
+      "url": "https://www.kitajchuk.com"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
-    "classnames": "^2.2.6",
+    "jambonz-ui": "^0.0.2",
     "nanoid": "^3.1.22",
     "next": "^12.1.4",
     "next-plugin-preact": "^3.0.6",
@@ -26,7 +33,7 @@
     "prismjs": "^1.23.0",
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
-    "react-feather": "^2.0.9",
+    "react-feather": "^2.0.10",
     "react-ssr-prepass": "npm:preact-ssr-prepass"
   },
   "devDependencies": {
@@ -34,13 +41,8 @@
     "babel-plugin-prismjs": "^2.0.1",
     "cypress": "^7.7.0",
     "env-cmd": "^10.1.0",
-    "eslint": "^7.26.0",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-flowtype": "^5.7.2",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint": "8.18.0",
+    "eslint-config-next": "12.1.6",
     "gray-matter": "^4.0.2",
     "husky": "^6.0.0",
     "lint-staged": "^12.4.1",
@@ -52,58 +54,7 @@
     "yamljs": "^0.3.0"
   },
   "lint-staged": {
-    "*.js": "yarn lint"
-  },
-  "eslintConfig": {
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
-    },
-    "env": {
-      "browser": true,
-      "es2021": true,
-      "node": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "react-app"
-    ],
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": 12,
-      "sourceType": "module"
-    },
-    "plugins": [
-      "react"
-    ],
-    "rules": {
-      "react/prop-types": "off",
-      "react/react-in-jsx-scope": "off",
-      "jsx-a11y/anchor-is-valid": "off",
-      "jsx-a11y/alt-text": "off",
-      "indent": [
-        "error",
-        2
-      ],
-      "quotes": [
-        "error",
-        "single"
-      ],
-      "semi": [
-        "error",
-        "always"
-      ]
-    },
-    "ignorePatterns": [
-      "**/node_modules/*",
-      "**/out/*",
-      "**/.next/*",
-      "next.config.js",
-      "**/cypress/*"
-    ]
+    "src/**/*.js": "yarn lint",
+    "pages/**/*.js": "yarn lint"
   }
 }

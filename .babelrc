@@ -11,7 +11,12 @@
           "js",
           "json",
           "bash",
-          "http"
+          "http",
+          "html",
+          "css",
+          "jsx",
+          "sass",
+          "scss"
         ],
         "plugins": [
           "line-numbers",

@@ -1,10 +1,12 @@
-import { useState } from 'react';
-import { nanoid } from 'nanoid';
-import classNames from 'classnames';
-
 import Link from 'next/link';
 
-import { Button, Icon, useMobileMedia, useActiveNavi, rSlash } from './jambonz-ui';
+import { nanoid } from 'nanoid';
+import { useState } from 'react';
+import { Button, Icon, classNames } from 'jambonz-ui';
+
+import { Icons } from './icons';
+import { rSlash } from './utils';
+import { useMobileMedia, useActiveNavi } from './hooks';
 
 function NaviItem({obj}) {
   const activeNavi = useActiveNavi();
@@ -37,12 +39,14 @@ function NaviMobile({ active, handler, siteData }) {
     <div className={classNames(classes)}>
       <div className="navi__mobile__head">
         <div className="navi__mobile__login">
-          <Button href={siteData.navi.login.link} mainStyle="login" subStyle="white" onClick={handler}>
+          <Button as={Link} href={siteData.navi.login.link} mainStyle="login" subStyle="white" onClick={handler}>
             {siteData.navi.login.label}
           </Button>
         </div>
         <div className="navi__mobile__icon" onClick={handler}>
-          <Icon mainStyle="fill" subStyle="white" name="X" />
+          <Icon mainStyle="fill" subStyle="white">
+            <Icons.X />
+          </Icon>
         </div>
       </div>
       <ul className="navi__mobile__links">
@@ -57,7 +61,7 @@ function NaviMobile({ active, handler, siteData }) {
         })}
       </ul>
       <div className="navi__mobile__support">
-        <Button href={`mailto:${siteData.footer.email}`} target="_blank" subStyle="light">
+        <Button as={Link} href={`mailto:${siteData.footer.email}`} target="_blank" subStyle="light">
           {siteData.footer.email}
         </Button>
       </div>
@@ -97,10 +101,12 @@ export default function Navi({ siteData }) {
           })}
         </ul>
         <div className="navi__icon" onClick={handleNavi}>
-          <Icon mainStyle="fill" name="Menu" />
+          <Icon mainStyle="fill">
+            <Icons.Menu />
+          </Icon>
         </div>
         <div className="navi__login">
-          <Button href={siteData.navi.login.link} mainStyle="login">
+          <Button as={Link} href={siteData.navi.login.link} mainStyle="login">
             {siteData.navi.login.label}
           </Button>
         </div>

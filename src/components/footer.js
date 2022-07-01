@@ -1,9 +1,10 @@
-import { nanoid } from 'nanoid';
-import classNames from 'classnames';
-
 import Link from 'next/link';
 
-import { Button, useActiveNavi, rSlash } from './jambonz-ui';
+import { nanoid } from 'nanoid';
+import { Button, classNames } from 'jambonz-ui';
+
+import { rSlash } from './utils';
+import { useActiveNavi } from './hooks';
 
 function FooterItem({ obj }) {
   const activeNavi = useActiveNavi();
@@ -42,7 +43,7 @@ export default function Footer({ siteData }) {
           </ul>
         </div>
         <div className="foot__support">
-          <Button href={`mailto:${siteData.footer.email}?subject=Jambonz Support`} target="_blank" subStyle="light">
+          <Button as={Link} href={`mailto:${siteData.footer.email}?subject=Jambonz Support`} target="_blank" subStyle="light">
             {siteData.footer.email}
           </Button>
         </div>

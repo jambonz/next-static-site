@@ -112,6 +112,22 @@ navi:
         path: nodejs-sdk
         title: Introduction to the Node.js SDK
   -
+    path: jambonz-ui
+    title: Jambonz UI
+    pages:
+      -
+        path: getting-started
+        title: Getting started
+      -
+        path: fonts-and-icons
+        title: Fonts and icons
+      -
+        path: styles
+        title: Styles
+      -
+        path: components
+        title: Components
+  -
     path: release-notes
     title: Release Notes
     pages:

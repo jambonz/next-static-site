@@ -1,4 +1,3 @@
-// Icons dictionary of just what we're using
 import {
   X,
   Lock,

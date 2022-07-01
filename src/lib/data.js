@@ -1,3 +1,9 @@
+/**
+ * These utils are for Next.js Static Generation (SSG) at build time
+ * They are used with Next.js `getStaticProps` and `getStaticPaths`
+ * https://nextjs.org/docs/basic-features/pages#static-generation-recommended
+ */
+
 const fs = require('fs');
 const path = require('path');
 const yamljs = require('yamljs');
@@ -8,6 +14,18 @@ const remarkGfm = require('remark-gfm');
 const dataDir = path.join(process.cwd(), 'data');
 const markdownDir = path.join(process.cwd(), 'markdown');
 
+function _slugify(str) {
+  return str.toString().toLowerCase().trim()
+    // Replace & with "and"
+    .replace( /&/g, "-and-" )
+
+    // Replace spaces, non-word characters and dashes with a single dash (-)
+    .replace( /[\s\W-]+/g, "-" )
+
+    // Replace leading trailing slashes with an empty string - nothing
+    .replace( /^[-]+|[-]+$/g, "" );
+}
+
 /**
  * For accessibility issues we can "fix" our limitations with markdown and remark-html
  * The ideal solution would be to comb over every markdown file and fix our headings...
@@ -17,11 +35,8 @@ const markdownDir = path.join(process.cwd(), 'markdown');
  */
 function _normalizeHTML(html) {
   return html
-    .replace(/<(h[1-6])>/g, (m, p1) => {
-      return `<div class="${p1}">`;
-    })
-    .replace(/<\/(h[1-6])>/g, (m, p1) => {
-      return '</div>';
+    .replace(/<(h[1-6])>(.*?)(<\/(h[1-6])>)/g, (m, p1, p2, p3) => {
+      return `<div class="${p1}" id="${p1}-${_slugify(p2)}">${p2}</div>`;
     });
 }
 

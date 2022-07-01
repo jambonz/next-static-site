@@ -1,10 +1,15 @@
-import { nanoid } from 'nanoid';
+import Link from 'next/link';
 
-import Layout from '../src/components/layout';
-import { Hero, Icon, Button, H2, P, normalizeSubtext } from '../src/components/jambonz-ui';
+import { nanoid } from 'nanoid';
+import { Icon, Button, H2, P } from 'jambonz-ui';
+
 import { getData } from '../src/lib/data';
+import { Icons } from '../src/components/icons';
+import Layout, { Hero } from '../src/components/layout';
+import { normalizeSubtext } from '../src/components/utils';
 
 function Structure({data}) {
+  const CtaIcon = Icons[data.cta.icon];
   return (
     <section className="structure">
       <div className="wrap structure__text">
@@ -16,8 +21,8 @@ function Structure({data}) {
       </div>
       <div className="wrap structure__cta">
         <P>{data.cta.text}</P>
-        <Button href={`${data.cta.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
-          <Icon name={data.cta.icon} />
+        <Button as={Link} href={`${data.cta.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
+          <CtaIcon />
           <span>{data.cta.cta}</span>
         </Button>
       </div>
@@ -26,6 +31,7 @@ function Structure({data}) {
 }
 
 function Services({data}) {
+  const SvgIcon = Icons[data.icon];
   return (
     <section className="bg--pink services pad">
       <div className="wrap services__wrap">
@@ -39,7 +45,7 @@ function Services({data}) {
                 <P>
                   <a className="i" href={`${data.url}?subject=${service.title} Support`} target="_blank" rel="noreferrer">
                     <strong>{service.title}</strong>
-                    <Icon name="ExternalLink" />
+                    <Icons.ExternalLink />
                   </a>
                 </P>
                 <P>{service.text}</P>
@@ -48,8 +54,8 @@ function Services({data}) {
           })}
         </div>
         <div className="services__cta">
-          <Button href={`${data.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
-            <Icon name={data.icon} />
+          <Button as={Link} href={`${data.url}?subject=Additional Services Support`} target="_blank" mainStyle="pill" subStyle="jambonz">
+            <SvgIcon />
             <span>{data.cta}</span>
           </Button>
         </div>

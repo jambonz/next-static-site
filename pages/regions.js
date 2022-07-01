@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { nanoid } from 'nanoid';
 
-import Layout from '../src/components/layout';
-import { Hero, Icon, P } from '../src/components/jambonz-ui';
+import { nanoid } from 'nanoid';
+import { Icon, P } from 'jambonz-ui';
+
 import { getData } from '../src/lib/data';
+import { Icons } from '../src/components/icons';
+import Layout, { Hero } from '../src/components/layout';
 
 function Regions({ data }) {
   const router = useRouter();
@@ -14,11 +16,14 @@ function Regions({ data }) {
     <section className="regions">
       {data.regions.map((region) => {
         const href = (redirect === 'login') ? region.url : region.altUrl;
+        const SvgIcon = Icons[region.icon];
 
         return (
           <div key={nanoid()} className="wrap regions__wrap">
             <div className="regions__icon">
-              <Icon name={region.icon} subStyle={region.color} mainStyle="fill" />
+              <Icon subStyle={region.color} mainStyle="fill">
+                <SvgIcon />
+              </Icon>
             </div>
             <div className="regions__title">
               <P className={`med color--${region.color}`}>
@@ -30,7 +35,7 @@ function Regions({ data }) {
                 <Link href={href}>
                   <a className="i" title={`jambonz ${region.title}`}>
                     <span className="regions__text">{region.text}</span>
-                    <Icon name="ExternalLink" />
+                    <Icons.ExternalLink />
                   </a>
                 </Link>
               </P>

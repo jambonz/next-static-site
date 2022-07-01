@@ -1,10 +1,14 @@
-import { nanoid } from 'nanoid';
-import classNames from 'classnames';
-import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
-import Layout from '../src/components/layout';
-import { Latest, Hero, Icon, Button, H4, H3, H2, P, MS, normalizeSubtext, normalizeSlug, useMobileMedia } from '../src/components/jambonz-ui';
+import { nanoid } from 'nanoid';
+import { useState, useEffect, useRef } from 'react';
+import { Icon, Button, H4, H3, H2, P, MS, classNames, IconGroup } from 'jambonz-ui';
+
 import { getData } from '../src/lib/data';
+import { Icons } from '../src/components/icons';
+import { useMobileMedia } from '../src/components/hooks';
+import Layout, { Latest, Hero } from '../src/components/layout';
+import { normalizeSubtext, normalizeSlug } from '../src/components/utils';
 
 function Tech({data}) {
   return (
@@ -92,7 +96,7 @@ function Dilemma({data}) {
                 <div className="dilemma__table__title" onClick={() => handleToggle(slug)}>
                   {table.logo ? <img src={table.logo} width="128" height="42" alt="jambonz" /> : <P><strong>{table.title}</strong></P>}
                   <span className="dilemma__table__toggle" >
-                    {isActiveToggle ? <Icon name="ChevronUp" /> : <Icon name="ChevronDown" />}
+                    {isActiveToggle ? <Icons.ChevronUp /> : <Icons.ChevronDown />}
                   </span>
                 </div>
                 <div className={classNames(pointsClasses)}>
@@ -101,10 +105,11 @@ function Dilemma({data}) {
                       'dilemma__table__point': true,
                       [point.icon.toLowerCase()]: true,
                     };
+                    const SvgIcon = Icons[point.icon];
 
                     return (
                       <div key={nanoid()} className={classNames(classes)}>
-                        <Icon name={point.icon} />
+                        <SvgIcon />
                         <MS>
                           {normalizeSubtext(point.text).map((text) => {
                             return <div key={nanoid()}>{text}</div>;
@@ -133,11 +138,16 @@ function BYO({data}) {
         <div className="byo__subtext">
           <H3 className="h5">{data.subtext}</H3>
         </div>
-        <div className="byo__icons icons">
+        <IconGroup className="byo__icons">
           {data.icons.map((icon) => {
-            return <Icon key={nanoid()} name={icon} mainStyle="fill" />;
+            const SvgIcon = Icons[icon];
+            return (
+              <Icon key={nanoid()} mainStyle="fill">
+                <SvgIcon />
+              </Icon>
+            );
           })}
-        </div>
+        </IconGroup>
         <div className="byo__comment">
           <H4 className="h5">
             {/* Use dangerouslySetInnerHTML to render inline link from YAML data */}
@@ -145,7 +155,7 @@ function BYO({data}) {
           </H4>
         </div>
         <div className="byo__cta">
-          <Button href={data.url} subStyle="dark">{data.cta}</Button>
+          <Button as={Link} href={data.url} subStyle="dark">{data.cta}</Button>
         </div>
       </div>
     </section>

@@ -1,5 +1,4 @@
-import Layout from '../src/components/layout';
-import { Hero, TextLayout } from '../src/components/jambonz-ui';
+import Layout, { Hero, TextLayout } from '../src/components/layout';
 import { getData, getParsedMarkdown } from '../src/lib/data';
 import path from 'path';
 

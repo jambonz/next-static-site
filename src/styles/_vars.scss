@@ -1,6 +1,6 @@
 /******************************************************************************
  * Special mobile layout width
- * Utilized in src/components/jambonz-ui: useMobileMedia
+ * Utilized in src/components/hooks: useMobileMedia
 *******************************************************************************/
 :root {
   --mobile-media: 896px;
@@ -9,68 +9,7 @@
 $mobile-width: 896px;
 
 /******************************************************************************
- * Colors
-*******************************************************************************/
-$black: #000;
-$white: #fff;
-$charcoal: #231f20;
-$grey: #f8f8f8;
-$grey-light: mix($white, $charcoal, 75%);
-$jambonz: #da1c5c;
-$pink: #fff3f6;
-$purple: #9662b2;
-$teal: #30beb0;
-$blue: #006dff;
-$green: #008a1a;
-$red: #e10e22;
-$mix-amount: 25%;
-
-/******************************************************************************
- * Font family
-*******************************************************************************/
-$font-regular: 'objectivityregular';
-$font-regular-italic: 'objectivityregular_slanted';
-$font-medium: 'objectivitymedium';
-$font-medium-italic: 'objectivitymedium_slanted';
-$font-bold: 'objectivitybold';
-$font-bold-italic: 'objectivitybold_slanted';
-$font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-
-/******************************************************************************
- * Font sizes
-*******************************************************************************/
-$h1-size: 3rem;
-$h2-size: 2.5rem;
-$h3-size: 2.25rem;
-$h4-size: 2rem;
-$h5-size: 1.5rem;
-$h6-size: 1.25rem;
-$p-size: 1.125rem;
-$m-size: 1rem;
-$ms-size: 0.875rem;
-$mxs-size: 0.75rem;
-
-/******************************************************************************
- * Icon sizes
-*******************************************************************************/
-$icon-size-1: $h1-size;
-$icon-size-2: $h2-size;
-$icon-size-3: $h3-size;
-
-/******************************************************************************
  * Sizes
 *******************************************************************************/
 $navi-index: 999;
 $navi-height: 76px;
-$width-max: 1440px;
-$width-tablet-1: 1024px;
-$width-tablet-2: 768px;
-$width-mobile: 640px;
-$width-small: 480px;
-$width-padding: 4.4444444444vw;
-
-/******************************************************************************
- * Animation / transitions
-*******************************************************************************/
-$base-dur: 200ms;
-$base-ease: ease;
