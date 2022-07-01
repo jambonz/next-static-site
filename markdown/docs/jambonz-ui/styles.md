@@ -14,7 +14,7 @@ You can load the raw CSS directly into your app with a `<link>` tag if you prefe
 You can also import the CSS directly into your jambonz app entry point (JS) as most bundlers support extraction for this file type:
 
 ```js
-import '@jambonz/ui/public/css/styles.css';
+import 'jambonz-ui/public/css/styles.css';
 ```
 
 ##### Available CSS selectors
@@ -60,11 +60,11 @@ As mentioned you can import either the whole kit or just the variables and mixin
 
 ```scss
 // This imports the entire SASS lib
-@import '@jambonz/ui/src/styles/index.scss';
+@import 'jambonz-ui/src/styles/index.scss';
 
 // This imports just the mixins and variables
-@import '@jambonz/ui/src/styles/_vars.scss';
-@import '@jambonz/ui/src/styles/_mixins.scss';
+@import 'jambonz-ui/src/styles/_vars.scss';
+@import 'jambonz-ui/src/styles/_mixins.scss';
 ```
 
 ##### Available SASS variables

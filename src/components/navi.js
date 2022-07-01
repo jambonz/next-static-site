@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
-import { Button, Icon, classNames } from '@jambonz/ui';
+import { Button, Icon, classNames } from 'jambonz-ui';
 
 import { Icons } from './icons';
 import { rSlash } from './utils';

@@ -6,8 +6,8 @@
   "scripts": {
     "prepare": "husky install",
     "preinstall": "cd ./jambonz-ui/ && yarn && yarn build && cd ../ && yarn up",
-    "postinstall": "rm -rf public/fonts && cp -R ./node_modules/@jambonz/ui/public/fonts ./public/fonts",
-    "up": "rm -rf ./node_modules/@jambonz && yarn upgrade @jambonz/ui",
+    "postinstall": "rm -rf public/fonts && cp -R ./node_modules/jambonz-ui/public/fonts ./public/fonts",
+    "up": "rm -rf ./node_modules/@jambonz && yarn upgrade jambonz-ui",
     "dev": "next",
     "lint": "next lint",
     "start": "next start",
@@ -26,7 +26,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@jambonz/ui": "./jambonz-ui/pkg/",
+    "jambonz-ui": "./jambonz-ui/pkg/",
     "nanoid": "^3.1.22",
     "next": "^12.1.4",
     "next-plugin-preact": "^3.0.6",

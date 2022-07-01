@@ -1,5 +1,5 @@
 {
-  "name": "@jambonz/ui",
+  "name": "jambonz-ui",
   "version": "0.0.1",
   "description": "The Jambonz UI library is a minimal, light-weight UI design package for developing frontends for jambonz apps.",
   "main": "dist/cjs/index.js",
@@ -30,6 +30,10 @@
       "url": "https://www.kitajchuk.com"
     }
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "license": "MIT",
   "engines": {
     "node": ">= 14"

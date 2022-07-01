@@ -8,7 +8,7 @@ A primary goal of the library is to have a small footprint. Current sizes:
 
 | Output format | CSS size | JS size |
 |---------------|----------|---------|
-| Minified and Gzipped | `2 KB` | `624 bytes` |
+| Minified and Gzipped | `2 KB` | `614 bytes` |
 | Minified | `10 KB` | `2 KB` |
 | Compiled | `14 KB` | `4 KB` |
 
@@ -17,7 +17,7 @@ A primary goal of the library is to have a small footprint. Current sizes:
 Installing the package is easy. You can use any typical package manager for frontend stacks.
 
 ```shell
-npm install @jambonz/ui # or yarn add @jambonz/ui
+npm install jambonz-ui # or yarn add jambonz-ui
 ```
 
 ##### General usage

@@ -24,7 +24,7 @@ For this [Next.js](https://nextjs.org/) app you're on right now we do this with 
 ```json
 {
   "scripts": {
-    "postinstall": "rm -rf public/fonts && cp -R ./node_modules/@jambonz/ui/public/fonts ./public/fonts"
+    "postinstall": "rm -rf public/fonts && cp -R ./node_modules/jambonz-ui/public/fonts ./public/fonts"
   }
 }
 ```
@@ -37,7 +37,7 @@ Example of dev server config:
 module.exports = {
   // ...
   devServer: {
-    static: [path.resolve(__dirname, 'node_modules/@jambonz/ui/public')],
+    static: [path.resolve(__dirname, 'node_modules/jambonz-ui/public')],
   },
 };
 ```
@@ -51,7 +51,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'node_modules/@jambonz/ui/public'),
+          from: path.resolve(__dirname, 'node_modules/jambonz-ui/public'),
           // If you would like to omit the CSS/JS and only copy fonts
           globOptions: {
             ignore: ['**/css/**', '**/js/**'],

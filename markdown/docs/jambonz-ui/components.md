@@ -17,7 +17,7 @@ The component library requires that some JS peer dependencies are met in your ja
 You can import available components from the package into your jambonz app JS.
 
 ```jsx
-import { ButtonGroup, Button, Icon } from '@jambonz/ui';
+import { ButtonGroup, Button, Icon } from 'jambonz-ui';
 
 function MyComponent() {
   return (
@@ -43,7 +43,7 @@ Using the `Link` prop with [react-router-dom](https://reactrouter.com/docs/en/v6
 
 ```jsx
 import { Link } from 'react-router-dom';
-import { Button } from '@jambonz/ui';
+import { Button } from 'jambonz-ui';
 
 function MyComponent() {
   return (
@@ -61,7 +61,7 @@ Using the `Link` prop with [next/link](https://nextjs.org/docs/api-reference/nex
 
 ```jsx
 import Link from 'next/link';
-import { Button } from '@jambonz/ui';
+import { Button } from 'jambonz-ui';
 
 function MyComponent() {
   return (
@@ -113,7 +113,7 @@ Then we can use these icons both `inline` and with the `Icon` component for styl
 
 ```jsx
 import { Icons, Heart } from './my-icons';
-import { Icon } from '@jambonz/ui';
+import { Icon } from 'jambonz-ui';
 
 function MyComponent() {
   return (

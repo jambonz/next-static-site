@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Icon, Button, IconGroup, ButtonGroup } from '@jambonz/ui';
+import { P, M, MS, MXS, H1, H2, H3, H4, H5, H6, Icon, Button, IconGroup, ButtonGroup } from 'jambonz-ui';
 
 import { getData } from '../src/lib/data';
 import { Icons } from '../src/components/icons';

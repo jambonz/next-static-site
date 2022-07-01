@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { nanoid } from 'nanoid';
-import { Icon, P } from '@jambonz/ui';
+import { Icon, P } from 'jambonz-ui';
 
 import { getData } from '../src/lib/data';
 import { Icons } from '../src/components/icons';

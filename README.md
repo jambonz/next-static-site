@@ -41,7 +41,7 @@ Clone this repository and install [yarn](https://yarnpkg.com/getting-started/ins
 
 ## Jambonz UI library
 
-Head on over to the [@jambonz/ui README](./jambonz-ui/) for full documentation. Also check out the [@jambonz/ui docs](https://jambonz.org/docs/jambonz-ui/getting-started/) as a more in-depth resource. To work on the UI library:
+Head on over to the [jambonz-ui README](./jambonz-ui/) for full documentation. Also check out the [jambonz-ui docs](https://jambonz.org/docs/jambonz-ui/getting-started/) as a more in-depth resource. To work on the UI library:
 
 ```shell
 # preinstall will build and package
@@ -56,7 +56,7 @@ yarn dev
 
 ### UI Design
 
-This app is being composed in the manor of `module > component > element`, wherein a page is a module which is made up of components that are comprised of elements. We are using [Next.js](https://nextjs.org) [SASS](https://nextjs.org/learn/basics/assets-metadata-css/css-styling) located in the `src/styles` directory and loaded globally in [pages/_app.js](/pages/_app.js). JS components are in the `src/components` directory. The `@jambonz/ui` component library consists of reusable design element components.
+This app is being composed in the manor of `module > component > element`, wherein a page is a module which is made up of components that are comprised of elements. We are using [Next.js](https://nextjs.org) [SASS](https://nextjs.org/learn/basics/assets-metadata-css/css-styling) located in the `src/styles` directory and loaded globally in [pages/_app.js](/pages/_app.js). JS components are in the `src/components` directory. The `jambonz-ui` component library consists of reusable design element components.
 
 ### Styling
 
@@ -64,7 +64,7 @@ We are using the [BEM](http://getbem.com/) style for our CSS/SASS system. Please
 
 ### Typography
 
-You should always use the reusable components from the `@jambonz/ui` component library. These typographic components implement our type-scale for our design system. When styling pages in which we want to adjust or tweak the type-scale you should always use the `mixins` provided in the SASS. This ensures when we decide to break out of our standard type-scale implementation for any given element(s) we retain a harmonious nature to our type sizing as it retains its responsive nature provided by the `mixins`. A perfect example of how we have already done this is for the `_text-layout` page(s) wherein we've chosen to have the `p` element implement the `ms()` mixin and likewise the `li` element(s) implementing the `ms()` mixin as well.
+You should always use the reusable components from the `jambonz-ui` component library. These typographic components implement our type-scale for our design system. When styling pages in which we want to adjust or tweak the type-scale you should always use the `mixins` provided in the SASS. This ensures when we decide to break out of our standard type-scale implementation for any given element(s) we retain a harmonious nature to our type sizing as it retains its responsive nature provided by the `mixins`. A perfect example of how we have already done this is for the `_text-layout` page(s) wherein we've chosen to have the `p` element implement the `ms()` mixin and likewise the `li` element(s) implementing the `ms()` mixin as well.
 
 ## Static page data
 
