@@ -1,6 +1,6 @@
 # Styles
 
-Jambonz UI styles are provided a couple of ways. The raw source for the styles is [SASS]() so if you're also using SASS you have the beneficial ability to directly import either all the UI SASS or just the variables and mixins for use extending the UI kit in your jambonz app. If you import all the SASS you don't need to use the raw CSS anywhere in your app. The imported SASS will compile into your final CSS output.
+Jambonz UI styles are provided a couple of ways. The raw source for the styles is [SASS](https://sass-lang.com/) so if you're also using SASS you have the beneficial ability to directly use either all the UI SASS or just the variables and mixins for use extending the UI kit in your jambonz app. If you use all the SASS you don't need to use the raw CSS anywhere in your app. The utilized SASS modules will compile into your final CSS output.
 
 ##### Loading the CSS
 
@@ -56,15 +56,19 @@ That `i` class is pretty useful. Here's an example of how it's used on this site
 
 ##### Loading in SASS
 
-As mentioned you can import either the whole kit or just the variables and mixins. If you're already using SASS for your jambonz app the recommendation would be to just import the whole thing and not worry about managing another CSS import target anywhere in your frontend stack.
+As mentioned you can use either the whole kit or just the variables and mixins. If you're already using SASS for your jambonz app the recommendation would be to just load the whole thing and not worry about managing another CSS import target anywhere in your frontend stack.
 
 ```scss
-// This imports the entire SASS lib
-@import 'jambonz-ui/src/styles/index.scss';
+// This loads the entire SASS lib
+// You should use this in your root SASS entry point
+@use 'jambonz-ui/src/styles/index.scss';
 
-// This imports just the mixins and variables
-@import 'jambonz-ui/src/styles/_vars.scss';
-@import 'jambonz-ui/src/styles/_mixins.scss';
+// In your local SASS modules you can use the vars and mixins from the UI library
+@use 'jambonz-ui/src/styles/vars' as ui-vars;
+
+.some-thing {
+  color: ui-vars.$jambonz;
+}
 ```
 
 ##### Available SASS variables

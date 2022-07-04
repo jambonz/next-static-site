@@ -1,27 +1,33 @@
+@use 'vars';
+@use 'mixins';
+
+@use 'jambonz-ui/src/styles/vars' as ui-vars;
+@use 'jambonz-ui/src/styles/mixins' as ui-mixins;
+
 /******************************************************************************
  * Above the fold
 *******************************************************************************/
 .banner {
-  @include flex-cols();
+  @include mixins.flex-cols();
   justify-content: center;
   width: 100%;
   height: 32px;
-  background: $jambonz;
+  background: ui-vars.$jambonz;
   position: sticky;
   top: 0;
-  z-index: $navi-index + 2;
+  z-index: vars.$navi-index + 2;
   text-align: center;
 
   a {
-    @include ms();
-    color: $white;
-    font-family: $font-medium;
+    @include ui-mixins.ms();
+    color: ui-vars.$white;
+    font-family: ui-vars.$font-medium;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @media (max-width: $width-mobile) {
-      @include mxs();
+    @media (max-width: ui-vars.$width-mobile) {
+      @include ui-mixins.mxs();
     }
   }
 
@@ -40,7 +46,7 @@
     .latest__headline {
       max-width: 840px;
 
-      @media (max-width: $width-tablet-1) {
+      @media (max-width: ui-vars.$width-tablet-1) {
         max-width: 760px;
       }
 
@@ -57,13 +63,13 @@
       }
 
       div {
-        @media (max-width: $width-small) {
+        @media (max-width: ui-vars.$width-small) {
           display: inline;
         }
       }
 
       div:last-child {
-        @media (max-width: $width-small) {
+        @media (max-width: ui-vars.$width-small) {
           padding-left: 6px;
         }
       }
@@ -71,18 +77,18 @@
   }
 
   &__wrap {
-    @include flex-cols();
+    @include mixins.flex-cols();
   }
 
   &__headline {
-    color: $jambonz;
+    color: ui-vars.$jambonz;
   }
 
   &__subtext {
     margin-top: 16px;
 
     a {
-      border-bottom: 1px solid $jambonz;
+      border-bottom: 1px solid ui-vars.$jambonz;
     }
   }
 }
@@ -98,7 +104,7 @@
     .hero__subtext {
       max-width: 870px;
 
-      @media (max-width: $width-tablet-1) {
+      @media (max-width: ui-vars.$width-tablet-1) {
         max-width: 740px;
       }
     }
@@ -122,10 +128,10 @@
 
     &:before {
       content: '';
-      background-color: $pink;
+      background-color: ui-vars.$pink;
       width: 100%;
-      height: calc(100% + #{$navi-height});
-      transform: translateY(-#{$navi-height});
+      height: calc(100% + #{vars.$navi-height});
+      transform: translateY(-#{vars.$navi-height});
       z-index: 1;
       display: block;
       position: absolute;
@@ -134,12 +140,12 @@
     }
 
     h1 {
-      color: $jambonz;
+      color: ui-vars.$jambonz;
     }
   }
 
   &__wrap {
-    @include flex-cols();
+    @include mixins.flex-cols();
   }
 
   &__subtext {

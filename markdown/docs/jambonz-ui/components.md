@@ -2,12 +2,14 @@
 
 The UI library would not be complete without some atomic components for use in your jambonz apps. Currently there are components for normalized typography, iconography and buttons. As jambonz frontend development continues to mature new use cases will become viable candidates to incorporate into this UI kit—form elements being the most notable upcoming candidates. To see all the components in action, visually in one place you can go [here](/jambonz-ui/).
 
-The component library requires that some JS peer dependencies are met in your jambonz app. The component library itself is also written in [TypeScript](https://www.typescriptlang.org/) so it supports jambonz apps also using TypeScript.
+The component library itself is written in [TypeScript](https://www.typescriptlang.org/) so it supports jambonz apps also using TypeScript. More documentation on jambonz UI type definitions will be coming soon.
+
+The component library requires that some JS peer dependencies are met in your jambonz app. These are likely the most common, however it's worth noting that you can also use the library with [preact](https://preactjs.com/). In fact, this site is a `Next.js` app using `preact/compat` in place of the `React` packages.
 
 ```json
 "peerDependencies": {
-  "react": ">=18.2.0",
-  "react-dom": ">=18.2.0",
+  "react": ">=17.0.2",
+  "react-dom": ">=17.0.2",
   "react-feather": ">=2.0.9"
 }
 ```
@@ -50,8 +52,9 @@ function MyComponent() {
     <Button
       as={Link}
       to="/someurl/"
-      subStyle="dark">
-        Some text
+      subStyle="dark"
+    >
+      Some text
     </Button>
   );
 }
@@ -68,8 +71,9 @@ function MyComponent() {
     <Button
       as={Link}
       href="/someurl/"
-      subStyle="dark">
-        Some text
+      subStyle="dark"
+    >
+      Some text
     </Button>
   );
 }
@@ -112,7 +116,7 @@ export default Icons;
 Then we can use these icons both `inline` and with the `Icon` component for stylized designer icons.
 
 ```jsx
-import { Icons, Heart } from './my-icons';
+import { Icons } from './my-icons';
 import { Icon } from 'jambonz-ui';
 
 function MyComponent() {

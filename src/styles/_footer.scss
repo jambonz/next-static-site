@@ -1,3 +1,5 @@
+@use 'jambonz-ui/src/styles/vars' as ui-vars;
+
 .foot {
   padding: 96px 0;
 
@@ -14,7 +16,7 @@
       margin-bottom: 16px;
     }
 
-    @media (max-width: $width-mobile) {
+    @media (max-width: ui-vars.$width-mobile) {
       margin: 0;
       width: 100%;
     }
@@ -23,7 +25,7 @@
   &__links:first-child {
     text-align: right;
 
-    @media (max-width: $width-mobile) {
+    @media (max-width: ui-vars.$width-mobile) {
       text-align: center;
     }
   }
@@ -31,23 +33,23 @@
   &__links:last-child {
     text-align: left;
 
-    @media (max-width: $width-mobile) {
+    @media (max-width: ui-vars.$width-mobile) {
       text-align: center;
       margin-top: 32px;
     }
   }
 
   &__link {
-    color: $white;
+    color: ui-vars.$white;
     text-decoration: none;
 
     &:hover {
-      color: $jambonz;
+      color: ui-vars.$jambonz;
     }
 
     &.active {
-      color: $jambonz;
-      border-bottom: 1px solid $jambonz;
+      color: ui-vars.$jambonz;
+      border-bottom: 1px solid ui-vars.$jambonz;
     }
   }
 
@@ -55,7 +57,7 @@
     text-align: center;
     padding-top: 64px;
 
-    @media (max-width: $width-mobile) {
+    @media (max-width: ui-vars.$width-mobile) {
       padding-top: 48px;
     }
   }

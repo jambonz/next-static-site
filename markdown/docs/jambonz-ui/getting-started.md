@@ -8,9 +8,9 @@ A primary goal of the library is to have a small footprint. Current sizes:
 
 | Output format | CSS size | JS size |
 |---------------|----------|---------|
-| Minified and Gzipped | `2 KB` | `614 bytes` |
-| Minified | `10 KB` | `2 KB` |
-| Compiled | `14 KB` | `4 KB` |
+| Minified and Gzipped | `2 KB` | `631 bytes` |
+| Minified | `11 KB` | `2 KB` |
+| Compiled | `15 KB` | `4 KB` |
 
 ##### Installation
 

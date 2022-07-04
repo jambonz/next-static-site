@@ -1,8 +1,11 @@
+@use 'jambonz-ui/src/styles/vars' as ui-vars;
+@use 'jambonz-ui/src/styles/mixins' as ui-mixins;
+
 .markdown {
   padding-top: 64px;
   padding-bottom: 96px;
 
-  @media (max-width: $width-tablet-1) {
+  @media (max-width: ui-vars.$width-tablet-1) {
     padding-top: 16px;
     padding-bottom: 64px;
   }
@@ -10,7 +13,7 @@
   &__wrap {
     display: flex;
 
-    @media (max-width: $width-tablet-1) {
+    @media (max-width: ui-vars.$width-tablet-1) {
       flex-wrap: wrap;
     }
   }
@@ -20,7 +23,7 @@
     width: 100%;
     margin-right: 16px;
 
-    @media (max-width: $width-tablet-1) {
+    @media (max-width: ui-vars.$width-tablet-1) {
       max-width: 100%;
       margin: 0 0 48px;
     }
@@ -38,7 +41,7 @@
     svg {
       width: 20px;
       height: 20px;
-      stroke: $jambonz;
+      stroke: ui-vars.$jambonz;
       margin-right: 8px;
       transform: translateY(-2px) translateX(-2px);
     }
@@ -64,7 +67,7 @@
       line-height: 1.5;
 
       &.active {
-        @include font-bold();
+        @include ui-mixins.font-bold();
       }
     }
   }

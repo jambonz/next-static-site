@@ -61,7 +61,7 @@ function NaviMobile({ active, handler, siteData }) {
         })}
       </ul>
       <div className="navi__mobile__support">
-        <Button as={Link} href={`mailto:${siteData.footer.email}`} target="_blank" subStyle="light">
+        <Button as={Link} href={`mailto:${siteData.footer.email}`} target="_blank" subStyle="white">
           {siteData.footer.email}
         </Button>
       </div>

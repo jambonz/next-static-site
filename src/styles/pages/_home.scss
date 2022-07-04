@@ -1,3 +1,7 @@
+@use '../mixins';
+
+@use 'jambonz-ui/src/styles/vars' as ui-vars;
+
 /******************************************************************************
  * App screenshot
 *******************************************************************************/
@@ -5,7 +9,7 @@
   display: flex;
   padding-bottom: 96px;
 
-  @media (max-width: $width-tablet-1) {
+  @media (max-width: ui-vars.$width-tablet-1) {
     flex-wrap: wrap;
     padding-bottom: 64px;
   }
@@ -14,7 +18,7 @@
     max-width: 66.6666666667vw;
     width: 1120px; // Largest render size per max-width of site container
 
-    @media (max-width: $width-tablet-1) {
+    @media (max-width: ui-vars.$width-tablet-1) {
       max-width: 100%;
       width: 100%;
     }
@@ -25,7 +29,7 @@
     padding-left: 16px;
     padding-top: 16px;
 
-    @media (max-width: $width-tablet-1) {
+    @media (max-width: ui-vars.$width-tablet-1) {
       max-width: 100%;
       width: 100%;
       display: flex;
@@ -33,7 +37,7 @@
       padding: 0;
     }
 
-    @media (max-width: $width-mobile) {
+    @media (max-width: ui-vars.$width-mobile) {
       max-width: 320px;
       margin: 0 auto;
     }
@@ -42,13 +46,13 @@
   &__note {
     margin-top: 16px;
 
-    @media (max-width: $width-tablet-1) {
+    @media (max-width: ui-vars.$width-tablet-1) {
       width: 50%;
       margin: 0;
       padding: 32px 16px;
     }
 
-    @media (max-width: $width-mobile) {
+    @media (max-width: ui-vars.$width-mobile) {
       padding: 16px;
       text-align: center;
       width: 100%;
@@ -63,11 +67,11 @@
   text-align: center;
 
   &__wrap {
-    @include flex-cols();
+    @include mixins.flex-cols();
   }
 
   &__headline {
-    @media (max-width: $width-small) {
+    @media (max-width: ui-vars.$width-small) {
         max-width: 320px;
       }
   }
@@ -76,17 +80,17 @@
     margin-top: 16px;
     margin-bottom: 64px;
 
-    @media (max-width: $width-mobile) {
+    @media (max-width: ui-vars.$width-mobile) {
       margin-bottom: 48px;
     }
 
     div {
-      @media (max-width: $width-small) {
+      @media (max-width: ui-vars.$width-small) {
         max-width: 270px;
       }
 
       & + div {
-        @media (max-width: $width-small) {
+        @media (max-width: ui-vars.$width-small) {
           margin-top: 8px;
         }
       }
@@ -97,7 +101,7 @@
     display: flex;
     justify-content: center;
     
-    @media (max-width: $width-tablet-2) {
+    @media (max-width: ui-vars.$width-tablet-2) {
       flex-wrap: wrap;
       width: 100%;
     }
@@ -107,31 +111,31 @@
     width: 100%;
     max-width: 320px;
     margin: 0 16px;
-    background-color: $white;
-    border: 2px solid $charcoal;
+    background-color: ui-vars.$white;
+    border: 2px solid ui-vars.$charcoal;
     border-radius: 8px;
     padding: 16px 32px;
 
-    @media (max-width: $width-tablet-1) {
+    @media (max-width: ui-vars.$width-tablet-1) {
       margin: 0 8px;
       padding: 16px;
     }
 
-    @media (max-width: $width-tablet-2) {
+    @media (max-width: ui-vars.$width-tablet-2) {
       margin: 0;
       max-width: 100%;
     }
 
     & + & {
-      @media (max-width: $width-tablet-2) {
+      @media (max-width: ui-vars.$width-tablet-2) {
         margin-top: 32px;
       }
     }
 
     &--jambonz {
       border-width: 4px;
-      border-color: $jambonz;
-      background-color: $pink;
+      border-color: ui-vars.$jambonz;
+      background-color: ui-vars.$pink;
     }
 
     &__title {
@@ -148,7 +152,7 @@
       img {
         width: 50%;
 
-        @media (max-width: $width-tablet-2) {
+        @media (max-width: ui-vars.$width-tablet-2) {
           width: 96px;
         }
       }
@@ -158,7 +162,7 @@
       margin-left: auto;
       display: none;
 
-      @media (max-width: $width-tablet-2) {
+      @media (max-width: ui-vars.$width-tablet-2) {
         display: block;
       }
     }
@@ -166,12 +170,12 @@
     &__points {
       margin-top: 16px;
 
-      @media (max-width: $width-tablet-2) {
+      @media (max-width: ui-vars.$width-tablet-2) {
         display: none;
       }
 
       &.active {
-        @media (max-width: $width-tablet-2) {
+        @media (max-width: ui-vars.$width-tablet-2) {
           display: block;
         }
       }
@@ -196,13 +200,13 @@
 
       &.xcircle {
         svg {
-          stroke: $red;
+          stroke: ui-vars.$red;
         }
       }
 
       &.checkcircle {
         svg {
-          stroke: $green;
+          stroke: ui-vars.$green;
         }
       }
     }
@@ -216,11 +220,11 @@
   text-align: center;
 
   &__wrap {
-    @include flex-cols();
+    @include mixins.flex-cols();
   }
 
   &__headline {
-    @media (max-width: $width-small) {
+    @media (max-width: ui-vars.$width-small) {
       max-width: 320px;
     }
   }
@@ -228,7 +232,7 @@
   &__subtext {
     margin-top: 16px;
 
-    @media (max-width: $width-mobile) {
+    @media (max-width: ui-vars.$width-mobile) {
       max-width: 320px;
     }
   }
@@ -236,7 +240,7 @@
   &__icons {
     margin: 64px 0;
 
-    @media (max-width: $width-tablet-1) {
+    @media (max-width: ui-vars.$width-tablet-1) {
       margin: 48px 0;
     }
   }
@@ -244,16 +248,16 @@
   &__comment {
     max-width: 800px;
 
-    @media (max-width: $width-small) {
+    @media (max-width: ui-vars.$width-small) {
       max-width: 340px;
     }
 
     a {
-      border-bottom: 1px solid $jambonz;
+      border-bottom: 1px solid ui-vars.$jambonz;
     }
   }
 
   &__cta {
-    @include cta();
+    @include mixins.cta();
   }
 }

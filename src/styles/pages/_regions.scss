@@ -1,3 +1,7 @@
+@use '../mixins';
+
+@use 'jambonz-ui/src/styles/vars' as ui-vars;
+
 /******************************************************************************
  * Regions
 *******************************************************************************/
@@ -5,15 +9,15 @@
   text-align: center;
   margin-top: 64px;
 
-  @media (max-width: $width-tablet-1) {
+  @media (max-width: ui-vars.$width-tablet-1) {
     margin-top: 32px;
   }
 
   &__wrap {
-    @include flex-cols();
+    @include mixins.flex-cols();
     padding-bottom: 64px;
 
-    @media (max-width: $width-mobile) {
+    @media (max-width: ui-vars.$width-mobile) {
       padding-bottom: 32px;
     }
   }
@@ -21,17 +25,17 @@
   &__icon {
     padding-bottom: 24px;
 
-    @media (max-width: $width-mobile) {
+    @media (max-width: ui-vars.$width-mobile) {
       padding-bottom: 16px;
     }
   }
 
   &__text {
-    color: $black;
-    transition: color $base-dur $base-ease;
+    color: ui-vars.$black;
+    transition: color ui-vars.$base-dur ui-vars.$base-ease;
 
     &:hover {
-      color: $jambonz;
+      color: ui-vars.$jambonz;
     }
   }
 }

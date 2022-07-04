@@ -1,3 +1,7 @@
+@use '../mixins';
+
+@use 'jambonz-ui/src/styles/vars' as ui-vars;
+
 /******************************************************************************
  * Pricing structure
 *******************************************************************************/
@@ -5,25 +9,25 @@
   padding-bottom: 96px;
   text-align: center;
 
-  @media (max-width: $width-tablet-1) {
+  @media (max-width: ui-vars.$width-tablet-1) {
     padding-bottom: 64px;
   }
 
   &__text {
     max-width: 960px;
-    @include flex-cols();
+    @include mixins.flex-cols();
 
     p + p {
       margin-top: 32px;
 
-      @media (max-width: $width-mobile) {
+      @media (max-width: ui-vars.$width-mobile) {
         margin-top: 16px;
       }
     }
   }
 
   &__cta {
-    @include cta();
+    @include mixins.cta();
 
     > :first-child {
       margin-bottom: 32px;
@@ -42,20 +46,20 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    @media (max-width: $width-tablet-1) {
+    @media (max-width: ui-vars.$width-tablet-1) {
       margin: 0 -32px;
     }
 
-    @media (max-width: $width-tablet-2) {
+    @media (max-width: ui-vars.$width-tablet-2) {
       margin: 0;
     }
 
     svg {
-      stroke: $jambonz;
+      stroke: ui-vars.$jambonz;
     }
 
     strong {
-      color: $jambonz;
+      color: ui-vars.$jambonz;
     }
   }
 
@@ -66,12 +70,12 @@
     padding-top: 64px;
     margin: 0 50px;
 
-    @media (max-width: $width-tablet-1) {
+    @media (max-width: ui-vars.$width-tablet-1) {
       width: calc(50% - 64px);
       margin: 0 32px;
     }
 
-    @media (max-width: $width-tablet-2) {
+    @media (max-width: ui-vars.$width-tablet-2) {
       width: 100%;
       margin: 0;
       padding-top: 32px;
@@ -79,6 +83,6 @@
   }
 
   &__cta {
-    @include cta();
+    @include mixins.cta();
   }
 }

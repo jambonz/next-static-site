@@ -1,9 +1,12 @@
+@use 'jambonz-ui/src/styles/vars' as ui-vars;
+@use 'jambonz-ui/src/styles/mixins' as ui-mixins;
+
 .text-layout {
-  max-width: $width-tablet-2;
+  max-width: ui-vars.$width-tablet-2;
   width: 100%;
   margin: 0 auto;
 
-  @media (max-width: $width-tablet-1) {
+  @media (max-width: ui-vars.$width-tablet-1) {
     max-width: 100%;
   }
 
@@ -15,23 +18,23 @@
     }
 
     a {
-      border-bottom: 1px solid $jambonz;
+      border-bottom: 1px solid ui-vars.$jambonz;
     }
 
     sup {
-      color: $jambonz;
+      color: ui-vars.$jambonz;
     }
 
     p {
-      @include ms();
+      @include ui-mixins.ms();
     }
 
     blockquote {
       padding-left: 16px;
 
       p {
-        font-family: $font-regular-italic;
-        border-left: 3px solid $jambonz;
+        font-family: ui-vars.$font-regular-italic;
+        border-left: 3px solid ui-vars.$jambonz;
         padding-left: 10px;
       }
     }
@@ -45,7 +48,7 @@
 
         p,
         &::marker {
-          @include p();
+          @include ui-mixins.p();
           font-size: 14px;
         }
       }
@@ -56,26 +59,26 @@
 
       li {
         list-style-type: disc;
-        @include ms();
+        @include ui-mixins.ms();
       }
     }
 
     table {
-      @include ms();
+      @include ui-mixins.ms();
       width: 100%;
 
       td, th {
         padding: 8px 12px;
-        border: 1px solid $grey-light;
+        border: 1px solid ui-vars.$grey-light;
       }
 
       th {
-        @include font-bold();
+        @include ui-mixins.font-bold();
       }
 
       tbody {
         tr:nth-child(odd) {
-          background-color: $grey;
+          background-color: ui-vars.$grey;
         }
       }
     }
@@ -88,15 +91,15 @@
     pre[class*="language-"] {
       font-size: 0.82em;
 
-      @media (max-width: $width-tablet-1) {
+      @media (max-width: ui-vars.$width-tablet-1) {
         font-size: 13px;
       }
     }
 
     code:not([class*="language-"]) {
-      font-family: $font-mono;
+      font-family: ui-vars.$font-mono;
       font-size: 13px;
-      color: $jambonz;
+      color: ui-vars.$jambonz;
     }
   }
 }

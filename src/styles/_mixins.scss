@@ -1,7 +1,9 @@
+@use 'jambonz-ui/src/styles/vars' as ui-vars;
+
 @mixin cta() {
   margin-top: 96px;
 
-  @media (max-width: $width-tablet-1) {
+  @media (max-width: ui-vars.$width-tablet-1) {
     margin-top: 64px;
   }
 }
