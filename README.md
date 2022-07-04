@@ -9,9 +9,6 @@
   <a aria-label="GitHub CI" href="https://github.com/jambonz/next-static-site/actions/workflows/main.yml">
     <img alt="" src="https://github.com/jambonz/next-static-site/actions/workflows/main.yml/badge.svg">
   </a>
-  <a aria-label="License" href="">
-    <img alt="" src="./LICENSE">
-  </a>
 </p>
 
 ## The stack
