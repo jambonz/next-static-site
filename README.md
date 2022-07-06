@@ -42,7 +42,7 @@ after yarn resolves packages, something like this:
 ## Jambonz UI library
 
 Head on over to the [jambonz-ui](https://github.com/jambonz/jambonz-ui) repo for full documentation. 
-Also check out the [jambonz-ui docs](https://jambonz.org/docs/jambonz-ui/getting-started/) as a more 
+Also check out the [jambonz-ui docs](https://jambonz.org/docs/jambonz-ui/) as a more 
 in-depth resource.
 
 ### UI Design
