@@ -29,7 +29,7 @@ function NaviItem({obj}) {
 
 function NaviMobile({ active, handler, siteData }) {
   const classes = {
-    'bg--charcoal': true,
+    'bg--dark': true,
     'wrap': true,
     'navi__mobile': true,
     'active': active,
@@ -39,7 +39,7 @@ function NaviMobile({ active, handler, siteData }) {
     <div className={classNames(classes)}>
       <div className="navi__mobile__head">
         <div className="navi__mobile__login">
-          <Button as={Link} href={siteData.navi.login.link} mainStyle="login" subStyle="white" onClick={handler}>
+          <Button as={Link} href={siteData.navi.login.link} mainStyle="hollow" subStyle="white" onClick={handler} small>
             {siteData.navi.login.label}
           </Button>
         </div>
@@ -106,7 +106,7 @@ export default function Navi({ siteData }) {
           </Icon>
         </div>
         <div className="navi__login">
-          <Button as={Link} href={siteData.navi.login.link} mainStyle="login">
+          <Button as={Link} href={siteData.navi.login.link} mainStyle="hollow" small>
             {siteData.navi.login.label}
           </Button>
         </div>

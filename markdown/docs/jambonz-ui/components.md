@@ -2,7 +2,7 @@
 
 The UI library would not be complete without some atomic components for use in your jambonz apps. Currently there are components for normalized typography, iconography and buttons. As jambonz frontend development continues to mature new use cases will become viable candidates to incorporate into this UI kit—form elements being the most notable upcoming candidates. To see all the components in action, visually in one place you can go [here](/jambonz-ui/).
 
-The component library itself is written in [TypeScript](https://www.typescriptlang.org/) so it supports jambonz apps also using TypeScript. More documentation on jambonz UI type definitions will be coming soon.
+The component library itself is written in [TypeScript](https://www.typescriptlang.org/) so it supports jambonz apps also using TypeScript. Documentation on jambonz UI type definitions will be implemented as we go.
 
 The component library requires that some JS peer dependencies are met in your jambonz app. These are likely the most common, however it's worth noting that you can also use the library with [preact](https://preactjs.com/). In fact, this site is a `Next.js` app using `preact/compat` in place of the `React` packages.
 
@@ -13,6 +13,51 @@ The component library requires that some JS peer dependencies are met in your ja
   "react-feather": ">=2.0.9"
 }
 ```
+
+###### Button
+
+| Props | Value(s) |
+|-------|----------|
+| children | Will render any children |
+| mainStyle | Currenly the only valid value is `hollow` |
+| subStyle | Valid values are `dark`, `blue`, `teal`, `purple`, `white` |
+| as | Render as either `next/link` or `react-router-dom` link |
+| to | Use with `react-router-dom` link |
+| href | Use with `next/link` |
+| ...rest | Props are spread so you can pass extra attributes like `type="submit` for buttons |
+
+###### ButtonGroup
+
+| Props | Value(s) |
+|-------|----------|
+| children | Will render any children -- should be `<Button>`s |
+| className | Any valid `className` string |
+
+###### Icon
+
+| Props | Value(s) |
+|-------|----------|
+| children | Will render any children |
+| mainStyle | Currenly the only valid value is `hollow` |
+| subStyle | Valid values are `dark`, `blue`, `teal`, `purple`, `white` |
+| ...rest | Props are spread so you can pass extra attributes like `type="submit` for buttons |
+
+###### IconGroup
+
+| Props | Value(s) |
+|-------|----------|
+| children | Will render any children -- should be `<Icon>`s |
+| className | Any valid `className` string |
+| set | Boolean, will add `ico--set` className if present |
+
+###### Typography H[1-6], P, M, MS and MXS
+
+All of these accept the same type of props with the exception of `M`, `MS` and `MXS` not spreading `rest` props.
+
+| Props | Value(s) |
+|-------|----------|
+| children | Will render any children |
+| ...rest | Props are spread so you can pass extra attributes like `className`. Note that `M`, `MS` and `MXS` don't support this. |
 
 ##### Using components
 
@@ -37,7 +82,7 @@ function MyComponent() {
 }
 ```
 
-##### Button with Link
+##### Notes on Button as Link (polymorphic)
 
 The `Button` component takes a few props that are specific to rendering a link element, `<a>`, with button styles. If you just need a button, you can ignore these props. But if you would like links to be styled like buttons (CTAs) and you want them to route within the [React](https://reactjs.org/) context you can do that. The distinction between which one has to do with passing either the `to` or the `href` props that are passed on to the `Link` component in question.
 
@@ -135,30 +180,6 @@ function MyComponent() {
   );
 }
 ```
-
-###### Atomic components
-
-| Component | Props |
-|-----------|-------|
-| Icon | `{ children, subStyle, mainStyle, ...rest }` |
-| IconGroup | `{ children, className, set }` |
-| Button | `{ children, to, href, as, subStyle, mainStyle, ...rest }` |
-| ButtonGroup | `{ children, className }` |
-
-###### Typography components
-
-| Component | Props |
-|-----------|-------|
-| H1 | `{ children, ...rest }` |
-| H2 | `{ children, ...rest }` |
-| H3 | `{ children, ...rest }` |
-| H4 | `{ children, ...rest }` |
-| H5 | `{ children, ...rest }` |
-| H6 | `{ children, ...rest }` |
-| P | `{ children, ...rest }` |
-| M | `{ children }` |
-| MS | `{ children }` |
-| MXS | `{ children }` |
 
 <p class="flex">
 <a href="/docs/jambonz-ui/styles/">Prev: Styles</a>

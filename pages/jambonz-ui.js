@@ -8,67 +8,67 @@ import Layout, { Hero } from '../src/components/layout';
 
 function KitOfParts({ textString }) {
   return (
-    <div className="kop" style={{ textAlign: 'center' }}>
+    <section className="kop" style={{ textAlign: 'center' }}>
       {/** Typography */}
       <div className="kop__typography">
         <div className="pad bg--black">
           <div className="wrap">
-            <div className="wrap-text">
-              <H1 style={{ maxWidth: '1024px' }}>H1: {textString}</H1>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <H1 style={{ maxWidth: '1024px' }}><span>H1:</span> {textString}</H1>
             </div>
           </div>
         </div>
         <div className="wrap">
-          <div className="wrap-text pad">
-            <H2 style={{ maxWidth: '850px' }}>H2: {textString}</H2>
+          <div className="pad" style={{ display: 'flex', justifyContent: 'center' }}>
+            <H2 style={{ maxWidth: '850px' }}><span>H2:</span> {textString}</H2>
           </div>
         </div>
         <div className="pad bg--pink">
           <div className="wrap">
-            <div className="wrap-text">
-              <H3 style={{ maxWidth: '760px' }}>H3: {textString}</H3>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <H3 style={{ maxWidth: '760px' }}><span>H3:</span> {textString}</H3>
             </div>
           </div>
         </div>
         <div className="wrap">
-          <div className="wrap-text pad">
-            <H4 style={{ maxWidth: '760px' }}>H4: {textString}</H4>
+          <div className="pad" style={{ display: 'flex', justifyContent: 'center' }}>
+            <H4 style={{ maxWidth: '760px' }}><span>H4:</span> {textString}</H4>
           </div>
         </div>
         <div className="pad bg--grey">
           <div className="wrap">
-            <div className="wrap-text">
-              <H5 style={{ maxWidth: '660px' }}>H5: {textString}</H5>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <H5 style={{ maxWidth: '660px' }}><span>H5:</span> {textString}</H5>
             </div>
           </div>
         </div>
         <div className="wrap">
-          <div className="wrap-text pad">
-            <H6 style={{ maxWidth: '620px' }}>H6: {textString}</H6>
+          <div className="pad" style={{ display: 'flex', justifyContent: 'center' }}>
+            <H6 style={{ maxWidth: '620px' }}><span>H6:</span> {textString}</H6>
           </div>
-          <div className="wrap-text pad">
-            <P style={{ maxWidth: '600px' }}>P: {textString}</P>
+          <div className="pad" style={{ display: 'flex', justifyContent: 'center' }}>
+            <P style={{ maxWidth: '600px' }}><span>P:</span> {textString}</P>
           </div>
-          <div className="wrap-text pad">
-            <P>P: With a <strong>strong</strong> element</P>
+          <div className="pad" style={{ display: 'flex', justifyContent: 'center' }}>
+            <P><span>P:</span> With a <strong>strong</strong> element</P>
           </div>
-          <div className="wrap-text pad">
-            <P>P: With a <strong className="med">medium</strong> element</P>
+          <div className="pad" style={{ display: 'flex', justifyContent: 'center' }}>
+            <P><span>P:</span> With a <strong className="med">medium</strong> element</P>
           </div>
-          <div className="wrap-text pad">
-            <P>P: With an <em>emphasized</em> element</P>
+          <div className="pad" style={{ display: 'flex', justifyContent: 'center' }}>
+            <P><span>P:</span> With an <em>emphasized</em> element</P>
           </div>
-          <div className="wrap-text pad">
-            <P>P: <span className="color--blue">With</span> <span className="color--teal">colored</span> <span className="color--purple">text</span></P>
+          <div className="pad" style={{ display: 'flex', justifyContent: 'center' }}>
+            <P><span>P:</span> <span className="txt--blue">With</span> <span className="txt--teal">colored</span> <span className="txt--purple">text</span></P>
           </div>
-          <div className="wrap-text pad">
-            <M style={{ maxWidth: '480px' }}>M: {textString}</M>
+          <div className="pad" style={{ display: 'flex', justifyContent: 'center' }}>
+            <M style={{ maxWidth: '480px' }}><span>M:</span> {textString}</M>
           </div>
-          <div className="wrap-text pad">
-            <MS style={{ maxWidth: '480px' }}>MS: {textString}</MS>
+          <div className="pad" style={{ display: 'flex', justifyContent: 'center' }}>
+            <MS style={{ maxWidth: '480px' }}><span>MS:</span> {textString}</MS>
           </div>
-          <div className="wrap-text pad">
-            <MXS style={{ maxWidth: '480px' }}>MXS: {textString}</MXS>
+          <div className="pad" style={{ display: 'flex', justifyContent: 'center' }}>
+            <MXS style={{ maxWidth: '480px' }}><span>MXS:</span> {textString}</MXS>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ function KitOfParts({ textString }) {
             {Object.keys(Icons).map((icon) => {
               const SvgIcon = Icons[icon];
               return (
-                <Icon key={icon} mainStyle="fill">
+                <Icon key={icon}>
                   <SvgIcon />
                 </Icon>
               );
@@ -88,45 +88,48 @@ function KitOfParts({ textString }) {
         </div>
         <div className="pad wrap">
           <IconGroup set>
-            <Icon mainStyle="fill" subStyle="dark">
+            <Icon subStyle="dark">
               <Icons.MapPin />
             </Icon>
-            <Icon mainStyle="fill" subStyle="purple">
+            <Icon subStyle="purple">
               <Icons.MapPin />
             </Icon>
-            <Icon mainStyle="fill" subStyle="teal">
+            <Icon subStyle="teal">
               <Icons.MapPin />
             </Icon>
-            <Icon mainStyle="fill" subStyle="blue">
+            <Icon subStyle="blue">
               <Icons.MapPin />
             </Icon>
           </IconGroup>
         </div>
         <div className="pad wrap">
           <IconGroup set>
-            <Icon mainStyle="pill" subStyle="dark">
+            <Icon mainStyle="hollow" subStyle="dark">
               <Icons.Heart />
             </Icon>
-            <Icon mainStyle="pill" subStyle="purple">
+            <Icon mainStyle="hollow" subStyle="purple">
               <Icons.Heart />
             </Icon>
-            <Icon mainStyle="pill" subStyle="teal">
+            <Icon mainStyle="hollow" subStyle="teal">
               <Icons.Heart />
             </Icon>
-            <Icon mainStyle="pill" subStyle="blue">
+            <Icon mainStyle="hollow" subStyle="blue">
               <Icons.Heart />
             </Icon>
-            <Icon mainStyle="pill">
+            <Icon mainStyle="hollow">
               <Icons.Heart />
             </Icon>
           </IconGroup>
         </div>
-        <div className="bg--charcoal">
-          <div className="pad wrap">
-            <Icon mainStyle="pill" subStyle="white">
+        <div className="bg--dark">
+          <IconGroup set className="pad wrap">
+            <Icon mainStyle="hollow" subStyle="white">
               <Icons.Heart />
             </Icon>
-          </div>
+            <Icon subStyle="white">
+              <Icons.Heart />
+            </Icon>
+          </IconGroup>
         </div>
       </div>
       {/** Buttons */}
@@ -134,20 +137,34 @@ function KitOfParts({ textString }) {
         <div className="wrap">
           <div className="pad">
             <ButtonGroup>
-              <Button mainStyle="login">Log In</Button>
-              <Button mainStyle="login" subStyle="purple">Log In</Button>
-              <Button mainStyle="login" subStyle="teal">Log In</Button>
-              <Button mainStyle="login" subStyle="blue">Log In</Button>
+              <Button small mainStyle="hollow">Log In</Button>
+              <Button small mainStyle="hollow" subStyle="purple">Log In</Button>
+              <Button small mainStyle="hollow" subStyle="teal">Log In</Button>
+              <Button small mainStyle="hollow" subStyle="blue">Log In</Button>
+            </ButtonGroup>
+          </div>
+          <div className="pad">
+            <ButtonGroup>
+              <Button small>Log In</Button>
+              <Button small subStyle="purple">Log In</Button>
+              <Button small subStyle="teal">Log In</Button>
+              <Button small subStyle="blue">Log In</Button>
             </ButtonGroup>
           </div>
         </div>
-        <div className="bg--charcoal">
-          <div className="wrap pad">
-            <ButtonGroup>
-              <Button mainStyle="login" subStyle="white">Log In</Button>
-              <Button mainStyle="login" subStyle="purple">Log In</Button>
-              <Button mainStyle="login" subStyle="teal">Log In</Button>
-              <Button mainStyle="login" subStyle="blue">Log In</Button>
+        <div className="bg--dark">
+          <div className="wrap">
+            <ButtonGroup className="pad">
+              <Button small mainStyle="hollow" subStyle="white">Log In</Button>
+              <Button small mainStyle="hollow" subStyle="purple">Log In</Button>
+              <Button small mainStyle="hollow" subStyle="teal">Log In</Button>
+              <Button small mainStyle="hollow" subStyle="blue">Log In</Button>
+            </ButtonGroup>
+            <ButtonGroup className="pad">
+              <Button small subStyle="white">Log In</Button>
+              <Button small subStyle="purple">Log In</Button>
+              <Button small subStyle="teal">Log In</Button>
+              <Button small subStyle="blue">Log In</Button>
             </ButtonGroup>
           </div>
         </div>
@@ -162,52 +179,52 @@ function KitOfParts({ textString }) {
             <Button subStyle="blue">Do it</Button>
           </ButtonGroup>
         </div>
-        <div className="bg--charcoal">
+        <div className="bg--dark">
           <div className="wrap pad">
             <ButtonGroup>
-              <Button mainStyle="pill" subStyle="white">styles</Button>
-              <Button mainStyle="pill" subStyle="purple">styles</Button>
-              <Button mainStyle="pill" subStyle="teal">styles</Button>
-              <Button mainStyle="pill" subStyle="blue">styles</Button>
+              <Button mainStyle="hollow" subStyle="white">styles</Button>
+              <Button mainStyle="hollow" subStyle="purple">styles</Button>
+              <Button mainStyle="hollow" subStyle="teal">styles</Button>
+              <Button mainStyle="hollow" subStyle="blue">styles</Button>
             </ButtonGroup>
           </div>
         </div>
         <div className="wrap">
           <ButtonGroup className="pad">
-            <Button mainStyle="pill">
+            <Button mainStyle="hollow" subStyle="dark">
               <Icons.GitHub />
               <span>github.com/jambonz</span>
             </Button>
-            <Button mainStyle="pill">
+            <Button mainStyle="hollow" subStyle="dark">
               <Icons.GitHub />
               <span>github.com/drachtio</span>
             </Button>
           </ButtonGroup>
           <ButtonGroup className="pad">
-            <Button mainStyle="pill" subStyle="purple">
+            <Button mainStyle="hollow" subStyle="purple">
               <span>colors</span>
             </Button>
-            <Button mainStyle="pill" subStyle="teal">
+            <Button mainStyle="hollow" subStyle="teal">
               <span>colors</span>
             </Button>
-            <Button mainStyle="pill" subStyle="blue">
+            <Button mainStyle="hollow" subStyle="blue">
               <span>colors</span>
             </Button>
           </ButtonGroup>
           <div className="pad">
-            <Button mainStyle="pill" subStyle="jambonz">
+            <Button mainStyle="hollow">
               <Icons.Send />
               <span>Contact us</span>
             </Button>
           </div>
         </div>
-        <div className="bg--jambonz">
+        <div className="bg--jam">
           <div className="wrap pad">
             <Button subStyle="white">support@jambonz.org</Button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

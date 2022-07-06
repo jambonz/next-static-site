@@ -17,6 +17,16 @@ The point of the Jambonz UI library is for jambonz apps to be "on brand" and sha
 
 Fonts can be copied from the package to your static public directory. This can be done manually, at installation time or during app bundling depending on your preference. The package provides a singular `public` directory that consists of all static assets: CSS, JS and fonts. You can literally just copy these assets into your jambonz applications static directory if you want to.
 
+You can even support browser `preload` for the fonts which will optimize the performance even more since the UI library ships with `font-display: swap` already. In your HTML `<head>` you can add some variation of this depending on which fonts render above the fold.
+
+```html
+<link rel="preload" href="/fonts/objectivity-medium-webfont.woff2" crossOrigin="anonymous" as="font" type="font/woff" />
+<link rel="preload" href="/fonts/objectivity-bold-webfont.woff2" crossOrigin="anonymous" as="font" type="font/woff" />
+<link rel="preload" href="/fonts/objectivity-regular-webfont.woff2" crossOrigin="anonymous" as="font" type="font/woff" />
+<link rel="preload" href="/fonts/objectivity-boldslanted-webfont.woff2" crossOrigin="anonymous" as="font" type="font/woff" />
+<link rel="preload" href="/fonts/objectivity-regularslanted-webfont.woff2" crossOrigin="anonymous" as="font" type="font/woff" />
+```
+
 ##### Examples
 
 For this [Next.js](https://nextjs.org/) app you're on right now we do this with the `postinstall` script in the `package.json` file. We are also opting to ignore the `fonts` directory inside of `public` since the fonts are always copied during `install` which works locally and in CI.
@@ -70,6 +80,6 @@ Jambonz UI utilizes [feathericons](https://feathericons.com/), an open-source ic
 You can see how we import the feather icons used on this site [here](https://github.com/jambonz/next-static-site/blob/main/src/components/icons.js).
 
 <p class="flex">
-<a href="/docs/jambonz-ui/getting-started/">Prev: Getting started</a>
+<a href="/docs/jambonz-ui/">Prev: Getting started</a>
 <a href="/docs/jambonz-ui/styles/">Next: Styles</a>
 </p>

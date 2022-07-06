@@ -2267,10 +2267,10 @@ isstream@~0.1.2:
   resolved "https://registry.npmjs.org/isstream/-/isstream-0.1.2.tgz"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
 
-jambonz-ui@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/jambonz-ui/-/jambonz-ui-0.0.6.tgz#63c4afd618f8d4dff210152a8ecf64f61ea67758"
-  integrity sha512-52P+xsLhqES2lo+Inz/mEzdfIgp5AV4NDzW1+6/16LiYDndxWzCnTyU6xkW4HGxmnEVvGdpcrPnQvuY+W4ojsw==
+jambonz-ui@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/jambonz-ui/-/jambonz-ui-0.0.7.tgz#8536933167a312993adf72a5cf730ed1413b5234"
+  integrity sha512-lDXpOUmaZwHRaHuvHP7dulH4pIiNaYzIiXrZ9Qi1ky2Y30SI28BQIwutD75WaJy6sGyyMDZl8bCphOTxbG+bcQ==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"

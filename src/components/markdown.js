@@ -56,7 +56,10 @@ function MarkdownSidebar({scope, data}) {
               </div>
               <ul className={classNames(subClasses)}>
                 {item.pages.map((page) => {
-                  const isActiveItem = (parsedPath === page.path && parsedTab === item.path) && isActiveToggle;
+                  // Supports using an `index.md` with a configured `path` of "/"
+                  const isIndex = (page.path === '/');
+                  const isActiveItem = (isIndex && parsedPath === item.path) || ((parsedPath === page.path && parsedTab === item.path) && isActiveToggle);
+                  const linkHref = isIndex ? `/${scope}/${item.path}` : `/${scope}/${item.path}/${page.path}`;
                   const itemClasses = {
                     'ms': true,
                     'active': isActiveItem,
@@ -64,7 +67,7 @@ function MarkdownSidebar({scope, data}) {
 
                   return (
                     <li key={nanoid()} className="markdown__subitem">
-                      <Link href={`/${scope}/${item.path}/${page.path}`}>
+                      <Link href={linkHref}>
                         <a className={classNames(itemClasses)}>{page.title}</a>
                       </Link>
                     </li>

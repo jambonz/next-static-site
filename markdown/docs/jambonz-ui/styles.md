@@ -23,20 +23,21 @@ Most of the styles are utilized directly by the [components](/dacs/jambonz-ui/co
 
 | CSS selector | Application |
 |--------------|-------------|
-| `bg--jambonz` | Applies main brand color as element `background-color` |
+| `bg--jam` | Applies main brand color as element `background-color` |
 | `bg--black` | Applies color as element `background-color` |
-| `bg--charcoal` | Applies color as element `background-color` |
+| `bg--dark` | Applies color as element `background-color` |
 | `bg--grey` | Applies color as element `background-color` |
 | `bg--pink` | Applies color as element `background-color` |
 | `bg--blue` | Applies color as element `background-color` |
 | `bg--purple` | Applies color as element `background-color` |
 | `bg--teal` | Applies color as element `background-color` |
-| `color--jambonz` | Applies main brand color as element `color` |
-| `color--blue` | Applies color as element `color` |
-| `color--purple` | Applies color as element `color` |
-| `color--teal` | Applies color as element `color` |
+| `txt--jam` | Applies main brand color as element `color` |
+| `txt--blue` | Applies color as element `color` |
+| `txt--purple` | Applies color as element `color` |
+| `txt--teal` | Applies color as element `color` |
+| `txt--red` | Applies color as element `color` |
+| `txt--green` | Applies color as element `color` |
 | `wrap` | Center contains content with a `max-width` and default left/right `padding` |
-| `wrap-text` | Flex center justifies text—combine with a `max-width` |
 | `pad` | Applies normalized top/bottom `padding` |
 | `pad-b` | Applies normalized bottom `padding` |
 | `pad-t` | Applies normalized top `padding` |
@@ -61,7 +62,7 @@ As mentioned you can use either the whole kit or just the variables and mixins. 
 ```scss
 // This loads the entire SASS lib
 // You should use this in your root SASS entry point
-@use 'jambonz-ui/src/styles/index.scss';
+@use 'jambonz-ui/src/styles/index';
 
 // In your local SASS modules you can use the vars and mixins from the UI library
 @use 'jambonz-ui/src/styles/vars' as ui-vars;

@@ -150,7 +150,7 @@ navi:
     title: Jambonz UI
     pages:
       -
-        path: getting-started
+        path: /
         title: Getting started
       -
         path: fonts-and-icons

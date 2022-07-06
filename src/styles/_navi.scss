@@ -15,7 +15,7 @@
   }
 
   // Menu / X icons for mobile nav interactions
-  .icon {
+  .ico {
     width: ui-vars.$icon-size-3;
     height: ui-vars.$icon-size-3;
 
@@ -39,7 +39,7 @@
 
   &__link {
     text-decoration: none;
-    color: ui-vars.$charcoal;
+    color: ui-vars.$dark;
     margin-left: 32px;
 
     &:hover {
@@ -69,7 +69,7 @@
     line-height: 0;
     cursor: pointer;
 
-    .icon {
+    .ico {
       transform: translateY(-5px);
     }
 

@@ -27,7 +27,7 @@ function FooterItem({ obj }) {
 
 export default function Footer({ siteData }) {
   return (
-    <footer className="bg--charcoal foot">
+    <footer className="bg--dark foot">
       <div className="wrap foot__wrap">
         <div className="foot__navs">
           <ul className="foot__links">
