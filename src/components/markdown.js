@@ -6,13 +6,14 @@ import { nanoid } from 'nanoid';
 import { classNames, Icon } from 'jambonz-ui';
 
 import { Icons } from './icons';
+import { rSlash } from './utils';
 import { TextLayout } from './layout';
 
 function MarkdownSidebar({scope, data}) {
   const router = useRouter();
-  const regex = new RegExp(`^/${scope}/|^/+|/+$`, 'g');
-  const parsedTab = router.asPath.replace(regex, '').split('/').shift();
-  const parsedPath = router.asPath.replace(/^\/+|\/+$/g, '').split('/').pop();
+  const segments = router.asPath.replace(rSlash, '').split('/');
+  const parsedTab = segments.filter((s) => s !== scope).shift();
+  const parsedPath = segments[segments.length - 1];
   const [active, setActive] = useState({
     [parsedTab]: true,
   });
@@ -56,10 +57,10 @@ function MarkdownSidebar({scope, data}) {
               </div>
               <ul className={classNames(subClasses)}>
                 {item.pages.map((page) => {
-                  // Supports using an `index.md` with a configured `path` of "/"
-                  const isIndex = (page.path === '/');
-                  const isActiveItem = (isIndex && parsedPath === item.path) || ((parsedPath === page.path && parsedTab === item.path) && isActiveToggle);
-                  const linkHref = isIndex ? `/${scope}/${item.path}` : `/${scope}/${item.path}/${page.path}`;
+                  // Supports using an `index.md` with a configured `item.path` of "index"
+                  const isPageIndex = (page.path === 'index');
+                  const isActiveItem = (isPageIndex ? (parsedPath === item.path) : (parsedPath === page.path && parsedTab === item.path)) && isActiveToggle;
+                  const linkHref = isPageIndex ? `/${scope}/${item.path}` : `/${scope}/${item.path}/${page.path}`;
                   const itemClasses = {
                     'ms': true,
                     'active': isActiveItem,
