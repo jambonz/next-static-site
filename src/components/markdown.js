@@ -14,9 +14,18 @@ function MarkdownSidebar({scope, data}) {
   const segments = router.asPath.replace(rSlash, '').split('/');
   const parsedTab = segments.filter((s) => s !== scope).shift();
   const parsedPath = segments[segments.length - 1];
+  // ["docs", "jambonz-ui"] vs ["docs", "jambonz-ui", "styles"]
+  // const isTabIndex = segments.length === 2;
   const [active, setActive] = useState({
     [parsedTab]: true,
   });
+
+  console.log(
+    router,
+    segments,
+    parsedTab,
+    parsedPath
+  );
 
   const handleToggle = (slug) => {
     setActive((oldActive) => {

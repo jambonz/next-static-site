@@ -40,3 +40,4 @@ public/fonts
 !/cypress/plugins
 !/cypress/support
 !/cypress/scripts
+.vercel
