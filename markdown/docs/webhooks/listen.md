@@ -33,6 +33,7 @@ You can use the following options in the `listen` action:
 | maxLength | the maximum length of the listened audio stream, in secs | no |
 | metadata | arbitrary data to add to the JSON payload sent to the remote server when websocket connection is first connected | no |
 | mixType | "mono" (send single channel), "stereo" (send dual channel of both calls in a bridge), or "mixed" (send audio from both calls in a bridge in a single mixed audio stream) Default: mono | no |
+| passDtmf | if true, any dtmf digits detected from the caller will be passed over the websocket as text frames in JSON format.  The JSON payload will look like this: {"event": "dtmf", "dtmf": "2", "duration": 1600}.  Duration is measured in RTP timestamp units.  Default: false| no |
 | playBeep | true, false whether to play a beep at the start of the listen operation.  Default: false | no |
 | sampleRate | sample rate of audio to send (allowable values: 8000, 16000, 24000, 48000, or 64000).  Default: 8000 | no |
 | timeout | the number of seconds of silence that terminates the listen operation.| no |
