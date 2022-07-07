@@ -2,8 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { useState } from 'react';
-import { nanoid } from 'nanoid';
-import { classNames, Icon } from 'jambonz-ui';
+import { classNames } from 'jambonz-ui';
 
 import { Icons } from './icons';
 import { rSlash } from './utils';
@@ -14,18 +13,9 @@ function MarkdownSidebar({scope, data}) {
   const segments = router.asPath.replace(rSlash, '').split('/');
   const parsedTab = segments.filter((s) => s !== scope).shift();
   const parsedPath = segments[segments.length - 1];
-  // ["docs", "jambonz-ui"] vs ["docs", "jambonz-ui", "styles"]
-  // const isTabIndex = segments.length === 2;
   const [active, setActive] = useState({
     [parsedTab]: true,
   });
-
-  console.log(
-    router,
-    segments,
-    parsedTab,
-    parsedPath
-  );
 
   const handleToggle = (slug) => {
     setActive((oldActive) => {
@@ -59,7 +49,7 @@ function MarkdownSidebar({scope, data}) {
           };
 
           return (
-            <li key={nanoid()} className="markdown__item">
+            <li key={item.path} className="markdown__item">
               <div className="m markdown__label" onClick={() => handleToggle(item.path)}>
                 {isActiveToggle ? <Icons.ChevronDown /> : <Icons.ChevronRight />}
                 <strong>{item.title}</strong>
@@ -87,7 +77,7 @@ function MarkdownSidebar({scope, data}) {
                   }
 
                   return (
-                    <li key={nanoid()} className="markdown__subitem">
+                    <li key={`${item.path}-${page.path}`} className="markdown__subitem">
                       <Link href={linkHref}>
                         <a className={classNames(itemClasses)}>{page.title}</a>
                       </Link>
