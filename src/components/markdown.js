@@ -80,7 +80,8 @@ function MarkdownSidebar({scope, data}) {
                     isPageIndex,
                     isActiveItem,
                     linkHref,
-                    itemClasses
+                    itemClasses,
+                    classNames(itemClasses)
                   );
 
                   return (
