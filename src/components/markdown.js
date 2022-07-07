@@ -75,6 +75,13 @@ function MarkdownSidebar({scope, data}) {
                     'active': isActiveItem,
                   };
 
+                  console.log(
+                    page,
+                    isPageIndex,
+                    isActiveItem,
+                    linkHref
+                  );
+
                   return (
                     <li key={nanoid()} className="markdown__subitem">
                       <Link href={linkHref}>
