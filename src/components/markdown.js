@@ -8,6 +8,36 @@ import { Icons } from './icons';
 import { rSlash } from './utils';
 import { TextLayout } from './layout';
 
+function MarkdownItem({item, page, scope, parsedTab, parsedPath, isActiveToggle}) {
+  // Supports using an `index.md` with a configured `item.path` of "index"
+  const isPageIndex = (page.path === 'index');
+  const isActiveItem = (isPageIndex ? (parsedPath === item.path) : (parsedPath === page.path && parsedTab === item.path)) && isActiveToggle;
+  const linkHref = isPageIndex ? `/${scope}/${item.path}` : `/${scope}/${item.path}/${page.path}`;
+  const itemClasses = {
+    'ms': true,
+    'active': isActiveItem,
+  };
+
+  // if (isPageIndex) {
+  //   console.log(
+  //     page,
+  //     isPageIndex,
+  //     isActiveItem,
+  //     linkHref,
+  //     itemClasses,
+  //     classNames(itemClasses)
+  //   );
+  // }
+
+  return (
+    <li className="markdown__subitem">
+      <Link href={linkHref}>
+        <a className={classNames(itemClasses)}>{page.title}</a>
+      </Link>
+    </li>
+  );
+}
+
 function MarkdownSidebar({scope, data}) {
   const router = useRouter();
   const segments = router.asPath.replace(rSlash, '').split('/');
@@ -55,35 +85,17 @@ function MarkdownSidebar({scope, data}) {
                 <strong>{item.title}</strong>
               </div>
               <ul className={classNames(subClasses)}>
-                {item.pages.map((page) => {
-                  // Supports using an `index.md` with a configured `item.path` of "index"
-                  const isPageIndex = (page.path === 'index');
-                  const isActiveItem = (isPageIndex ? (parsedPath === item.path) : (parsedPath === page.path && parsedTab === item.path)) && isActiveToggle;
-                  const linkHref = isPageIndex ? `/${scope}/${item.path}` : `/${scope}/${item.path}/${page.path}`;
-                  const itemClasses = {
-                    'ms': true,
-                    'active': isActiveItem,
-                  };
-
-                  if (isPageIndex) {
-                    console.log(
-                      page,
-                      isPageIndex,
-                      isActiveItem,
-                      linkHref,
-                      itemClasses,
-                      classNames(itemClasses)
-                    );
-                  }
-
-                  return (
-                    <li key={`${item.path}-${page.path}`} className="markdown__subitem">
-                      <Link href={linkHref}>
-                        <a className={classNames(itemClasses)}>{page.title}</a>
-                      </Link>
-                    </li>
-                  );
-                })}
+                {item.pages.map((page) => (
+                  <MarkdownItem
+                    key={`${item.path}-${page.path}`}
+                    item={item}
+                    page={page}
+                    scope={scope}
+                    parsedTab={parsedTab}
+                    parsedPath={parsedPath}
+                    isActiveToggle={isActiveToggle}
+                  />
+                ))}
               </ul>
             </li>
           );
