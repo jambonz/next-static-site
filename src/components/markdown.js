@@ -79,7 +79,8 @@ function MarkdownSidebar({scope, data}) {
                     page,
                     isPageIndex,
                     isActiveItem,
-                    linkHref
+                    linkHref,
+                    itemClasses
                   );
 
                   return (
