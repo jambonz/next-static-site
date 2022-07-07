@@ -75,14 +75,16 @@ function MarkdownSidebar({scope, data}) {
                     'active': isActiveItem,
                   };
 
-                  console.log(
-                    page,
-                    isPageIndex,
-                    isActiveItem,
-                    linkHref,
-                    itemClasses,
-                    classNames(itemClasses)
-                  );
+                  if (isPageIndex) {
+                    console.log(
+                      page,
+                      isPageIndex,
+                      isActiveItem,
+                      linkHref,
+                      itemClasses,
+                      classNames(itemClasses)
+                    );
+                  }
 
                   return (
                     <li key={nanoid()} className="markdown__subitem">
