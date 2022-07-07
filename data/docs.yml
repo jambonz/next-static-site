@@ -66,6 +66,9 @@ navi:
       -
         path: sip-decline
         title: sip:decline
+      - 
+        path: sip-request
+        title: sip:request
       -
         path: sip-refer
         title: sip:refer
@@ -82,6 +85,40 @@ navi:
       -
         path: overview
         title: Overview
+  -
+    path: ws
+    title: Websocket API
+    pages:
+      -
+        path: overview
+        title: Overview
+      -
+        path: session-new
+        title: session:new
+      -
+        path: session-redirect
+        title: session:redirect
+      -
+        path: session-reconnect
+        title: session:reconnect
+      -
+        path: call-status
+        title: call:status
+      -
+        path: verb-hook
+        title: verb:hook
+      -
+        path: verb-status
+        title: verb:status
+      -
+        path: jambonz-error
+        title: jambonz:error
+      -
+        path: ack
+        title: ack
+      -
+        path: command
+        title: command
   -
     path: client-sdks
     title: Client SDKs

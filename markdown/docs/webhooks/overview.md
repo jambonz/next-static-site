@@ -1,6 +1,9 @@
 # Webhooks 
 
-jambonz uses JSON payloads that are exchanged in HTTP messages to control calls.  
+jambonz controls calls through the use of JSON payloads that are exchanged either over an HTTP(s) or a websocket connection.  When an incoming call for your account is received, jambonz retrieves the URL that you have configured for the application you want to run.  If the URL begins with 'http(s)://' jambonz makes an http request to the URL, while if the URL starts with 'ws(s)://' jambonz establishes a websocket connection to that URL. jambonz then sends an initial message describing the incoming call, and your webapp is then responsible for returning a JSON payload that indicates how you want the call handled.
+
+
+Either way (http or websocket) the details of the JSON payloads are the same.  The information below pertains to using HTTP connections; for information describing the websocket interface [see here](/docs/ws).
 
 When an incoming call for your account is received, jambonz makes an HTTP request to a URL that you have configured and your webapp will then return a response containing a JSON body that indicates how you want the call handled.
 
