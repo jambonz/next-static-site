@@ -1,17 +1,17 @@
 # session:new
 
+>> jambonz => websocket server
+
 A `session:new` message is sent by jambonz to the websocket server when a new call arrives (or an outbound call generated via the  REST API has been answered).  This is analogous to the initial webhook sent by jambonz to gather an initial set of instructions for the call when using the HTTP-based webhook API.
 
-The websocket server is responsible for replying with an [ack](/docs/ws/ack) message containing the the jambonz verbs to execute for this call.
+The websocket server must reply reply to a `session:new` message with an [ack](/docs/ws/ack) response message containing the the jambonz verbs to execute for this call.  If an `ack` message is not received within 5 seconds of sending the `session:new` jambonz will hang up the call.
 
-|property|type|meaning|
-|--------|----|-------|
-|msgid|string|unique message identifier|
-|call_sid|string|unique call identifier|
-|b3|string|open telemetry span identifier (only if otel tracing is enabled|
-|data|object|JSON payload describing the call|
-
-Here is an example `session:new` message.
+|property|type|meaning|required|
+|--------|----|-------|--------|
+|msgid|string|unique message identifier|yes|
+|call_sid|string|unique call identifier|yes|
+|b3|string|open telemetry span identifier for this call (only provided if otel tracing is enabled)|yes|
+|data|object|JSON payload describing the call|yes|
 
 ```json
 {

@@ -1,18 +1,24 @@
 # Websocket API
 
-The websocket API is functionally equivalent to the Webhook API.  The reason we created this alternative API is that there are some use cases, primarily those involving a lot of asynchronous interaction with jambonz, that can be done much easier over a single websocket connection than over a combination of HTTP webhooks and REST APIs.  As an example, some integrations with AI/bots have used the websocket API to good affect.
+The websocket API is functionally equivalent to the Webhook API; it is simply an alternative way for an application to interact with and drive jambonz call and message processing.  
 
-When you create a jambonz application in the jambonz portal and you want to use the websocket API, simply provide a ws(s) URL for the calling webhook instead of an http(s) URL.  The call status webhook can be the same ws(s) URL.  This will cause jambonz to establish a websocket connection to that URL when an incoming call (or outbound call) is routed to that application.
+The reason we created this alternative API is that there are some use cases - primarily those involving a lot of asynchronous interaction with jambonz - that can be done much easier over a single websocket connection than over a combination of HTTP webhooks and REST APIs.
+
+When you create a jambonz application in the jambonz portal and you want to use the websocket API, simply provide a ws(s) URL for the calling webhook instead of an http(s) URL.  The call status webhook can be the same ws(s) URL, in which case your application will get the call status notifications over the same websocket connections.
+> You can also have call status notifications sent to a completely separate http(s) webhook URL if you prefer.
+
+The impact of specifying a ws(s) URL as the application calling webhook is that this causes jambonz to establish a websocket connection to that URL when an incoming call (or outbound call) is routed to the jambonz application, and then communicate with your application over that websocket connection. 
 
 ## Connection management
 
-The websocket connection will be established by jambonz to the specified websocket url,  The websocket subprotocol used shall be “ws.jambonz.org”.  If jambonz fails to connect to the provided url, there will be no retry and the call shall be rejected.
+The websocket connection will be established by jambonz to the specified websocket URL,  The websocket subprotocol used shall be “ws.jambonz.org”.  If jambonz fails to connect to the provided URL, there will be no retry and the call shall be rejected.
 
 Once connected, jambonz will send an initial JSON text message to the your server with the same parameters as are provided in the webhook call.  The full message set is described below, but for now we can simply say that:
 - Only text frames are ever sent over the websocket connections; i.e. no binary frames.
-- The information content sent from jambonz to the your server is exactly the same content as that supplied webhooks.
+- All text frames contain JSON-formatted data.
+- The information content sent from jambonz to the your server is exactly the same content as that supplied via http webhooks.
 
-The websocket should generally be closed only from the jambonz side, when a call is ended.  If the your server closes the socket, jambonz will attempt to reconnect, up to a configurable number of reconnects.  Upon reconnecting, jambonz will send an initial reconnect message containing only the callSid of the session.  It is up to the your server to maintain any further context of the call between reconnections of the same call.
+The websocket should generally be closed only from the jambonz side, which happens when the call is ended.  If the your server closes the socket, jambonz will attempt to reconnect, up to a configurable number of reconnection attempts.  Upon reconnecting, jambonz will send an initial reconnect message containing only the callSid of the session.  It is up to the your server to maintain the state of the application between reconnections for the same call.
 
 ## Message format
 
@@ -22,7 +28,7 @@ As mentioned above, all messages will be JSON payloads sent as text frames.  The
   - Messages from the your server to jambonz will have the following types: [`ack`, `command`].
 - *msgid*: every message sent from jambonz will include a unique message identifier. Messages from the your server application that are responses to jambonz messages (`ack`) **must** include the msgId that they are acknowledging.  
 
-Note that not all messages sent by jambonz need to be acknowledged.  The message types which **must** be acknowledged are the `session:new`, and `verb:hook` messages.  An app **may** choose to acknowledge other message types as well, but these acknowledgement messages will simply be discarded by jambonz.
+Note that not all messages sent by jambonz need to be acknowledged.  The message types which **must** be acknowledged are the `session:new`, and `verb:hook` messages.
 
 ## Message types
 In the sections that follow, we will describe each of the message types in detail.  The table below provides summary information.
