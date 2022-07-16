@@ -30,12 +30,13 @@
     }
 
     blockquote {
-      padding-left: 16px;
+      border-left: 3px solid ui-vars.$jambonz;
+      background-color: ui-vars.$grey-light;
+      border-radius: 0.3em;
 
       p {
         font-family: ui-vars.$font-regular-italic;
-        border-left: 3px solid ui-vars.$jambonz;
-        padding-left: 10px;
+        padding: 16px;
       }
     }
 
@@ -69,7 +70,7 @@
 
       td, th {
         padding: 8px 12px;
-        border: 1px solid ui-vars.$grey-light;
+        border: 1px solid ui-vars.$grey;
       }
 
       th {
@@ -78,7 +79,7 @@
 
       tbody {
         tr:nth-child(odd) {
-          background-color: ui-vars.$grey;
+          background-color: ui-vars.$grey-light;
         }
       }
     }

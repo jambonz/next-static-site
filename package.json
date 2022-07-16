@@ -24,7 +24,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "jambonz-ui": "^0.0.7",
+    "jambonz-ui": "^0.0.8",
     "nanoid": "^3.1.22",
     "next": "^12.1.4",
     "next-plugin-preact": "^3.0.6",

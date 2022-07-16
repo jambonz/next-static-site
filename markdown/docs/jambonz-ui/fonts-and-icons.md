@@ -1,6 +1,6 @@
 # Fonts and icons
 
-The point of the Jambonz UI library is for jambonz apps to be "on brand" and share a cohesive foundational design DNA. With that in mind, the official font family for jambonz is called [Objectivity](https://www.behance.net/gallery/60530395/Objectivity-Free-Font-Family). Objectivity is a free, open-source font available for download online. The UI kit provides the font files already optimized for web use in the `woff` format. Jambonz doesn't utilize every member of the font family but you can view the full font specimen [here](https://www.fontsquirrel.com/fonts/objectivity).
+The point of the Jambonz UI library is for jambonz apps to be "on brand" and share a cohesive foundational design system. With that in mind, the official font family for jambonz is called [Objectivity](https://www.behance.net/gallery/60530395/Objectivity-Free-Font-Family). Objectivity is a free, open-source font available for download online. The UI kit provides the font files already optimized for web use in the `woff` format. Jambonz doesn't utilize every member of the font family but you can view the full font specimen [here](https://www.fontsquirrel.com/fonts/objectivity).
 
 ##### Available fonts for web use:
 
