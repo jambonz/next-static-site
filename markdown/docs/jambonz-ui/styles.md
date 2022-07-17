@@ -74,12 +74,12 @@ As mentioned you can use either the whole kit or just the variables and mixins. 
 
 ##### Available SASS variables
 
-A more comprehensive table of available variables here is coming soon. For now the easiest place to visualize this is in the source file for the variables [here](https://github.com/jambonz/next-static-site/tree/main/jambonz-ui/src/styles/_vars.scss).
+A more comprehensive table of available variables here is coming soon. For now the easiest place to visualize this is in the source file for the variables [here](https://github.com/jambonz/jambonz-ui/tree/main/src/styles/_vars.scss).
 
 
 ##### Available SASS mixins
 
-A more comprehensive table of available mixins here is coming soon. For now the easiest place to visualize this is in the source file for the mixins [here](https://github.com/jambonz/next-static-site/tree/main/jambonz-ui/src/styles/_mixins.scss).
+A more comprehensive table of available mixins here is coming soon. For now the easiest place to visualize this is in the source file for the mixins [here](https://github.com/jambonz/jambonz-ui/tree/main/src/styles/_mixins.scss).
 
 
 <p class="flex">
