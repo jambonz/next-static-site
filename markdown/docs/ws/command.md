@@ -9,7 +9,7 @@ A `command` message is sent by the websocket server to jambonz when the server w
 |type|string "command"|indicates this is a command message|yes|
 |command|string|describes the action to take, see allowed commands below|yes|
 |queueCommand|boolean|if true, queue this command until previous commands are completed; otherwise, interrupt and flush all previous commands and execute this command immediately|no|
-|data|array|data pertaining to the requested command|yes|
+|data|array or object|data pertaining to the requested command|yes|
 
 The `command` property must be one of the values shown below.
 > Note: `redirect` is the most commonly-used value.
