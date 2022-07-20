@@ -91,6 +91,12 @@ The payload that is included in the `actionHook` will always contain a `type` pr
 |amd_error|an error has occurred|error - an error message|
 |amd_stopped|answering machine detection was stopped|none|
 
+It is possible to receive more than one event for a single call.  For instance, a possible sequence of events on a call to an answering machine is:
+
+1. amd_machine_detected, then
+1. amd_tone_detected, then
+1. amd_machine_stopped_speaking
+
 ## Configuration
 
 The full set of configuration parameters is shown below.
