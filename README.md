@@ -20,7 +20,7 @@ This app is a [Next.js](https://nextjs.org) site deploying on [Vercel](https://v
 ## Dev start
 
 Clone this repository and install [yarn](https://yarnpkg.com/getting-started/install). 
-***Important for developers: Run a fresh `yarn install` and make sure [Husky](https://typicode.github.io/husky/) 
+***Important for developers: Run a fresh `npm run install` and make sure [Husky](https://typicode.github.io/husky/) 
 installs on your local machine*** Your terminal output will show that husky has been installed 
 after yarn resolves packages, something like this:
 
@@ -28,15 +28,15 @@ after yarn resolves packages, something like this:
 
 ### Commands
 
-- `yarn`
+- `npm i`
   - Installs packages and setup husky
-- `yarn dev`
+- `npm run dev`
   - Serves local dev at [localhost:3000](http://localhost:3000)
-- `yarn lint`
+- `npm run lint`
   - Runs Next.js linting
-- `yarn build && yarn start`
+- `npm run build && npm run start`
   - Create an optimized Next.js production build and serve it locally
-- `yarn build && yarn export`
+- `npm run build && npm run export`
   - Create a static production export for any static deploy target
 
 ## Jambonz UI library
@@ -104,15 +104,15 @@ in this file that merges our config with `next/babel` so Next.js works properly.
 
 You can run e2e tests for the site using [Cypress](https://docs.cypress.io). Cypress specs 
 rely on running the Next.js site on port `3000` as the baseUrl so the best way to test locally 
-is to `yarn dev` in one shell and then `yarn test` in another shell. Optionally, you can 
-`yarn build && yarn start` to create an optimized production server locally and in another 
-shell run `yarn test`. The GitHub workflow for this repository runs the Cypress tests by 
-building and then starting Next.js in the background like `yarn build && (yarn start&) > /dev/null` 
-and then `yarn test`.
+is to `npm run dev` in one shell and then `npm run test` in another shell. Optionally, you can 
+`npm run build && npm run start` to create an optimized production server locally and in another 
+shell run `npm run test`. The GitHub workflow for this repository runs the Cypress tests by 
+building and then starting Next.js in the background like `npm run build && (npm run start&) > /dev/null` 
+and then `npm run test`.
 
 Cypress specs are located at `cypress/integration/...`. The source of truth static YAML data 
 should always be used when authoring Cypress tests so we've implemented a script that generates 
-`JSON` data fixtures for Cypress from the YAML data before tests are run. When running `yarn test` 
+`JSON` data fixtures for Cypress from the YAML data before tests are run. When running `npm run test` 
 what happens is:
 
 * A `pretest` script runs and generates the JSON fixtures for Cypress
