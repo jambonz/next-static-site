@@ -17,15 +17,6 @@ This app is a [Next.js](https://nextjs.org) site deploying on [Vercel](https://v
 
 - [jambonz.vercel.app](https://jambonz.vercel.app)
 
-## Dev start
-
-Clone this repository and install [yarn](https://yarnpkg.com/getting-started/install). 
-***Important for developers: Run a fresh `npm run install` and make sure [Husky](https://typicode.github.io/husky/) 
-installs on your local machine*** Your terminal output will show that husky has been installed 
-after yarn resolves packages, something like this:
-
-<img src="/public/husky_screenshot.png" width="224" height="auto" />
-
 ### Commands
 
 - `npm i`
