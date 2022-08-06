@@ -75,7 +75,7 @@ function KitOfParts({ textString }) {
       {/** Icons */}
       <div className="kop__icons">
         <div className="pad wrap">
-          <IconGroup set>
+          <IconGroup>
             {Object.keys(Icons).map((icon) => {
               const SvgIcon = Icons[icon];
               return (
@@ -87,7 +87,7 @@ function KitOfParts({ textString }) {
           </IconGroup>
         </div>
         <div className="pad wrap">
-          <IconGroup set>
+          <IconGroup>
             <Icon subStyle="dark">
               <Icons.MapPin />
             </Icon>
@@ -103,7 +103,7 @@ function KitOfParts({ textString }) {
           </IconGroup>
         </div>
         <div className="pad wrap">
-          <IconGroup set>
+          <IconGroup>
             <Icon mainStyle="hollow" subStyle="dark">
               <Icons.Heart />
             </Icon>
@@ -122,7 +122,7 @@ function KitOfParts({ textString }) {
           </IconGroup>
         </div>
         <div className="bg--dark">
-          <IconGroup set className="pad wrap">
+          <IconGroup className="pad wrap">
             <Icon mainStyle="hollow" subStyle="white">
               <Icons.Heart />
             </Icon>
