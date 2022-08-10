@@ -21,7 +21,7 @@ function Regions({ data }) {
         return (
           <div key={nanoid()} className="wrap regions__wrap">
             <div className="regions__icon">
-              <Icon subStyle={region.color} mainStyle="fill">
+              <Icon subStyle={region.color}>
                 <SvgIcon />
               </Icon>
             </div>

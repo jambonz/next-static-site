@@ -76,11 +76,11 @@ import { ButtonGroup, Button, Icon } from "jambonz-ui";
 function MyComponent() {
   return (
     <ButtonGroup className="pad">
-      <Button mainStyle="pill">
+      <Button mainStyle="hollow">
         <Icons.GitHub />
         <span>github.com/jambonz</span>
       </Button>
-      <Button mainStyle="pill">
+      <Button mainStyle="hollow">
         <Icons.GitHub />
         <span>github.com/drachtio</span>
       </Button>
@@ -178,7 +178,7 @@ import { Icon } from "jambonz-ui";
 function MyComponent() {
   return (
     <>
-      <Icon mainStyle="pill" subStyle="dark">
+      <Icon mainStyle="hollow" subStyle="dark">
         <Icons.Heart />
       </Icon>
       <Link href="https://www.behance.net/gallery/60530395/Objectivity-Free-Font-Family">

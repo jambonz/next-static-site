@@ -142,7 +142,7 @@ function BYO({data}) {
           {data.icons.map((icon) => {
             const SvgIcon = Icons[icon];
             return (
-              <Icon key={nanoid()} mainStyle="fill">
+              <Icon key={icon}>
                 <SvgIcon />
               </Icon>
             );

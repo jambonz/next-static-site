@@ -44,7 +44,7 @@ function NaviMobile({ active, handler, siteData }) {
           </Button>
         </div>
         <div className="navi__mobile__icon" onClick={handler}>
-          <Icon mainStyle="fill" subStyle="white">
+          <Icon subStyle="white">
             <Icons.X />
           </Icon>
         </div>
@@ -101,7 +101,7 @@ export default function Navi({ siteData }) {
           })}
         </ul>
         <div className="navi__icon" onClick={handleNavi}>
-          <Icon mainStyle="fill">
+          <Icon>
             <Icons.Menu />
           </Icon>
         </div>
