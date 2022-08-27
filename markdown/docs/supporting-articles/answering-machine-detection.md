@@ -19,10 +19,9 @@ The answering machine detection feature can be enabled on outbound calls to prov
   }
 }
 ```
-> Note: answering machine detection can also be performed on an inbound leg by adding an `amd` property to a [config](/docs/webhooks/config) verb.  While it is less common to need to do answering machine detection on an inbound leg, this can be useful when jambonz is behind a dialer that has placed the outbound call and then connected it to jambonz by sending an INVITE to jambonz.
+In this example, when the dialed call is answered the answering machine detection feature will begin listening on the outbound call leg and after a short period of time will send a webhook to '/amdEvents' with an indication of whether a human or a machine has answered the call.
 
-In this example, when the dialed call is answered the answering machine detection feature will begin listening on the outbound call leg and after a short period of time will send a webhook to '/amdEvents' with an indication of whether a human or a machine has answered the call.  The payload in the webhook will look something like this:
-
+The payload in the webhook will look something like this:
 ```json
 {"type":"amd_human_detected"}
 ```
@@ -115,3 +114,7 @@ The full set of configuration parameters is shown below.
 ### Voicemail phrases
 
 If desired, a JSON file of voicemail phrases, organized by language as shown above can be supplied.  If provided, the environment variable `VMD_HINTS_FILE` should point to the file path to this file.
+
+## Answering machine detection on inbound calls
+
+Answering machine detection can also be performed on an inbound leg by adding an `amd` property to a [config](/docs/webhooks/config) verb.  While it is less common to need to do answering machine detection on an inbound leg, this can be useful when jambonz is behind a dialer that has placed the outbound call and then connected it to jambonz by sending an INVITE to jambonz.

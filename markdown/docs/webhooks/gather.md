@@ -63,6 +63,8 @@ You can use the following options in the `gather` command:
 | recognizer.requestSnr | (microsoft only) Request signal to noise information| no |
 | recognizer.initialSpeechTimeoutMs | (microsoft only) Initial speech timeout in milliseconds| no |
 | recognizer.azureServiceEndpoint | (microsoft only) URI of a custom speech endpoint to connect to| no |
+| recognizer.asrTimeout|timeout value for [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
+| recognizer.asrDtmfTerminationDigit|DMTF key that terminates [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
 | say | nested [say](#say) Command that can be used to prompt the user | no |
 | timeout | The number of seconds of silence or inaction that denote the end of caller input.  The timeout timer will begin after any nested play or say command completes.  Defaults to 5 | no |
 

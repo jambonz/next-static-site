@@ -46,7 +46,10 @@ You can use the following options in the `transcribe` command:
 | recognizer.outputFormat | (microsoft only) simple or detailed.  Default:  simple| no |
 | recognizer.requestSnr | (microsoft only) Request signal to noise information| no |
 | recognizer.initialSpeechTimeoutMs | (microsoft only) Initial speech timeout in milliseconds| no |
-| transcriptionHook | Webhook to receive an HTPP POST when an interim or final transcription is received. | yes |
+| recognizer.transcriptionHook | Webhook to receive an HTPP POST when an interim or final transcription is received. | yes |
+| recognizer.asrTimeout|timeout value for [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
+| recognizer.asrDtmfTerminationDigit|DMTF key that terminates [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
+
 
 <p class="flex">
 <a href="/docs/webhooks/tag">Prev: tag</a>
