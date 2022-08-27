@@ -27,7 +27,7 @@ You can use the following options in the `transcribe` command:
 | recognizer.vad.voiceMs|If vad is enabled, the number of milliseconds of speech required before connecting to cloud recognizer|no|
 | recognizer.vad.mode|If vad is enabled, this setting governs the sensitivity of the voice activity detector; value must be between 0 to 3 inclusive, lower numbers mean more sensitive|no|
 | recognizer.separateRecognitionPerChannel | If true, recognize both caller and called party speech | no |
-| recognizer.altLanguages |(google only) An array of alternative languages that the speaker may be using | no |
+| recognizer.altLanguages |(google/microsoft only) An array of alternative languages that the speaker may be using | no |
 | recognizer.punctuation |(google only) Enable automatic punctuation | no |
 | recognizer.enhancedModel |(google only) Use enhanced model | no |
 | recognizer.words |(google only) Enable word offsets | no |
@@ -37,6 +37,7 @@ You can use the following options in the `transcribe` command:
 | recognizer.interactionType |(google only) Set the interaction type: discussion, presentation, phone_call, voicemail, professionally_produced, voice_search, voice_command, dictation | no |
 | recognizer.naicsCode |(google only) set an industry [NAICS](https://www.census.gov/naics/?58967?yearbck=2022) code that is relevant to the speech  | no |
 | recognizer.hints | (google and microsoft only) Array of words or phrases to assist speech detection | no |
+| recognizer.hintsBoost | (google only) Number indicating the strength to assign to the configured hints | no |
 | recognizer.profanityFilter | (google only) If true, filter profanity from speech transcription .  Default:  no| no |
 | recognizer.vocabularyName |  (aws only) The name of a vocabulary to use when processing the speech.| no |
 | recognizer.vocabularyFilterName |  (aws only) The name of a vocabulary filter to use when processing the speech.| no |
@@ -46,7 +47,10 @@ You can use the following options in the `transcribe` command:
 | recognizer.outputFormat | (microsoft only) simple or detailed.  Default:  simple| no |
 | recognizer.requestSnr | (microsoft only) Request signal to noise information| no |
 | recognizer.initialSpeechTimeoutMs | (microsoft only) Initial speech timeout in milliseconds| no |
-| transcriptionHook | Webhook to receive an HTPP POST when an interim or final transcription is received. | yes |
+| recognizer.transcriptionHook | Webhook to receive an HTPP POST when an interim or final transcription is received. | yes |
+| recognizer.asrTimeout|timeout value for [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
+| recognizer.asrDtmfTerminationDigit|DMTF key that terminates [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
+
 
 <p class="flex">
 <a href="/docs/webhooks/tag">Prev: tag</a>

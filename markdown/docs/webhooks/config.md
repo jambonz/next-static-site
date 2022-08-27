@@ -29,8 +29,8 @@ You can use the following attributes in the `config` command:
 | ------------- |-------------| -----|
 | synthesizer | change the session-level default text-to-speech settings. See [the say verb](/docs/webhooks/say) for details on the `synthesizer` property.| no |
 | recognizer | change the session-level default speech recognition settings. See [the transcribe verb](/docs/webhooks/transcribe) for details on the `recognizer` property.| no |
-| bargeIn.enable| if true, begin listening for speech or dtmf input while the session is executing other verbs.  This is known as a "background gather" and an application to capture user input outside of a [gather verb](/docs/webhooks/gather).  If false, stop any background listening task that is in progress| no|
 |bargein|this object contains properties that are used to instantiate a 'background' [gather verb](/docs/webhooks/gather)|no|
+| bargeIn.enable| if true, begin listening for speech or dtmf input while the session is executing other verbs.  This is known as a "background gather" and an application to capture user input outside of a [gather verb](/docs/webhooks/gather).  If false, stop any background listening task that is in progress| no|
 | bargeIn.actionHook | A webhook to call if user input is collected from the background gather.| no |
 | bargeIn.input |Array, specifying allowed types of input: ['digits'], ['speech'], or ['digits', 'speech']. | yes |
 | bargeIn.finishOnKey | Dmtf key that signals the end of dtmf input | no |
@@ -38,6 +38,12 @@ You can use the following attributes in the `config` command:
 | bargeIn.minDigits | Minimum number of dtmf digits expected to gather.  Defaults to 1. | no |
 | bargeIn.maxDigits | Maximum number of dtmf digits expected to gather | no |
 | bargeIn.interDigitTimeout | Amount of time to wait between digits after minDigits have been entered.| no |
+|amd|enable answering machine detection; see [answering machine detection](/docs/supporting-articles/answering-machine-detection) for details|no|
+|record|options to manage [call recording using SIPREC](/docs/supporting-articles/siprec-client)|no|
+|record.action|"startCallRecording", "stopCallRecording", "pauseCallRecording", or "resumeCallRecording"|yes|
+|record.siprecServerURL|sip uri for SIPREC server|required if action is "startCallRecording"|
+|record.recordingID|user-supplied string to identify the recording|no|
+
 
 
 <p class="flex">

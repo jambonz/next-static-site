@@ -33,6 +33,7 @@ You can use the following options in the `listen` action:
 | maxLength | the maximum length of the listened audio stream, in secs | no |
 | metadata | arbitrary data to add to the JSON payload sent to the remote server when websocket connection is first connected | no |
 | mixType | "mono" (send single channel), "stereo" (send dual channel of both calls in a bridge), or "mixed" (send audio from both calls in a bridge in a single mixed audio stream) Default: mono | no |
+| passDtmf | if true, any dtmf digits detected from the caller will be passed over the websocket as text frames in JSON format.  Default: false| no |
 | playBeep | true, false whether to play a beep at the start of the listen operation.  Default: false | no |
 | sampleRate | sample rate of audio to send (allowable values: 8000, 16000, 24000, 48000, or 64000).  Default: 8000 | no |
 | timeout | the number of seconds of silence that terminates the listen operation.| no |
@@ -40,6 +41,18 @@ You can use the following options in the `listen` action:
 | url | url of remote server to connect to | yes |
 | wsAuth.username | HTTP basic auth username to use on websocket connection | no |
 | wsAuth.password | HTTP basic auth password to use on websocket connection | no |
+
+<h4 id="pass_dtmf">Passing DTMF</h4>
+
+Any DTMF digits entered by the far end party on the call can optionally be passed to the websocket server as JSON text frames by setting the `passDtmf` property to `true`. Each DTMF entry is reported separately in a payload that contains the specific DTMF key that was entered, as well as the duration which is reported in RTP timestamp units.  The payload that is sent will look like this:
+
+```json
+{
+  "event": "dtmf",
+  "dtmf": "2",
+  "duration": "1600"
+}
+```
 
 <h4 id="birectional_audio">Bidirectional audio</h4>
 
