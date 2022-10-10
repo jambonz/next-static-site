@@ -153,6 +153,9 @@ navi:
     title: Release Notes
     pages:
       -
+        path: v0.7.7
+        title: v0.7.7
+      -
         path: v0.7.6
         title: v0.7.6
       -
