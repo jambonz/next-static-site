@@ -1,6 +1,6 @@
 # dtmf
 
-The `dtmf` verb generates a string of dtmf digit signals.  These are sent as RTP payloads using [RFC 3822](https://datatracker.ietf.org/doc/html/rfc2833).
+The `dtmf` verb generates a string of dtmf digit signals.  These are sent as RTP payloads using [RFC 2833](https://datatracker.ietf.org/doc/html/rfc2833).
 
 ```json
 {
