@@ -1,7 +1,7 @@
 banner:
   active: true
   text: Click here to launch a jambonz CPaaS on AWS.
-  link: https://aws.amazon.com/marketplace/pp/prodview-55wp45fowbovo
+  link: https://blog.jambonz.org/installing-jambonz-using-aws-marketplace
 latest:
   -
     active: true
@@ -32,6 +32,9 @@ navi:
     -
       label: Open Source
       link: /open-source/
+    -
+      label: Blog
+      link: https://blog.jambonz.org
 footer:
   email: support@jambonz.org
   links:
