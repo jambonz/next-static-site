@@ -72,7 +72,7 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 | resource[].builtin | Name of a builtin resource in the data pack| no |
 | resource[].inlineGrammar | Inline grammar, SRGS XML format| no |
 | resource[].wakeupWord | Array of [wakeup words](https://docs.mix.nuance.com/asr-grpc/v1/#wakeup-words)| no |
-| resource[].weightName | nput field setting the [weight](https://docs.mix.nuance.com/asr-grpc/v1/#enumresourcetype) of the domain LM or builtin relative to the data pack ('defaultWeight', 'lowest', 'low', 'medium', 'high', 'highest')| no (default = MEDIUM|
+| resource[].weightName | input field setting the [weight](https://docs.mix.nuance.com/asr-grpc/v1/#enumresourcetype) of the domain LM or builtin relative to the data pack ('defaultWeight', 'lowest', 'low', 'medium', 'high', 'highest')| no (default = MEDIUM|
 | resource[].weightValue | Weight of DLM or builtin as a numeric value from 0 to 1| no (default: 0.25)|
 | resource[].reuse | Whether the resource will be [used multiple times](https://docs.mix.nuance.com/asr-grpc/v1/#enumresourcereuse) ('undefined_reuse', 'low_reuse','high_reuse')| no (default: low_reuse|
 | resource[].externalReference|[An external DLM or settings file](https://docs.mix.nuance.com/asr-grpc/v1/#resourcereference) for creating or updating a speaker profile| no|
