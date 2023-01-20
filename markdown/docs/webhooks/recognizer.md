@@ -39,7 +39,7 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 
 <h2 id="nuanceOptions">nuanceOptions</h2>
 
-`nuanceOptions` is an object with the following properties. Please refer to the [Nuance Documentation](https://docs.mix.nuance.com/asr-grpc/v1/#recognitionparameters) for detailed descriptions.
+`nuanceOptions` is an object with the following properties. Please refer to the [Nuance Documentation](https://docs.nuance.com/mix/apis/asr-grpc/v1/#recognitionparameters) for detailed descriptions.
 
 | option        | description | required  |
 | ------------- |-------------| -----|
@@ -67,15 +67,15 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 | clientData | An object containing arbitrary key, value pairs to inject into the call log.| no |
 | formatting.scheme | Keyword for a formatting type defined in the data pack| no |
 | formatting.options | Object containing key, value pairs of formatting options and values defined in the data pack| no |
-|resource|An array of zero or more [recognition resources](https://docs.mix.nuance.com/asr-grpc/v1/#recognitionresource) (domain LMs, wordsets, etc.) to improve recognition|no|
-| resource[].inlineWordset | Inline wordset JSON resource. See [Wordsets](https://docs.mix.nuance.com/asr-grpc/v1/#wordsets) for the format| no |
+|resource|An array of zero or more [recognition resources](https://docs.nuance.com/mix/apis/asr-grpc/v1/api/nuance-asr/#recognitionresource) (domain LMs, wordsets, etc.) to improve recognition|no|
+| resource[].inlineWordset | Inline wordset JSON resource. See [Wordsets](https://docs.nuance.com/mix/apis/asr-grpc/v1/ref-topics/resources-asr/wordsets-asr/) for details| no |
 | resource[].builtin | Name of a builtin resource in the data pack| no |
 | resource[].inlineGrammar | Inline grammar, SRGS XML format| no |
-| resource[].wakeupWord | Array of [wakeup words](https://docs.mix.nuance.com/asr-grpc/v1/#wakeup-words)| no |
-| resource[].weightName | input field setting the [weight](https://docs.mix.nuance.com/asr-grpc/v1/#enumresourcetype) of the domain LM or builtin relative to the data pack ('defaultWeight', 'lowest', 'low', 'medium', 'high', 'highest')| no (default = MEDIUM|
+| resource[].wakeupWord | Array of [wakeup words](https://docs.nuance.com/mix/apis/asr-grpc/v1/api/nuance-asr/#wakeupword)| no |
+| resource[].weightName | input field setting the [weight](https://docs.nuance.com/mix/apis/asr-grpc/v1/api/nuance-asr/#enumweight) of the domain LM or builtin relative to the data pack ('defaultWeight', 'lowest', 'low', 'medium', 'high', 'highest')| no (default = MEDIUM|
 | resource[].weightValue | Weight of DLM or builtin as a numeric value from 0 to 1| no (default: 0.25)|
-| resource[].reuse | Whether the resource will be [used multiple times](https://docs.mix.nuance.com/asr-grpc/v1/#enumresourcereuse) ('undefined_reuse', 'low_reuse','high_reuse')| no (default: low_reuse|
-| resource[].externalReference|[An external DLM or settings file](https://docs.mix.nuance.com/asr-grpc/v1/#resourcereference) for creating or updating a speaker profile| no|
+| resource[].reuse | Whether the resource will be [used multiple times](https://docs.nuance.com/mix/apis/asr-grpc/v1/api/nuance-asr/#enumresourcereuse) ('undefined_reuse', 'low_reuse','high_reuse')| no (default: low_reuse|
+| resource[].externalReference|[An external DLM or settings file](https://docs.nuance.com/mix/apis/asr-grpc/v1/api/nuance-asr/#resourcereference) for creating or updating a speaker profile| no|
 | resource[].externalReference.type | Resource type ('undefined_resource_type', 'wordset', 'compiled_wordset', 'domain_lm', 'speaker_profile', 'grammar', 'settings') | no |
 | resource[].externalReference.uri | Location of the resource as a URN reference| no |
 | resource[].externalReference.maxLoadFailures | when true allow transcription to proceed resource loading fails| no |
