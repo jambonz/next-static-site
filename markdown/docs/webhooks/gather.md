@@ -45,28 +45,7 @@ You can use the following options in the `gather` command:
 | numDigits | Exact number of dtmf digits expected to gather | no |
 | partialResultHook | Webhook to send interim transcription results to. Partial transcriptions are only generated if this property is set. | no |
 | play | nested [play](#play) Command that can be used to prompt the user | no |
-| recognizer.vendor | Speech vendor to use (google, aws, or microsoft) | no |
-| recognizer.language | Language code to use for speech detection.  Defaults to the application level setting| no |
-| recognizer.vad.enable|If true, delay connecting to cloud recognizer until speech is detected|no|
-| recognizer.vad.voiceMs|If vad is enabled, the number of milliseconds of speech required before connecting to cloud recognizer|no|
-| recognizer.vad.mode|If vad is enabled, this setting governs the sensitivity of the voice activity detector; value must be between 0 to 3 inclusive (lower numbers mean more sensitivity, i.e. more likely to return a false positive). Default: 2|no|
-| recognizer.hints | (google and microsoft only) Array of words or phrases to assist speech detection | no |
-| recognizer.hintsBoost | (google only) A value between 0 to 20 inclusive; higher number means assign more weight to the hints | no |
-| recognizer.altLanguages |(google only) An array of alternative languages that the speaker may be using | no |
-| recognizer.punctuation |(google only) Enable automatic punctuation | no |
-| recognizer.profanityFilter | (google only) If true, filter profanity from speech transcription .  Default:  no| no |
-| recognizer.vocabularyName |  (aws only) The name of a vocabulary to use when processing the speech.| no |
-| recognizer.vocabularyFilterName |  (aws only) The name of a vocabulary filter to use when processing the speech.| no |
-| recognizer.filterMethod |  (aws only) The method to use when filtering the speech: remove, mask, or tag.| no |
-| recognizer.profanityOption | (microsoft only) masked, removed, or raw.  Default:  raw| no |
-| recognizer.outputFormat | (microsoft only) simple or detailed.  Default:  simple| no |
-| recognizer.requestSnr | (microsoft only) Request signal to noise information| no |
-| recognizer.initialSpeechTimeoutMs | (microsoft only) Initial speech timeout in milliseconds| no |
-| recognizer.azureServiceEndpoint | (microsoft only) URI of a custom speech endpoint to connect to| no |
-| recognizer.asrTimeout|timeout value for [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
-| recognizer.asrDtmfTerminationDigit|DMTF key that terminates [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
-| say | nested [say](#say) Command that can be used to prompt the user | no |
-| timeout | The number of seconds of silence or inaction that denote the end of caller input.  The timeout timer will begin after any nested play or say command completes.  Defaults to 5 | no |
+| [recognizer](/docs/webhooks/recognizer) | Speech recognition options | no |
 
 In the case of speech input, the actionHook payload will include a `speech` object with the response from Google speech:
 ```json
