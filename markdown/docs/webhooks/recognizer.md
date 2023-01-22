@@ -33,13 +33,13 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 | transcriptionHook | Webhook to receive an HTPP POST when an interim or final transcription is received. | yes |
 | asrTimeout|timeout value for [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
 | asrDtmfTerminationDigit|DMTF key that terminates [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
-| nuanceOptions|Nuance-specific speech recognition options (see below)| no |
-| deepgramOptions|Deepgram-specific speech recognition options (see below)| no |
-| ibmOptions|IBM Watson-specific speech recognition options (see below)| no |
+| nuanceOptions (added in 0.8.0)|Nuance-specific speech recognition options (see below)| no |
+| deepgramOptions (added in 0.8.0)|Deepgram-specific speech recognition options (see below)| no |
+| ibmOptions (added in 0.8.0)|IBM Watson-specific speech recognition options (see below)| no |
 
 <h2 id="nuanceOptions">nuanceOptions</h2>
 
-`nuanceOptions` is an object with the following properties. Please refer to the [Nuance Documentation](https://docs.nuance.com/mix/apis/asr-grpc/v1/#recognitionparameters) for detailed descriptions.
+`nuanceOptions` is an object with the following properties. Please refer to the [Nuance Documentation](https://docs.nuance.com/mix/apis/asr-grpc/v1/#recognitionparameters) for detailed descriptions.  This option is only available in jambonz 0.8.0 or above.
 
 | option        | description | required  |
 | ------------- |-------------| -----|
@@ -84,7 +84,7 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 
 <h2 id="deepgramOptions">deepgramOptions</h2>
 
-`deepgramOptions` is an object with the following properties. Please refer to the [Deepgram Documentation](https://developers.deepgram.com/api-reference/transcription/#transcribe-live-streaming-audio) for detailed descriptions.
+`deepgramOptions` is an object with the following properties. Please refer to the [Deepgram Documentation](https://developers.deepgram.com/api-reference/transcription/#transcribe-live-streaming-audio) for detailed descriptions. This option is only available in jambonz 0.8.0 or above.
 
 | option        | description | required  |
 | ------------- |-------------| -----|
@@ -110,7 +110,7 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 
 <h2 id="ibmOptions">ibmOptions</h2>
 
-`ibmOptions` is an object with the following properties. Please refer to the [IBM Watson Documentation](https://cloud.ibm.com/apidocs/speech-to-text?code=node#recognize) for detailed descriptions.
+`ibmOptions` is an object with the following properties. Please refer to the [IBM Watson Documentation](https://cloud.ibm.com/apidocs/speech-to-text?code=node#recognize) for detailed descriptions. This option is only available in jambonz 0.8.0 or above.
 
 | option        | description | required  |
 | ------------- |-------------| -----|
