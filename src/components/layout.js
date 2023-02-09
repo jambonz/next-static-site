@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { nanoid } from 'nanoid';
-import { classNames, H1, H2, H3, Button } from 'jambonz-ui';
+import { classNames, H1, H2, H3, Button } from '@jambonz/ui-kit';
 
 import Navi from './navi';
 import Footer from './footer';

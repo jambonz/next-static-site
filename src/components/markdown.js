@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
-import { classNames, Icon } from 'jambonz-ui';
+import { classNames, Icon } from '@jambonz/ui-kit';
 
 import { Icons } from './icons';
 import { rSlash } from './utils';

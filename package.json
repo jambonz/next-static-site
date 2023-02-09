@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
-    "postinstall": "rm -rf public/fonts && cp -R ./node_modules/jambonz-ui/public/fonts ./public/fonts",
+    "postinstall": "rm -rf public/fonts && cp -R ./node_modules/@jambonz/ui-kit/fonts ./public/fonts",
     "dev": "next",
     "lint": "next lint",
     "start": "next start",
