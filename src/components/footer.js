@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { nanoid } from 'nanoid';
-import { Button, classNames } from 'jambonz-ui';
+import { Button, classNames } from '@jambonz/ui-kit';
 
 import { rSlash } from './utils';
 import { useActiveNavi } from './hooks';

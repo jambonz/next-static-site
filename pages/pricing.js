@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { nanoid } from 'nanoid';
-import { Icon, Button, H2, P } from 'jambonz-ui';
+import { Icon, Button, H2, P } from '@jambonz/ui-kit';
 
 import { getData } from '../src/lib/data';
 import { Icons } from '../src/components/icons';

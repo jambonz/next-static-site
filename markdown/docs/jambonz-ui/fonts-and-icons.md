@@ -46,7 +46,7 @@ script in the `package.json` file. We are also opting to ignore the `fonts` dire
 ```json
 {
   "scripts": {
-    "postinstall": "rm -rf public/fonts && cp -R ./node_modules/jambonz-ui/public/fonts ./public/fonts"
+    "postinstall": "rm -rf public/fonts && cp -R ./node_modules/@jambonz/ui-kit/public/fonts ./public/fonts"
   }
 }
 ```
@@ -63,7 +63,7 @@ Example of dev server config:
 module.exports = {
   // ...
   devServer: {
-    static: [path.resolve(__dirname, 'node_modules/jambonz-ui/public')],
+    static: [path.resolve(__dirname, 'node_modules/@jambonz/ui-kit/public')],
   },
 };
 ```
@@ -77,7 +77,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'node_modules/jambonz-ui/public'),
+          from: path.resolve(__dirname, 'node_modules/@jambonz/ui-kit/public'),
           // If you would like to omit the CSS/JS and only copy fonts
           globOptions: {
             ignore: ['**/css/**', '**/js/**'],

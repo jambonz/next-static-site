@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { nanoid } from 'nanoid';
 import { useState, useEffect, useRef } from 'react';
-import { Icon, Button, H4, H3, H2, P, MS, classNames, IconGroup } from 'jambonz-ui';
+import { Icon, Button, H4, H3, H2, P, MS, classNames, IconGroup } from '@jambonz/ui-kit';
 
 import { getData } from '../src/lib/data';
 import { Icons } from '../src/components/icons';

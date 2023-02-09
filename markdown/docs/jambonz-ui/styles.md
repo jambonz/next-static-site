@@ -77,10 +77,10 @@ already using SASS for your jambonz app the recommendation would be to just load
 ```scss
 // This loads the entire SASS lib
 // You should use this in your root SASS entry point
-@use 'jambonz-ui/src/styles/index';
+@use '@jambonz/ui-kit/src/styles/index';
 
 // In your local SASS modules you can use the vars and mixins from the UI library
-@use 'jambonz-ui/src/styles/vars' as ui-vars;
+@use '@jambonz/ui-kit/styles/vars' as ui-vars;
 
 .some-thing {
   color: ui-vars.$jambonz;
