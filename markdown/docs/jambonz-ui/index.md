@@ -21,7 +21,7 @@ View the [storybook](https://jambonz-ui.vercel.app/).
 Installing the package is easy. You can use any typical package manager for frontend stacks.
 
 ```shell
-npm install jambonz-ui # or yarn add jambonz-ui
+npm install @jambonz/ui-kit # or yarn add @jambonz/ui-kit
 ```
 
 ##### General usage
