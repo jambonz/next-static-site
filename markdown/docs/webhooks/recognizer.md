@@ -3,43 +3,63 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| vendor | Speech vendor to use (google, aws, microsoft, deepgram, nuance, or ibm) | no |
+| vendor | Speech vendor to use (google, aws, microsoft, deepgram, nuance, nvidia, and ibm are currently supported) | no |
 | language | Language code to use for speech detection.  Defaults to the application level setting | no |
 | interim | If true, interim transcriptions are sent | no (default: false) |
+| hints | (google, microsoft, deepgram, nvidia) Array of words or phrases to assist speech detection.  See [examples](#hints) below. | no |
+| hintsBoost | (google, nvidia) Number indicating the strength to assign to the configured hints.  See examples below. | no |
+| profanityFilter | (google, deepgram, nuance, nvidia) If true, filter profanity from speech transcription .  Default:  no| no |
 | vad.enable|If true, delay connecting to cloud recognizer until speech is detected|no|
 | vad.voiceMs|If vad is enabled, the number of milliseconds of speech required before connecting to cloud recognizer|no|
 | vad.mode|If vad is enabled, this setting governs the sensitivity of the voice activity detector; value must be between 0 to 3 inclusive, lower numbers mean more sensitive|no|
 | separateRecognitionPerChannel | If true, recognize both caller and called party speech using separate recognition sessions | no |
-| altLanguages |(google/microsoft only) An array of alternative languages that the speaker may be using | no |
-| punctuation |(google only) Enable automatic punctuation | no |
-| enhancedModel |(google only) Use enhanced model | no |
-| words |(google only) Enable word offsets | no |
-| diarization |(google only) Enable speaker diarization | no |
-| diarizationMinSpeakers |(google only) Set the minimum speaker count | no |
-| diarizationMaxSpeakers |(google only) Set the maximum speaker count | no |
-| interactionType |(google only) Set the interaction type: discussion, presentation, phone_call, voicemail, professionally_produced, voice_search, voice_command, dictation | no |
-| naicsCode |(google only) set an industry [NAICS](https://www.census.gov/naics/?58967?yearbck=2022) code that is relevant to the speech  | no |
-| hints | (google and microsoft only) Array of words or phrases to assist speech detection | no |
-| hintsBoost | (google only) Number indicating the strength to assign to the configured hints | no |
-| profanityFilter | (google only) If true, filter profanity from speech transcription .  Default:  no| no |
-| vocabularyName |  (aws only) The name of a vocabulary to use when processing the speech.| no |
-| vocabularyFilterName |  (aws only) The name of a vocabulary filter to use when processing the speech.| no |
-| filterMethod |  (aws only) The method to use when filtering the speech: remove, mask, or tag.| no |
-| identifyChannels |  (aws only) Enable channel identification. | no |
-| profanityOption | (microsoft only) masked, removed, or raw.  Default:  raw| no |
-| outputFormat | (microsoft only) simple or detailed.  Default:  simple| no |
-| requestSnr | (microsoft only) Request signal to noise information| no |
-| initialSpeechTimeoutMs | (microsoft only) Initial speech timeout in milliseconds| no |
+| altLanguages |(google, microsoft) An array of alternative languages that the speaker may be using | no |
+| punctuation |(google) Enable automatic punctuation | no |
+| enhancedModel |(google) Use enhanced model | no |
+| words |(google) Enable word offsets | no |
+| diarization |(google) Enable speaker diarization | no |
+| diarizationMinSpeakers |(google) Set the minimum speaker count | no |
+| diarizationMaxSpeakers |(google) Set the maximum speaker count | no |
+| interactionType |(google) Set the interaction type: discussion, presentation, phone_call, voicemail, professionally_produced, voice_search, voice_command, dictation | no |
+| naicsCode |(google) set an industry [NAICS](https://www.census.gov/naics/?58967?yearbck=2022) code that is relevant to the speech  | no |
+| vocabularyName |  (aws) The name of a vocabulary to use when processing the speech.| no |
+| vocabularyFilterName |  (aws) The name of a vocabulary filter to use when processing the speech.| no |
+| filterMethod |  (aws) The method to use when filtering the speech: remove, mask, or tag.| no |
+| identifyChannels |  (aws) Enable channel identification. | no |
+| profanityOption | (microsoft) masked, removed, or raw.  Default:  raw| no |
+| outputFormat | (microsoft) simple or detailed.  Default:  simple| no |
+| requestSnr | (microsoft) Request signal to noise information| no |
+| initialSpeechTimeoutMs | (microsoft) Initial speech timeout in milliseconds| no |
 | transcriptionHook | Webhook to receive an HTPP POST when an interim or final transcription is received. | yes |
 | asrTimeout|timeout value for [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
 | asrDtmfTerminationDigit|DMTF key that terminates [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
 | nuanceOptions (added in 0.8.0)|Nuance-specific speech recognition options (see below)| no |
 | deepgramOptions (added in 0.8.0)|Deepgram-specific speech recognition options (see below)| no |
+| nvidiaOptions (added in 0.8.0)|Nvidia-specific speech recognition options (see below)| no |
 | ibmOptions (added in 0.8.0)|IBM Watson-specific speech recognition options (see below)| no |
+
+<h2 id="hints">Providing speech hints</h2>
+
+google, microsoft, deepgram, and nvidia all support the ability to provide a dynamic list of words or phrases that should be "boosted" by the recognizer, i.e. the recognizer should be more likely to detect this terms and return them in the transcript.  A boost factor can also be applied.  In the most basic implementation it would look like this:
+
+```json
+"hints": ["benign", "malignant", "biopsy"],
+"hintsBoost": 50
+```
+
+Additionally, google and nvidia allow a boost factor to be specified at the phrase level, e.g.
+
+```json
+"hints": [
+  {"phrase": "benign", "boost": 50},
+  {"phrase": "malignant", "boost": 10},
+  {"phrase": "biopsy", "boost": 20},
+]
+```
 
 <h2 id="nuanceOptions">nuanceOptions</h2>
 
-`nuanceOptions` is an object with the following properties. Please refer to the [Nuance Documentation](https://docs.nuance.com/mix/apis/asr-grpc/v1/#recognitionparameters) for detailed descriptions.  This option is only available in jambonz 0.8.0 or above.
+`nuanceOptions` is an object with the following properties. Please refer to the [Nuance Documentation](https://docs.nuance.com/mix/apis/asr-grpc/v1/#recognitionparameters) for detailed descriptions.  This option is available in jambonz 0.8.0 or above.
 
 | option        | description | required  |
 | ------------- |-------------| -----|
@@ -84,7 +104,7 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 
 <h2 id="deepgramOptions">deepgramOptions</h2>
 
-`deepgramOptions` is an object with the following properties. Please refer to the [Deepgram Documentation](https://developers.deepgram.com/api-reference/transcription/#transcribe-live-streaming-audio) for detailed descriptions. This option is only available in jambonz 0.8.0 or above.
+`deepgramOptions` is an object with the following properties. Please refer to the [Deepgram Documentation](https://developers.deepgram.com/api-reference/transcription/#transcribe-live-streaming-audio) for detailed descriptions. This option is available in jambonz 0.8.0 or above.
 
 | option        | description | required  |
 | ------------- |-------------| -----|
@@ -110,7 +130,7 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 
 <h2 id="ibmOptions">ibmOptions</h2>
 
-`ibmOptions` is an object with the following properties. Please refer to the [IBM Watson Documentation](https://cloud.ibm.com/apidocs/speech-to-text?code=node#recognize) for detailed descriptions. This option is only available in jambonz 0.8.0 or above.
+`ibmOptions` is an object with the following properties. Please refer to the [IBM Watson Documentation](https://cloud.ibm.com/apidocs/speech-to-text?code=node#recognize) for detailed descriptions. This option is available in jambonz 0.8.0 or above.
 
 | option        | description | required  |
 | ------------- |-------------| -----|
@@ -123,3 +143,17 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 | baseModelVersion | Base model to be used | no |
 | watsonMetadata | a [tag value](https://cloud.ibm.com/apidocs/speech-to-text?code=node#getting-started-data-labels) to apply to the request data provided | no |
 | watsonLearningOptOut | set to true to prevent IBM from using your api request data to improve their service| no |
+
+<h2 id="nvidiaOptions">nvidiaOptions</h2>
+
+`nvidiaOptions` is an object with the following properties. Please refer to the [Nvidia Riva Documentation](https://docs.nvidia.com/deeplearning/riva/user-guide/docs/index.html) for detailed descriptions. This option is available in jambonz 0.8.0 or above.
+
+| option        | description | required  |
+| ------------- |-------------| -----|
+| rivaUri | grcp endpoint (ip:port) that Nvidia Riva is listening on  | no |
+| maxAlternatives | number of alternatives to return| no |
+| profanityFilter | Indicates whether to remove profanity from the transcript  | no |
+| punctuation | Indicates whether to provide puncutation in the transcripts | no |
+| wordTimeOffsets | indicates whether to provide word-level detail | no |
+| verbatimTranscripts | Indicates whether to provide verbatim transcripts| no |
+| customConfiguration | An object of key-value pairs that can be sent to Nvidia for custom configuration | no |
