@@ -33,6 +33,7 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 | transcriptionHook | Webhook to receive an HTPP POST when an interim or final transcription is received. | yes |
 | asrTimeout|timeout value for [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
 | asrDtmfTerminationDigit|DMTF key that terminates [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
+| azureServiceEndpoint | Custom service endpoint to connect to, instead of hosted Microsoft regional endpoints | no |
 | nuanceOptions (added in 0.8.0)|Nuance-specific speech recognition options (see below)| no |
 | deepgramOptions (added in 0.8.0)|Deepgram-specific speech recognition options (see below)| no |
 | nvidiaOptions (added in 0.8.0)|Nvidia-specific speech recognition options (see below)| no |
