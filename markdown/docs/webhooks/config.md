@@ -29,6 +29,7 @@ You can use the following attributes in the `config` command:
 | ------------- |-------------| -----|
 | synthesizer | change the session-level default text-to-speech settings. See [the say verb](/docs/webhooks/say) for details on the `synthesizer` property.| no |
 | recognizer | change the session-level default speech recognition settings. See [the transcribe verb](/docs/webhooks/transcribe) for details on the `recognizer` property.| no |
+| notifyEvents | boolean, whether to enable event notifications (verb:status messages) over websocket connections.  Verbs that are sent over the websocket must also contain an "id" property to activate this feature.|no|
 |bargein|this object contains properties that are used to instantiate a 'background' [gather verb](/docs/webhooks/gather)|no|
 | bargeIn.enable| if true, begin listening for speech or dtmf input while the session is executing other verbs.  This is known as a "background gather" and an application to capture user input outside of a [gather verb](/docs/webhooks/gather).  If false, stop any background listening task that is in progress| no|
 | bargeIn.sticky | If true and bargeIn.enable is true, then when the background gather completes with speech or dtmf detected, it will automatically start another background gather|no|
