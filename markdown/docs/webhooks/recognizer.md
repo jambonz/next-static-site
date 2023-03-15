@@ -3,7 +3,7 @@ The `recognizer` property is used in multiple verbs (gather, transcribe, etc). I
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| vendor | Speech vendor to use (google, aws, microsoft, deepgram, nuance, nvidia, and ibm are currently supported) | no |
+| vendor | Speech vendor to use (google, aws, microsoft, deepgram, nuance, nvidia, and ibm are supported, along with any others you add via the [custom speech API](/docs/supporting-articles/custom-speech-stt)) | no |
 | language | Language code to use for speech detection.  Defaults to the application level setting | no |
 | interim | If true, interim transcriptions are sent | no (default: false) |
 | hints | (google, microsoft, deepgram, nvidia) Array of words or phrases to assist speech detection.  See [examples](#hints) below. | no |

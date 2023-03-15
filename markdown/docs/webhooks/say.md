@@ -1,6 +1,6 @@
 # say
 
-The say command is used to send synthesized speech to the remote party. The text provided may be either plain text or may use SSML tags.  The following vendors are supported: google, microsoft, aws, nuance, nvidia, ibm, and wellsaid, 
+The say command is used to send synthesized speech to the remote party. The text provided may be either plain text or may use SSML tags.  The following vendors are supported: google, microsoft, aws, nuance, nvidia, ibm, and wellsaid; along with any others you add via the [custom speech API](/docs/supporting-articles/custom-speech-tts).
 
 ```json
 {

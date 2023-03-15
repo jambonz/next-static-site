@@ -4,7 +4,9 @@ jambonz provides native support for lots of speech recognition vendors, but if y
 
 The STT API is based on Websockets.  
 
-jambonz opens a Websocket connection towards a URL that you specify, and sends audio as well as JSON control text frames to your server.  Your server is responsible for implementing the interface to your chosen speech vendor and returning results in JSON format back over the Websocket connection to jambonz.  Easy-peasy!
+jambonz opens a Websocket connection towards a URL that you specify, and sends audio as well as JSON control text frames to your server.  Your server is responsible for implementing the interface to your chosen speech vendor and returning results in JSON format back over the Websocket connection to jambonz.  
+
+Easy-peasy!
 
 ## Authentication
 
@@ -14,7 +16,7 @@ An Authorization header is sent by jambonz on the HTTP request that creates the 
 Authorization: Bearer <apiKey>
 ```
 
-When you create a custom speech vendor in the jambonz portal you will specify an api key which is then then provided in the Authorization header whenever that custom speech vendor is used in yourj application.
+When you create a custom speech vendor in the jambonz portal you will specify an api key which is then then provided in the Authorization header whenever that custom speech vendor is used in your application.
 
 In the example below, we creeate a Custom speech service for [AssemblyAI](https://www.assemblyai.com/docs) and add an apiKey of 'foobarbazzle'.
 
