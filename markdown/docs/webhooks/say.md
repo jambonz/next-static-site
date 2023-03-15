@@ -18,7 +18,7 @@ You can use the following options in the `say` action:
 | option        | description | required  |
 | ------------- |-------------| -----|
 | text | text to speak; may contain SSML tags | yes |
-| synthesizer.vendor | speech vendor to use| no |
+| synthesizer.vendor | speech vendor to use (google, aws, microsoft, nuance, nvidia, and ibm are supported, along with any others you add via the [custom speech API](/docs/speech-api/overview/))| no |
 | synthesizer.language | language code to use.  | no |
 | synthesizer.gender | (Google only) MALE, FEMALE, or NEUTRAL.  | no |
 | synthesizer.voice | voice to use.  Note that the voice list differs whether you are using aws or Google. Defaults to application setting, if provided. | no |

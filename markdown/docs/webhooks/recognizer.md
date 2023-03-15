@@ -1,9 +1,9 @@
 
-The `recognizer` property is used in multiple verbs (gather, transcribe, etc). It selects and configures the speech recognizer.  It is an object containing the following properties:
+The `recognizer` property is used in multiple verbs ([gather](/docs/webhooks/gather), [transcribe](/docs/webhooks/transcribe), [dial](/docs/webhooks/dial)). It selects and configures the speech recognizer.  It is an object containing the following properties:
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| vendor | Speech vendor to use (google, aws, microsoft, deepgram, nuance, nvidia, and ibm are supported, along with any others you add via the [custom speech API](/docs/supporting-articles/custom-speech-stt)) | no |
+| vendor | Speech vendor to use (google, aws, microsoft, deepgram, nuance, nvidia, and ibm are supported, along with any others you add via the [custom speech API](/docs/speech-api/overview/)) | no |
 | language | Language code to use for speech detection.  Defaults to the application level setting | no |
 | interim | If true, interim transcriptions are sent | no (default: false) |
 | hints | (google, microsoft, deepgram, nvidia) Array of words or phrases to assist speech detection.  See [examples](#hints) below. | no |
