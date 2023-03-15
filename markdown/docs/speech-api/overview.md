@@ -1,4 +1,5 @@
 # Custom speech API
+> Added in 0.8.2
 
 jambonz natively supports a large number of [STT](/docs/webhooks/recognizer) and [TTS](/docs/webhooks/say) speech providers out of the box, but if you want to use a speech provider that we don't support: no propblem! You can also add support for new speech vendors using our Speech APIs:
 

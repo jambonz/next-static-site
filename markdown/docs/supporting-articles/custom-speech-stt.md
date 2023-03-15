@@ -1,4 +1,5 @@
 # Speech-to-text API
+> Added in 0.8.2
 
 jambonz provides native support for lots of speech recognition vendors, but if you want to integrate with a vendor we don't yet support you can easily do this by writing to our API.  
 
