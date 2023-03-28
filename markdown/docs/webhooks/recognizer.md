@@ -1,20 +1,22 @@
 
-The `recognizer` property is used in multiple verbs (gather, transcribe, etc). It selects and configures the speech recognizer.  It is an object containing the following properties:
+The `recognizer` property is used in multiple verbs ([gather](/docs/webhooks/gather), [transcribe](/docs/webhooks/transcribe), [dial](/docs/webhooks/dial)). It selects and configures the speech recognizer.  It is an object containing the following properties:
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| vendor | Speech vendor to use (google, aws, microsoft, deepgram, nuance, nvidia, and ibm are currently supported) | no |
+| vendor | Speech vendor to use (google, aws, microsoft, deepgram, nuance, nvidia, and ibm are supported, along with any others you add via the [custom speech API](/docs/speech-api/overview/)) | no |
 | language | Language code to use for speech detection.  Defaults to the application level setting | no |
 | interim | If true, interim transcriptions are sent | no (default: false) |
 | hints | (google, microsoft, deepgram, nvidia) Array of words or phrases to assist speech detection.  See [examples](#hints) below. | no |
 | hintsBoost | (google, nvidia) Number indicating the strength to assign to the configured hints.  See examples below. | no |
 | profanityFilter | (google, deepgram, nuance, nvidia) If true, filter profanity from speech transcription .  Default:  no| no |
+| singleUtterance | (google) If true, return only a single utterance/transcript | no (default: true for gather)|
 | vad.enable|If true, delay connecting to cloud recognizer until speech is detected|no|
 | vad.voiceMs|If vad is enabled, the number of milliseconds of speech required before connecting to cloud recognizer|no|
 | vad.mode|If vad is enabled, this setting governs the sensitivity of the voice activity detector; value must be between 0 to 3 inclusive, lower numbers mean more sensitive|no|
 | separateRecognitionPerChannel | If true, recognize both caller and called party speech using separate recognition sessions | no |
 | altLanguages |(google, microsoft) An array of alternative languages that the speaker may be using | no |
 | punctuation |(google) Enable automatic punctuation | no |
+| model |(google) speech recognition model to use | no (default: phone_call) |
 | enhancedModel |(google) Use enhanced model | no |
 | words |(google) Enable word offsets | no |
 | diarization |(google) Enable speaker diarization | no |

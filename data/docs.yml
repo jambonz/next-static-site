@@ -120,6 +120,13 @@ navi:
         path: command
         title: command
   -
+    path: speech-api
+    title: Speech API
+    pages:
+      -
+        path: overview
+        title: Custom Speech API
+  -
     path: client-sdks
     title: Client SDKs
     pages:
