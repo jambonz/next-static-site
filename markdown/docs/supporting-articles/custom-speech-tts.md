@@ -7,7 +7,7 @@ The TTS API is a simple http-based api.
 
 jambonz sends an HTTP POST containing the text to be synthesized and associated properties such as language and voice.  Your server is responsible for implementing the interface to your chosen speech vendor and returning an mp3 file containing the audio.  
 
-Easy-peasy!
+Want to look at some working code?  Check out [these examples](https://github.com/jambonz/custom-speech-example).
 
 ## Authentication
 

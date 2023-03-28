@@ -5,9 +5,9 @@ jambonz provides native support for lots of speech recognition vendors, but if y
 
 The STT API is based on Websockets.  
 
-jambonz opens a Websocket connection towards a URL that you specify, and sends audio as well as JSON control text frames to your server.  Your server is responsible for implementing the interface to your chosen speech vendor and returning results in JSON format back over the Websocket connection to jambonz.  
+jambonz opens a Websocket connection towards a URL that you specify, and sends audio as well as JSON control text frames to your server.  Your server is responsible for implementing the interface to your chosen speech vendor and returning results in JSON format back over the Websocket connection to jambonz.
 
-Easy-peasy!
+Want to look at some working code?  Check out [these examples](https://github.com/jambonz/custom-speech-example).
 
 ## Authentication
 
