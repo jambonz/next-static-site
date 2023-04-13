@@ -3,10 +3,10 @@ The `recognizer` property is used in multiple verbs ([gather](/docs/webhooks/gat
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| vendor | Speech vendor to use (google, aws, microsoft, deepgram, nuance, nvidia, and ibm are supported, along with any others you add via the [custom speech API](/docs/speech-api/overview/)) | no |
+| vendor | Speech vendor to use (google, aws, microsoft, deepgram, nuance, nvidia, soniox, and ibm are supported, along with any others you add via the [custom speech API](/docs/speech-api/overview/)) | no |
 | language | Language code to use for speech detection.  Defaults to the application level setting | no |
 | interim | If true, interim transcriptions are sent | no (default: false) |
-| hints | (google, microsoft, deepgram, nvidia) Array of words or phrases to assist speech detection.  See [examples](#hints) below. | no |
+| hints | (google, microsoft, deepgram, nvidia, soniox) Array of words or phrases to assist speech detection.  See [examples](#hints) below. | no |
 | hintsBoost | (google, nvidia) Number indicating the strength to assign to the configured hints.  See examples below. | no |
 | profanityFilter | (google, deepgram, nuance, nvidia) If true, filter profanity from speech transcription .  Default:  no| no |
 | singleUtterance | (google) If true, return only a single utterance/transcript | no (default: true for gather)|
@@ -40,6 +40,7 @@ The `recognizer` property is used in multiple verbs ([gather](/docs/webhooks/gat
 | deepgramOptions (added in 0.8.0)|Deepgram-specific speech recognition options (see below)| no |
 | nvidiaOptions (added in 0.8.0)|Nvidia-specific speech recognition options (see below)| no |
 | ibmOptions (added in 0.8.0)|IBM Watson-specific speech recognition options (see below)| no |
+| sonioxOptions (added in 0.8.2)|Soniox-specific speech recognition options (see below)| no |
 
 <h2 id="hints">Providing speech hints</h2>
 
@@ -160,3 +161,19 @@ Additionally, google and nvidia allow a boost factor to be specified at the phra
 | wordTimeOffsets | indicates whether to provide word-level detail | no |
 | verbatimTranscripts | Indicates whether to provide verbatim transcripts| no |
 | customConfiguration | An object of key-value pairs that can be sent to Nvidia for custom configuration | no |
+
+<h2 id="sonioxOptions">sonioxOptions</h2>
+
+`sonioxOptions` is an object with the following properties. Please refer to the [Soniox Documentation](https://soniox.com/docs/) for detailed descriptions. This option is available in jambonz 0.8.2 or above.
+
+| option        | description | required  |
+| ------------- |-------------| -----|
+| api_key | Soniox api key  | no |
+| model | Soniox [model](https://soniox.com/docs/models) to use | no (default: precision_ivr) |
+| profanityFilter | Indicates whether to [remove profanity](https://soniox.com/docs/profanity_filter) from the transcript  | no |
+| storage | properties that dictate whether to audio and/or transcripts.  Can be useful for debugging purposes. | no |
+| storage.id | storage identifier | no |
+| storage.title | storage title | no |
+| storage.disableStoreAudio | if true do not store audio | no (default: false) |
+| storage.disableStoreTranscript | if true do not store transcript | no (default: false)  |
+| storage.disableSearch |  if true do not allow search | no (default: false)  |
