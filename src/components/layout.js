@@ -95,7 +95,7 @@ export function TextLayout({ data, name }) {
   );
 }
 
-export default function Layout({ children, siteData, title = 'jambonz' }) {
+export default function Layout({ children, siteData, title = 'The open source voice gateway for conversational AI providers | jambonz' }) {
   return (
     <>
       <Head>
@@ -105,7 +105,7 @@ export default function Layout({ children, siteData, title = 'jambonz' }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="image" property="og:image" content="https://www.jambonz.org/jambonz.png" />
-        <meta name="description" content="The “bring your own everything” CPaaS" />
+        <meta name="description" content="The open source voice gateway for conversational AI providers | jambonz" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="preload" href="/fonts/objectivity-medium-webfont.woff2" crossOrigin="anonymous" as="font" type="font/woff" />
