@@ -34,6 +34,7 @@
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
     "react-feather": "^2.0.10",
+    "react-gtm-module": "^2.0.11",
     "react-ssr-prepass": "npm:preact-ssr-prepass"
   },
   "devDependencies": {
