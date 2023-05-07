@@ -1,8 +1,8 @@
 hero:
   headline: Build unique voice solutions, faster.
   subtext:
-    - jambonz is the open source CPaaS 
-    - built for communications service providers.
+    - jambonz is the open source voice platform 
+    - for conversational AI providers and CSPs.
   cta: Sign up for free
   url:
     pathname: /regions/
