@@ -4,6 +4,29 @@ import { useState, useEffect, useCallback } from 'react';
 
 import { rSlash } from './utils';
 
+export function usePageViewTracking(gtagId) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      window.dataLayer.push({
+        event: 'page_view',
+        gtag_id: gtagId,
+        config: {
+          [gtagId]: {
+            page_path: url,
+            groups: 'default',
+          },
+        },
+      });
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events, gtagId]);
+}
 
 export function useActiveNavi() {
   const router = useRouter();

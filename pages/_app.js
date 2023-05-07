@@ -1,12 +1,29 @@
 import '../src/styles/global.scss';
-import { useEffect } from 'react'
-import TagManager from 'react-gtm-module'
+import { useEffect } from 'react';
+import TagManager from 'react-gtm-module';
+import { usePageViewTracking } from '../src/components/hooks.js';
 
-const gtmId = 'G-7J55WH6BVM';
+
+const gtagId = 'G-7J55WH6BVM';
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
-    TagManager.initialize({ gtmId })
+    TagManager.initialize({
+      gtmId: gtagId,
+      dataLayer: {
+        gtag_id: gtagId,
+        config: {
+          [gtagId]: { groups: 'default' },
+        },
+      },
+    });
   }, []);
-  return <Component {...pageProps} />
+
+  usePageViewTracking(gtagId);
+
+  return <Component {...pageProps} />;
 }
+
+
+
+
