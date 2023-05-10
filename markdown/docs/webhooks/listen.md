@@ -6,7 +6,7 @@ jambonz does not have a 'record' verb. This is by design, for data privacy reaso
 
 Instead, jambonz provides the **listen** verb, where an audio stream(s) can be forked and sent in real-time to your application for processing.
 
-The listen verb can also be nested in a [dial](#dial) verb, which allows the audio for a call between two parties to be sent to a remote websocket server.
+The listen verb can also be nested in a [dial](/docs/webhooks/dial) or [config](/docs/webhooks/config) verb, which allows the audio for a call between two parties to be sent to a remote websocket server.
 
 To utilize the listen verb, the customer must implement a websocket server to receive and process the audio.  The endpoint should be prepared to accept websocket connections with a subprotocol name of 'audio.jambonz.org'.  
 
@@ -37,7 +37,7 @@ You can use the following options in the `listen` action:
 | playBeep | true, false whether to play a beep at the start of the listen operation.  Default: false | no |
 | sampleRate | sample rate of audio to send (allowable values: 8000, 16000, 24000, 48000, or 64000).  Default: 8000 | no |
 | timeout | the number of seconds of silence that terminates the listen operation.| no |
-| transcribe | a nested [transcribe](#transcribe) verb | no |
+| transcribe | a nested [transcribe](/docs/webhooks/transcribe) verb | no |
 | url | url of remote server to connect to | yes |
 | wsAuth.username | HTTP basic auth username to use on websocket connection | no |
 | wsAuth.password | HTTP basic auth password to use on websocket connection | no |
