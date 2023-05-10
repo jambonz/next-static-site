@@ -40,7 +40,7 @@ You can use the following attributes in the `config` command:
 | bargeIn.minDigits | Minimum number of dtmf digits expected to gather.  Defaults to 1. | no |
 | bargeIn.maxDigits | Maximum number of dtmf digits expected to gather | no |
 | bargeIn.interDigitTimeout | Amount of time to wait between digits after minDigits have been entered.| no |
-| listen | a nested [listen](#listen) action, which allows recording of the call from this point forward by streaming the audio to a remote server over a websocket connection | no |
+| listen | a nested [listen](/docs/webhooks/listen) action, which allows recording of the call from this point forward by streaming the audio to a remote server over a websocket connection | no |
 |amd|enable answering machine detection; see [answering machine detection](/docs/supporting-articles/answering-machine-detection) for details|no|
 |record|options to manage [call recording using SIPREC](/docs/supporting-articles/siprec-client)|no|
 |record.action|"startCallRecording", "stopCallRecording", "pauseCallRecording", or "resumeCallRecording"|yes|
