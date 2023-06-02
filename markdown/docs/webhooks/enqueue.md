@@ -29,7 +29,7 @@ The *actionHook* webhook will contain the following additional parameters:
     - 'error' - a system error of some kind occurred
 - `queueTime` - the number of seconds the call spent in queue
 - `queueSize` - the number of calls remaining in queue
-- `queuePosition` - the position of the call in queue before removal (0 = front of queue)
+- `queuePosition` - the zero-based position of the call in queue before it was removed
 - `callSid` - the unique identifier for the call
 - `callId` - the sip Call-ID for the call
 
