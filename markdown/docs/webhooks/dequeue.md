@@ -17,6 +17,7 @@ You can use the following options in the `dequeue` command:
 | option        | description | required  |
 | ------------- |-------------| -----|
 | name | name of the queue | yes |
+| callSid | a specific call to dequeue; if not provided the lowest priority call or the call at the head of the queue will be dequeued | no|
 | actionHook | A webhook invoke when call ends. If no webhook is provided, execution will continue with the next verb in the current application. <br/>See below for specified request parameters.| no |
 | beep | if true, play a beep tone to this caller only just prior to connecting the queued call; this provides an auditory cue that the call is now connected | no |
 | timeout | number of seconds to wait on an empty queue before returning (default: wait forever) | no |
