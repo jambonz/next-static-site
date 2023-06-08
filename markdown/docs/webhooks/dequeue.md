@@ -1,7 +1,7 @@
 # dequeue
 The `dequeue` verb removes the lowest priority call from a specified queue and bridges that call to the current caller.  
 
-Note that calls can optionally be [enqueued](/docs/webhooks/enqueue) with priority values that will dictate how they are ordered in the queue.  If priorities are not specified then the queue will operate in FIFO order.
+Note that (as of release 0.8.3-4) calls can optionally be [enqueued](/docs/webhooks/enqueue) with priority values that will dictate how they are ordered in the queue.  If priorities are not specified then the queue will operate in FIFO order.
 
 ```json
 {

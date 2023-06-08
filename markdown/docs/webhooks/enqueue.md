@@ -15,7 +15,7 @@ You can use the following options in the `enqueue` command:
 | option        | description | required  |
 | ------------- |-------------| -----|
 | name | name of the queue | yes |
-| priority | optional priority value between 0 and 999. Calls are dequeued in priority order, lowest to highest| no (default: 999)|
+| priority | (added in 0.8.3-4) optional priority value between 0 and 999. Calls are dequeued in priority order, lowest to highest| no (default: 999)|
 | actionHook | A webhook invoke when operation completes. <br/>If a call is dequeued through the `leave` verb, the webook is immediately invoked. <br/>If the call has been bridged to another party via the `dequeue` verb, then the webhook is invoked after both parties have disconnected. <br/>If no webhook is provided, execution will continue with the next verb in the current application. <br/>See below for specified request parameters.| no |
 | waitHook | A webhook to invoke while the caller is in queue.  The only allowed verbs in the application returned from this webhook are `say`, `play`, `pause`, and `leave`, </br>See below for additional request parameters| no|
 
