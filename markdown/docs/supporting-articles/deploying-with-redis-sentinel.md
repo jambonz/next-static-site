@@ -9,7 +9,7 @@ A Redis Sentinel cluster consists of Redis instances playing these roles:
 
 It's recommended to have at least three Redis Sentinel instances for a robust deployment. A typical configuration could have one Redis master, two Redis slaves, and three Redis Sentinel instances spread across three servers for a robust deployment.
 
-When running jambonz against a standalone Redis server (which again, is the default), you may notice these environment variables being passed to many of the jambonz Node.js apps:
+When running jambonz against a standalone Redis server (which again, is the default), you may notice these environment variables being passed to many of the jambonz Node.js apps, e.g. for a jambonz-mini on AWS:
 ```
       JAMBONES_REDIS_HOST: '127.0.0.1',
       JAMBONES_REDIS_PORT: 6379,
@@ -21,5 +21,6 @@ To run against a Redis Sentinel cluster, simply replace those 2 environment vari
       JAMBONES_REDIS_SENTINEL_MASTER_NAME: 'Redis-master',
       JAMBONES_REDIS_SENTINEL_PASSWORD: 'JambonzR0ck$',
 ```
+Of course, be sure to change the Sentinel addresses and master name and password to the appropriate values for your deployment.
 
 With those changes, jambonz will connect to and use the Redis Sentinel cluster for caching information.
