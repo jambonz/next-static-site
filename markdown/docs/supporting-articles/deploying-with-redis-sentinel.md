@@ -17,9 +17,9 @@ When running jambonz against a standalone Redis server (which again, is the defa
 
 To run against a Redis Sentinel cluster, simply replace those 2 environment variables with the following 3 which specify the location of the Sentinels along with the master name and password, e.g.
 ```
-      JAMBONES_REDIS_SENTINELS: '3.88.135.74:26379,3.88.135.74:26380,3.88.135.74:26381',
-      JAMBONES_REDIS_SENTINEL_MASTER_NAME: 'Redis-master',
-      JAMBONES_REDIS_SENTINEL_PASSWORD: 'JambonzR0ck$',
+      JAMBONES_REDIS_SENTINELS: '3.88.135.70:26379,3.88.135.71:26380,3.88.135.72:26381',
+      JAMBONES_REDIS_SENTINEL_MASTER_NAME: 'mymaster',
+      JAMBONES_REDIS_SENTINEL_PASSWORD: 'mypassword',
 ```
 Of course, be sure to change the Sentinel addresses and master name and password to the appropriate values for your deployment.
 
