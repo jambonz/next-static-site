@@ -160,6 +160,9 @@ navi:
     title: Release Notes
     pages:
       -
+        path: v0.8.4
+        title: v0.8.4
+      -
         path: v0.8.3
         title: v0.8.3
       -
