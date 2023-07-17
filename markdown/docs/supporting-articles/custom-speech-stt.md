@@ -7,6 +7,8 @@ The STT API is based on Websockets.
 
 jambonz opens a Websocket connection towards a URL that you specify, and sends audio as well as JSON control text frames to your server.  Your server is responsible for implementing the interface to your chosen speech vendor and returning results in JSON format back over the Websocket connection to jambonz.
 
+> **Important Note**: your server is responsible for closing the websocket connection.  Generally, this is done after receiving the [stop control message](#h3-stop-control-message) from jambonz.
+
 Want to look at some working code?  Check out [these examples](https://github.com/jambonz/custom-speech-example).
 
 ## Authentication
@@ -48,6 +50,8 @@ The first message that you will receive from jambonz after accepting and upgradi
 ### Stop control message
 
 jambonz sends a "stop" message when it is time to stop speech recognition.  
+
+jambonz does **not** close the socket after sending this control message.  This is to allow your speech recognizer to return a final transcript, if necessary.  So when receiving the `stop` control message, you should do what is necessary to close and clean up the speech recognition service you are using, return a final transcript if any, and then close the websocket with a normal close.
 
 | property | type | description  |
 | ---------|-------------| -----|
