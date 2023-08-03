@@ -3,11 +3,9 @@ hero:
   subtext:
     - jambonz is the open source voice platform 
     - for conversational AI providers and CSPs.
-  cta: Sign up for free
-  url:
-    pathname: /regions/
-    query:
-      redirect: register
+  cta: Create a free account on jambonz.cloud
+  url: https://jambonz.cloud/register
+
 tech:
   image:
     src: /images/Jambonz_app_screenshot.webp
@@ -17,14 +15,14 @@ tech:
     height: 842
   notes:
     -
-      title: Adapts to your needs
-      text: Designed to plug-and-play with your chosen carriers and tech stack.
-    -
-      title: Privacy comes first
-      text: Our innovative design means that your customers' most sensitive personal information is never stored on our systems.
+      title: Self-hosted or cloud
+      text: Run your traffic on our cloud service or deploy on your own infrastructure.
     -
       title: Open source
-      text: We work in the open, so that you can see all that we do and can gain the greatest value from our products.
+      text: Drive your own innovations into the software to outdistance your competition.
+    -
+      title: Data privacy
+      text: Our innovative design protects your customers' most sensitive data.
     -
       title: Reliable
       text: Built by a team that has been delivering five 9’s products to telcos since VoIP was a thing.
@@ -99,7 +97,4 @@ byo:
     - Cloud
   comment: Why pay someone to upcharge you for all of that when it’s basically a one-click experience to provision all of those yourself in today's world. You know how to <a href="/regions/?redirect=register">click</a>, right?
   cta: Get started for free
-  url:
-    pathname: /regions/
-    query:
-      redirect: register
+  url: https://jambonz.cloud/register

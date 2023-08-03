@@ -1,0 +1,17 @@
+root:
+  link: /support/
+  label: 
+navi:
+  -
+    path: tiers
+    title: Support Options
+    pages:
+      -
+        path: support-level-1
+        title: Single system
+      -
+        path: support-level-2
+        title: Cluster
+      -
+        path: support-level-3
+        title: Premium support
