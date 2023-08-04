@@ -1,6 +1,6 @@
 banner:
   active: true
-  text: Click here to launch a jambonz CPaaS on AWS.
+  text: Click to launch a jambonz instance on AWS.
   link: https://blog.jambonz.org/installing-jambonz-using-aws-marketplace
 latest:
   -
@@ -15,10 +15,7 @@ navi:
     label: Home
   login:
     label: Log In
-    link: 
-      pathname: /regions/
-      query:
-        redirect: login
+    link: https://jambonz.cloud
   links:
     -
       label: Why jambonz
@@ -27,7 +24,10 @@ navi:
       label: Docs
       link: /docs/
     -
-      label: Pricing
+      label: Support
+      link: /support/
+    -
+      label: Cloud Pricing
       link: /pricing/
     -
       label: Open Source

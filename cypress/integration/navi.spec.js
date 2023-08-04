@@ -30,9 +30,7 @@ describe('Navigation', () => {
 
       cy.get('.navi__login .btn')
         .contains(site.navi.login.label)
-        .should('have.attr', 'href', 
-          `${site.navi.login.link.pathname}?redirect=${site.navi.login.link.query.redirect}`
-        )
+        .should('have.attr', 'href', `${site.navi.login.link}`)
     });
   });
 

@@ -26,7 +26,7 @@
     }
 
     p {
-      @include ui-mixins.ms();
+      @include ui-mixins.m();
     }
 
     blockquote {
@@ -60,12 +60,12 @@
 
       li {
         list-style-type: disc;
-        @include ui-mixins.ms();
+        @include ui-mixins.m();
       }
     }
 
     table {
-      @include ui-mixins.ms();
+      @include ui-mixins.m();
       width: 100%;
 
       td, th {
