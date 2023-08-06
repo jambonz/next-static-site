@@ -1,5 +1,11 @@
 # Websocket API
 
+>> Note: this page describes how to build applications using websockets.  If you prefer to use the webhooks API, please visit [this page](/docs/webhooks/overview).
+
+**TLDR;**
+- Use `npx create-jambonz-ws-app` to scaffold a webhook application
+- See [@jambonz/node-client-ws](https://www.npmjs.com/package/@jambonz/node-client-ws) for Node.js API
+
 The websocket API is functionally equivalent to the Webhook API; it is simply an alternative way for an application to interact with and drive jambonz call and message processing.  
 
 The reason we created this alternative API is that there are some use cases - primarily those involving a lot of asynchronous interaction with jambonz - that can be done much easier over a single websocket connection than over a combination of HTTP webhooks and REST APIs.
