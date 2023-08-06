@@ -144,6 +144,9 @@ navi:
     title: Tutorials
     pages:
       -
+        path: tadhack-2023
+        title: TADHack 2023
+      -
         path: getting-started
         title: Getting started
       -

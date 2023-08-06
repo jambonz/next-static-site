@@ -1,4 +1,15 @@
-# Webhooks 
+# Webhook API
+
+>> Note: this page describes how to build applications using webhooks.  If you prefer to use the websocket API, please visit [this page](/docs/ws/overview).
+
+**TLDR;**
+- Use `npx create-jambonz-app` to scaffold a webhook application
+- See [@jambonz/node-client](https://www.npmjs.com/package/@jambonz/node-client) for Node.js API
+
+Or:
+- use Node-RED and install [@jambonz/node-red-contrib-jambonz](https://flows.nodered.org/node/@jambonz/node-red-contrib-jambonz)
+
+## Overview
 
 jambonz controls calls through the use of JSON payloads that are exchanged either over an HTTP(s) or a websocket connection.  When an incoming call for your account is received, jambonz retrieves the URL that you have configured for the application you want to run.  If the URL begins with 'http(s)://' jambonz makes an http request to the URL, while if the URL starts with 'ws(s)://' jambonz establishes a websocket connection to that URL. jambonz then sends an initial message describing the incoming call, and your webapp is then responsible for returning a JSON payload that indicates how you want the call handled.
 
