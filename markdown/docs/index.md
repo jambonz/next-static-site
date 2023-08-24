@@ -5,7 +5,7 @@ jambonz is an open-source CPaaS platform that is primarily designed for use by c
 As an API-driven platform, you will primarily interface with it using [Webhooks](/docs/webhooks/overview/) and [REST APIs](/docs/rest/overview/).  Our client SDKs include a [Node.js SDK](/docs/client-sdks/nodejs-sdk/) SDK as well as [Node-RED plugins](/docs/client-sdks/node-red/).  
 
 There are two ways to run jambonz:
-- use our hosted platform (you can [create a free account](https://jambonz.us/register)), or
+- use our hosted platform (you can [create a free account](https://jambonz.cloud/register)), or
 - self-host your own jambonz system using the open-source distribution.
 
 > Pro tip: Start by creating a free account on the hosted platform because you can start testing immediately. You can always build a self-hosted platform later and migrate your applications seamlessly.

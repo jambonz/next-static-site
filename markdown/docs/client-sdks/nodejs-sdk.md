@@ -26,9 +26,9 @@ If your application also needs to make [REST API calls](/docs/rest/overview/), y
 ```js
 const jambonz = require('@jambonz/node-client');
 const {WebhookResponse} = jambonz;
-const client = jambonz('your-account-sid', 'your-api-key', {baseUrl: 'https://jambonz.us'});
+const client = jambonz('your-account-sid', 'your-api-key', {baseUrl: 'https://jambonz.cloud'});
 ```
-> Note: if you are running a self-hosted system, replace `https://jambonz.us` in the above with the appropriate URL of your own jambonz system.
+> Note: if you are running a self-hosted system, replace `https://jambonz.cloud` in the above with the appropriate URL of your own jambonz system.
 
 #### How to use it - Webhooks
 Responding to webhooks is quite simple:

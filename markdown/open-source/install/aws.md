@@ -1,6 +1,6 @@
 # Installing on AWS
 
-The quickest way for you to try out jambonz is to create an account on [jambonz.us](https://jambonz.us/register).  This gets you up and running with a few clicks of the mouse, and all of your applications can later be re-pointed to a self-hosted system that you build up.
+The quickest way for you to try out jambonz is to create an account on [jambonz.cloud](https://jambonz.cloud/register).  This gets you up and running with a few clicks of the mouse, and all of your applications can later be re-pointed to a self-hosted system that you build up.
 
 When you are ready to build your own system, AWS is the recommended hosting provider for jambonz at the present time, because a lot of work has been done to integrate to AWS autoscaling groups and other resources that make deployment and management of a jambonz cluster easy.
 

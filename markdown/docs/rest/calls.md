@@ -8,7 +8,7 @@ Calls are created from the REST API by sending an HTTP POST request. A successfu
 
 An example is shown below:
 ```bash
-POST https://jambonz.us/v1/Accounts/fef61e75-cec3-496c-a7bc-8368e4d02a04/Calls HTTP/1.1
+POST https://jambonz.cloud/v1/Accounts/fef61e75-cec3-496c-a7bc-8368e4d02a04/Calls HTTP/1.1
 Content-Length: 175
 Accept: application/json
 Authorization: Bearer 9404e5f7-9a77-4bcc-b0fa-5665ace28ab3
@@ -59,7 +59,7 @@ At the time that the 201 response is returned to the caller, the call attempt ha
 **GET /v1/Accounts/{AccountSid}/Calls/{CallSid}**
 
 ```bash
-curl -X GET "https://jambonz.us/v1/Accounts/fef61e75-cec3-496c-a7bc-8368e4d02a04/Calls/ba01d74c-397e-4c80-9c8f-d57515ca8e86" \
+curl -X GET "https://jambonz.cloud/v1/Accounts/fef61e75-cec3-496c-a7bc-8368e4d02a04/Calls/ba01d74c-397e-4c80-9c8f-d57515ca8e86" \
   -H "accept: application/json" \
   -H "Authorization: Bearer 38700987-c7a4-4685-a5bb-af378f9734de"
 

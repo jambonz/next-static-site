@@ -1,6 +1,6 @@
 # Installing on AWS
 
-The recommended way to trial the jambonz software is to [create an account](https://jambonz.us/register) on the hosted jambonz system, since this allows you to get up and running in minutes without building servers.  Plus, you can always migrate to a self-hosted system at any time with no changes.
+The recommended way to trial the jambonz software is to [create an account](https://jambonz.cloud/register) on the hosted jambonz system, since this allows you to get up and running in minutes without building servers.  Plus, you can always migrate to a self-hosted system at any time with no changes.
 
 When you are ready to build a self-hosted solution (or if you prefer to start with a self-hosted solution), then AWS is the preferred hosting provider for jambonz, because a lot of work has been done to implement a scaling solution that uses AWS autoscale groups and SNS lifecycle notifications to scale gracefully and effectively.
 
