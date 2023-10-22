@@ -76,6 +76,11 @@ export function Hero({ data = {}, subStyle, altStyle, children }) {
             </H2>
           </div>
         )}
+        {data.ctaline && (
+          <div className="hero__ctaline">
+            <p dangerouslySetInnerHTML={{ __html: data.ctaline }} />
+          </div>
+        )}
         {data.cta && (
           <div className="hero__cta">
             <Button as={Link} href={data.url}>{data.cta}</Button>

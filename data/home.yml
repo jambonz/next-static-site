@@ -1,9 +1,8 @@
 hero:
   headline: Build unique voice solutions, faster.
-  subtext:
-    - jambonz is the open source voice platform 
-    - for conversational AI providers and CSPs.
-  cta: Create a free account on jambonz.cloud
+  subtext: jambonz is the open source voice platform for conversational AI providers and CSPs.
+  ctaline: Create a free account on <a href="https://jambonz.cloud/register">jambonz.cloud</a> today!
+  cta: Create your free account
   url: https://jambonz.cloud/register
 
 tech:
