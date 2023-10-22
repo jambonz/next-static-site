@@ -107,6 +107,14 @@
   &--home {
     padding-bottom: 64px;
     padding-top: 32px;
+
+    .hero__subtext {
+      max-width: 530px;
+
+      @media (max-width: ui-vars.$width-tablet-1) {
+        max-width: 470px;
+      }
+    }
   }
 
   &--why {
@@ -165,6 +173,10 @@
       margin-left: auto;
       margin-right: auto;
     }
+  }
+
+  &__ctaline {
+    margin-bottom: 32px;
   }
 }
 
