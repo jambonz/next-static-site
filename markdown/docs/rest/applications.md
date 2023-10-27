@@ -20,7 +20,7 @@ Applications have the following properties:
 **GET /v1/Applications/{ApplicationSid}**
 
 ```bash
-curl -X GET "https://jambonz.us/v1/Applications/0e0681b0-d49f-4fb8-b973-b5a3c6758de1" \
+curl -X GET "https://jambonz.cloud/v1/Applications/0e0681b0-d49f-4fb8-b973-b5a3c6758de1" \
   -H "accept: application/json" \
   -H "Authorization: Bearer 38700987-c7a4-4685-a5bb-af378f9734de"
 
@@ -57,7 +57,7 @@ curl -X GET "https://jambonz.us/v1/Applications/0e0681b0-d49f-4fb8-b973-b5a3c675
 Lists all Applications an Account (if an account scope api token is used).
 
 ```bash
-curl -X GET "https://api.jambonz.us/v1/Applications" \
+curl -X GET "https://api.jambonz.cloud/v1/Applications" \
 -H  "accept: application/json" \
 -H  "Authorization: Bearer 97b24a80-4908-4c23-8c47-e88b49193d3d"
 
@@ -132,7 +132,7 @@ Creates a new Application.
 Upon success, a 201 response is returned with a JSON body providing the account_sid ("sid") of the application that was created.
 
 ```xml
-curl -X POST "https://jambonz.us/v1/Applications" \
+curl -X POST "https://jambonz.cloud/v1/Applications" \
 -H "accept: application/json" \
 -H "Authorization: Bearer 38700987-c7a4-4685-a5bb-af378f9734de" \
 -H "Content-Type: application/json" \
