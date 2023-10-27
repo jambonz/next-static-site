@@ -113,24 +113,26 @@ Additionally, google and nvidia allow a boost factor to be specified at the phra
 | option        | description | required  |
 | ------------- |-------------| -----|
 | apiKey | Deepgram api key to authenticate with (overrides setting in jambonz portal) | no |
-| tier | Level of model you would like to use ('enhanced', 'base')  | no (default: base) |
-| model | AI model used to process submitted audio ('general', 'meeting', 'phonecall', 'voicemail', 'finance', 'conversationalai', 'video', 'custom')  | no (default: general) |
+| [tier](https://developers.deepgram.com/docs/tier) | Deepgram tier you would like to use ('enhanced', 'base')  | no (default: base) |
+| [model](https://developers.deepgram.com/docs/model) | Deepgram model used to process submitted audio ('general', 'meeting', 'phonecall', 'voicemail', 'finance', 'conversationalai', 'video', 'custom')  | no (default: general) |
+| [endpointing](https://developers.deepgram.com/docs/endpointing) | Indicates the number of milliseconds of silence Deepgram will use to determine a speaker has finished saying a word or phrase. The value provided must be iether a number of milliseconds or 'false' to disable the feature entirely.  Note: the default endpointing value that Deepgram uses is 10 milliseconds.  You can set this value higher to allow to require more silence before a final transcript is returned but we suggest a value of 1000 (one second) or less, as we have observed strange behaviors with higher values.  If you wish to allow more time for pauses during a conversation before returning a transcript, we suggest using the utteranceEndMs feature instead that is described below. | no (default: 10ms) |
 | customModel | Id of custom model  | no |
-| version | version of model to use  | no (default: latest)|
-| punctuate | Indicates whether to add punctuation and capitalization to the transcript  | no |
+| [version](https://developers.deepgram.com/docs/version) | Deepgram version of model to use  | no (default: latest)|
+| [punctuate](https://developers.deepgram.com/docs/punctuation) | Indicates whether to add punctuation and capitalization to the transcript  | no |
 | [profanityFilter](https://developers.deepgram.com/documentation/features/profanity-filter/) | Indicates whether to remove profanity from the transcript  | no |
 | [redact](https://developers.deepgram.com/documentation/features/redact/) | Whether to redact information from transcripts ('pci', 'numbers', 'true', 'ssn')  | no |
-| diarize | Wehther to assign a speaker to each word in the transcript  | no |
+| [diarize](https://developers.deepgram.com/docs/diarization) | Wehther to assign a speaker to each word in the transcript  | no |
 | diarizeVersion | if set to '2021-07-14.0' the legacy diarization feature will be used  | no |
 | multichannel | Indicates whether to transcribe each audio channel independently  | no |
 | alternatives | Number of alternative transcripts to return  | no |
-| numerals | Indicates whether to convert numbers from written format (e.g., one) to numerical format (e.g., 1)  | no |
+| [numerals](https://developers.deepgram.com/docs/numerals) | Indicates whether to convert numbers from written format (e.g., one) to numerical format (e.g., 1)  | no |
 | search | An array of terms or phrases to search for in the submitted audio| no |
-| replace | An array of terms or phrases to search for in the submitted audio and replace  | no |
+| [replace](https://developers.deepgram.com/docs/find-and-replace) | An array of terms or phrases to search for in the submitted audio and replace  | no |
 | [keywords](https://developers.deepgram.com/documentation/features/keywords/) | An array keywords to which the model should pay particular attention to boosting or suppressing to help it understand context  | no |
-| endpointing | Indicates whether Deepgram will detect whether a speaker has finished speaking  | no (default: true) |
-| tag | A tag to associate with the request.  Tags appear in usage reports | no |
-| apiKey | Deepgram  | no |
+| [tag](https://developers.deepgram.com/docs/tagging) | A tag to associate with the request.  Tags appear in usage reports | no |
+| utteranceEndMs (added in 08.5) | a number of milliseconds of silence that deepgram will wait after the last word was spoken before returning an UtteranceEnd event, which is used by jambonz to trigger the transcript webhook if this proprety is supplied.  This is essentially Deepgram's version of continous ASR (and in fact if you enable continuos ASR on Deepgram it will work by enabling this property) | no |
+| shortUtterance (added in 08.5)| Causes a transcript to be returned as soon as the Deepgram is_final property is set.  This should only be used in scenarios where you are expecting a very short confirmation or directed command and you want minimal latency | no |
+| [smartFormatting](https://developers.deepgram.com/docs/smart-format) (added in 08.5) | Indicates whether to enable Deepgram's Smart Formatting feature. | no |
 
 <h2 id="ibmOptions">ibmOptions</h2>
 
