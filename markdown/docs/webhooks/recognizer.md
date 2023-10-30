@@ -36,11 +36,13 @@ The `recognizer` property is used in multiple verbs ([gather](/docs/webhooks/gat
 | asrTimeout|timeout value for [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
 | asrDtmfTerminationDigit|DMTF key that terminates [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
 | azureServiceEndpoint | Custom service endpoint to connect to, instead of hosted Microsoft regional endpoints | no |
-| nuanceOptions (added in 0.8.0)|Nuance-specific speech recognition options (see below)| no |
-| deepgramOptions (added in 0.8.0)|Deepgram-specific speech recognition options (see below)| no |
-| nvidiaOptions (added in 0.8.0)|Nvidia-specific speech recognition options (see below)| no |
-| ibmOptions (added in 0.8.0)|IBM Watson-specific speech recognition options (see below)| no |
-| sonioxOptions (added in 0.8.2)|Soniox-specific speech recognition options (see below)| no |
+| [azureOptions](#azureOptions) (added in 0.8.5) | Azure-specific speech recognition options (see below) | no |
+| [deepgramOptions](#deepgramOptions) (added in 0.8.0)|Deepgram-specific speech recognition options (see below)| no |
+| [ibmOptions](#ibmOptions) (added in 0.8.0)|IBM Watson-specific speech recognition options (see below)| no |
+| [nuanceOptions](#nuanceOptions) (added in 0.8.0)|Nuance-specific speech recognition options (see below)| no |
+| [nvidiaOptions](#nvidiaOptions) (added in 0.8.0)|Nvidia-specific speech recognition options (see below)| no |
+| [sonioxOptions](#sonioxOptions) (added in 0.8.2)|Soniox-specific speech recognition options (see below)| no |
+
 
 <h2 id="hints">Providing speech hints</h2>
 
@@ -60,6 +62,15 @@ Additionally, google and nvidia allow a boost factor to be specified at the phra
   {"phrase": "biopsy", "boost": 20},
 ]
 ```
+
+<h2 id="azureOptions">azureOptions</h2>
+
+`azureOptions` is an object with the following properties. This option is available in jambonz 0.8.5 or above.
+
+| option        | description | required  |
+| ------------- |-------------| -----|
+| speechSegmentationSilenceTimeoutMs | Duration (in ms) of nonspeech audio within a phrase that's currently being spoken before that phrase is considered "done." See [here](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-recognize-speech?pivots=programming-language-csharp#change-how-silence-is-handled) for details| no |
+
 
 <h2 id="nuanceOptions">nuanceOptions</h2>
 
