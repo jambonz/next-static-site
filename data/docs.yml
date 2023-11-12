@@ -163,6 +163,9 @@ navi:
     title: Release Notes
     pages:
       -
+        path: v0.8.5
+        title: v0.8.5
+      -
         path: v0.8.4
         title: v0.8.4
       -
@@ -180,12 +183,6 @@ navi:
       -
         path: v0.7.9
         title: v0.7.9
-      -
-        path: v0.7.8
-        title: v0.7.8
-      -
-        path: v0.7.7
-        title: v0.7.7
   -
     path: jambonz-ui
     title: Jambonz UI
