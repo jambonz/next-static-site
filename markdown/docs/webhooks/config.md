@@ -27,9 +27,7 @@ You can use the following attributes in the `config` command:
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| synthesizer | change the session-level default text-to-speech settings. See [the say verb](/docs/webhooks/say) for details on the `synthesizer` property.| no |
-| recognizer | change the session-level default speech recognition settings. See [the transcribe verb](/docs/webhooks/transcribe) for details on the `recognizer` property.| no |
-| notifyEvents | boolean, whether to enable event notifications (verb:status messages) over websocket connections.  Verbs that are sent over the websocket must also contain an "id" property to activate this feature.|no|
+|amd|enable answering machine detection; see [answering machine detection](/docs/supporting-articles/answering-machine-detection) for details|no|
 |bargein|this object contains properties that are used to instantiate a 'background' [gather verb](/docs/webhooks/gather)|no|
 | bargeIn.enable| if true, begin listening for speech or dtmf input while the session is executing other verbs.  This is known as a "background gather" and an application to capture user input outside of a [gather verb](/docs/webhooks/gather).  If false, stop any background listening task that is in progress| no|
 | bargeIn.sticky | If true and bargeIn.enable is true, then when the background gather completes with speech or dtmf detected, it will automatically start another background gather|no|
@@ -41,11 +39,16 @@ You can use the following attributes in the `config` command:
 | bargeIn.maxDigits | Maximum number of dtmf digits expected to gather | no |
 | bargeIn.interDigitTimeout | Amount of time to wait between digits after minDigits have been entered.| no |
 | listen | a nested [listen](/docs/webhooks/listen) action, which allows recording of the call from this point forward by streaming the audio to a remote server over a websocket connection | no |
-|amd|enable answering machine detection; see [answering machine detection](/docs/supporting-articles/answering-machine-detection) for details|no|
+| notifyEvents | boolean, whether to enable event notifications (verb:status messages) over websocket connections.  Verbs that are sent over the websocket must also contain an "id" property to activate this feature.|no|
+|onHoldMusic | string, provides the URL to a remote music source to use when a call is placed on hold|no|
+| recognizer | change the session-level default speech recognition settings. See [the transcribe verb](/docs/webhooks/transcribe) for details on the `recognizer` property.| no |
+| reset | string or array, resets either 'recognizer' and/or 'synthesizer' to the default application settings|no| 
 |record|options to manage [call recording using SIPREC](/docs/supporting-articles/siprec-client)|no|
 |record.action|"startCallRecording", "stopCallRecording", "pauseCallRecording", or "resumeCallRecording"|yes|
 |record.siprecServerURL|sip uri for SIPREC server|required if action is "startCallRecording"|
 |record.recordingID|user-supplied string to identify the recording|no|
+|sipRequestWithinDialogHook|object or string, a webhook to call when a sip request is received within the dialog (e.g. an INFO, NOTIFY, or REFER)|no|
+| synthesizer | change the session-level default text-to-speech settings. See [the say verb](/docs/webhooks/say) for details on the `synthesizer` property.| no |
 
 
 
