@@ -1,3 +1,4 @@
+# recognizer
 
 The `recognizer` property is used in multiple verbs ([gather](/docs/webhooks/gather), [transcribe](/docs/webhooks/transcribe), [dial](/docs/webhooks/dial)). It selects and configures the speech recognizer.  It is an object containing the following properties:
 
