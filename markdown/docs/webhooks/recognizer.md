@@ -1,10 +1,12 @@
 # recognizer
 
-The `recognizer` property is used in multiple verbs ([gather](/docs/webhooks/gather), [transcribe](/docs/webhooks/transcribe), [dial](/docs/webhooks/dial)). It selects and configures the speech recognizer.  It is an object containing the following properties:
+The `recognizer` property is used in multiple verbs ([gather](/docs/webhooks/gather), [transcribe](/docs/webhooks/transcribe), [dial](/docs/webhooks/dial)). It selects and configures the speech recognizer.  
+
+It is an object containing the following properties:
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| vendor | Speech vendor to use (google, aws, microsoft, deepgram, nuance, nvidia, soniox, and ibm are supported, along with any others you add via the [custom speech API](/docs/speech-api/overview/)) | no |
+| vendor | Speech vendor to use (see list below, along with any others you add via the [custom speech API](/docs/speech-api/overview/)) | no |
 | language | Language code to use for speech detection.  Defaults to the application level setting | no |
 | interim | If true, interim transcriptions are sent | no (default: false) |
 | hints | (google, microsoft, deepgram, nvidia, soniox) Array of words or phrases to assist speech detection.  See [examples](#hints) below. | no |
@@ -44,6 +46,18 @@ The `recognizer` property is used in multiple verbs ([gather](/docs/webhooks/gat
 | [nvidiaOptions](#nvidiaOptions) (added in 0.8.0)|Nvidia-specific speech recognition options (see below)| no |
 | [sonioxOptions](#sonioxOptions) (added in 0.8.2)|Soniox-specific speech recognition options (see below)| no |
 
+## Speech-to-text vendors
+jambonz natively supports the following speech-to-text services:
+- assemblyai
+- aws
+- azure
+- cobalt
+- deepgram
+- google
+- ibm
+- nuance
+- nvidia
+- sonoix
 
 <h2 id="hints">Providing speech hints</h2>
 
