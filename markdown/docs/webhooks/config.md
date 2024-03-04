@@ -48,6 +48,7 @@ You can use the following attributes in the `config` command:
 |record.siprecServerURL|sip uri for SIPREC server|required if action is "startCallRecording"|
 |record.recordingID|user-supplied string to identify the recording|no|
 |transcribe| a nested [transcribe](/docs/webhooks/transcribe) action, which allows a transcription of the call to be sent in the background | no |
+|transcribe.enable| boolean, if true start the transcribe, if false stop it | yes |
 |transcribe.transcriptionHook| the webhook/websocket identifier to send transcriptions to | yes if enabling transcription |
 |transcribe.recognizer| [recognizer](/docs/webhooks/recognizer) options | no |
 |sipRequestWithinDialogHook|object or string, a webhook to call when a sip request is received within the dialog (e.g. an INFO, NOTIFY, or REFER)|no|
