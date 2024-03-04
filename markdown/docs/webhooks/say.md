@@ -27,11 +27,11 @@ You can use the following options in the `say` action:
 
 ## Text-to-speech vendors
 jambonz natively supports the following text-to-speech services:
-- google
 - aws
 - azure
 - deepgram
 - elevenlabs
+- google
 - ibm
 - nuance
 - nvidia
