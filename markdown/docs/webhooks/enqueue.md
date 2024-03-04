@@ -43,6 +43,6 @@ The *waitHook* webhook will contain the following additional parameters:
 You can also optionally receive [queue webhook notifications](/docs/webhooks/queue-notifications) any time a members joins or leaves a queue.
 
 <p class="flex">
-<a href="/docs/webhooks/dtmf">Prev: dtmf</a>
+<a href="/docs/webhooks/dub">Prev: dub</a>
 <a href="/docs/webhooks/gather">Next: gather</a>
 </p>
