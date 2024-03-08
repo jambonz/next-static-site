@@ -2,7 +2,7 @@
 
 Sometimes in conversational AI scenarios there may be significant latency while the remote application processes a user response and is determing the next action to take.  In these scenarios it is common to play a typing sound or other audio to provide an audio cue to the caller that the system is processing the response, that the agent is thinking or retrieving, etc.  
 
-Support for "filelr noise" can enabled either at the session level using the `config.fillerNoise` property or at the individual `gather` level using the same property.  In the example below, we set a session-wide setting for filler noise (in the form of a typing sound) to kick in after waiting 2 seconds for the remote app to respond to user input.
+Support for "filler noise" can enabled either at the session level using the `config.fillerNoise` property or at the individual `gather` level using the same property.  In the example below, we set a session-wide setting for filler noise (in the form of a typing sound) to kick in after waiting 2 seconds for the remote app to respond to user input.
 
 ```js
 /* websocket application */
