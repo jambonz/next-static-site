@@ -1,7 +1,10 @@
-# dub
+
+![Dub](/images/dubbing.png)
 > Added in v0.8.6
 
-The `dub` verb adds an additional audio track to the conversation. The purpose is to "dub" audio into the channel that plays over the top of the content of the `play` and `say` verbs.  The dub command is non-blocking so that once the audio is started execution proceeds immediately to the next verb.  A maximum of two additional tracks may be added to the conversation.
+The `dub` verb adds one or more additional audio tracks into the conversation (currently, a max of two additional audio tracks may be added). Audio can then be inserted into these tracks and it will be blended with the `play` or `say` content being sent to the caller/called party.  The source of the audio content can be either text to speech or mp3 audio accessible via http(s).
+
+Additionally, the volume (gain) of the inserted audio may be adjusted up or down.  As well, the [config.boostAudioSignal](/docs/webhooks/config) allows the volume in the main conversational channel to be adjusted as well.
 
 ```json
   {
@@ -16,7 +19,7 @@ The `dub` verb adds an additional audio track to the conversation. The purpose i
     "play": "https://example.com/sounds/office-hubbub.mp3"
   }
 ```
-You can use the following attributes in the `dub` command:
+Verb properties for the `dub` command:
 
 | option        | description | required  |
 | ------------- |-------------| -----|
@@ -25,18 +28,18 @@ You can use the following attributes in the `dub` command:
 | play | an http(s) url to an mp3 file to play into the track | no |
 | say | text to convert to audio and play into the track| no |
 | loop | boolean; if true, loop the mp3 | no |
-| gain | integer (e.g. -6) or string (e.g. "-6 dB) specifying decibels to boost or reduce the audio signal | no |
+| gain | a string value in the format "-6 dB" specifying decibels to boost or reduce the strength of the audio signal (note: simple integer values accepted as well). The value supplied must be between +- 50 dB.| no |
 
 The various options are:
 - `addTrack` adds an audio track to the conversation; once added, the `play` or `say` command may be used to inject audio into the track
 - `removeTrack` removes an audio track from the conversation
 - `silenceTrack` silences an audio track but leaves it in place
-- `play` plays audio from an http(s) url into the audio track
-- `say` generates text-to-speech into the audio track
+- `playOnTrack` plays audio from an http(s) mp3 url into the audio track
+- `sayOnTrack` generates text-to-speech into the audio track
 
 Note: all tracks are automatically removed when the call completes, so if using an additional track for the entire conversation there is no need to explicitly remove it when the call ends.
 
-Note: for convenience the `addTrack` and `play` operations may be combined in a single verb; e.g.:
+Note: for convenience the `addTrack` and `playOnTrack` operations may be combined into a single `addTrack` verb; e.g.:
 
 ```json
   {
@@ -48,6 +51,8 @@ Note: for convenience the `addTrack` and `play` operations may be combined in a 
     "gain": "-10 dB"
   }
 ```
+
+See [Using dub tracks](/docs/supporting-articles/using-dub-tracks) for more information.
 
 <p class="flex">
 <a href="/docs/webhooks/dtmf">Prev: DTMF</a>

@@ -45,7 +45,10 @@ You can use the following options in the `gather` command:
 | numDigits | Exact number of dtmf digits expected to gather | no |
 | partialResultHook | Webhook to send interim transcription results to. Partial transcriptions are only generated if this property is set. | no |
 | play | nested [play](#play) Command that can be used to prompt the user | no |
-| [recognizer](/docs/webhooks/recognizer) | Speech recognition options | no |
+| fillerNoise | play audio to the caller while the remote application is processing gather transcriptions. See [Using filler noise](/docs/supporting-articles/using-filler-noise) for more details.| no |
+| fillerNoise.enable | boolean, whether to enable or disable filler noise | yes |
+| fillerNoise.url | http(s) audio to play as filler noise | yes |
+| fillerNoise.startDelaySecs | integer value specifying number of seconds to wait for a response from the remote | [recognizer](/docs/webhooks/recognizer) | Speech recognition options | no |
 
 In the case of speech input, the actionHook payload will include a `speech` object with the response from Google speech:
 ```json
