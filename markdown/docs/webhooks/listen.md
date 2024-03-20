@@ -14,7 +14,7 @@ The format of the audio data sent over the websocket is 16-bit PCM encoding, wit
 
 Additionally, one text frame is sent immediately after the websocket connection is established.  This text frame contains a JSON string with all of the call attributes normally sent on an HTTP request (e.g. callSid, etc), plus **sampleRate** and **mixType** properties describing the audio sample rate and stream(s).  Additional metadata can also be added to this payload using the **metadata** property as described in the table below.  Once the intial text frame containing the metadata has been sent, the remote side should expect to receive only binary frames, containing audio.  
 
-Note that the remote side can optionally send messages and audio back over the websocket connection, as described below in [Birectional Audio](#birectional_audio).
+Note that the remote side can optionally send messages and audio back over the websocket connection, as described below in [Bidirectional Audio](#bidirectional_audio).
 
 ```json
 {
@@ -54,7 +54,7 @@ Any DTMF digits entered by the far end party on the call can optionally be passe
 }
 ```
 
-<h4 id="birectional_audio">Bidirectional audio</h4>
+<h4 id="bidirectional_audio">Bidirectional audio</h4>
 
 Audio can also be sent back over the websocket to jambonz.  This audio, if supplied, will be played out to the caller.  (Note: Bidirectional audio is not supported when the `listen` is nested in the context of a `dial` verb).
 
