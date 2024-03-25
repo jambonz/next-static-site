@@ -28,6 +28,9 @@ navi:
         path: dtmf
         title: dtmf
       -
+        path: dub 
+        title: dub
+      -
         path: enqueue
         title: enqueue
       -
