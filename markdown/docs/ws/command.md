@@ -22,8 +22,10 @@ The `command` property must be one of the values shown below.
 |conf:mute-status|mute or unmute all non-moderator conference legs|data must include a `conf_mute_status` property with a value of either 'mute' or 'unmute'|
 |conf:hold-status|place a conference leg on hold or take off hold|data must include a `conf_hold_status` property with a value of either 'hold' or 'unhold'|
 |listen:status|Change the status of a listen stream|data must include a `listen_status` property with a value of 'pause' or 'resume'|
+|record|manage call recording that is done via SIPREC to a remote recording server|data must include an `action` with one of "startCallRecording", "stopCallRecording", "pauseCallRecording", or "resumeCallRecording".  When starting a recording you must also supply "recordingID" and  "siprecServerURL".  You may optionally supply a `headers` object with custom headers to be sent to the remote SIPREC recording server.|
 |whisper|Play a whisper prompt to the caller (i.e only one party hears the prompt)|data must include a `whisper` property that can be an array of say or play verbs|
 |sip:request|Send a SIP INFO, NOTIFY, or MESSAGE request to the far end party|data must include a 'method' property (allowed values: 'INFO', 'NOTIFY', 'MESSAGE') and can include 'content_type', 'content', and 'headers' properties.|
+|dub|add, remove or operate on a dub track.|The data must include the properties defined for the [dub](./docs/webhooks/dub) verb|
 
 
 > Note: In the data payload when `redirect` is used, each jambonz verb in the `data` array may optionally include an `id` property.  If present, jambonz will provide `verb:status` notifications when the verb starts and ends execution.
