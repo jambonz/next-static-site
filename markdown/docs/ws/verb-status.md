@@ -4,7 +4,7 @@
 
 A `verb:status` message is sent by jambonz to the websocket server when a verb has just started or completed executing.  
 
-> Note: `verb:status` messages are only sent when the app has provided an `id` property on verbs it includes in a `command` message.
+> Note: The `notifyEvents` attribute of the session config defaults to `false`. This must be set to `true` in order for `verb:status` messages to be enabled, and they will only be sent where the app has provided an `id` property on verbs it includes in a `command` message.
 
 |property|type|meaning|required|
 |--------|----|-------|--------|
