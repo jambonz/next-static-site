@@ -166,6 +166,9 @@ navi:
     title: Release Notes
     pages:
       -
+        path: v0.8.6
+        title: v0.8.6
+      -
         path: v0.8.5
         title: v0.8.5
       -
