@@ -29,6 +29,10 @@ You can use the following options in the `listen` action:
 | option        | description | required  |
 | ------------- |-------------| -----|
 | actionHook | webhook to invoke when listen operation ends.  The information will include the duration of the audio stream, and also a 'digits' property if the recording was terminated by a dtmf key. | yes |
+|bidirectionalAudio.enabled|if true, enable bidirectional audio | no (default: true)|
+|bidirectionalAudio.streaming|if true, enable streaming of audio from your application to jambonz (and the remote caller)|no (default: false)|
+|bidirectionalAudio.sampleRate|required if streaming| no|
+|disableBidirectionalAudio| (deprecated) if true, disable bidirectional audio (same as setting bidirectionalAudio.enabled = false)|no|
 | finishOnKey | The set of digits that can end the listen action | no |
 | maxLength | the maximum length of the listened audio stream, in secs | no |
 | metadata | arbitrary data to add to the JSON payload sent to the remote server when websocket connection is first connected | no |
@@ -57,6 +61,12 @@ Any DTMF digits entered by the far end party on the call can optionally be passe
 <h4 id="bidirectional_audio">Bidirectional audio</h4>
 
 Audio can also be sent back over the websocket to jambonz.  This audio, if supplied, will be played out to the caller.  (Note: Bidirectional audio is not supported when the `listen` is nested in the context of a `dial` verb).
+
+There are two separate modes for bidirectional audio:
+- non-streaming, where you provide a full base64-encoded audio file as JSON text frames
+- streaming, where stream audio as L16 pcm raw audio as binary frames
+
+<h5 id="bidirectional_audio_non_streaming">non-streaming</h5>
 
 The far-end websocket server supplies bidirectional audio by sending a JSON text frame over the websocket connection:
 ```json
@@ -91,6 +101,22 @@ And finally, if the websocket connection wishes to end the `listen`, it can send
   "type": "disconnect"
 }
 ```
+
+<h5 id="bidirectional_audio_streaming">streaming</h5>
+
+To enable streaming bidirectional audio, you must explicitly enable it as shown below:
+```js
+{
+  verb: 'listen',
+  bdirectionalAudio: {
+    enabled: true,
+    streaming: true,
+    sampleRate: 8000
+  }
+}
+```
+
+Your application should then send binary frames of linear-16 pcm raw data with the specified sample rate over the websocket connection.
 
 <p class="flex">
 <a href="/docs/webhooks/lex">Prev: lex</a>
