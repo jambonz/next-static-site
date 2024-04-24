@@ -19,7 +19,7 @@ app.conference({
 })
 ```
 
-Later, when the manager joins, they should use the `speakTo` tag to indicate their audio input should only be heard by agents:
+Later, when the manager joins, they should use the `speakOnlyTo` tag to indicate their audio input should only be heard by agents:
 
 ```js 
 app.conference({
