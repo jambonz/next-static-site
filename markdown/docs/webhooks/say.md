@@ -38,6 +38,8 @@ jambonz natively supports the following text-to-speech services:
 - wellsaid
 - whisper
 
+Note: Microsoft supports [on-prem and private link options](/docs/supporting-articles/azure-private-link) for deploying the speech service in addition to the hosted Microsoft service.
+
 <p class="flex">
 <a href="/docs/webhooks/redirect">Prev: redirect</a>
 <a href="/docs/webhooks/sip-decline">Next: sip:decline</a>

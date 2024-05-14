@@ -59,6 +59,8 @@ jambonz natively supports the following speech-to-text services:
 - nvidia
 - sonoix
 
+Note: Microsoft supports [on-prem and private link options](/docs/supporting-articles/azure-private-link) for deploying the speech service in addition to the hosted Microsoft service.
+
 <h2 id="hints">Providing speech hints</h2>
 
 google, microsoft, deepgram, and nvidia all support the ability to provide a dynamic list of words or phrases that should be "boosted" by the recognizer, i.e. the recognizer should be more likely to detect this terms and return them in the transcript.  A boost factor can also be applied.  In the most basic implementation it would look like this:
