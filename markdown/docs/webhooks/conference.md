@@ -21,7 +21,7 @@ You can use the following attributes in the `conference` command:
 | enterHook | A webhook to retrieve something to play or say to the caller just before they are put into a conference after waiting for it to start| no |
 | joinMuted | if true, this caller will join th conference with their audio muted | no |
 | maxParticipants | maximum number of participants that will be allowed in the conference | no |
-| memberTag | a way to classify participants for the "coach" feature; see related speakOnlyTo attribute below (0.9.0 and above)| no |
+| memberTag | a way to classify participants for the "coach" feature; see related speakOnlyTo attribute below (0.9.1 and above)| no |
 | name | name of the conference | yes |
 | speakOnlyTo | a tag value that will cause this members audio to be heard only by members that were assigned that tag; see [this article](/docs/supporting-articles/conferencing-coach-mode) for details | no |
 | startConferenceOnEnter | if true, start the conference only when this caller enters.  This also designates this caller as a moderator of the conference (default: true) | no |

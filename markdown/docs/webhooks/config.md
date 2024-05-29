@@ -28,6 +28,7 @@ You can use the following attributes in the `config` command:
 | option        | description | required  |
 | ------------- |-------------| -----|
 |amd|enable answering machine detection; see [answering machine detection](/docs/supporting-articles/answering-machine-detection) for details.|no|
+|actionHookDelayAction|object, see [here](/docs/supporting-articles/handling-action-hook-delays) for details.|no|
 |bargein|this object contains properties that are used to instantiate a 'background' [gather verb](/docs/webhooks/gather).|no|
 | bargeIn.enable| if true, begin listening for speech or dtmf input while the session is executing other verbs.  This is known as a "background gather" and an application to capture user input outside of a [gather verb](/docs/webhooks/gather).  If false, stop any background listening task that is in progress.| no|
 | bargeIn.sticky | If true and bargeIn.enable is true, then when the background gather completes with speech or dtmf detected, it will automatically start another background gather.|no|
