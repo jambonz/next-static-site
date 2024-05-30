@@ -33,6 +33,7 @@ You can use the following options in the `gather` command:
 | option        | description | required  |
 | ------------- |-------------| -----|
 | actionHook | Webhook POST to invoke with the collected digits or speech. The payload will include a 'speech' or 'dtmf' property along with the standard attributes.  See below for more detail.| yes |
+|actionHookDelayAction|object, see [here](/docs/supporting-articles/handling-action-hook-delays) for details.|no|
 | bargein | allow speech bargein, i.e. kill audio playback if caller begins speaking | no |
 | dtmfBargein | allow dtmf bargein, i.e. kill audio playback if caller enters dtmf | no |
 | finishOnKey | Dmtf key that signals the end of input | no |

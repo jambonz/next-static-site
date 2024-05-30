@@ -4,7 +4,7 @@ The conferencing feature supports a coaching feature whereby designated particip
 
 The classic example of this is a manager listening in on a call between an agent and a customer and being able to "whisper" to the agent without the customer hearing.  This feature is not limited to a single participant receiving the audio, it could be any subset of the conference participants.
 
->> Coach mode is only supported on version 0.9.0 and above
+>> Coach mode is only supported on version 0.9.1 and above
 
 ## Enabling coach mode
 
