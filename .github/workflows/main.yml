@@ -12,8 +12,6 @@ on:
 jobs:
   test:
     environment: Production
-    # Available tools on this machine:
-    # https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-README.md
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,8 +19,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-      - name: Setup and Install
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install Dependencies
         run: yarn install
+      - name: Update Preact Render to String
+        run: yarn add preact-render-to-string@^6.5.0
       - name: Build and Start Next.js
         run: yarn build && (yarn start&) > /dev/null
       - name: Run Tests
