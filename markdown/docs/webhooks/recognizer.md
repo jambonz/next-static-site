@@ -35,6 +35,7 @@ It is an object containing the following properties:
 | outputFormat | (microsoft) simple or detailed.  Default:  simple| no |
 | requestSnr | (microsoft) Request signal to noise information| no |
 | initialSpeechTimeoutMs | (microsoft) Initial speech timeout in milliseconds| no |
+| minConfidence | If provided, final transcripts with confidence less than this value return a reason of 'stt-low-confidence' in webhook | no |
 | transcriptionHook | Webhook to receive an HTPP POST when an interim or final transcription is received. | yes |
 | asrTimeout|timeout value for [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
 | asrDtmfTerminationDigit|DMTF key that terminates [continuous ASR feature](/docs/supporting-articles/continuous-asr)| no |
