@@ -13,7 +13,7 @@ The `dial` verb is used to create a new call by dialing out to a telephone numbe
     "method": "GET"
   },
   "amd": {
-    "hook": "/answeringMachineDetection",
+    "actionHook": "/answeringMachineDetection",
     "disconnectOnAMD": true,
 
   }
