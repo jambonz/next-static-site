@@ -15,7 +15,7 @@ The answering machine detection feature can be enabled on outbound calls to prov
     }
   ],
   "amd": {
-    "hook": "/amdEvents"
+    "actionHook": "/amdEvents"
   }
 }
 ```
