@@ -30,6 +30,7 @@ It is an object containing the following properties:
 | vocabularyName |  (aws) The name of a vocabulary to use when processing the speech.| no |
 | vocabularyFilterName |  (aws) The name of a vocabulary filter to use when processing the speech.| no |
 | filterMethod |  (aws) The method to use when filtering the speech: remove, mask, or tag.| no |
+| languageModelName |  (aws) The name of the custom language model when processing speech.| no |
 | identifyChannels |  (aws) Enable channel identification. | no |
 | profanityOption | (microsoft) masked, removed, or raw.  Default:  raw| no |
 | outputFormat | (microsoft) simple or detailed.  Default:  simple| no |
