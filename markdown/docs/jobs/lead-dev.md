@@ -1,6 +1,6 @@
 # Lead Open Source Developer
 
-[jambonz](https://jambonz.org) and [drachtio](https://drachtio.org) are open source projects that are widely used as the underlying voice platform by some of the largest CX/AI technology companies.  Our growth and success has created a need to expand and we are looking for a highly experienced and highly VoIP lead developer to join our team.
+[jambonz](https://jambonz.org) and [drachtio](https://drachtio.org) are open source projects that are widely used as the underlying voice platform by some of the largest CX/AI technology companies.  Our growth and success has created a need to expand and we are looking for a highly experienced and highly motivate VoIP lead developer to join our team.
 
 This is a unique opportunity to join an early-stage open source company, work closely with the founding team, and take over increasing responsibility for the future direction of the software while building a sustainable career in the open source RTC community.
 
