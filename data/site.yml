@@ -4,7 +4,7 @@ banner:
   link: https://blog.jambonz.org/installing-jambonz-using-aws-marketplace
 latest:
   -
-    active: false
+    active: true
     label: jobs
     headline: Hey there! We're hiring!
     subtext:

@@ -1,10 +1,8 @@
 # Lead Open Source Developer
 
-[drachtio](https://drachtio.org) and [jambonz](https://jambonz.org) are open source projects that have been widely adopted by many companies in the realtime communications space. 
-- drachtio is the open source SIP server that is programmable using Node.js and makes it easy for web app developers to build sophisticated SIP server applications.  
-- jambonz is the open-source CPaaS that is designed for the needs of communication service providers.
+[jambonz](https://jambonz.org) and [drachtio](https://drachtio.org) are open source projects that are widely used as the underlying voice platform by some of the largest CX/AI technology companies.  Our growth and success has created a need to expand and we are looking for a highly experienced and highly motivated lead developer to join our team.
 
-The success of the these projects has enabled us to expand the team, and we are looking to hire an experienced lead developer (C/C++ and Node.js) to work on the core software, to support customer deployments and to take our success to the next level.  This is a unique opportunity to join an early-stage open source company, work closely with the founder/creator of the software (that's me - Dave Horton), and take over increasing responsibility for the future direction of the software while building yourself a sustainable career in the open source RTC community.
+This is a unique opportunity to join an early-stage open source company, work closely with the foundeing team, and take over increasing responsibility for the future direction of the software while building yourself a sustainable career in the open source RTC community.
 
 **What you will do**
 
@@ -24,7 +22,7 @@ First, doing a lot of different things means you must be interested and eager to
 
 Second: that "supporting customers" thing is key.  Our success follows that of our customers, so part of everyone's job is helping our customers win, and this can involve some amount of after-hours support in responding to critical production issues.
 
-The core of your job will be adding new features and fixing bugs in the drachtio [server](https://github.com/drachtio/drachtio-server) and [client](https://github.com/drachtio/drachtio-srf) projects as well as the [jambonz](https://github.com/jambonz) projects.  We're looking to extend these projects quite dramatically in the upcoming year and you will be a key driver of this work.
+The core of your job will be working to drive out customers' success while adding new features and fixing bugs in the [jambonz](https://github.com/jambonz) software, as well as drachtio [server](https://github.com/drachtio/drachtio-server) and [client](https://github.com/drachtio/drachtio-srf) frameworks. 
 
 **What we are looking for**
 
@@ -38,19 +36,19 @@ First and foremost, we are looking for someone who:
 
 Beyond that, here are some technical requirements:
 
-- Previous experience building VoIP and/or SIP applications is required.
-- Experience with both C/C++ and Node.js (and mastery of at least one of these) is required.
-- Experience using drachtio or jambonz is desirable, but not required.  
-- Experience with at least one other RTC open source projects (e.g. Freeswitch, Kamailio, Asterisk, Janus, openSIPs, etc) is highly desirable.
-- Experience with Kubernetes deployments (and related CI/CD practices) is highly desirable.
-- Experience building webRTC client apps is a plus, but not required.
-- Experience with react and react native is a plus, but not required. 
+- You have past experience building VoIP and/or SIP server applications.
+- You know SIP -- by that I mean the protocol down to a fairly detailed level.
+- You have deep expertise building applications in Node.js and consider yourself somewhat of an expert.
+- You have past experience building solutions with at least one other RTC open source projects (e.g. Freeswitch, Kamailio, Asterisk, Janus, openSIPs, etc).
+- Experience using drachtio or jambonz? That's highly desirable.  
+- Experience with Kubernetes deployments (and related CI/CD practices? Also highly desirable.
+- Experience with react and web application development?  Ditto.
 
 We'll also expect to see a lot of your work on github or elsewhere that we can review to get a sense of your skills and experience.
 
 Compensation will be competitive and negotiated based on your level of experience, your location, and your needs.
 
-Still interested after reading all this?  Ping me at daveh@drachtio.org and let's start a conversation!
+Still interested after reading all this?  Ping me at daveh@jambonz.org and let's start a conversation!
 
 
 
