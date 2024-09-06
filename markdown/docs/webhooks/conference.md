@@ -48,6 +48,6 @@ Conference status webhooks will contain the following additional parameters:
 - duration: the current length of the conference in seconds
 
 <p class="flex">
-<a href="/docs/webhooks/overview">Prev: Overview</a>
+<a href="/docs/webhooks/answer">Prev: Answer</a>
 <a href="/docs/webhooks/config">Next: config</a>
 </p>
