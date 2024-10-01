@@ -14,7 +14,7 @@ The format of the audio data sent over the websocket is 16-bit PCM encoding, wit
 
 Additionally, one text frame is sent immediately after the websocket connection is established.  This text frame contains a JSON string with all of the call attributes normally sent on an HTTP request (e.g. callSid, etc), plus **sampleRate** and **mixType** properties describing the audio sample rate and stream(s).  Additional metadata can also be added to this payload using the **metadata** property as described in the table below.  Once the intial text frame containing the metadata has been sent, the remote side should expect to receive only binary frames, containing audio.  
 
-Note that the remote side can optionally send messages and audio back over the websocket connection, as described below in [Bidirectional Audio](#bidirectional_audio).
+Note that the remote side can optionally send messages and audio back over the websocket connection, as described below in [Bidirectional Audio](#h3-streaming-bi-directional-audio).
 
 ```json
 {
@@ -46,7 +46,7 @@ You can use the following options in the `listen` action:
 | wsAuth.username | HTTP basic auth username to use on websocket connection | no |
 | wsAuth.password | HTTP basic auth password to use on websocket connection | no |
 
-<h4 id="pass_dtmf">Passing DTMF</h4>
+### Passing DTMF
 
 Any DTMF digits entered by the far end party on the call can optionally be passed to the websocket server as JSON text frames by setting the `passDtmf` property to `true`. Each DTMF entry is reported separately in a payload that contains the specific DTMF key that was entered, as well as the duration which is reported in RTP timestamp units.  The payload that is sent will look like this:
 
@@ -58,7 +58,7 @@ Any DTMF digits entered by the far end party on the call can optionally be passe
 }
 ```
 
-<h4 id="bidirectional_audio">Bidirectional audio</h4>
+### Bidirectional audio
 
 Audio can also be sent back over the websocket to jambonz.  This audio, if supplied, will be played out to the caller.  (Note: Bidirectional audio is not supported when the `listen` is nested in the context of a `dial` verb).
 
@@ -66,7 +66,7 @@ There are two separate modes for bidirectional audio:
 - non-streaming, where you provide a full base64-encoded audio file as JSON text frames
 - streaming, where stream audio as L16 pcm raw audio as binary frames
 
-<h5 id="bidirectional_audio_non_streaming">non-streaming</h5>
+#### non-streaming
 
 The far-end websocket server supplies bidirectional audio by sending a JSON text frame over the websocket connection:
 ```json
@@ -102,9 +102,9 @@ And finally, if the websocket connection wishes to end the `listen`, it can send
 }
 ```
 
-<h5 id="bidirectional_audio_streaming">streaming</h5>
+### Streaming bi-directional audio
 
-To enable streaming bidirectional audio, you must explicitly enable it as shown below:
+To enable bidirectional audio, you must explicitly enable it in the listen verb with the `streaming` property as shown below:
 ```js
 {
   verb: 'listen',
@@ -117,6 +117,74 @@ To enable streaming bidirectional audio, you must explicitly enable it as shown 
 ```
 
 Your application should then send binary frames of linear-16 pcm raw data with the specified sample rate over the websocket connection.
+
+Note that you can specify both the sample rate that you want to receive over the websocket as well as the sample rate that you want to send back audio, and they do not need to be the same.  In the example below, we choose to receive 8k sampling but send back 16K sampling.
+```js
+{
+  verb: 'listen',
+  sampleRate: 8000
+  bdirectionalAudio: {
+    enabled: true,
+    streaming: true,
+    sampleRate: 16000
+  }
+}
+```
+
+#### Commands
+You can send the following commands over the websocket as json frames:
+- disconnect
+- killAudio
+- mark
+- clearMarks
+
+##### disconnect
+```json
+{
+  "type": "disconnect"
+}
+```
+This causes the websocket to be closed from the jambonz side, and the associated `listen` verb to end.
+
+##### killAudio
+```json
+{
+  "type": "killAudio"
+}
+```
+This causes any audio that is playing out from the bidirectional socket as well as any buffered audio to be flushed.
+
+##### mark
+```json
+{
+  "type": "mark",
+  "data": {
+    "name": "my-mark-1"
+  }
+}
+```
+You can send a `mark` command if you want to be able to synchronize activities on your end with the playout of the audio stream that you have provided.  Because the audio you provide will usually be buffered before it is streamed, if you want to know when a specific piece of audio has started or completed, send a `mark` command with a name property at the point in the stream you want to sync with.  When that point in the audio stream is later reached during playback, you will get a matching json frame back over the websocket:
+
+```json
+{
+  "type": "mark",
+  "data": {
+    "name": "my-mark-1",
+    "event": "playout"
+  }
+}
+```
+
+Note that `event` will contain either `playout` or `cleared` depending on whether the audio stream reached the mark during playout or the mark was never played out due to a `killAudio` command.
+
+##### clearMarks
+```json
+{
+  "type": "clearMarks"
+}
+```
+
+This command clears (removes) and audio marks that are being tracked.  When you remove the marks in this way, you will not receive `mark` events for the removed marks.
 
 <p class="flex">
 <a href="/docs/webhooks/lex">Prev: lex</a>
