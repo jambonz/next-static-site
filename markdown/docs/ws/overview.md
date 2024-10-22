@@ -47,9 +47,13 @@ In the sections that follow, we will describe each of the message types in detai
 |call:status|jambonz|sent any time the call status changes.|
 |verb:hook|jambonz| sent when an action hook or event hook configured for a verb has been triggered (e.g. a “gather” verb has collected an utterance from the user).|
 |verb:status|jambonz|sent when a verb has just started or completed executing.  See “command” below; this message is only sent if the app includes “id” properties on the verbs provided.|
+|llm:event|jambonz|sent when an LLM generates any kind of event; e.g. transcript, etc|
 |jambonz:error|jambonz| if jambonz encounters some sort of fatal error (i.e. something that would necessitate ending the call unexpectedly) jambonz will send an error event to the far end app describing the problem.|
 |ack|websocket server|the ws server will respond to any `session:new` or `verb:hook` message with an `ack` message indicating that the provided content in the message has been processed.  The ack message may optionally contain a payload of new instructions for jambonz.|
 |command|websocket server|the ws server  will send this message when it wants to asynchronously  provide a new set of instructions to jambonz. The app **may** include an `id` property in each of the verbs included in the command; if so, jambonz will send `verb:status` notifications back to the app when the verb is executed.  The `id` property is a string value that is assigned by the app and is meaningful only to the app (i.e. to jambonz it is simply an opaque piece of tracking data).|
+|llm:tool-call|jambonz|sent when an LLM agent makes a tool or function call that the app needs to invoke|
+|llm:tool-output|websocket server|the ws server sends when a tool has been invoked and results are available|
+|llm:update|websocket server|the ws server application sends when it wants to asynchronously provide new instructions or session state to the LLM|
 
 
 <p class="flex">
