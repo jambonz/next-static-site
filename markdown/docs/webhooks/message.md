@@ -37,6 +37,6 @@ The actionHook that is invoked when the `message` command completes will include
 | carrier_message_id | the message identifier assigned by the carrier for this SMS|
 
 <p class="flex">
-<a href="/docs/webhooks/listen">Prev: listen</a>
+<a href="/docs/webhooks/llm">Prev: listen</a>
 <a href="/docs/webhooks/pause">Next: pause</a>
 </p>
