@@ -27,10 +27,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Install Dependencies
-        run: yarn install
-      - name: Update Preact Render to String
-        run: yarn add preact-render-to-string@^6.5.0
+        run: npm install
       - name: Build and Start Next.js
-        run: yarn build && (yarn start&) > /dev/null
+        run: npm run build && (npm run start&) > /dev/null
       - name: Run Tests
-        run: yarn test
+        run: npm run test
