@@ -55,7 +55,7 @@ You can use the following attributes in the `dial` command:
 | ------------- |-------------| -----|
 | actionHook | webhook to invoke when the call ends. The webhook will include [properties](#h5-actionhook-properties) describing the outcome of the call attempt.| no |
 |amd|enable answering machine detection; see [answering machine detection](/docs/supporting-articles/answering-machine-detection) for details|no|
-| anchorMedia | if true, jambonz will not release the media from freeswitch for the bridged call. [See here](/docs/supporting-articles/controlling-media-path-during-call) for details. Default: false | no |
+| anchorMedia | if true, jambonz will not release the media from feature server for the bridged call. [See here](/docs/supporting-articles/controlling-media-path-during-call) for details. Default: false | no |
 | answerOnBridge | If set to true, the inbound call will ring until the number that was dialed answers the call, and at that point a 200 OK will be sent on the inbound leg.  If false, the inbound call will be answered immediately as the outbound call is placed. <br/>Defaults to false. | no |
 | callerId | The inbound caller's phone number, which is displayed to the number that was dialed. The caller ID must be a valid E.164 number. <br/>Defaults to caller id on inbound call. | no |
 | confirmHook | webhook for an application to run on the callee's end after the dialed number answers but before the call is connected. This allows the caller to provide information to the dialed number, giving them the opportunity to decline the call, before they answer the call.  Note that if you want to run different applications on specific destinations, you can specify the 'url' property on the nested [target](#h5-target-types) object.  | no |
