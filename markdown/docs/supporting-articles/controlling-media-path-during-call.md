@@ -1,6 +1,6 @@
 # Controlling the media path during a call
 
-When using the [dial verb](/docs/webhooks/hangu) to create a bridged call there a few ways the media can be routed:
+When using the [dial verb](/docs/webhooks/dial) to create a bridged call there a few ways the media can be routed:
 
 - **full media** - we call it "full media" if the audio continues to be routed through the feature server.  From the perspective of the caller, their audio is routed to the jambonz SBC, through the feature server, and back out through the jambonz SBC on its outward path to the called party.  This media path is necessary if an application wants to perform operations like transcribe, listen, or record the call.
 
