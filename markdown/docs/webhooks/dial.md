@@ -139,6 +139,11 @@ The webhook that is invoked when amd property is included and jambonz has either
 | event | one of 'amd', 'beep', or 'silence' |
 | amd_type| 'human' or 'machine', only provided when event = 'amd'|
 
+<h5 id="dial-exit-media-path">exitMediaPath</h5>
+
+The purpose of the `exitMediaPath` is to support use cases where it is important that the media path not touch the jambonz system at all.  The common use case is the need to transfer a call to a human agent or credit card system where the caller will be giving their credit card details over the phone.  In order to have a PCI-Compliant transaction it is necessary that this conversation not be able to be recorded, stored, or in any way reach the jambonz system.  Performing the `dial` verb using the `exitMediaPath` property ensures this happens.
+
+For more details on controlling the media path during a call, please see [Controlling media path during call](/docs/supporting-articles/controlling-media-path-during-call).
 
 <p class="flex">
 <a href="/docs/webhooks/dequeue">Prev: dequeue</a>
