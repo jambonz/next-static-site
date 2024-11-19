@@ -4,7 +4,7 @@ When using the [dial verb](/docs/webhooks/hangu) to create a bridged call there 
 
 - **full media** - we call it "full media" if the audio continues to be routed through the feature server.  From the perspective of the caller, their audio is routed to the jambonz SBC, through the feature server, and back out through the jambonz SBC on its outward path to the called party.  This media path is necessary if an application wants to perform operations like transcribe, listen, or record the call.
 
-- **partial media** - we call it "partial media" if the audio path for the bridged call is released from the featuer server and only traverses the SBC(s) on its journey from caller to called party.
+- **partial media** - we call it "partial media" if the audio path for the bridged call is released from the feature server and only traverses the SBC(s) on its journey from caller to called party.
 
 - **no media** - we call if "no media" if the audio is completely released from jambonz.  In this case, the audio path from the caller's SBC is directly to the far end SBC or SIP trunk.  
 
