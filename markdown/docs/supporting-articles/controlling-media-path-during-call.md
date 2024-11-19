@@ -24,7 +24,7 @@ Even if the media _could_ be released to the SBC, you may prefer for some reason
 
 ### I want to release the media completely.
 
-If you want to release the media completely from the jambonz system, set the `dial.exitMediaPath` property to true.  This will attempt to crate a "no media" bridge call - but please keep in mind the warning above that this is dependent on the 3rd party providers/SBC you are connecting to.  
+If you want to release the media completely from the jambonz system, set the `dial.exitMediaPath` property to true.  This will attempt to create a "no media" bridge call - but please keep in mind the warning above that this is dependent on the 3rd party providers/SBC you are connecting to.  
 
 Note also that the 'no media' path is only possible if the `JAMBONES_ENABLE_FULL_MEDIA_RELEASE` environment variable has been set for both the sbc-inbound and sbc-outbound applications.
 
