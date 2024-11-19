@@ -44,4 +44,4 @@ Later, once the transaction has been completed, you could switch the call back t
 session.injectCommand('media:path', 'full-media');
 ```
 
-Due to the switching of the audio path, both parties will hear a brief loss of audio while the audio path is re-established.
+Due to the switching of the audio path, both parties may hear a very brief loss of audio while the audio path is reconfigured.
