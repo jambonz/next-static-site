@@ -15,10 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
+
       - name: Cache node modules
         uses: actions/cache@v3
         with:
@@ -26,9 +28,23 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
+      - name: Cache Cypress binary
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Cypress
+          key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-cypress-
+
       - name: Install Dependencies
         run: npm install
+
+      - name: Install Cypress
+        run: npx cypress install
+
       - name: Build and Start Next.js
         run: npm run build && (npm run start&) > /dev/null
+
       - name: Run Tests
         run: npm run test
