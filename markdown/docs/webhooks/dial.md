@@ -53,17 +53,17 @@ You can use the following attributes in the `dial` command:
 
 | option        | description | required  |
 | ------------- |-------------| -----|
-| actionHook | webhook to invoke when the call ends. The webhook will include [properties](#dial-action-properties) describing the outcome of the call attempt.| no |
+| actionHook | webhook to invoke when the call ends. The webhook will include [properties](#h5-actionhook-properties) describing the outcome of the call attempt.| no |
 |amd|enable answering machine detection; see [answering machine detection](/docs/supporting-articles/answering-machine-detection) for details|no|
-| anchorMedia | if true, jambonz will not release the media from freeswitch for the bridged call; generally, jambonz will evaluate whether media can be released (for example, transcribing features are not needed on the bridged call) and will attempt to release the media back to the jambonz SBC.  This feature keeps media pinned through the freeswitch even if no transcoding is being used.| no (default: false)|
+| anchorMedia | if true, jambonz will not release the media from freeswitch for the bridged call. [See here](/docs/supporting-articles/controlling-media-path-during-call) for details. Default: false | no |
 | answerOnBridge | If set to true, the inbound call will ring until the number that was dialed answers the call, and at that point a 200 OK will be sent on the inbound leg.  If false, the inbound call will be answered immediately as the outbound call is placed. <br/>Defaults to false. | no |
 | callerId | The inbound caller's phone number, which is displayed to the number that was dialed. The caller ID must be a valid E.164 number. <br/>Defaults to caller id on inbound call. | no |
-| confirmHook | webhook for an application to run on the callee's end after the dialed number answers but before the call is connected. This allows the caller to provide information to the dialed number, giving them the opportunity to decline the call, before they answer the call.  Note that if you want to run different applications on specific destinations, you can specify the 'url' property on the nested [target](#target-types) object.  | no |
+| confirmHook | webhook for an application to run on the callee's end after the dialed number answers but before the call is connected. This allows the caller to provide information to the dialed number, giving them the opportunity to decline the call, before they answer the call.  Note that if you want to run different applications on specific destinations, you can specify the 'url' property on the nested [target](#h5-target-types) object.  | no |
 | dialMusic | url that specifies a .wav or .mp3 audio file of custom audio or ringback to play to the caller while the outbound call is ringing. | no |
 | dtmfCapture | an array of strings that represent dtmf sequence which, when detected, will trigger a mid-call notification to the application via the configured `dtmfHook` | no |
 | dtmfHook | a webhook to call when a dtmfCapture entry is matched.  This is a notification only -- no response is expected, and any desired actions must be carried out via the REST updateCall API. | no|
 | dub | a nested [dub](/docs/webhooks/dub) verb to add additional audio tracks into the outbound call. | no |
-| exitMediaPath | if true, jambonz will attempt to re-invite itself completely out of the media path for the call; the media will not even transit the jambonz SBC.  Use of this feature requires the `JAMBONES_ENABLE_FULL_MEDIA_RELEASE` env var to be set for both sbc-inbound and sbc-outbound applications | no (default: false) | 
+| exitMediaPath | if true, jambonz will attempt to re-invite itself completely out of the media path for the call; [see below](#h5-exitmediapath) for details, Defaults to false| no | 
 | headers | an object containing arbitrary sip headers to apply to the outbound call attempt(s) | no |
 | listen | a nested [listen](/docs/webhooks/listen) action, which will cause audio from the call to be streamed to a remote server over a websocket connection | no |
 | referHook | webhook to invoke when an incoming SIP REFER is received on a dialed call.  If the application wishes to accept and process the REFER, the webhook application should simply return an HTTP status code 200 with no body, and jambonz will send a SIP 202 Accepted.  Otherwise, any HTTP non-success status will cause jambonz to send a SIP response to the REFER with the same status code.  <br/><br/>Note that jambonz will send the 202 Accepted and do nothing further.  It is the responsibility of the third-party application to then outdial a new call and bridge the other leg, presumably by using the REST API.  See [this example app](https://github.com/jambonz/sip-blind-transfer) for more details.| no|
@@ -72,7 +72,7 @@ You can use the following attributes in the `dial` command:
 | timeout | ring no answer timeout, in seconds.  <br/>Defaults to 60. | no |
 | transcribe | a nested [transcribe](#transcribe) action, which will cause the call to be transcribed | no 
 
-<h5 id="target-types">target types</h5>
+##### target types
 
 *PSTN number*
 
@@ -120,7 +120,7 @@ The `confirmHook` property that can be optionally specified as part of the targe
 This allows you to easily implement call screening applications (e.g. "You have a call from so-and-so.  Press 1 to decline").
 
 
-<h5 id="dial-action-properties">actionHook properties</h5>
+##### actionHook properties
 
 The actionHook that is invoked when the dial command ends will include the following properties:
 
@@ -139,7 +139,9 @@ The webhook that is invoked when amd property is included and jambonz has either
 | event | one of 'amd', 'beep', or 'silence' |
 | amd_type| 'human' or 'machine', only provided when event = 'amd'|
 
-<h5 id="dial-exit-media-path">exitMediaPath</h5>
+##### exitMediaPath
+
+> Added in 0.9.3
 
 The purpose of the `exitMediaPath` is to support use cases where it is important that the media path not touch the jambonz system at all.  The common use case is the need to transfer a call to a human agent or credit card system where the caller will be giving their credit card details over the phone.  In order to have a PCI-Compliant transaction it is necessary that this conversation not be able to be recorded, stored, or in any way reach the jambonz system.  Performing the `dial` verb using the `exitMediaPath` property ensures this happens.
 
