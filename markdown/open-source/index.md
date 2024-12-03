@@ -12,7 +12,7 @@ To that end, we believe that all companies in the RTC space that are engaged wit
 
 As a point of comparison, many companies feel that they have a social mission responsibility, and will report  on the actions they've taken to fulfill that responsibility apart and aside from their financial results. Our shared responsibility to the stewardship of the open source RTC ecosystem should be treated in the same respectful manner.
 
-On these pages you will find our own statement of commitment as well as instructions on how to install and use the open source.
+On these pages you will find our own statement of commitment.
 
 
 

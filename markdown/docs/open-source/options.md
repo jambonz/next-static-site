@@ -1,0 +1,7 @@
+# Install options
+
+The recommended way to trial the jambonz software is to [create an account](https://jambonz.cloud/register) on the hosted jambonz system, since this allows you to get up and running in minutes without building servers.  Plus, you can always migrate to a self-hosted system at any time with no changes to your application.
+
+If you wish to self-host a jambonz system you can use the [AWS Marketplace offering](https://blog.jambonz.org/installing-jambonz-using-aws-marketplace) which provides a single jambonz instance on one server (what we call a "jambonz mini").
+
+For other deployments including clustered jambonz solutions running on the hosting provider of your choice or bare metal servers we encourage you to reach out to us for a [paid support plan](/docs/support).  Paid support plans include a variety of benefits delivered by our team to help your business succeed using jambonz.  We prepare, install, tune and support your jambonz systems, prioritize your bug fixes and can assist with your integration and customer on-boarding.  If you are serious about deploying jambonz as a mission-critical element of your business, it's a no-brainer to have the folks that developed jambonz working alongside your team.  This is also the primary means of financial support for the project, so you are ensuring its future when you purchase a support plan.

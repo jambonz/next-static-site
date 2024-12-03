@@ -23,11 +23,5 @@ navi:
     title: How to install
     pages:
       -
-        path: aws
-        title: Installing on AWS
-      -
-        path: self-hosted
-        title: Installing elsewhere
-      -
-        path: homer
-        title: Customizing Homer
+        path: options
+        title: Installation options
