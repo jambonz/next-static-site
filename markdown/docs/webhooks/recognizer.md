@@ -165,6 +165,7 @@ Additionally, google and nvidia allow a boost factor to be specified at the phra
 | utteranceEndMs (added in 08.5) | a number of milliseconds of silence that deepgram will wait after the last word was spoken before returning an UtteranceEnd event, which is used by jambonz to trigger the transcript webhook if this proprety is supplied.  This is essentially Deepgram's version of continous ASR (and in fact if you enable continuos ASR on Deepgram it will work by enabling this property) | no |
 | shortUtterance (added in 08.5)| Causes a transcript to be returned as soon as the Deepgram is_final property is set.  This should only be used in scenarios where you are expecting a very short confirmation or directed command and you want minimal latency | no |
 | [smartFormatting](https://developers.deepgram.com/docs/smart-format) (added in 08.5) | Indicates whether to enable Deepgram's Smart Formatting feature. | no |
+| [fillerWords](https://developers.deepgram.com/docs/filler-words) (added in 0.9.3) | Indicates if Deepgram should transcribe filler words |no |
 
 <h2 id="ibmOptions">ibmOptions</h2>
 
