@@ -8,6 +8,8 @@ It is an object containing the following properties:
 | ------------- |-------------| -----|
 | vendor | Speech vendor to use (see list below, along with any others you add via the [custom speech API](/docs/speech-api/overview/)) | no |
 | language | Language code to use for speech detection.  Defaults to the application level setting | no |
+| fallbackVendor | Fallback Speech vendor to use (see list below, along with any others you add via the [custom speech API](/docs/speech-api/overview/)) | no |
+| fallbackLanguage | Fallback Language code to use for speech detection.  Defaults to the application level setting | no |
 | interim | If true, interim transcriptions are sent | no (default: false) |
 | hints | (google, microsoft, deepgram, nvidia, soniox) Array of words or phrases to assist speech detection.  See [examples](#hints) below. | no |
 | hintsBoost | (google, nvidia) Number indicating the strength to assign to the configured hints.  See examples below. | no |

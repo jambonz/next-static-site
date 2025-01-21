@@ -20,6 +20,8 @@ You can use the following options in the `say` action:
 | text | text to speak; may contain SSML tags | yes |
 | synthesizer.vendor | speech vendor to use (see list below, along with any others you add via the [custom speech API](/docs/speech-api/overview/))| no |
 | synthesizer.language | language code to use.  | no |
+| synthesizer.fallbackVendor | fallback speech vendor to use (see list below, along with any others you add via the [custom speech API](/docs/speech-api/overview/))| no |
+| synthesizer.fallbackLanguage | fallback language code to use.  | no |
 | synthesizer.gender | (Google only) MALE, FEMALE, or NEUTRAL.  | no |
 | synthesizer.voice | voice to use.  Note that the voice list differs whether you are using aws or Google. Defaults to application setting, if provided. | no |
 | loop | the number of times a text is to be repeated; 0 means repeat forever.  Defaults to 1. | no |
