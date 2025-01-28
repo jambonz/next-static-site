@@ -103,31 +103,61 @@ navi:
         title: Overview
       -
         path: session-new
-        title: session:new
+        title: (client) session:new
       -
         path: session-redirect
-        title: session:redirect
+        title: (client) session:redirect
       -
         path: session-reconnect
-        title: session:reconnect
+        title: (client) session:reconnect
       -
         path: call-status
-        title: call:status
+        title: (client) call:status
       -
         path: verb-hook
-        title: verb:hook
+        title: (client) verb:hook
       -
         path: verb-status
-        title: verb:status
+        title: (client) verb:status
+      -
+        path: llm-event
+        title: (client) llm:event
+      -
+        path: llm-tool-call
+        title: (client) llm:tool-call
+      -
+        path: tts-tokens-result
+        title: (client) tts:tokens-result
+      -
+        path: tts-streaming-event
+        title: (client) tts:streaming-eventresult
+      -
+        path: dial-confirm
+        title: (client) dial:confirm
       -
         path: jambonz-error
-        title: jambonz:error
+        title: (client) jambonz:error
       -
         path: ack
-        title: ack
+        title: (server) ack
       -
         path: command
-        title: command
+        title: (server) command
+      -
+        path: llm-tool-output
+        title: (server) llm:tool-output
+      -
+        path: llm-update
+        title: (server) llm:update
+      -
+        path: tts-tokens
+        title: (server) tts:tokens
+      -
+        path: tts-flush
+        title: (server) tts:flush
+      -
+        path: tts-clear
+        title: (server) tts:clear
   -
     path: speech-api
     title: Speech API
