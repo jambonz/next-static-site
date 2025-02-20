@@ -22,7 +22,7 @@ navi:
       link: /why/
     -
       label: Docs
-      link: /docs/
+      link: https://docs.jambonz.org
     -
       label: Support
       link: /support/
